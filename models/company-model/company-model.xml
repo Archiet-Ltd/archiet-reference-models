@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="id-company-model" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd">
+  <name xml:lang="en">One Company, End to End (starter)</name>
+  <documentation xml:lang="en">A small subscription business modelled end to end: what it is trying to achieve, the capabilities that deliver it, the applications behind them, the suppliers and contracts behind those, what each costs, who owns it and what could go wrong. Because every piece is connected, the model answers the questions people actually ask: what breaks if a system or supplier fails, what a capability really costs, and who has to act. Replace the example company with your own, starting from a spreadsheet of applications.</documentation>
+  <elements>
+    <element identifier="id-driver-customer-churn-above-plan" xsi:type="Driver">
+      <name xml:lang="en">Customer churn above plan</name>
+      <documentation xml:lang="en">Monthly churn has run above plan for two quarters.</documentation>
+    </element>
+    <element identifier="id-goal-keep-monthly-churn-below-3" xsi:type="Goal">
+      <name xml:lang="en">Keep monthly churn below 3%</name>
+    </element>
+    <element identifier="id-capability-customer-service" xsi:type="Capability">
+      <name xml:lang="en">Customer Service</name>
+    </element>
+    <element identifier="id-capability-billing" xsi:type="Capability">
+      <name xml:lang="en">Billing</name>
+    </element>
+    <element identifier="id-capability-order-management" xsi:type="Capability">
+      <name xml:lang="en">Order Management</name>
+    </element>
+    <element identifier="id-capability-customer-insight" xsi:type="Capability">
+      <name xml:lang="en">Customer Insight</name>
+    </element>
+    <element identifier="id-applicationcomponent-customer-portal" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Customer Portal</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Head of Customer Success</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">18,000</value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-crm-platform" xsi:type="ApplicationComponent">
+      <name xml:lang="en">CRM Platform</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Head of Customer Success</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">42,000</value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-billing-system" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Billing System</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Finance Director</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">36,000</value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-order-management-system" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Order Management System</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Operations Director</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">55,000</value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-data-warehouse" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Data Warehouse</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Head of Data</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">24,000</value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessrole-finance-director" xsi:type="BusinessRole">
+      <name xml:lang="en">Finance Director</name>
+    </element>
+    <element identifier="id-businessrole-head-of-customer-success" xsi:type="BusinessRole">
+      <name xml:lang="en">Head of Customer Success</name>
+    </element>
+    <element identifier="id-businessrole-head-of-data" xsi:type="BusinessRole">
+      <name xml:lang="en">Head of Data</name>
+    </element>
+    <element identifier="id-businessrole-operations-director" xsi:type="BusinessRole">
+      <name xml:lang="en">Operations Director</name>
+    </element>
+    <element identifier="id-technologyservice-cloud-hosting" xsi:type="TechnologyService">
+      <name xml:lang="en">Cloud hosting</name>
+      <documentation xml:lang="en">Hosts every application except the billing system.</documentation>
+    </element>
+    <element identifier="id-technologyservice-hosted-billing-platform" xsi:type="TechnologyService">
+      <name xml:lang="en">Hosted billing platform</name>
+      <documentation xml:lang="en">The billing system runs on the vendor's own platform.</documentation>
+    </element>
+    <element identifier="id-businessactor-cloud-provider" xsi:type="BusinessActor">
+      <name xml:lang="en">Cloud provider</name>
+      <documentation xml:lang="en">Supplier.</documentation>
+    </element>
+    <element identifier="id-contract-cloud-hosting-agreement" xsi:type="Contract">
+      <name xml:lang="en">Cloud hosting agreement</name>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">96,000</value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">Yes</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessactor-billing-software-vendor" xsi:type="BusinessActor">
+      <name xml:lang="en">Billing software vendor</name>
+      <documentation xml:lang="en">Supplier.</documentation>
+    </element>
+    <element identifier="id-contract-billing-subscription" xsi:type="Contract">
+      <name xml:lang="en">Billing subscription</name>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">36,000</value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">No</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-assessment-billing-depends-on-one-vendor-with-no-tested-exit-plan" xsi:type="Assessment">
+      <name xml:lang="en">Billing depends on one vendor with no tested exit plan</name>
+      <documentation xml:lang="en">If the billing vendor fails or exits, invoices stop and the customer portal cannot show account balances. Likelihood low, impact high.</documentation>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="id-rel-001" source="id-driver-customer-churn-above-plan" target="id-goal-keep-monthly-churn-below-3" xsi:type="Influence">
+    </relationship>
+    <relationship identifier="id-rel-002" source="id-applicationcomponent-customer-portal" target="id-capability-customer-service" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-003" source="id-applicationcomponent-crm-platform" target="id-capability-customer-insight" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-004" source="id-applicationcomponent-billing-system" target="id-capability-billing" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-005" source="id-applicationcomponent-order-management-system" target="id-capability-order-management" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-006" source="id-applicationcomponent-data-warehouse" target="id-capability-customer-insight" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-007" source="id-applicationcomponent-crm-platform" target="id-applicationcomponent-customer-portal" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-008" source="id-applicationcomponent-billing-system" target="id-applicationcomponent-customer-portal" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-009" source="id-applicationcomponent-order-management-system" target="id-applicationcomponent-billing-system" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-010" source="id-applicationcomponent-crm-platform" target="id-applicationcomponent-data-warehouse" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-011" source="id-businessrole-head-of-customer-success" target="id-applicationcomponent-customer-portal" xsi:type="Association">
+      <name xml:lang="en">owns</name>
+    </relationship>
+    <relationship identifier="id-rel-012" source="id-businessrole-head-of-customer-success" target="id-applicationcomponent-crm-platform" xsi:type="Association">
+      <name xml:lang="en">owns</name>
+    </relationship>
+    <relationship identifier="id-rel-013" source="id-businessrole-finance-director" target="id-applicationcomponent-billing-system" xsi:type="Association">
+      <name xml:lang="en">owns</name>
+    </relationship>
+    <relationship identifier="id-rel-014" source="id-businessrole-operations-director" target="id-applicationcomponent-order-management-system" xsi:type="Association">
+      <name xml:lang="en">owns</name>
+    </relationship>
+    <relationship identifier="id-rel-015" source="id-businessrole-head-of-data" target="id-applicationcomponent-data-warehouse" xsi:type="Association">
+      <name xml:lang="en">owns</name>
+    </relationship>
+    <relationship identifier="id-rel-016" source="id-technologyservice-cloud-hosting" target="id-applicationcomponent-customer-portal" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-017" source="id-technologyservice-cloud-hosting" target="id-applicationcomponent-crm-platform" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-018" source="id-technologyservice-cloud-hosting" target="id-applicationcomponent-order-management-system" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-019" source="id-technologyservice-cloud-hosting" target="id-applicationcomponent-data-warehouse" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-020" source="id-technologyservice-hosted-billing-platform" target="id-applicationcomponent-billing-system" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-021" source="id-businessactor-cloud-provider" target="id-contract-cloud-hosting-agreement" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-022" source="id-contract-cloud-hosting-agreement" target="id-technologyservice-cloud-hosting" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-023" source="id-businessactor-billing-software-vendor" target="id-contract-billing-subscription" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-024" source="id-contract-billing-subscription" target="id-technologyservice-hosted-billing-platform" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-025" source="id-assessment-billing-depends-on-one-vendor-with-no-tested-exit-plan" target="id-contract-billing-subscription" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-026" source="id-assessment-billing-depends-on-one-vendor-with-no-tested-exit-plan" target="id-goal-keep-monthly-churn-below-3" xsi:type="Influence">
+    </relationship>
+  </relationships>
+  <organizations>
+    <item><label xml:lang="en">Strategy</label>
+      <item identifierRef="id-capability-customer-service"/>
+      <item identifierRef="id-capability-billing"/>
+      <item identifierRef="id-capability-order-management"/>
+      <item identifierRef="id-capability-customer-insight"/>
+    </item>
+    <item><label xml:lang="en">Business</label>
+      <item identifierRef="id-businessrole-finance-director"/>
+      <item identifierRef="id-businessrole-head-of-customer-success"/>
+      <item identifierRef="id-businessrole-head-of-data"/>
+      <item identifierRef="id-businessrole-operations-director"/>
+      <item identifierRef="id-businessactor-cloud-provider"/>
+      <item identifierRef="id-contract-cloud-hosting-agreement"/>
+      <item identifierRef="id-businessactor-billing-software-vendor"/>
+      <item identifierRef="id-contract-billing-subscription"/>
+    </item>
+    <item><label xml:lang="en">Application</label>
+      <item identifierRef="id-applicationcomponent-customer-portal"/>
+      <item identifierRef="id-applicationcomponent-crm-platform"/>
+      <item identifierRef="id-applicationcomponent-billing-system"/>
+      <item identifierRef="id-applicationcomponent-order-management-system"/>
+      <item identifierRef="id-applicationcomponent-data-warehouse"/>
+    </item>
+    <item><label xml:lang="en">Technology</label>
+      <item identifierRef="id-technologyservice-cloud-hosting"/>
+      <item identifierRef="id-technologyservice-hosted-billing-platform"/>
+    </item>
+    <item><label xml:lang="en">Motivation</label>
+      <item identifierRef="id-driver-customer-churn-above-plan"/>
+      <item identifierRef="id-goal-keep-monthly-churn-below-3"/>
+      <item identifierRef="id-assessment-billing-depends-on-one-vendor-with-no-tested-exit-plan"/>
+    </item>
+    <item><label xml:lang="en">Relations</label>
+      <item identifierRef="id-rel-001"/>
+      <item identifierRef="id-rel-002"/>
+      <item identifierRef="id-rel-003"/>
+      <item identifierRef="id-rel-004"/>
+      <item identifierRef="id-rel-005"/>
+      <item identifierRef="id-rel-006"/>
+      <item identifierRef="id-rel-007"/>
+      <item identifierRef="id-rel-008"/>
+      <item identifierRef="id-rel-009"/>
+      <item identifierRef="id-rel-010"/>
+      <item identifierRef="id-rel-011"/>
+      <item identifierRef="id-rel-012"/>
+      <item identifierRef="id-rel-013"/>
+      <item identifierRef="id-rel-014"/>
+      <item identifierRef="id-rel-015"/>
+      <item identifierRef="id-rel-016"/>
+      <item identifierRef="id-rel-017"/>
+      <item identifierRef="id-rel-018"/>
+      <item identifierRef="id-rel-019"/>
+      <item identifierRef="id-rel-020"/>
+      <item identifierRef="id-rel-021"/>
+      <item identifierRef="id-rel-022"/>
+      <item identifierRef="id-rel-023"/>
+      <item identifierRef="id-rel-024"/>
+      <item identifierRef="id-rel-025"/>
+      <item identifierRef="id-rel-026"/>
+    </item>
+    <item><label xml:lang="en">Views</label>
+      <item identifierRef="id-view-the-company-on-one-page"/>
+      <item identifierRef="id-view-who-owns-what"/>
+      <item identifierRef="id-view-what-breaks-if-the-billing-vendor-fails"/>
+    </item>
+  </organizations>
+  <propertyDefinitions>
+    <propertyDefinition identifier="propid-1" type="string"><name xml:lang="en">Owner</name></propertyDefinition>
+    <propertyDefinition identifier="propid-2" type="string"><name xml:lang="en">Annual run cost gbp</name></propertyDefinition>
+    <propertyDefinition identifier="propid-3" type="string"><name xml:lang="en">Annual cost gbp</name></propertyDefinition>
+    <propertyDefinition identifier="propid-4" type="string"><name xml:lang="en">Exit plan tested</name></propertyDefinition>
+    <propertyDefinition identifier="propid-5" type="string"><name xml:lang="en">Renewal date</name></propertyDefinition>
+  </propertyDefinitions>
+  <views>
+    <diagrams>
+      <view identifier="id-view-the-company-on-one-page" xsi:type="Diagram">
+        <name xml:lang="en">The company on one page</name>
+        <documentation xml:lang="en">Goal, capabilities, applications, suppliers and the risk that matters most, connected. Follow the lines down from any capability to see what it depends on.</documentation>
+        <node identifier="id-view-the-company-on-one-page-n1" elementRef="id-capability-customer-service" xsi:type="Element" x="20" y="20" w="180" h="50">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-the-company-on-one-page-n2" elementRef="id-capability-order-management" xsi:type="Element" x="220" y="20" w="180" h="50">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-the-company-on-one-page-n3" elementRef="id-capability-customer-insight" xsi:type="Element" x="520" y="20" w="180" h="50">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-the-company-on-one-page-n4" elementRef="id-capability-billing" xsi:type="Element" x="860" y="20" w="180" h="50">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-the-company-on-one-page-n5" elementRef="id-applicationcomponent-customer-portal" xsi:type="Element" x="20" y="150" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-the-company-on-one-page-n6" elementRef="id-applicationcomponent-order-management-system" xsi:type="Element" x="220" y="150" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-the-company-on-one-page-n7" elementRef="id-applicationcomponent-crm-platform" xsi:type="Element" x="420" y="150" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-the-company-on-one-page-n8" elementRef="id-applicationcomponent-data-warehouse" xsi:type="Element" x="620" y="150" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-the-company-on-one-page-n9" elementRef="id-applicationcomponent-billing-system" xsi:type="Element" x="860" y="150" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-the-company-on-one-page-n10" elementRef="id-technologyservice-cloud-hosting" xsi:type="Element" x="320" y="290" w="200" h="50">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-the-company-on-one-page-n11" elementRef="id-technologyservice-hosted-billing-platform" xsi:type="Element" x="840" y="290" w="220" h="50">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-the-company-on-one-page-n12" elementRef="id-contract-cloud-hosting-agreement" xsi:type="Element" x="310" y="400" w="220" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-the-company-on-one-page-n13" elementRef="id-businessactor-cloud-provider" xsi:type="Element" x="310" y="510" w="220" h="50">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-the-company-on-one-page-n14" elementRef="id-contract-billing-subscription" xsi:type="Element" x="840" y="400" w="220" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-the-company-on-one-page-n15" elementRef="id-businessactor-billing-software-vendor" xsi:type="Element" x="840" y="510" w="220" h="50">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-the-company-on-one-page-n16" elementRef="id-driver-customer-churn-above-plan" xsi:type="Element" x="1120" y="20" w="220" h="50">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-the-company-on-one-page-n17" elementRef="id-goal-keep-monthly-churn-below-3" xsi:type="Element" x="1120" y="150" w="220" h="50">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-the-company-on-one-page-n18" elementRef="id-assessment-billing-depends-on-one-vendor-with-no-tested-exit-plan" xsi:type="Element" x="1120" y="393" w="220" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-the-company-on-one-page-c1" relationshipRef="id-rel-001" xsi:type="Relationship" source="id-view-the-company-on-one-page-n16" target="id-view-the-company-on-one-page-n17"/>
+        <connection identifier="id-view-the-company-on-one-page-c2" relationshipRef="id-rel-002" xsi:type="Relationship" source="id-view-the-company-on-one-page-n5" target="id-view-the-company-on-one-page-n1"/>
+        <connection identifier="id-view-the-company-on-one-page-c3" relationshipRef="id-rel-003" xsi:type="Relationship" source="id-view-the-company-on-one-page-n7" target="id-view-the-company-on-one-page-n3"/>
+        <connection identifier="id-view-the-company-on-one-page-c4" relationshipRef="id-rel-004" xsi:type="Relationship" source="id-view-the-company-on-one-page-n9" target="id-view-the-company-on-one-page-n4"/>
+        <connection identifier="id-view-the-company-on-one-page-c5" relationshipRef="id-rel-005" xsi:type="Relationship" source="id-view-the-company-on-one-page-n6" target="id-view-the-company-on-one-page-n2"/>
+        <connection identifier="id-view-the-company-on-one-page-c6" relationshipRef="id-rel-006" xsi:type="Relationship" source="id-view-the-company-on-one-page-n8" target="id-view-the-company-on-one-page-n3"/>
+        <connection identifier="id-view-the-company-on-one-page-c7" relationshipRef="id-rel-016" xsi:type="Relationship" source="id-view-the-company-on-one-page-n10" target="id-view-the-company-on-one-page-n5"/>
+        <connection identifier="id-view-the-company-on-one-page-c8" relationshipRef="id-rel-017" xsi:type="Relationship" source="id-view-the-company-on-one-page-n10" target="id-view-the-company-on-one-page-n7"/>
+        <connection identifier="id-view-the-company-on-one-page-c9" relationshipRef="id-rel-018" xsi:type="Relationship" source="id-view-the-company-on-one-page-n10" target="id-view-the-company-on-one-page-n6"/>
+        <connection identifier="id-view-the-company-on-one-page-c10" relationshipRef="id-rel-019" xsi:type="Relationship" source="id-view-the-company-on-one-page-n10" target="id-view-the-company-on-one-page-n8"/>
+        <connection identifier="id-view-the-company-on-one-page-c11" relationshipRef="id-rel-020" xsi:type="Relationship" source="id-view-the-company-on-one-page-n11" target="id-view-the-company-on-one-page-n9"/>
+        <connection identifier="id-view-the-company-on-one-page-c12" relationshipRef="id-rel-021" xsi:type="Relationship" source="id-view-the-company-on-one-page-n13" target="id-view-the-company-on-one-page-n12"/>
+        <connection identifier="id-view-the-company-on-one-page-c13" relationshipRef="id-rel-022" xsi:type="Relationship" source="id-view-the-company-on-one-page-n12" target="id-view-the-company-on-one-page-n10"/>
+        <connection identifier="id-view-the-company-on-one-page-c14" relationshipRef="id-rel-023" xsi:type="Relationship" source="id-view-the-company-on-one-page-n15" target="id-view-the-company-on-one-page-n14"/>
+        <connection identifier="id-view-the-company-on-one-page-c15" relationshipRef="id-rel-024" xsi:type="Relationship" source="id-view-the-company-on-one-page-n14" target="id-view-the-company-on-one-page-n11"/>
+        <connection identifier="id-view-the-company-on-one-page-c16" relationshipRef="id-rel-025" xsi:type="Relationship" source="id-view-the-company-on-one-page-n18" target="id-view-the-company-on-one-page-n14"/>
+        <connection identifier="id-view-the-company-on-one-page-c17" relationshipRef="id-rel-026" xsi:type="Relationship" source="id-view-the-company-on-one-page-n18" target="id-view-the-company-on-one-page-n17"/>
+      </view>
+      <view identifier="id-view-who-owns-what" xsi:type="Diagram">
+        <name xml:lang="en">Who owns what</name>
+        <documentation xml:lang="en">Each application with its accountable owner and annual run cost, so an incident or a renewal always lands with a named role.</documentation>
+        <node identifier="id-view-who-owns-what-n1" elementRef="id-businessrole-finance-director" xsi:type="Element" x="20" y="20" w="220" h="50">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-who-owns-what-n2" elementRef="id-applicationcomponent-billing-system" xsi:type="Element" x="20" y="140" w="220" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-who-owns-what-n3" elementRef="id-businessrole-head-of-customer-success" xsi:type="Element" x="260" y="20" w="460" h="50">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-who-owns-what-n4" elementRef="id-applicationcomponent-customer-portal" xsi:type="Element" x="260" y="140" w="220" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-who-owns-what-n5" elementRef="id-applicationcomponent-crm-platform" xsi:type="Element" x="500" y="140" w="220" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-who-owns-what-n6" elementRef="id-businessrole-head-of-data" xsi:type="Element" x="740" y="20" w="220" h="50">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-who-owns-what-n7" elementRef="id-applicationcomponent-data-warehouse" xsi:type="Element" x="740" y="140" w="220" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-who-owns-what-n8" elementRef="id-businessrole-operations-director" xsi:type="Element" x="980" y="20" w="220" h="50">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-who-owns-what-n9" elementRef="id-applicationcomponent-order-management-system" xsi:type="Element" x="980" y="140" w="220" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-who-owns-what-c1" relationshipRef="id-rel-011" xsi:type="Relationship" source="id-view-who-owns-what-n3" target="id-view-who-owns-what-n4"/>
+        <connection identifier="id-view-who-owns-what-c2" relationshipRef="id-rel-012" xsi:type="Relationship" source="id-view-who-owns-what-n3" target="id-view-who-owns-what-n5"/>
+        <connection identifier="id-view-who-owns-what-c3" relationshipRef="id-rel-013" xsi:type="Relationship" source="id-view-who-owns-what-n1" target="id-view-who-owns-what-n2"/>
+        <connection identifier="id-view-who-owns-what-c4" relationshipRef="id-rel-014" xsi:type="Relationship" source="id-view-who-owns-what-n8" target="id-view-who-owns-what-n9"/>
+        <connection identifier="id-view-who-owns-what-c5" relationshipRef="id-rel-015" xsi:type="Relationship" source="id-view-who-owns-what-n6" target="id-view-who-owns-what-n7"/>
+      </view>
+      <view identifier="id-view-what-breaks-if-the-billing-vendor-fails" xsi:type="Diagram">
+        <name xml:lang="en">What breaks if the billing vendor fails</name>
+        <documentation xml:lang="en">The chain an impact question walks: supplier, contract, service, the billing system, the portal that depends on it, the capabilities they realize, and the goal the risk puts in danger.</documentation>
+        <node identifier="id-view-what-breaks-if-the-billing-vendor-fails-n1" elementRef="id-businessactor-billing-software-vendor" xsi:type="Element" x="20" y="260" w="210" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-what-breaks-if-the-billing-vendor-fails-n2" elementRef="id-contract-billing-subscription" xsi:type="Element" x="260" y="260" w="210" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-what-breaks-if-the-billing-vendor-fails-n3" elementRef="id-technologyservice-hosted-billing-platform" xsi:type="Element" x="500" y="260" w="210" h="55">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-what-breaks-if-the-billing-vendor-fails-n4" elementRef="id-applicationcomponent-billing-system" xsi:type="Element" x="740" y="260" w="210" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-what-breaks-if-the-billing-vendor-fails-n5" elementRef="id-applicationcomponent-customer-portal" xsi:type="Element" x="980" y="260" w="210" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-what-breaks-if-the-billing-vendor-fails-n6" elementRef="id-capability-billing" xsi:type="Element" x="740" y="400" w="200" h="50">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-what-breaks-if-the-billing-vendor-fails-n7" elementRef="id-capability-customer-service" xsi:type="Element" x="980" y="400" w="200" h="50">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-what-breaks-if-the-billing-vendor-fails-n8" elementRef="id-assessment-billing-depends-on-one-vendor-with-no-tested-exit-plan" xsi:type="Element" x="260" y="110" w="330" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-what-breaks-if-the-billing-vendor-fails-n9" elementRef="id-goal-keep-monthly-churn-below-3" xsi:type="Element" x="700" y="120" w="220" h="50">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-what-breaks-if-the-billing-vendor-fails-c1" relationshipRef="id-rel-002" xsi:type="Relationship" source="id-view-what-breaks-if-the-billing-vendor-fails-n5" target="id-view-what-breaks-if-the-billing-vendor-fails-n7"/>
+        <connection identifier="id-view-what-breaks-if-the-billing-vendor-fails-c2" relationshipRef="id-rel-004" xsi:type="Relationship" source="id-view-what-breaks-if-the-billing-vendor-fails-n4" target="id-view-what-breaks-if-the-billing-vendor-fails-n6"/>
+        <connection identifier="id-view-what-breaks-if-the-billing-vendor-fails-c3" relationshipRef="id-rel-008" xsi:type="Relationship" source="id-view-what-breaks-if-the-billing-vendor-fails-n4" target="id-view-what-breaks-if-the-billing-vendor-fails-n5"/>
+        <connection identifier="id-view-what-breaks-if-the-billing-vendor-fails-c4" relationshipRef="id-rel-020" xsi:type="Relationship" source="id-view-what-breaks-if-the-billing-vendor-fails-n3" target="id-view-what-breaks-if-the-billing-vendor-fails-n4"/>
+        <connection identifier="id-view-what-breaks-if-the-billing-vendor-fails-c5" relationshipRef="id-rel-023" xsi:type="Relationship" source="id-view-what-breaks-if-the-billing-vendor-fails-n1" target="id-view-what-breaks-if-the-billing-vendor-fails-n2"/>
+        <connection identifier="id-view-what-breaks-if-the-billing-vendor-fails-c6" relationshipRef="id-rel-024" xsi:type="Relationship" source="id-view-what-breaks-if-the-billing-vendor-fails-n2" target="id-view-what-breaks-if-the-billing-vendor-fails-n3"/>
+        <connection identifier="id-view-what-breaks-if-the-billing-vendor-fails-c7" relationshipRef="id-rel-025" xsi:type="Relationship" source="id-view-what-breaks-if-the-billing-vendor-fails-n8" target="id-view-what-breaks-if-the-billing-vendor-fails-n2"/>
+        <connection identifier="id-view-what-breaks-if-the-billing-vendor-fails-c8" relationshipRef="id-rel-026" xsi:type="Relationship" source="id-view-what-breaks-if-the-billing-vendor-fails-n8" target="id-view-what-breaks-if-the-billing-vendor-fails-n9"/>
+      </view>
+    </diagrams>
+  </views>
+</model>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="id-event-driven" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd">
+  <name xml:lang="en">Event-Driven Architecture</name>
+  <documentation xml:lang="en">Services announce what happened as events and other services react, instead of calling each other directly. The producer writes the event to an outbox in the same transaction as its own data, so an event is never lost and never published for a change that did not happen.</documentation>
+  <elements>
+    <element identifier="id-applicationcomponent-order-service" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Order service</name>
+    </element>
+    <element identifier="id-applicationprocess-place-order" xsi:type="ApplicationProcess">
+      <name xml:lang="en">Place order</name>
+    </element>
+    <element identifier="id-dataobject-outbox" xsi:type="DataObject">
+      <name xml:lang="en">Outbox</name>
+      <documentation xml:lang="en">Written in the same database transaction as the order; a relay publishes from it to the event stream.</documentation>
+    </element>
+    <element identifier="id-applicationevent-order-placed" xsi:type="ApplicationEvent">
+      <name xml:lang="en">Order placed</name>
+    </element>
+    <element identifier="id-dataobject-order-placed-event-versioned-schema" xsi:type="DataObject">
+      <name xml:lang="en">Order placed event (versioned schema)</name>
+      <documentation xml:lang="en">Consumers depend on the schema, not on the producer. Additive changes only; breaking changes get a new version.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-inventory-service" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Inventory service</name>
+    </element>
+    <element identifier="id-applicationprocess-reserve-stock" xsi:type="ApplicationProcess">
+      <name xml:lang="en">Reserve stock</name>
+      <documentation xml:lang="en">Idempotent: processing the same event twice has no further effect, because delivery is at least once.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-notification-service" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Notification service</name>
+    </element>
+    <element identifier="id-applicationprocess-send-confirmation" xsi:type="ApplicationProcess">
+      <name xml:lang="en">Send confirmation</name>
+      <documentation xml:lang="en">Idempotent: processing the same event twice has no further effect, because delivery is at least once.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-analytics-service" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Analytics service</name>
+    </element>
+    <element identifier="id-applicationprocess-update-sales-figures" xsi:type="ApplicationProcess">
+      <name xml:lang="en">Update sales figures</name>
+      <documentation xml:lang="en">Idempotent: processing the same event twice has no further effect, because delivery is at least once.</documentation>
+    </element>
+    <element identifier="id-technologyservice-event-streaming" xsi:type="TechnologyService">
+      <name xml:lang="en">Event streaming</name>
+      <documentation xml:lang="en">Durable, ordered, replayable event log.</documentation>
+    </element>
+    <element identifier="id-node-broker-cluster" xsi:type="Node">
+      <name xml:lang="en">Broker cluster</name>
+    </element>
+    <element identifier="id-artifact-dead-letter-queue" xsi:type="Artifact">
+      <name xml:lang="en">Dead-letter queue</name>
+      <documentation xml:lang="en">Events a consumer could not process, kept for inspection and replay instead of blocking the stream.</documentation>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="id-rel-001" source="id-applicationcomponent-order-service" target="id-applicationprocess-place-order" xsi:type="Assignment">
+    </relationship>
+    <relationship identifier="id-rel-002" source="id-applicationprocess-place-order" target="id-dataobject-outbox" xsi:type="Access" accessType="Write">
+    </relationship>
+    <relationship identifier="id-rel-003" source="id-applicationprocess-place-order" target="id-applicationevent-order-placed" xsi:type="Triggering">
+    </relationship>
+    <relationship identifier="id-rel-004" source="id-applicationevent-order-placed" target="id-dataobject-order-placed-event-versioned-schema" xsi:type="Access">
+    </relationship>
+    <relationship identifier="id-rel-005" source="id-applicationcomponent-inventory-service" target="id-applicationprocess-reserve-stock" xsi:type="Assignment">
+    </relationship>
+    <relationship identifier="id-rel-006" source="id-applicationevent-order-placed" target="id-applicationprocess-reserve-stock" xsi:type="Triggering">
+    </relationship>
+    <relationship identifier="id-rel-007" source="id-applicationcomponent-notification-service" target="id-applicationprocess-send-confirmation" xsi:type="Assignment">
+    </relationship>
+    <relationship identifier="id-rel-008" source="id-applicationevent-order-placed" target="id-applicationprocess-send-confirmation" xsi:type="Triggering">
+    </relationship>
+    <relationship identifier="id-rel-009" source="id-applicationcomponent-analytics-service" target="id-applicationprocess-update-sales-figures" xsi:type="Assignment">
+    </relationship>
+    <relationship identifier="id-rel-010" source="id-applicationevent-order-placed" target="id-applicationprocess-update-sales-figures" xsi:type="Triggering">
+    </relationship>
+    <relationship identifier="id-rel-011" source="id-node-broker-cluster" target="id-technologyservice-event-streaming" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-012" source="id-technologyservice-event-streaming" target="id-applicationcomponent-order-service" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-013" source="id-technologyservice-event-streaming" target="id-applicationcomponent-inventory-service" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-014" source="id-technologyservice-event-streaming" target="id-applicationcomponent-notification-service" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-015" source="id-technologyservice-event-streaming" target="id-applicationcomponent-analytics-service" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-016" source="id-technologyservice-event-streaming" target="id-artifact-dead-letter-queue" xsi:type="Access">
+    </relationship>
+  </relationships>
+  <organizations>
+    <item><label xml:lang="en">Application</label>
+      <item identifierRef="id-applicationcomponent-order-service"/>
+      <item identifierRef="id-applicationprocess-place-order"/>
+      <item identifierRef="id-dataobject-outbox"/>
+      <item identifierRef="id-applicationevent-order-placed"/>
+      <item identifierRef="id-dataobject-order-placed-event-versioned-schema"/>
+      <item identifierRef="id-applicationcomponent-inventory-service"/>
+      <item identifierRef="id-applicationprocess-reserve-stock"/>
+      <item identifierRef="id-applicationcomponent-notification-service"/>
+      <item identifierRef="id-applicationprocess-send-confirmation"/>
+      <item identifierRef="id-applicationcomponent-analytics-service"/>
+      <item identifierRef="id-applicationprocess-update-sales-figures"/>
+    </item>
+    <item><label xml:lang="en">Technology</label>
+      <item identifierRef="id-technologyservice-event-streaming"/>
+      <item identifierRef="id-node-broker-cluster"/>
+      <item identifierRef="id-artifact-dead-letter-queue"/>
+    </item>
+    <item><label xml:lang="en">Relations</label>
+      <item identifierRef="id-rel-001"/>
+      <item identifierRef="id-rel-002"/>
+      <item identifierRef="id-rel-003"/>
+      <item identifierRef="id-rel-004"/>
+      <item identifierRef="id-rel-005"/>
+      <item identifierRef="id-rel-006"/>
+      <item identifierRef="id-rel-007"/>
+      <item identifierRef="id-rel-008"/>
+      <item identifierRef="id-rel-009"/>
+      <item identifierRef="id-rel-010"/>
+      <item identifierRef="id-rel-011"/>
+      <item identifierRef="id-rel-012"/>
+      <item identifierRef="id-rel-013"/>
+      <item identifierRef="id-rel-014"/>
+      <item identifierRef="id-rel-015"/>
+      <item identifierRef="id-rel-016"/>
+    </item>
+    <item><label xml:lang="en">Views</label>
+      <item identifierRef="id-view-event-flow"/>
+      <item identifierRef="id-view-runtime-platform"/>
+    </item>
+  </organizations>
+  <views>
+    <diagrams>
+      <view identifier="id-view-event-flow" xsi:type="Diagram">
+        <name xml:lang="en">Event flow</name>
+        <documentation xml:lang="en">One business event, published once, handled independently by every service that cares about it.</documentation>
+        <node identifier="id-view-event-flow-n1" elementRef="id-applicationcomponent-order-service" xsi:type="Element" x="20" y="20" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-event-flow-n2" elementRef="id-applicationprocess-place-order" xsi:type="Element" x="20" y="150" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-event-flow-n3" elementRef="id-dataobject-outbox" xsi:type="Element" x="20" y="280" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-event-flow-n4" elementRef="id-applicationevent-order-placed" xsi:type="Element" x="300" y="150" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-event-flow-n5" elementRef="id-dataobject-order-placed-event-versioned-schema" xsi:type="Element" x="300" y="280" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-event-flow-n6" elementRef="id-applicationprocess-reserve-stock" xsi:type="Element" x="580" y="20" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-event-flow-n7" elementRef="id-applicationcomponent-inventory-service" xsi:type="Element" x="860" y="20" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-event-flow-n8" elementRef="id-applicationprocess-send-confirmation" xsi:type="Element" x="580" y="150" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-event-flow-n9" elementRef="id-applicationcomponent-notification-service" xsi:type="Element" x="860" y="150" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-event-flow-n10" elementRef="id-applicationprocess-update-sales-figures" xsi:type="Element" x="580" y="280" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-event-flow-n11" elementRef="id-applicationcomponent-analytics-service" xsi:type="Element" x="860" y="280" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-event-flow-c1" relationshipRef="id-rel-001" xsi:type="Relationship" source="id-view-event-flow-n1" target="id-view-event-flow-n2"/>
+        <connection identifier="id-view-event-flow-c2" relationshipRef="id-rel-002" xsi:type="Relationship" source="id-view-event-flow-n2" target="id-view-event-flow-n3"/>
+        <connection identifier="id-view-event-flow-c3" relationshipRef="id-rel-003" xsi:type="Relationship" source="id-view-event-flow-n2" target="id-view-event-flow-n4"/>
+        <connection identifier="id-view-event-flow-c4" relationshipRef="id-rel-004" xsi:type="Relationship" source="id-view-event-flow-n4" target="id-view-event-flow-n5"/>
+        <connection identifier="id-view-event-flow-c5" relationshipRef="id-rel-005" xsi:type="Relationship" source="id-view-event-flow-n7" target="id-view-event-flow-n6"/>
+        <connection identifier="id-view-event-flow-c6" relationshipRef="id-rel-006" xsi:type="Relationship" source="id-view-event-flow-n4" target="id-view-event-flow-n6"/>
+        <connection identifier="id-view-event-flow-c7" relationshipRef="id-rel-007" xsi:type="Relationship" source="id-view-event-flow-n9" target="id-view-event-flow-n8"/>
+        <connection identifier="id-view-event-flow-c8" relationshipRef="id-rel-008" xsi:type="Relationship" source="id-view-event-flow-n4" target="id-view-event-flow-n8"/>
+        <connection identifier="id-view-event-flow-c9" relationshipRef="id-rel-009" xsi:type="Relationship" source="id-view-event-flow-n11" target="id-view-event-flow-n10"/>
+        <connection identifier="id-view-event-flow-c10" relationshipRef="id-rel-010" xsi:type="Relationship" source="id-view-event-flow-n4" target="id-view-event-flow-n10"/>
+      </view>
+      <view identifier="id-view-runtime-platform" xsi:type="Diagram">
+        <name xml:lang="en">Runtime platform</name>
+        <documentation xml:lang="en">Every service connects to one event streaming service; none connects to another directly.</documentation>
+        <node identifier="id-view-runtime-platform-n1" elementRef="id-applicationcomponent-order-service" xsi:type="Element" x="20" y="20" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-runtime-platform-n2" elementRef="id-applicationcomponent-inventory-service" xsi:type="Element" x="260" y="20" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-runtime-platform-n3" elementRef="id-applicationcomponent-notification-service" xsi:type="Element" x="500" y="20" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-runtime-platform-n4" elementRef="id-applicationcomponent-analytics-service" xsi:type="Element" x="740" y="20" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-runtime-platform-n5" elementRef="id-technologyservice-event-streaming" xsi:type="Element" x="380" y="160" w="180" h="55">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-runtime-platform-n6" elementRef="id-node-broker-cluster" xsi:type="Element" x="380" y="290" w="180" h="55">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-runtime-platform-n7" elementRef="id-artifact-dead-letter-queue" xsi:type="Element" x="700" y="290" w="180" h="55">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-runtime-platform-c1" relationshipRef="id-rel-011" xsi:type="Relationship" source="id-view-runtime-platform-n6" target="id-view-runtime-platform-n5"/>
+        <connection identifier="id-view-runtime-platform-c2" relationshipRef="id-rel-012" xsi:type="Relationship" source="id-view-runtime-platform-n5" target="id-view-runtime-platform-n1"/>
+        <connection identifier="id-view-runtime-platform-c3" relationshipRef="id-rel-013" xsi:type="Relationship" source="id-view-runtime-platform-n5" target="id-view-runtime-platform-n2"/>
+        <connection identifier="id-view-runtime-platform-c4" relationshipRef="id-rel-014" xsi:type="Relationship" source="id-view-runtime-platform-n5" target="id-view-runtime-platform-n3"/>
+        <connection identifier="id-view-runtime-platform-c5" relationshipRef="id-rel-015" xsi:type="Relationship" source="id-view-runtime-platform-n5" target="id-view-runtime-platform-n4"/>
+        <connection identifier="id-view-runtime-platform-c6" relationshipRef="id-rel-016" xsi:type="Relationship" source="id-view-runtime-platform-n5" target="id-view-runtime-platform-n7"/>
+      </view>
+    </diagrams>
+  </views>
+</model>

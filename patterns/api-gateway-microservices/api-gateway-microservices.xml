@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="id-api-gateway-microservices" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd">
+  <name xml:lang="en">API Gateway and Microservices</name>
+  <documentation xml:lang="en">A product split into independently deployable services, each owning its own data, behind one API gateway. Clients see a single API; teams ship their service without coordinating a release with everyone else.</documentation>
+  <elements>
+    <element identifier="id-businessactor-customers" xsi:type="BusinessActor">
+      <name xml:lang="en">Customers</name>
+    </element>
+    <element identifier="id-applicationcomponent-web-front-end" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Web front end</name>
+    </element>
+    <element identifier="id-applicationcomponent-mobile-app" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Mobile app</name>
+    </element>
+    <element identifier="id-applicationcomponent-api-gateway" xsi:type="ApplicationComponent">
+      <name xml:lang="en">API gateway</name>
+      <documentation xml:lang="en">Routing, authentication, rate limiting and request shaping for each client. No business logic.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-identity-provider" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Identity provider</name>
+    </element>
+    <element identifier="id-applicationcomponent-catalogue-service" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Catalogue service</name>
+    </element>
+    <element identifier="id-dataobject-catalogue-database" xsi:type="DataObject">
+      <name xml:lang="en">Catalogue database</name>
+      <documentation xml:lang="en">Owned by one service. Other services ask that service; they never read its database.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-order-service" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Order service</name>
+    </element>
+    <element identifier="id-dataobject-order-database" xsi:type="DataObject">
+      <name xml:lang="en">Order database</name>
+      <documentation xml:lang="en">Owned by one service. Other services ask that service; they never read its database.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-payment-service" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Payment service</name>
+    </element>
+    <element identifier="id-dataobject-payment-ledger" xsi:type="DataObject">
+      <name xml:lang="en">Payment ledger</name>
+      <documentation xml:lang="en">Owned by one service. Other services ask that service; they never read its database.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-customer-account-service" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Customer account service</name>
+    </element>
+    <element identifier="id-dataobject-customer-database" xsi:type="DataObject">
+      <name xml:lang="en">Customer database</name>
+      <documentation xml:lang="en">Owned by one service. Other services ask that service; they never read its database.</documentation>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="id-rel-001" source="id-applicationcomponent-catalogue-service" target="id-dataobject-catalogue-database" xsi:type="Access">
+    </relationship>
+    <relationship identifier="id-rel-002" source="id-applicationcomponent-catalogue-service" target="id-applicationcomponent-api-gateway" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-003" source="id-applicationcomponent-order-service" target="id-dataobject-order-database" xsi:type="Access">
+    </relationship>
+    <relationship identifier="id-rel-004" source="id-applicationcomponent-order-service" target="id-applicationcomponent-api-gateway" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-005" source="id-applicationcomponent-payment-service" target="id-dataobject-payment-ledger" xsi:type="Access">
+    </relationship>
+    <relationship identifier="id-rel-006" source="id-applicationcomponent-payment-service" target="id-applicationcomponent-api-gateway" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-007" source="id-applicationcomponent-customer-account-service" target="id-dataobject-customer-database" xsi:type="Access">
+    </relationship>
+    <relationship identifier="id-rel-008" source="id-applicationcomponent-customer-account-service" target="id-applicationcomponent-api-gateway" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-009" source="id-applicationcomponent-web-front-end" target="id-businessactor-customers" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-010" source="id-applicationcomponent-mobile-app" target="id-businessactor-customers" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-011" source="id-applicationcomponent-api-gateway" target="id-applicationcomponent-web-front-end" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-012" source="id-applicationcomponent-api-gateway" target="id-applicationcomponent-mobile-app" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-013" source="id-applicationcomponent-identity-provider" target="id-applicationcomponent-api-gateway" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-014" source="id-applicationcomponent-payment-service" target="id-applicationcomponent-order-service" xsi:type="Serving">
+    </relationship>
+  </relationships>
+  <organizations>
+    <item><label xml:lang="en">Business</label>
+      <item identifierRef="id-businessactor-customers"/>
+    </item>
+    <item><label xml:lang="en">Application</label>
+      <item identifierRef="id-applicationcomponent-web-front-end"/>
+      <item identifierRef="id-applicationcomponent-mobile-app"/>
+      <item identifierRef="id-applicationcomponent-api-gateway"/>
+      <item identifierRef="id-applicationcomponent-identity-provider"/>
+      <item identifierRef="id-applicationcomponent-catalogue-service"/>
+      <item identifierRef="id-dataobject-catalogue-database"/>
+      <item identifierRef="id-applicationcomponent-order-service"/>
+      <item identifierRef="id-dataobject-order-database"/>
+      <item identifierRef="id-applicationcomponent-payment-service"/>
+      <item identifierRef="id-dataobject-payment-ledger"/>
+      <item identifierRef="id-applicationcomponent-customer-account-service"/>
+      <item identifierRef="id-dataobject-customer-database"/>
+    </item>
+    <item><label xml:lang="en">Relations</label>
+      <item identifierRef="id-rel-001"/>
+      <item identifierRef="id-rel-002"/>
+      <item identifierRef="id-rel-003"/>
+      <item identifierRef="id-rel-004"/>
+      <item identifierRef="id-rel-005"/>
+      <item identifierRef="id-rel-006"/>
+      <item identifierRef="id-rel-007"/>
+      <item identifierRef="id-rel-008"/>
+      <item identifierRef="id-rel-009"/>
+      <item identifierRef="id-rel-010"/>
+      <item identifierRef="id-rel-011"/>
+      <item identifierRef="id-rel-012"/>
+      <item identifierRef="id-rel-013"/>
+      <item identifierRef="id-rel-014"/>
+    </item>
+    <item><label xml:lang="en">Views</label>
+      <item identifierRef="id-view-services-behind-one-gateway"/>
+    </item>
+  </organizations>
+  <views>
+    <diagrams>
+      <view identifier="id-view-services-behind-one-gateway" xsi:type="Diagram">
+        <name xml:lang="en">Services behind one gateway</name>
+        <documentation xml:lang="en">Each service owns its data; the gateway is the only way in.</documentation>
+        <node identifier="id-view-services-behind-one-gateway-n1" elementRef="id-businessactor-customers" xsi:type="Element" x="380" y="20" w="180" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-services-behind-one-gateway-n2" elementRef="id-applicationcomponent-web-front-end" xsi:type="Element" x="200" y="130" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-services-behind-one-gateway-n3" elementRef="id-applicationcomponent-mobile-app" xsi:type="Element" x="560" y="130" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-services-behind-one-gateway-n4" elementRef="id-applicationcomponent-api-gateway" xsi:type="Element" x="380" y="250" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-services-behind-one-gateway-n5" elementRef="id-applicationcomponent-identity-provider" xsi:type="Element" x="760" y="250" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-services-behind-one-gateway-n6" elementRef="id-applicationcomponent-catalogue-service" xsi:type="Element" x="20" y="380" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-services-behind-one-gateway-n7" elementRef="id-dataobject-catalogue-database" xsi:type="Element" x="20" y="500" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-services-behind-one-gateway-n8" elementRef="id-applicationcomponent-order-service" xsi:type="Element" x="260" y="380" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-services-behind-one-gateway-n9" elementRef="id-dataobject-order-database" xsi:type="Element" x="260" y="500" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-services-behind-one-gateway-n10" elementRef="id-applicationcomponent-payment-service" xsi:type="Element" x="500" y="380" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-services-behind-one-gateway-n11" elementRef="id-dataobject-payment-ledger" xsi:type="Element" x="500" y="500" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-services-behind-one-gateway-n12" elementRef="id-applicationcomponent-customer-account-service" xsi:type="Element" x="740" y="380" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-services-behind-one-gateway-n13" elementRef="id-dataobject-customer-database" xsi:type="Element" x="740" y="500" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-services-behind-one-gateway-c1" relationshipRef="id-rel-001" xsi:type="Relationship" source="id-view-services-behind-one-gateway-n6" target="id-view-services-behind-one-gateway-n7"/>
+        <connection identifier="id-view-services-behind-one-gateway-c2" relationshipRef="id-rel-002" xsi:type="Relationship" source="id-view-services-behind-one-gateway-n6" target="id-view-services-behind-one-gateway-n4"/>
+        <connection identifier="id-view-services-behind-one-gateway-c3" relationshipRef="id-rel-003" xsi:type="Relationship" source="id-view-services-behind-one-gateway-n8" target="id-view-services-behind-one-gateway-n9"/>
+        <connection identifier="id-view-services-behind-one-gateway-c4" relationshipRef="id-rel-004" xsi:type="Relationship" source="id-view-services-behind-one-gateway-n8" target="id-view-services-behind-one-gateway-n4"/>
+        <connection identifier="id-view-services-behind-one-gateway-c5" relationshipRef="id-rel-005" xsi:type="Relationship" source="id-view-services-behind-one-gateway-n10" target="id-view-services-behind-one-gateway-n11"/>
+        <connection identifier="id-view-services-behind-one-gateway-c6" relationshipRef="id-rel-006" xsi:type="Relationship" source="id-view-services-behind-one-gateway-n10" target="id-view-services-behind-one-gateway-n4"/>
+        <connection identifier="id-view-services-behind-one-gateway-c7" relationshipRef="id-rel-007" xsi:type="Relationship" source="id-view-services-behind-one-gateway-n12" target="id-view-services-behind-one-gateway-n13"/>
+        <connection identifier="id-view-services-behind-one-gateway-c8" relationshipRef="id-rel-008" xsi:type="Relationship" source="id-view-services-behind-one-gateway-n12" target="id-view-services-behind-one-gateway-n4"/>
+        <connection identifier="id-view-services-behind-one-gateway-c9" relationshipRef="id-rel-009" xsi:type="Relationship" source="id-view-services-behind-one-gateway-n2" target="id-view-services-behind-one-gateway-n1"/>
+        <connection identifier="id-view-services-behind-one-gateway-c10" relationshipRef="id-rel-010" xsi:type="Relationship" source="id-view-services-behind-one-gateway-n3" target="id-view-services-behind-one-gateway-n1"/>
+        <connection identifier="id-view-services-behind-one-gateway-c11" relationshipRef="id-rel-011" xsi:type="Relationship" source="id-view-services-behind-one-gateway-n4" target="id-view-services-behind-one-gateway-n2"/>
+        <connection identifier="id-view-services-behind-one-gateway-c12" relationshipRef="id-rel-012" xsi:type="Relationship" source="id-view-services-behind-one-gateway-n4" target="id-view-services-behind-one-gateway-n3"/>
+        <connection identifier="id-view-services-behind-one-gateway-c13" relationshipRef="id-rel-013" xsi:type="Relationship" source="id-view-services-behind-one-gateway-n5" target="id-view-services-behind-one-gateway-n4"/>
+        <connection identifier="id-view-services-behind-one-gateway-c14" relationshipRef="id-rel-014" xsi:type="Relationship" source="id-view-services-behind-one-gateway-n10" target="id-view-services-behind-one-gateway-n8"/>
+      </view>
+    </diagrams>
+  </views>
+</model>

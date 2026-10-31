@@ -1,0 +1,13 @@
+name,type,description,business_capabilities,time,lifecycle,vendor,business_owner
+CRM Platform,service,Strategic system of record for customers.,Customer Relationship Management; Sales,Invest,Active,,
+Legacy CRM,service,Duplicates the CRM Platform; remaining users and data move there.,Customer Relationship Management,Migrate,Phasing out,,
+Service Desk,service,Fit for purpose; no investment beyond upkeep.,Customer Service,Tolerate,Active,,
+ERP Finance,service,Core finance platform.,Accounting; Financial Reporting,Invest,Active,,
+Forecasting Spreadsheets,service,End-user computing with no owner or controls; replace with ERP reporting.,Financial Reporting,Eliminate,Unmanaged,,
+HR Suite,service,Single HR platform.,Recruitment; Payroll,Invest,Active,,
+Payroll Bureau Portal,service,Payroll moves into the HR Suite when the bureau contract ends.,Payroll,Migrate,Contract ending,,
+Data Warehouse,service,Stable; review when the analytics platform decision is made.,Data Management; Financial Reporting,Tolerate,Active,,
+File Shares,service,Uncontrolled document storage; content moves to the document platform.,Document Management,Eliminate,Unmanaged,,
+Document Platform,service,Target document store.,Document Management,Invest,Active,,
+Integration Platform,service,All new interfaces go through the platform; point-to-point links are retired over time.,Integration Management,Invest,Active,,
+Departmental Ticket Tracker,service,Supports no business capability on the map; candidate for switch-off.,,Eliminate,Unmanaged,,

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="id-data-platform" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd">
+  <name xml:lang="en">Modern Data Platform</name>
+  <documentation xml:lang="en">Operational data flows in from source systems, lands unchanged in a raw zone, is cleaned and modelled into a curated zone, and is served through one semantic layer so every report uses the same definitions. A catalog records where every dataset came from.</documentation>
+  <elements>
+    <element identifier="id-applicationcomponent-crm" xsi:type="ApplicationComponent">
+      <name xml:lang="en">CRM</name>
+    </element>
+    <element identifier="id-applicationcomponent-erp" xsi:type="ApplicationComponent">
+      <name xml:lang="en">ERP</name>
+    </element>
+    <element identifier="id-applicationcomponent-product-event-stream" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Product event stream</name>
+    </element>
+    <element identifier="id-applicationcomponent-ingestion-pipelines" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Ingestion pipelines</name>
+      <documentation xml:lang="en">Copies source data in on a schedule or as a stream, without changing it.</documentation>
+    </element>
+    <element identifier="id-dataobject-raw-zone" xsi:type="DataObject">
+      <name xml:lang="en">Raw zone</name>
+      <documentation xml:lang="en">Source data exactly as received, kept so any result can be rebuilt.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-transformation-jobs" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Transformation jobs</name>
+      <documentation xml:lang="en">Tested, version-controlled models that clean, join and conform the data.</documentation>
+    </element>
+    <element identifier="id-dataobject-curated-zone" xsi:type="DataObject">
+      <name xml:lang="en">Curated zone</name>
+      <documentation xml:lang="en">Conformed, documented tables that people may rely on.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-semantic-layer" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Semantic layer</name>
+      <documentation xml:lang="en">One definition of revenue, customer and churn for every tool.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-dashboards-and-reports" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Dashboards and reports</name>
+    </element>
+    <element identifier="id-applicationcomponent-machine-learning" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Machine learning</name>
+    </element>
+    <element identifier="id-applicationcomponent-data-catalog-and-lineage" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Data catalog and lineage</name>
+      <documentation xml:lang="en">Who owns each dataset, where it came from and what depends on it.</documentation>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="id-rel-001" source="id-applicationcomponent-crm" target="id-applicationcomponent-ingestion-pipelines" xsi:type="Flow">
+    </relationship>
+    <relationship identifier="id-rel-002" source="id-applicationcomponent-erp" target="id-applicationcomponent-ingestion-pipelines" xsi:type="Flow">
+    </relationship>
+    <relationship identifier="id-rel-003" source="id-applicationcomponent-product-event-stream" target="id-applicationcomponent-ingestion-pipelines" xsi:type="Flow">
+    </relationship>
+    <relationship identifier="id-rel-004" source="id-applicationcomponent-ingestion-pipelines" target="id-dataobject-raw-zone" xsi:type="Access" accessType="Write">
+    </relationship>
+    <relationship identifier="id-rel-005" source="id-applicationcomponent-ingestion-pipelines" target="id-applicationcomponent-transformation-jobs" xsi:type="Flow">
+    </relationship>
+    <relationship identifier="id-rel-006" source="id-applicationcomponent-transformation-jobs" target="id-dataobject-raw-zone" xsi:type="Access" accessType="Read">
+    </relationship>
+    <relationship identifier="id-rel-007" source="id-applicationcomponent-transformation-jobs" target="id-dataobject-curated-zone" xsi:type="Access" accessType="Write">
+    </relationship>
+    <relationship identifier="id-rel-008" source="id-applicationcomponent-semantic-layer" target="id-dataobject-curated-zone" xsi:type="Access" accessType="Read">
+    </relationship>
+    <relationship identifier="id-rel-009" source="id-applicationcomponent-semantic-layer" target="id-applicationcomponent-dashboards-and-reports" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-010" source="id-applicationcomponent-machine-learning" target="id-dataobject-curated-zone" xsi:type="Access" accessType="Read">
+    </relationship>
+    <relationship identifier="id-rel-011" source="id-applicationcomponent-data-catalog-and-lineage" target="id-applicationcomponent-ingestion-pipelines" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-012" source="id-applicationcomponent-data-catalog-and-lineage" target="id-dataobject-curated-zone" xsi:type="Access" accessType="Read">
+    </relationship>
+  </relationships>
+  <organizations>
+    <item><label xml:lang="en">Application</label>
+      <item identifierRef="id-applicationcomponent-crm"/>
+      <item identifierRef="id-applicationcomponent-erp"/>
+      <item identifierRef="id-applicationcomponent-product-event-stream"/>
+      <item identifierRef="id-applicationcomponent-ingestion-pipelines"/>
+      <item identifierRef="id-dataobject-raw-zone"/>
+      <item identifierRef="id-applicationcomponent-transformation-jobs"/>
+      <item identifierRef="id-dataobject-curated-zone"/>
+      <item identifierRef="id-applicationcomponent-semantic-layer"/>
+      <item identifierRef="id-applicationcomponent-dashboards-and-reports"/>
+      <item identifierRef="id-applicationcomponent-machine-learning"/>
+      <item identifierRef="id-applicationcomponent-data-catalog-and-lineage"/>
+    </item>
+    <item><label xml:lang="en">Relations</label>
+      <item identifierRef="id-rel-001"/>
+      <item identifierRef="id-rel-002"/>
+      <item identifierRef="id-rel-003"/>
+      <item identifierRef="id-rel-004"/>
+      <item identifierRef="id-rel-005"/>
+      <item identifierRef="id-rel-006"/>
+      <item identifierRef="id-rel-007"/>
+      <item identifierRef="id-rel-008"/>
+      <item identifierRef="id-rel-009"/>
+      <item identifierRef="id-rel-010"/>
+      <item identifierRef="id-rel-011"/>
+      <item identifierRef="id-rel-012"/>
+    </item>
+    <item><label xml:lang="en">Views</label>
+      <item identifierRef="id-view-data-platform"/>
+    </item>
+  </organizations>
+  <views>
+    <diagrams>
+      <view identifier="id-view-data-platform" xsi:type="Diagram">
+        <name xml:lang="en">Data platform</name>
+        <documentation xml:lang="en">Sources to raw to curated to one semantic layer, with lineage throughout.</documentation>
+        <node identifier="id-view-data-platform-n1" elementRef="id-applicationcomponent-crm" xsi:type="Element" x="20" y="20" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-data-platform-n2" elementRef="id-applicationcomponent-erp" xsi:type="Element" x="20" y="130" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-data-platform-n3" elementRef="id-applicationcomponent-product-event-stream" xsi:type="Element" x="20" y="240" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-data-platform-n4" elementRef="id-applicationcomponent-ingestion-pipelines" xsi:type="Element" x="280" y="130" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-data-platform-n5" elementRef="id-dataobject-raw-zone" xsi:type="Element" x="540" y="20" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-data-platform-n6" elementRef="id-applicationcomponent-transformation-jobs" xsi:type="Element" x="540" y="130" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-data-platform-n7" elementRef="id-dataobject-curated-zone" xsi:type="Element" x="540" y="240" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-data-platform-n8" elementRef="id-applicationcomponent-semantic-layer" xsi:type="Element" x="800" y="240" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-data-platform-n9" elementRef="id-applicationcomponent-dashboards-and-reports" xsi:type="Element" x="1060" y="240" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-data-platform-n10" elementRef="id-applicationcomponent-machine-learning" xsi:type="Element" x="800" y="360" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-data-platform-n11" elementRef="id-applicationcomponent-data-catalog-and-lineage" xsi:type="Element" x="280" y="360" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-data-platform-c1" relationshipRef="id-rel-001" xsi:type="Relationship" source="id-view-data-platform-n1" target="id-view-data-platform-n4"/>
+        <connection identifier="id-view-data-platform-c2" relationshipRef="id-rel-002" xsi:type="Relationship" source="id-view-data-platform-n2" target="id-view-data-platform-n4"/>
+        <connection identifier="id-view-data-platform-c3" relationshipRef="id-rel-003" xsi:type="Relationship" source="id-view-data-platform-n3" target="id-view-data-platform-n4"/>
+        <connection identifier="id-view-data-platform-c4" relationshipRef="id-rel-004" xsi:type="Relationship" source="id-view-data-platform-n4" target="id-view-data-platform-n5"/>
+        <connection identifier="id-view-data-platform-c5" relationshipRef="id-rel-005" xsi:type="Relationship" source="id-view-data-platform-n4" target="id-view-data-platform-n6"/>
+        <connection identifier="id-view-data-platform-c6" relationshipRef="id-rel-006" xsi:type="Relationship" source="id-view-data-platform-n6" target="id-view-data-platform-n5"/>
+        <connection identifier="id-view-data-platform-c7" relationshipRef="id-rel-007" xsi:type="Relationship" source="id-view-data-platform-n6" target="id-view-data-platform-n7"/>
+        <connection identifier="id-view-data-platform-c8" relationshipRef="id-rel-008" xsi:type="Relationship" source="id-view-data-platform-n8" target="id-view-data-platform-n7"/>
+        <connection identifier="id-view-data-platform-c9" relationshipRef="id-rel-009" xsi:type="Relationship" source="id-view-data-platform-n8" target="id-view-data-platform-n9"/>
+        <connection identifier="id-view-data-platform-c10" relationshipRef="id-rel-010" xsi:type="Relationship" source="id-view-data-platform-n10" target="id-view-data-platform-n7"/>
+        <connection identifier="id-view-data-platform-c11" relationshipRef="id-rel-011" xsi:type="Relationship" source="id-view-data-platform-n11" target="id-view-data-platform-n4"/>
+        <connection identifier="id-view-data-platform-c12" relationshipRef="id-rel-012" xsi:type="Relationship" source="id-view-data-platform-n11" target="id-view-data-platform-n7"/>
+      </view>
+    </diagrams>
+  </views>
+</model>

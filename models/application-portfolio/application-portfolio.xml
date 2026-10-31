@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="id-application-portfolio" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd">
+  <name xml:lang="en">Application Portfolio Rationalisation (starter)</name>
+  <documentation xml:lang="en">An application portfolio mapped to the business capabilities each application supports, scored with Gartner's TIME model: Tolerate, Invest, Migrate, Eliminate. Two applications realizing the same capability is the redundancy signal; an application nobody can map to a capability is the elimination signal. Replace the example applications with your own inventory and keep the properties filled in: they are what makes the portfolio decidable.</documentation>
+  <elements>
+    <element identifier="id-capability-customer-relationship-management" xsi:type="Capability">
+      <name xml:lang="en">Customer Relationship Management</name>
+    </element>
+    <element identifier="id-capability-sales" xsi:type="Capability">
+      <name xml:lang="en">Sales</name>
+    </element>
+    <element identifier="id-capability-customer-service" xsi:type="Capability">
+      <name xml:lang="en">Customer Service</name>
+    </element>
+    <element identifier="id-capability-financial-reporting" xsi:type="Capability">
+      <name xml:lang="en">Financial Reporting</name>
+    </element>
+    <element identifier="id-capability-accounting" xsi:type="Capability">
+      <name xml:lang="en">Accounting</name>
+    </element>
+    <element identifier="id-capability-payroll" xsi:type="Capability">
+      <name xml:lang="en">Payroll</name>
+    </element>
+    <element identifier="id-capability-recruitment" xsi:type="Capability">
+      <name xml:lang="en">Recruitment</name>
+    </element>
+    <element identifier="id-capability-data-management" xsi:type="Capability">
+      <name xml:lang="en">Data Management</name>
+    </element>
+    <element identifier="id-capability-document-management" xsi:type="Capability">
+      <name xml:lang="en">Document Management</name>
+    </element>
+    <element identifier="id-capability-integration-management" xsi:type="Capability">
+      <name xml:lang="en">Integration Management</name>
+    </element>
+    <element identifier="id-applicationcomponent-crm-platform" xsi:type="ApplicationComponent">
+      <name xml:lang="en">CRM Platform</name>
+      <documentation xml:lang="en">Strategic system of record for customers.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Invest</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Active</value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-legacy-crm" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Legacy CRM</name>
+      <documentation xml:lang="en">Duplicates the CRM Platform; remaining users and data move there.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Migrate</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Phasing out</value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-service-desk" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Service Desk</name>
+      <documentation xml:lang="en">Fit for purpose; no investment beyond upkeep.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Tolerate</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Active</value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-erp-finance" xsi:type="ApplicationComponent">
+      <name xml:lang="en">ERP Finance</name>
+      <documentation xml:lang="en">Core finance platform.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Invest</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Active</value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-forecasting-spreadsheets" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Forecasting Spreadsheets</name>
+      <documentation xml:lang="en">End-user computing with no owner or controls; replace with ERP reporting.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Eliminate</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Unmanaged</value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-hr-suite" xsi:type="ApplicationComponent">
+      <name xml:lang="en">HR Suite</name>
+      <documentation xml:lang="en">Single HR platform.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Invest</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Active</value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-payroll-bureau-portal" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Payroll Bureau Portal</name>
+      <documentation xml:lang="en">Payroll moves into the HR Suite when the bureau contract ends.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Migrate</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Contract ending</value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-data-warehouse" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Data Warehouse</name>
+      <documentation xml:lang="en">Stable; review when the analytics platform decision is made.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Tolerate</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Active</value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-file-shares" xsi:type="ApplicationComponent">
+      <name xml:lang="en">File Shares</name>
+      <documentation xml:lang="en">Uncontrolled document storage; content moves to the document platform.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Eliminate</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Unmanaged</value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-document-platform" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Document Platform</name>
+      <documentation xml:lang="en">Target document store.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Invest</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Active</value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-integration-platform" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Integration Platform</name>
+      <documentation xml:lang="en">All new interfaces go through the platform; point-to-point links are retired over time.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Invest</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Active</value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-departmental-ticket-tracker" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Departmental Ticket Tracker</name>
+      <documentation xml:lang="en">Supports no business capability on the map; candidate for switch-off.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Eliminate</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Unmanaged</value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-grouping-supports-no-mapped-capability" xsi:type="Grouping">
+      <name xml:lang="en">Supports no mapped capability</name>
+      <documentation xml:lang="en">Applications that realize none of the capabilities on the map.</documentation>
+    </element>
+    <element identifier="id-grouping-invest" xsi:type="Grouping">
+      <name xml:lang="en">Invest</name>
+      <documentation xml:lang="en">Strategic and fit for purpose: fund and extend.</documentation>
+    </element>
+    <element identifier="id-grouping-tolerate" xsi:type="Grouping">
+      <name xml:lang="en">Tolerate</name>
+      <documentation xml:lang="en">Adequate today: keep running, spend only on upkeep.</documentation>
+    </element>
+    <element identifier="id-grouping-migrate" xsi:type="Grouping">
+      <name xml:lang="en">Migrate</name>
+      <documentation xml:lang="en">The capability matters but this application does not: move to a target.</documentation>
+    </element>
+    <element identifier="id-grouping-eliminate" xsi:type="Grouping">
+      <name xml:lang="en">Eliminate</name>
+      <documentation xml:lang="en">No longer needed: plan switch-off and data retention.</documentation>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="id-rel-001" source="id-applicationcomponent-crm-platform" target="id-capability-customer-relationship-management" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-002" source="id-applicationcomponent-crm-platform" target="id-capability-sales" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-003" source="id-applicationcomponent-legacy-crm" target="id-capability-customer-relationship-management" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-004" source="id-applicationcomponent-service-desk" target="id-capability-customer-service" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-005" source="id-applicationcomponent-erp-finance" target="id-capability-accounting" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-006" source="id-applicationcomponent-erp-finance" target="id-capability-financial-reporting" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-007" source="id-applicationcomponent-forecasting-spreadsheets" target="id-capability-financial-reporting" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-008" source="id-applicationcomponent-hr-suite" target="id-capability-recruitment" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-009" source="id-applicationcomponent-hr-suite" target="id-capability-payroll" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-010" source="id-applicationcomponent-payroll-bureau-portal" target="id-capability-payroll" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-011" source="id-applicationcomponent-data-warehouse" target="id-capability-data-management" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-012" source="id-applicationcomponent-data-warehouse" target="id-capability-financial-reporting" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-013" source="id-applicationcomponent-file-shares" target="id-capability-document-management" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-014" source="id-applicationcomponent-document-platform" target="id-capability-document-management" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-015" source="id-applicationcomponent-integration-platform" target="id-capability-integration-management" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-016" source="id-applicationcomponent-integration-platform" target="id-applicationcomponent-crm-platform" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-017" source="id-applicationcomponent-integration-platform" target="id-applicationcomponent-erp-finance" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-018" source="id-applicationcomponent-integration-platform" target="id-applicationcomponent-hr-suite" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-019" source="id-grouping-supports-no-mapped-capability" target="id-applicationcomponent-departmental-ticket-tracker" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-020" source="id-grouping-invest" target="id-applicationcomponent-crm-platform" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-021" source="id-grouping-migrate" target="id-applicationcomponent-legacy-crm" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-022" source="id-grouping-tolerate" target="id-applicationcomponent-service-desk" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-023" source="id-grouping-invest" target="id-applicationcomponent-erp-finance" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-024" source="id-grouping-eliminate" target="id-applicationcomponent-forecasting-spreadsheets" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-025" source="id-grouping-invest" target="id-applicationcomponent-hr-suite" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-026" source="id-grouping-migrate" target="id-applicationcomponent-payroll-bureau-portal" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-027" source="id-grouping-tolerate" target="id-applicationcomponent-data-warehouse" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-028" source="id-grouping-eliminate" target="id-applicationcomponent-file-shares" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-029" source="id-grouping-invest" target="id-applicationcomponent-document-platform" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-030" source="id-grouping-invest" target="id-applicationcomponent-integration-platform" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-031" source="id-grouping-eliminate" target="id-applicationcomponent-departmental-ticket-tracker" xsi:type="Aggregation">
+    </relationship>
+  </relationships>
+  <organizations>
+    <item><label xml:lang="en">Strategy</label>
+      <item identifierRef="id-capability-customer-relationship-management"/>
+      <item identifierRef="id-capability-sales"/>
+      <item identifierRef="id-capability-customer-service"/>
+      <item identifierRef="id-capability-financial-reporting"/>
+      <item identifierRef="id-capability-accounting"/>
+      <item identifierRef="id-capability-payroll"/>
+      <item identifierRef="id-capability-recruitment"/>
+      <item identifierRef="id-capability-data-management"/>
+      <item identifierRef="id-capability-document-management"/>
+      <item identifierRef="id-capability-integration-management"/>
+    </item>
+    <item><label xml:lang="en">Application</label>
+      <item identifierRef="id-applicationcomponent-crm-platform"/>
+      <item identifierRef="id-applicationcomponent-legacy-crm"/>
+      <item identifierRef="id-applicationcomponent-service-desk"/>
+      <item identifierRef="id-applicationcomponent-erp-finance"/>
+      <item identifierRef="id-applicationcomponent-forecasting-spreadsheets"/>
+      <item identifierRef="id-applicationcomponent-hr-suite"/>
+      <item identifierRef="id-applicationcomponent-payroll-bureau-portal"/>
+      <item identifierRef="id-applicationcomponent-data-warehouse"/>
+      <item identifierRef="id-applicationcomponent-file-shares"/>
+      <item identifierRef="id-applicationcomponent-document-platform"/>
+      <item identifierRef="id-applicationcomponent-integration-platform"/>
+      <item identifierRef="id-applicationcomponent-departmental-ticket-tracker"/>
+    </item>
+    <item><label xml:lang="en">Other</label>
+      <item identifierRef="id-grouping-supports-no-mapped-capability"/>
+      <item identifierRef="id-grouping-invest"/>
+      <item identifierRef="id-grouping-tolerate"/>
+      <item identifierRef="id-grouping-migrate"/>
+      <item identifierRef="id-grouping-eliminate"/>
+    </item>
+    <item><label xml:lang="en">Relations</label>
+      <item identifierRef="id-rel-001"/>
+      <item identifierRef="id-rel-002"/>
+      <item identifierRef="id-rel-003"/>
+      <item identifierRef="id-rel-004"/>
+      <item identifierRef="id-rel-005"/>
+      <item identifierRef="id-rel-006"/>
+      <item identifierRef="id-rel-007"/>
+      <item identifierRef="id-rel-008"/>
+      <item identifierRef="id-rel-009"/>
+      <item identifierRef="id-rel-010"/>
+      <item identifierRef="id-rel-011"/>
+      <item identifierRef="id-rel-012"/>
+      <item identifierRef="id-rel-013"/>
+      <item identifierRef="id-rel-014"/>
+      <item identifierRef="id-rel-015"/>
+      <item identifierRef="id-rel-016"/>
+      <item identifierRef="id-rel-017"/>
+      <item identifierRef="id-rel-018"/>
+      <item identifierRef="id-rel-019"/>
+      <item identifierRef="id-rel-020"/>
+      <item identifierRef="id-rel-021"/>
+      <item identifierRef="id-rel-022"/>
+      <item identifierRef="id-rel-023"/>
+      <item identifierRef="id-rel-024"/>
+      <item identifierRef="id-rel-025"/>
+      <item identifierRef="id-rel-026"/>
+      <item identifierRef="id-rel-027"/>
+      <item identifierRef="id-rel-028"/>
+      <item identifierRef="id-rel-029"/>
+      <item identifierRef="id-rel-030"/>
+      <item identifierRef="id-rel-031"/>
+    </item>
+    <item><label xml:lang="en">Views</label>
+      <item identifierRef="id-view-applications-by-capability"/>
+      <item identifierRef="id-view-time-quadrants"/>
+    </item>
+  </organizations>
+  <propertyDefinitions>
+    <propertyDefinition identifier="propid-1" type="string"><name xml:lang="en">Time</name></propertyDefinition>
+    <propertyDefinition identifier="propid-2" type="string"><name xml:lang="en">Lifecycle</name></propertyDefinition>
+    <propertyDefinition identifier="propid-3" type="string"><name xml:lang="en">Business owner</name></propertyDefinition>
+    <propertyDefinition identifier="propid-4" type="string"><name xml:lang="en">Annual run cost</name></propertyDefinition>
+  </propertyDefinitions>
+  <views>
+    <diagrams>
+      <view identifier="id-view-applications-by-capability" xsi:type="Diagram">
+        <name xml:lang="en">Applications by capability</name>
+        <documentation xml:lang="en">Each capability holds the applications that realize it. A capability holding two or more applications is overlap worth a decision; an application outside every capability supports nothing on the map.</documentation>
+        <node identifier="id-view-applications-by-capability-n1" elementRef="id-capability-customer-relationship-management" xsi:type="Element" x="20" y="20" w="230" h="172">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-applications-by-capability-n2" elementRef="id-applicationcomponent-crm-platform" xsi:type="Element" x="35" y="67" w="200" h="45">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-applications-by-capability-n3" elementRef="id-applicationcomponent-legacy-crm" xsi:type="Element" x="35" y="127" w="200" h="45">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-applications-by-capability-n4" elementRef="id-capability-sales" xsi:type="Element" x="265" y="20" w="230" h="97">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-applications-by-capability-n5" elementRef="id-applicationcomponent-crm-platform" xsi:type="Element" x="280" y="52" w="200" h="45">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-applications-by-capability-n6" elementRef="id-capability-customer-service" xsi:type="Element" x="510" y="20" w="230" h="97">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-applications-by-capability-n7" elementRef="id-applicationcomponent-service-desk" xsi:type="Element" x="525" y="52" w="200" h="45">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-applications-by-capability-n8" elementRef="id-capability-financial-reporting" xsi:type="Element" x="755" y="20" w="230" h="217">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-applications-by-capability-n9" elementRef="id-applicationcomponent-erp-finance" xsi:type="Element" x="770" y="52" w="200" h="45">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-applications-by-capability-n10" elementRef="id-applicationcomponent-forecasting-spreadsheets" xsi:type="Element" x="770" y="112" w="200" h="45">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-applications-by-capability-n11" elementRef="id-applicationcomponent-data-warehouse" xsi:type="Element" x="770" y="172" w="200" h="45">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-applications-by-capability-n12" elementRef="id-capability-accounting" xsi:type="Element" x="1000" y="20" w="230" h="97">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-applications-by-capability-n13" elementRef="id-applicationcomponent-erp-finance" xsi:type="Element" x="1015" y="52" w="200" h="45">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-applications-by-capability-n14" elementRef="id-capability-payroll" xsi:type="Element" x="1245" y="20" w="230" h="157">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-applications-by-capability-n15" elementRef="id-applicationcomponent-hr-suite" xsi:type="Element" x="1260" y="52" w="200" h="45">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-applications-by-capability-n16" elementRef="id-applicationcomponent-payroll-bureau-portal" xsi:type="Element" x="1260" y="112" w="200" h="45">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-applications-by-capability-n17" elementRef="id-capability-recruitment" xsi:type="Element" x="20" y="252" w="230" h="97">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-applications-by-capability-n18" elementRef="id-applicationcomponent-hr-suite" xsi:type="Element" x="35" y="284" w="200" h="45">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-applications-by-capability-n19" elementRef="id-capability-data-management" xsi:type="Element" x="265" y="252" w="230" h="97">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-applications-by-capability-n20" elementRef="id-applicationcomponent-data-warehouse" xsi:type="Element" x="280" y="284" w="200" h="45">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-applications-by-capability-n21" elementRef="id-capability-document-management" xsi:type="Element" x="510" y="252" w="230" h="157">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-applications-by-capability-n22" elementRef="id-applicationcomponent-file-shares" xsi:type="Element" x="525" y="284" w="200" h="45">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-applications-by-capability-n23" elementRef="id-applicationcomponent-document-platform" xsi:type="Element" x="525" y="344" w="200" h="45">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-applications-by-capability-n24" elementRef="id-capability-integration-management" xsi:type="Element" x="755" y="252" w="230" h="97">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-applications-by-capability-n25" elementRef="id-applicationcomponent-integration-platform" xsi:type="Element" x="770" y="284" w="200" h="45">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-applications-by-capability-n26" elementRef="id-grouping-supports-no-mapped-capability" xsi:type="Element" x="1000" y="252" w="230" h="97">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-applications-by-capability-n27" elementRef="id-applicationcomponent-departmental-ticket-tracker" xsi:type="Element" x="1015" y="284" w="200" h="45">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+      </view>
+      <view identifier="id-view-time-quadrants" xsi:type="Diagram">
+        <name xml:lang="en">TIME quadrants</name>
+        <documentation xml:lang="en">The portfolio sorted into Tolerate, Invest, Migrate and Eliminate. Agree the quadrant with each business owner; the Migrate and Eliminate quadrants become the roadmap.</documentation>
+        <node identifier="id-view-time-quadrants-n1" elementRef="id-grouping-tolerate" xsi:type="Element" x="20" y="20" w="395" h="102">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-time-quadrants-n2" elementRef="id-applicationcomponent-service-desk" xsi:type="Element" x="35" y="52" w="175" h="50">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-time-quadrants-n3" elementRef="id-applicationcomponent-data-warehouse" xsi:type="Element" x="225" y="52" w="175" h="50">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-time-quadrants-n4" elementRef="id-grouping-invest" xsi:type="Element" x="430" y="20" w="395" h="232">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-time-quadrants-n5" elementRef="id-applicationcomponent-crm-platform" xsi:type="Element" x="445" y="52" w="175" h="50">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-time-quadrants-n6" elementRef="id-applicationcomponent-erp-finance" xsi:type="Element" x="635" y="52" w="175" h="50">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-time-quadrants-n7" elementRef="id-applicationcomponent-hr-suite" xsi:type="Element" x="445" y="117" w="175" h="50">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-time-quadrants-n8" elementRef="id-applicationcomponent-document-platform" xsi:type="Element" x="635" y="117" w="175" h="50">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-time-quadrants-n9" elementRef="id-applicationcomponent-integration-platform" xsi:type="Element" x="445" y="182" w="175" h="50">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-time-quadrants-n10" elementRef="id-grouping-migrate" xsi:type="Element" x="20" y="280" w="395" h="102">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-time-quadrants-n11" elementRef="id-applicationcomponent-legacy-crm" xsi:type="Element" x="35" y="312" w="175" h="50">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-time-quadrants-n12" elementRef="id-applicationcomponent-payroll-bureau-portal" xsi:type="Element" x="225" y="312" w="175" h="50">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-time-quadrants-n13" elementRef="id-grouping-eliminate" xsi:type="Element" x="430" y="280" w="395" h="167">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-time-quadrants-n14" elementRef="id-applicationcomponent-forecasting-spreadsheets" xsi:type="Element" x="445" y="312" w="175" h="50">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-time-quadrants-n15" elementRef="id-applicationcomponent-file-shares" xsi:type="Element" x="635" y="312" w="175" h="50">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-time-quadrants-n16" elementRef="id-applicationcomponent-departmental-ticket-tracker" xsi:type="Element" x="445" y="377" w="175" h="50">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+      </view>
+    </diagrams>
+  </views>
+</model>

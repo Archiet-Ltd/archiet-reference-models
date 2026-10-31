@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="id-zero-trust-access" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd">
+  <name xml:lang="en">Zero-Trust Access</name>
+  <documentation xml:lang="en">No request is trusted because of where it comes from. Every request to an internal application passes an access proxy, which asks a policy engine to decide using the user's identity, the health of their device and the sensitivity of the application, every time.</documentation>
+  <elements>
+    <element identifier="id-businessactor-employee-or-contractor" xsi:type="BusinessActor">
+      <name xml:lang="en">Employee or contractor</name>
+    </element>
+    <element identifier="id-device-managed-device" xsi:type="Device">
+      <name xml:lang="en">Managed device</name>
+    </element>
+    <element identifier="id-applicationcomponent-access-proxy" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Access proxy</name>
+      <documentation xml:lang="en">Policy enforcement point: the only route to internal applications.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-internal-applications" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Internal applications</name>
+      <documentation xml:lang="en">Not reachable from the network directly.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-policy-engine" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Policy engine</name>
+      <documentation xml:lang="en">Policy decision point: allows, denies or asks for step-up authentication, per request.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-identity-provider" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Identity provider</name>
+      <documentation xml:lang="en">Strong, phishing-resistant multi-factor authentication.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-device-posture-service" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Device posture service</name>
+      <documentation xml:lang="en">Is the device managed, patched and encrypted right now?</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-security-monitoring" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Security monitoring</name>
+      <documentation xml:lang="en">Every decision is logged and analysed.</documentation>
+    </element>
+    <element identifier="id-grouping-principles" xsi:type="Grouping">
+      <name xml:lang="en">Principles</name>
+    </element>
+    <element identifier="id-principle-never-trust-the-network" xsi:type="Principle">
+      <name xml:lang="en">Never trust the network</name>
+    </element>
+    <element identifier="id-principle-verify-every-request" xsi:type="Principle">
+      <name xml:lang="en">Verify every request</name>
+    </element>
+    <element identifier="id-principle-least-privilege-granted-just-in-time" xsi:type="Principle">
+      <name xml:lang="en">Least privilege, granted just in time</name>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="id-rel-001" source="id-businessactor-employee-or-contractor" target="id-device-managed-device" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-002" source="id-applicationcomponent-access-proxy" target="id-businessactor-employee-or-contractor" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-003" source="id-applicationcomponent-internal-applications" target="id-applicationcomponent-access-proxy" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-004" source="id-applicationcomponent-policy-engine" target="id-applicationcomponent-access-proxy" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-005" source="id-applicationcomponent-identity-provider" target="id-applicationcomponent-policy-engine" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-006" source="id-applicationcomponent-device-posture-service" target="id-applicationcomponent-policy-engine" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-007" source="id-applicationcomponent-device-posture-service" target="id-device-managed-device" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-008" source="id-applicationcomponent-policy-engine" target="id-applicationcomponent-security-monitoring" xsi:type="Flow">
+    </relationship>
+    <relationship identifier="id-rel-009" source="id-grouping-principles" target="id-principle-never-trust-the-network" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-010" source="id-grouping-principles" target="id-principle-verify-every-request" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-011" source="id-grouping-principles" target="id-principle-least-privilege-granted-just-in-time" xsi:type="Aggregation">
+    </relationship>
+  </relationships>
+  <organizations>
+    <item><label xml:lang="en">Business</label>
+      <item identifierRef="id-businessactor-employee-or-contractor"/>
+    </item>
+    <item><label xml:lang="en">Application</label>
+      <item identifierRef="id-applicationcomponent-access-proxy"/>
+      <item identifierRef="id-applicationcomponent-internal-applications"/>
+      <item identifierRef="id-applicationcomponent-policy-engine"/>
+      <item identifierRef="id-applicationcomponent-identity-provider"/>
+      <item identifierRef="id-applicationcomponent-device-posture-service"/>
+      <item identifierRef="id-applicationcomponent-security-monitoring"/>
+    </item>
+    <item><label xml:lang="en">Technology</label>
+      <item identifierRef="id-device-managed-device"/>
+    </item>
+    <item><label xml:lang="en">Motivation</label>
+      <item identifierRef="id-principle-never-trust-the-network"/>
+      <item identifierRef="id-principle-verify-every-request"/>
+      <item identifierRef="id-principle-least-privilege-granted-just-in-time"/>
+    </item>
+    <item><label xml:lang="en">Other</label>
+      <item identifierRef="id-grouping-principles"/>
+    </item>
+    <item><label xml:lang="en">Relations</label>
+      <item identifierRef="id-rel-001"/>
+      <item identifierRef="id-rel-002"/>
+      <item identifierRef="id-rel-003"/>
+      <item identifierRef="id-rel-004"/>
+      <item identifierRef="id-rel-005"/>
+      <item identifierRef="id-rel-006"/>
+      <item identifierRef="id-rel-007"/>
+      <item identifierRef="id-rel-008"/>
+      <item identifierRef="id-rel-009"/>
+      <item identifierRef="id-rel-010"/>
+      <item identifierRef="id-rel-011"/>
+    </item>
+    <item><label xml:lang="en">Views</label>
+      <item identifierRef="id-view-zero-trust-access"/>
+    </item>
+  </organizations>
+  <views>
+    <diagrams>
+      <view identifier="id-view-zero-trust-access" xsi:type="Diagram">
+        <name xml:lang="en">Zero-trust access</name>
+        <documentation xml:lang="en">Identity, device and policy decide every request; the network decides nothing.</documentation>
+        <node identifier="id-view-zero-trust-access-n1" elementRef="id-businessactor-employee-or-contractor" xsi:type="Element" x="20" y="20" w="180" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-zero-trust-access-n2" elementRef="id-device-managed-device" xsi:type="Element" x="20" y="140" w="180" h="55">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-zero-trust-access-n3" elementRef="id-applicationcomponent-access-proxy" xsi:type="Element" x="300" y="20" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-zero-trust-access-n4" elementRef="id-applicationcomponent-internal-applications" xsi:type="Element" x="580" y="20" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-zero-trust-access-n5" elementRef="id-applicationcomponent-device-posture-service" xsi:type="Element" x="20" y="260" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-zero-trust-access-n6" elementRef="id-applicationcomponent-policy-engine" xsi:type="Element" x="300" y="260" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-zero-trust-access-n7" elementRef="id-applicationcomponent-identity-provider" xsi:type="Element" x="580" y="260" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-zero-trust-access-n8" elementRef="id-applicationcomponent-security-monitoring" xsi:type="Element" x="300" y="390" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-zero-trust-access-n9" elementRef="id-grouping-principles" xsi:type="Element" x="580" y="380" w="420" h="208">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-zero-trust-access-n10" elementRef="id-principle-never-trust-the-network" xsi:type="Element" x="600" y="418" w="380" h="40">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-zero-trust-access-n11" elementRef="id-principle-verify-every-request" xsi:type="Element" x="600" y="473" w="380" h="40">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-zero-trust-access-n12" elementRef="id-principle-least-privilege-granted-just-in-time" xsi:type="Element" x="600" y="528" w="380" h="40">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <connection identifier="id-view-zero-trust-access-c1" relationshipRef="id-rel-001" xsi:type="Relationship" source="id-view-zero-trust-access-n1" target="id-view-zero-trust-access-n2"/>
+        <connection identifier="id-view-zero-trust-access-c2" relationshipRef="id-rel-002" xsi:type="Relationship" source="id-view-zero-trust-access-n3" target="id-view-zero-trust-access-n1"/>
+        <connection identifier="id-view-zero-trust-access-c3" relationshipRef="id-rel-003" xsi:type="Relationship" source="id-view-zero-trust-access-n4" target="id-view-zero-trust-access-n3"/>
+        <connection identifier="id-view-zero-trust-access-c4" relationshipRef="id-rel-004" xsi:type="Relationship" source="id-view-zero-trust-access-n6" target="id-view-zero-trust-access-n3"/>
+        <connection identifier="id-view-zero-trust-access-c5" relationshipRef="id-rel-005" xsi:type="Relationship" source="id-view-zero-trust-access-n7" target="id-view-zero-trust-access-n6"/>
+        <connection identifier="id-view-zero-trust-access-c6" relationshipRef="id-rel-006" xsi:type="Relationship" source="id-view-zero-trust-access-n5" target="id-view-zero-trust-access-n6"/>
+        <connection identifier="id-view-zero-trust-access-c7" relationshipRef="id-rel-007" xsi:type="Relationship" source="id-view-zero-trust-access-n5" target="id-view-zero-trust-access-n2"/>
+        <connection identifier="id-view-zero-trust-access-c8" relationshipRef="id-rel-008" xsi:type="Relationship" source="id-view-zero-trust-access-n6" target="id-view-zero-trust-access-n8"/>
+      </view>
+    </diagrams>
+  </views>
+</model>

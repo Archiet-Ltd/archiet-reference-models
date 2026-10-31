@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="id-layered-customer-onboarding" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd">
+  <name xml:lang="en">Layered View: Customer Onboarding (starter)</name>
+  <documentation xml:lang="en">A complete business-to-technology slice for one process, customer onboarding with identity verification. It is the pattern most ArchiMate models are built from: who does the work, the process and the service it delivers, the application services and components that support it, the data they use, and the technology they run on. Copy the structure for any other process.</documentation>
+  <elements>
+    <element identifier="id-businessactor-customer" xsi:type="BusinessActor">
+      <name xml:lang="en">Customer</name>
+    </element>
+    <element identifier="id-businessrole-applicant" xsi:type="BusinessRole">
+      <name xml:lang="en">Applicant</name>
+    </element>
+    <element identifier="id-businessrole-onboarding-analyst" xsi:type="BusinessRole">
+      <name xml:lang="en">Onboarding analyst</name>
+    </element>
+    <element identifier="id-businessevent-application-received" xsi:type="BusinessEvent">
+      <name xml:lang="en">Application received</name>
+    </element>
+    <element identifier="id-businessprocess-capture-application" xsi:type="BusinessProcess">
+      <name xml:lang="en">Capture application</name>
+    </element>
+    <element identifier="id-businessprocess-verify-identity" xsi:type="BusinessProcess">
+      <name xml:lang="en">Verify identity</name>
+    </element>
+    <element identifier="id-businessprocess-assess-risk" xsi:type="BusinessProcess">
+      <name xml:lang="en">Assess risk</name>
+    </element>
+    <element identifier="id-businessprocess-open-account" xsi:type="BusinessProcess">
+      <name xml:lang="en">Open account</name>
+    </element>
+    <element identifier="id-businessservice-account-opening" xsi:type="BusinessService">
+      <name xml:lang="en">Account opening</name>
+    </element>
+    <element identifier="id-businessobject-customer-record" xsi:type="BusinessObject">
+      <name xml:lang="en">Customer record</name>
+    </element>
+    <element identifier="id-applicationservice-application-intake" xsi:type="ApplicationService">
+      <name xml:lang="en">Application intake</name>
+    </element>
+    <element identifier="id-applicationservice-identity-verification" xsi:type="ApplicationService">
+      <name xml:lang="en">Identity verification</name>
+    </element>
+    <element identifier="id-applicationservice-risk-scoring" xsi:type="ApplicationService">
+      <name xml:lang="en">Risk scoring</name>
+    </element>
+    <element identifier="id-applicationservice-account-provisioning" xsi:type="ApplicationService">
+      <name xml:lang="en">Account provisioning</name>
+    </element>
+    <element identifier="id-applicationcomponent-onboarding-portal" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Onboarding portal</name>
+    </element>
+    <element identifier="id-applicationcomponent-identity-verification-service" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Identity verification service</name>
+    </element>
+    <element identifier="id-applicationcomponent-risk-engine" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Risk engine</name>
+    </element>
+    <element identifier="id-applicationcomponent-core-banking-platform" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Core banking platform</name>
+    </element>
+    <element identifier="id-dataobject-customer-profile" xsi:type="DataObject">
+      <name xml:lang="en">Customer profile</name>
+    </element>
+    <element identifier="id-node-application-cluster" xsi:type="Node">
+      <name xml:lang="en">Application cluster</name>
+    </element>
+    <element identifier="id-node-database-server" xsi:type="Node">
+      <name xml:lang="en">Database server</name>
+    </element>
+    <element identifier="id-systemsoftware-container-runtime" xsi:type="SystemSoftware">
+      <name xml:lang="en">Container runtime</name>
+    </element>
+    <element identifier="id-systemsoftware-relational-database" xsi:type="SystemSoftware">
+      <name xml:lang="en">Relational database</name>
+    </element>
+    <element identifier="id-technologyservice-container-hosting" xsi:type="TechnologyService">
+      <name xml:lang="en">Container hosting</name>
+    </element>
+    <element identifier="id-technologyservice-managed-database" xsi:type="TechnologyService">
+      <name xml:lang="en">Managed database</name>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="id-rel-001" source="id-businessactor-customer" target="id-businessrole-applicant" xsi:type="Assignment">
+    </relationship>
+    <relationship identifier="id-rel-002" source="id-businessevent-application-received" target="id-businessprocess-capture-application" xsi:type="Triggering">
+    </relationship>
+    <relationship identifier="id-rel-003" source="id-businessprocess-capture-application" target="id-businessprocess-verify-identity" xsi:type="Triggering">
+    </relationship>
+    <relationship identifier="id-rel-004" source="id-businessprocess-verify-identity" target="id-businessprocess-assess-risk" xsi:type="Triggering">
+    </relationship>
+    <relationship identifier="id-rel-005" source="id-businessprocess-assess-risk" target="id-businessprocess-open-account" xsi:type="Triggering">
+    </relationship>
+    <relationship identifier="id-rel-006" source="id-businessrole-onboarding-analyst" target="id-businessprocess-assess-risk" xsi:type="Assignment">
+    </relationship>
+    <relationship identifier="id-rel-007" source="id-businessprocess-open-account" target="id-businessservice-account-opening" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-008" source="id-businessservice-account-opening" target="id-businessrole-applicant" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-009" source="id-businessprocess-open-account" target="id-businessobject-customer-record" xsi:type="Access" accessType="Write">
+    </relationship>
+    <relationship identifier="id-rel-010" source="id-applicationservice-application-intake" target="id-businessprocess-capture-application" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-011" source="id-applicationservice-identity-verification" target="id-businessprocess-verify-identity" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-012" source="id-applicationservice-risk-scoring" target="id-businessprocess-assess-risk" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-013" source="id-applicationservice-account-provisioning" target="id-businessprocess-open-account" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-014" source="id-applicationcomponent-onboarding-portal" target="id-applicationservice-application-intake" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-015" source="id-applicationcomponent-identity-verification-service" target="id-applicationservice-identity-verification" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-016" source="id-applicationcomponent-risk-engine" target="id-applicationservice-risk-scoring" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-017" source="id-applicationcomponent-core-banking-platform" target="id-applicationservice-account-provisioning" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-018" source="id-applicationcomponent-core-banking-platform" target="id-dataobject-customer-profile" xsi:type="Access" accessType="Write">
+    </relationship>
+    <relationship identifier="id-rel-019" source="id-applicationcomponent-risk-engine" target="id-dataobject-customer-profile" xsi:type="Access" accessType="Read">
+    </relationship>
+    <relationship identifier="id-rel-020" source="id-dataobject-customer-profile" target="id-businessobject-customer-record" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-021" source="id-node-application-cluster" target="id-systemsoftware-container-runtime" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-022" source="id-node-database-server" target="id-systemsoftware-relational-database" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-023" source="id-systemsoftware-container-runtime" target="id-technologyservice-container-hosting" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-024" source="id-systemsoftware-relational-database" target="id-technologyservice-managed-database" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-025" source="id-technologyservice-container-hosting" target="id-applicationcomponent-onboarding-portal" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-026" source="id-technologyservice-container-hosting" target="id-applicationcomponent-risk-engine" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-027" source="id-technologyservice-container-hosting" target="id-applicationcomponent-identity-verification-service" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-028" source="id-technologyservice-managed-database" target="id-applicationcomponent-core-banking-platform" xsi:type="Serving">
+    </relationship>
+  </relationships>
+  <organizations>
+    <item><label xml:lang="en">Business</label>
+      <item identifierRef="id-businessactor-customer"/>
+      <item identifierRef="id-businessrole-applicant"/>
+      <item identifierRef="id-businessrole-onboarding-analyst"/>
+      <item identifierRef="id-businessevent-application-received"/>
+      <item identifierRef="id-businessprocess-capture-application"/>
+      <item identifierRef="id-businessprocess-verify-identity"/>
+      <item identifierRef="id-businessprocess-assess-risk"/>
+      <item identifierRef="id-businessprocess-open-account"/>
+      <item identifierRef="id-businessservice-account-opening"/>
+      <item identifierRef="id-businessobject-customer-record"/>
+    </item>
+    <item><label xml:lang="en">Application</label>
+      <item identifierRef="id-applicationservice-application-intake"/>
+      <item identifierRef="id-applicationservice-identity-verification"/>
+      <item identifierRef="id-applicationservice-risk-scoring"/>
+      <item identifierRef="id-applicationservice-account-provisioning"/>
+      <item identifierRef="id-applicationcomponent-onboarding-portal"/>
+      <item identifierRef="id-applicationcomponent-identity-verification-service"/>
+      <item identifierRef="id-applicationcomponent-risk-engine"/>
+      <item identifierRef="id-applicationcomponent-core-banking-platform"/>
+      <item identifierRef="id-dataobject-customer-profile"/>
+    </item>
+    <item><label xml:lang="en">Technology</label>
+      <item identifierRef="id-node-application-cluster"/>
+      <item identifierRef="id-node-database-server"/>
+      <item identifierRef="id-systemsoftware-container-runtime"/>
+      <item identifierRef="id-systemsoftware-relational-database"/>
+      <item identifierRef="id-technologyservice-container-hosting"/>
+      <item identifierRef="id-technologyservice-managed-database"/>
+    </item>
+    <item><label xml:lang="en">Relations</label>
+      <item identifierRef="id-rel-001"/>
+      <item identifierRef="id-rel-002"/>
+      <item identifierRef="id-rel-003"/>
+      <item identifierRef="id-rel-004"/>
+      <item identifierRef="id-rel-005"/>
+      <item identifierRef="id-rel-006"/>
+      <item identifierRef="id-rel-007"/>
+      <item identifierRef="id-rel-008"/>
+      <item identifierRef="id-rel-009"/>
+      <item identifierRef="id-rel-010"/>
+      <item identifierRef="id-rel-011"/>
+      <item identifierRef="id-rel-012"/>
+      <item identifierRef="id-rel-013"/>
+      <item identifierRef="id-rel-014"/>
+      <item identifierRef="id-rel-015"/>
+      <item identifierRef="id-rel-016"/>
+      <item identifierRef="id-rel-017"/>
+      <item identifierRef="id-rel-018"/>
+      <item identifierRef="id-rel-019"/>
+      <item identifierRef="id-rel-020"/>
+      <item identifierRef="id-rel-021"/>
+      <item identifierRef="id-rel-022"/>
+      <item identifierRef="id-rel-023"/>
+      <item identifierRef="id-rel-024"/>
+      <item identifierRef="id-rel-025"/>
+      <item identifierRef="id-rel-026"/>
+      <item identifierRef="id-rel-027"/>
+      <item identifierRef="id-rel-028"/>
+    </item>
+    <item><label xml:lang="en">Views</label>
+      <item identifierRef="id-view-customer-onboarding-business-to-technology"/>
+    </item>
+  </organizations>
+  <views>
+    <diagrams>
+      <view identifier="id-view-customer-onboarding-business-to-technology" xsi:type="Diagram" viewpoint="Layered">
+        <name xml:lang="en">Customer onboarding: business to technology</name>
+        <documentation xml:lang="en">Business layer on top, application layer in the middle, technology layer at the bottom. Every arrow answers a question a change will raise: who uses this, what supports it, what does it run on.</documentation>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n1" elementRef="id-businessactor-customer" xsi:type="Element" x="20" y="20" w="150" h="50">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n2" elementRef="id-businessrole-applicant" xsi:type="Element" x="200" y="20" w="150" h="50">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n3" elementRef="id-businessservice-account-opening" xsi:type="Element" x="400" y="20" w="170" h="50">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n4" elementRef="id-businessrole-onboarding-analyst" xsi:type="Element" x="640" y="20" w="170" h="50">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n5" elementRef="id-businessobject-customer-record" xsi:type="Element" x="880" y="20" w="160" h="50">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n6" elementRef="id-businessevent-application-received" xsi:type="Element" x="20" y="120" w="150" h="50">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n7" elementRef="id-businessprocess-capture-application" xsi:type="Element" x="200" y="120" w="180" h="50">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n8" elementRef="id-businessprocess-verify-identity" xsi:type="Element" x="410" y="120" w="180" h="50">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n9" elementRef="id-businessprocess-assess-risk" xsi:type="Element" x="620" y="120" w="180" h="50">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n10" elementRef="id-businessprocess-open-account" xsi:type="Element" x="830" y="120" w="180" h="50">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n11" elementRef="id-applicationservice-application-intake" xsi:type="Element" x="200" y="250" w="180" h="50">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n12" elementRef="id-applicationservice-identity-verification" xsi:type="Element" x="410" y="250" w="180" h="50">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n13" elementRef="id-applicationservice-risk-scoring" xsi:type="Element" x="620" y="250" w="180" h="50">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n14" elementRef="id-applicationservice-account-provisioning" xsi:type="Element" x="830" y="250" w="180" h="50">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n15" elementRef="id-applicationcomponent-onboarding-portal" xsi:type="Element" x="200" y="350" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n16" elementRef="id-applicationcomponent-identity-verification-service" xsi:type="Element" x="410" y="350" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n17" elementRef="id-applicationcomponent-risk-engine" xsi:type="Element" x="620" y="350" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n18" elementRef="id-applicationcomponent-core-banking-platform" xsi:type="Element" x="830" y="350" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n19" elementRef="id-dataobject-customer-profile" xsi:type="Element" x="1060" y="250" w="150" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n20" elementRef="id-technologyservice-container-hosting" xsi:type="Element" x="300" y="480" w="180" h="50">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n21" elementRef="id-technologyservice-managed-database" xsi:type="Element" x="720" y="480" w="180" h="50">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n22" elementRef="id-node-application-cluster" xsi:type="Element" x="280" y="580" w="220" h="110">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-customer-onboarding-business-to-technology-n23" elementRef="id-systemsoftware-container-runtime" xsi:type="Element" x="300" y="620" w="180" h="50">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-customer-onboarding-business-to-technology-n24" elementRef="id-node-database-server" xsi:type="Element" x="700" y="580" w="220" h="110">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-customer-onboarding-business-to-technology-n25" elementRef="id-systemsoftware-relational-database" xsi:type="Element" x="720" y="620" w="180" h="50">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c1" relationshipRef="id-rel-001" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n1" target="id-view-customer-onboarding-business-to-technology-n2"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c2" relationshipRef="id-rel-002" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n6" target="id-view-customer-onboarding-business-to-technology-n7"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c3" relationshipRef="id-rel-003" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n7" target="id-view-customer-onboarding-business-to-technology-n8"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c4" relationshipRef="id-rel-004" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n8" target="id-view-customer-onboarding-business-to-technology-n9"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c5" relationshipRef="id-rel-005" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n9" target="id-view-customer-onboarding-business-to-technology-n10"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c6" relationshipRef="id-rel-006" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n4" target="id-view-customer-onboarding-business-to-technology-n9"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c7" relationshipRef="id-rel-007" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n10" target="id-view-customer-onboarding-business-to-technology-n3"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c8" relationshipRef="id-rel-008" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n3" target="id-view-customer-onboarding-business-to-technology-n2"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c9" relationshipRef="id-rel-009" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n10" target="id-view-customer-onboarding-business-to-technology-n5"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c10" relationshipRef="id-rel-010" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n11" target="id-view-customer-onboarding-business-to-technology-n7"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c11" relationshipRef="id-rel-011" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n12" target="id-view-customer-onboarding-business-to-technology-n8"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c12" relationshipRef="id-rel-012" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n13" target="id-view-customer-onboarding-business-to-technology-n9"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c13" relationshipRef="id-rel-013" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n14" target="id-view-customer-onboarding-business-to-technology-n10"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c14" relationshipRef="id-rel-014" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n15" target="id-view-customer-onboarding-business-to-technology-n11"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c15" relationshipRef="id-rel-015" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n16" target="id-view-customer-onboarding-business-to-technology-n12"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c16" relationshipRef="id-rel-016" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n17" target="id-view-customer-onboarding-business-to-technology-n13"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c17" relationshipRef="id-rel-017" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n18" target="id-view-customer-onboarding-business-to-technology-n14"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c18" relationshipRef="id-rel-018" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n18" target="id-view-customer-onboarding-business-to-technology-n19"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c19" relationshipRef="id-rel-019" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n17" target="id-view-customer-onboarding-business-to-technology-n19"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c20" relationshipRef="id-rel-020" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n19" target="id-view-customer-onboarding-business-to-technology-n5"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c21" relationshipRef="id-rel-023" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n23" target="id-view-customer-onboarding-business-to-technology-n20"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c22" relationshipRef="id-rel-024" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n25" target="id-view-customer-onboarding-business-to-technology-n21"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c23" relationshipRef="id-rel-025" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n20" target="id-view-customer-onboarding-business-to-technology-n15"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c24" relationshipRef="id-rel-026" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n20" target="id-view-customer-onboarding-business-to-technology-n17"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c25" relationshipRef="id-rel-027" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n20" target="id-view-customer-onboarding-business-to-technology-n16"/>
+        <connection identifier="id-view-customer-onboarding-business-to-technology-c26" relationshipRef="id-rel-028" xsi:type="Relationship" source="id-view-customer-onboarding-business-to-technology-n21" target="id-view-customer-onboarding-business-to-technology-n18"/>
+      </view>
+    </diagrams>
+  </views>
+</model>

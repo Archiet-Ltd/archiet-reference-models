@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="id-capability-map" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd">
+  <name xml:lang="en">Business Capability Map (starter)</name>
+  <documentation xml:lang="en">A two-level business capability map for a mid-sized organisation, independent of industry. Capabilities describe what the business does, never how or by whom, so the map stays stable while processes, teams and systems change underneath it. Rename, merge and extend the second level to match your organisation; keep the first level to roughly eight areas so it fits on one page for executives. Each capability carries two properties for a heat map: strategic importance and current maturity.</documentation>
+  <elements>
+    <element identifier="id-capability-strategy-and-governance" xsi:type="Capability">
+      <name xml:lang="en">Strategy and Governance</name>
+      <documentation xml:lang="en">Level 1 capability area: Strategy and Governance.</documentation>
+    </element>
+    <element identifier="id-capability-strategic-planning" xsi:type="Capability">
+      <name xml:lang="en">Strategic Planning</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-portfolio-and-investment-management" xsi:type="Capability">
+      <name xml:lang="en">Portfolio and Investment Management</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-enterprise-architecture" xsi:type="Capability">
+      <name xml:lang="en">Enterprise Architecture</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-performance-management" xsi:type="Capability">
+      <name xml:lang="en">Performance Management</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-customer-management" xsi:type="Capability">
+      <name xml:lang="en">Customer Management</name>
+      <documentation xml:lang="en">Level 1 capability area: Customer Management.</documentation>
+    </element>
+    <element identifier="id-capability-marketing" xsi:type="Capability">
+      <name xml:lang="en">Marketing</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-sales" xsi:type="Capability">
+      <name xml:lang="en">Sales</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-customer-onboarding" xsi:type="Capability">
+      <name xml:lang="en">Customer Onboarding</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-customer-service" xsi:type="Capability">
+      <name xml:lang="en">Customer Service</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-customer-insight" xsi:type="Capability">
+      <name xml:lang="en">Customer Insight</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-product-and-service-delivery" xsi:type="Capability">
+      <name xml:lang="en">Product and Service Delivery</name>
+      <documentation xml:lang="en">Level 1 capability area: Product and Service Delivery.</documentation>
+    </element>
+    <element identifier="id-capability-product-management" xsi:type="Capability">
+      <name xml:lang="en">Product Management</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-service-design" xsi:type="Capability">
+      <name xml:lang="en">Service Design</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-order-management" xsi:type="Capability">
+      <name xml:lang="en">Order Management</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-fulfilment" xsi:type="Capability">
+      <name xml:lang="en">Fulfilment</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-billing" xsi:type="Capability">
+      <name xml:lang="en">Billing</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-operations" xsi:type="Capability">
+      <name xml:lang="en">Operations</name>
+      <documentation xml:lang="en">Level 1 capability area: Operations.</documentation>
+    </element>
+    <element identifier="id-capability-procurement" xsi:type="Capability">
+      <name xml:lang="en">Procurement</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-supplier-management" xsi:type="Capability">
+      <name xml:lang="en">Supplier Management</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-asset-management" xsi:type="Capability">
+      <name xml:lang="en">Asset Management</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-facilities-management" xsi:type="Capability">
+      <name xml:lang="en">Facilities Management</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-finance" xsi:type="Capability">
+      <name xml:lang="en">Finance</name>
+      <documentation xml:lang="en">Level 1 capability area: Finance.</documentation>
+    </element>
+    <element identifier="id-capability-financial-planning" xsi:type="Capability">
+      <name xml:lang="en">Financial Planning</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-accounting" xsi:type="Capability">
+      <name xml:lang="en">Accounting</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-treasury" xsi:type="Capability">
+      <name xml:lang="en">Treasury</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-financial-reporting" xsi:type="Capability">
+      <name xml:lang="en">Financial Reporting</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-people" xsi:type="Capability">
+      <name xml:lang="en">People</name>
+      <documentation xml:lang="en">Level 1 capability area: People.</documentation>
+    </element>
+    <element identifier="id-capability-workforce-planning" xsi:type="Capability">
+      <name xml:lang="en">Workforce Planning</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-recruitment" xsi:type="Capability">
+      <name xml:lang="en">Recruitment</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-learning-and-development" xsi:type="Capability">
+      <name xml:lang="en">Learning and Development</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-payroll" xsi:type="Capability">
+      <name xml:lang="en">Payroll</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-risk-and-compliance" xsi:type="Capability">
+      <name xml:lang="en">Risk and Compliance</name>
+      <documentation xml:lang="en">Level 1 capability area: Risk and Compliance.</documentation>
+    </element>
+    <element identifier="id-capability-risk-management" xsi:type="Capability">
+      <name xml:lang="en">Risk Management</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-regulatory-compliance" xsi:type="Capability">
+      <name xml:lang="en">Regulatory Compliance</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-information-security" xsi:type="Capability">
+      <name xml:lang="en">Information Security</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-business-continuity" xsi:type="Capability">
+      <name xml:lang="en">Business Continuity</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-audit" xsi:type="Capability">
+      <name xml:lang="en">Audit</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-technology-and-data" xsi:type="Capability">
+      <name xml:lang="en">Technology and Data</name>
+      <documentation xml:lang="en">Level 1 capability area: Technology and Data.</documentation>
+    </element>
+    <element identifier="id-capability-data-management" xsi:type="Capability">
+      <name xml:lang="en">Data Management</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-application-management" xsi:type="Capability">
+      <name xml:lang="en">Application Management</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-infrastructure-management" xsi:type="Capability">
+      <name xml:lang="en">Infrastructure Management</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-capability-integration-management" xsi:type="Capability">
+      <name xml:lang="en">Integration Management</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Not assessed</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Not assessed</value></property>
+      </properties>
+    </element>
+    <element identifier="id-valuestream-acquire-to-retain" xsi:type="ValueStream">
+      <name xml:lang="en">Acquire to Retain</name>
+      <documentation xml:lang="en">End-to-end value stream from first contact to repeat business. Each stage is served by the capabilities it depends on.</documentation>
+    </element>
+    <element identifier="id-valuestream-attract-customer" xsi:type="ValueStream">
+      <name xml:lang="en">Attract Customer</name>
+    </element>
+    <element identifier="id-valuestream-win-order" xsi:type="ValueStream">
+      <name xml:lang="en">Win Order</name>
+    </element>
+    <element identifier="id-valuestream-onboard-customer" xsi:type="ValueStream">
+      <name xml:lang="en">Onboard Customer</name>
+    </element>
+    <element identifier="id-valuestream-deliver-service" xsi:type="ValueStream">
+      <name xml:lang="en">Deliver Service</name>
+    </element>
+    <element identifier="id-valuestream-bill-and-collect" xsi:type="ValueStream">
+      <name xml:lang="en">Bill and Collect</name>
+    </element>
+    <element identifier="id-valuestream-retain-customer" xsi:type="ValueStream">
+      <name xml:lang="en">Retain Customer</name>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="id-rel-001" source="id-capability-strategy-and-governance" target="id-capability-strategic-planning" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-002" source="id-capability-strategy-and-governance" target="id-capability-portfolio-and-investment-management" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-003" source="id-capability-strategy-and-governance" target="id-capability-enterprise-architecture" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-004" source="id-capability-strategy-and-governance" target="id-capability-performance-management" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-005" source="id-capability-customer-management" target="id-capability-marketing" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-006" source="id-capability-customer-management" target="id-capability-sales" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-007" source="id-capability-customer-management" target="id-capability-customer-onboarding" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-008" source="id-capability-customer-management" target="id-capability-customer-service" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-009" source="id-capability-customer-management" target="id-capability-customer-insight" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-010" source="id-capability-product-and-service-delivery" target="id-capability-product-management" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-011" source="id-capability-product-and-service-delivery" target="id-capability-service-design" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-012" source="id-capability-product-and-service-delivery" target="id-capability-order-management" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-013" source="id-capability-product-and-service-delivery" target="id-capability-fulfilment" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-014" source="id-capability-product-and-service-delivery" target="id-capability-billing" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-015" source="id-capability-operations" target="id-capability-procurement" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-016" source="id-capability-operations" target="id-capability-supplier-management" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-017" source="id-capability-operations" target="id-capability-asset-management" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-018" source="id-capability-operations" target="id-capability-facilities-management" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-019" source="id-capability-finance" target="id-capability-financial-planning" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-020" source="id-capability-finance" target="id-capability-accounting" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-021" source="id-capability-finance" target="id-capability-treasury" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-022" source="id-capability-finance" target="id-capability-financial-reporting" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-023" source="id-capability-people" target="id-capability-workforce-planning" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-024" source="id-capability-people" target="id-capability-recruitment" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-025" source="id-capability-people" target="id-capability-learning-and-development" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-026" source="id-capability-people" target="id-capability-payroll" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-027" source="id-capability-risk-and-compliance" target="id-capability-risk-management" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-028" source="id-capability-risk-and-compliance" target="id-capability-regulatory-compliance" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-029" source="id-capability-risk-and-compliance" target="id-capability-information-security" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-030" source="id-capability-risk-and-compliance" target="id-capability-business-continuity" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-031" source="id-capability-risk-and-compliance" target="id-capability-audit" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-032" source="id-capability-technology-and-data" target="id-capability-data-management" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-033" source="id-capability-technology-and-data" target="id-capability-application-management" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-034" source="id-capability-technology-and-data" target="id-capability-infrastructure-management" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-035" source="id-capability-technology-and-data" target="id-capability-integration-management" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-036" source="id-valuestream-acquire-to-retain" target="id-valuestream-attract-customer" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-037" source="id-valuestream-acquire-to-retain" target="id-valuestream-win-order" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-038" source="id-valuestream-acquire-to-retain" target="id-valuestream-onboard-customer" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-039" source="id-valuestream-acquire-to-retain" target="id-valuestream-deliver-service" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-040" source="id-valuestream-acquire-to-retain" target="id-valuestream-bill-and-collect" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-041" source="id-valuestream-acquire-to-retain" target="id-valuestream-retain-customer" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-042" source="id-valuestream-attract-customer" target="id-valuestream-win-order" xsi:type="Flow">
+    </relationship>
+    <relationship identifier="id-rel-043" source="id-valuestream-win-order" target="id-valuestream-onboard-customer" xsi:type="Flow">
+    </relationship>
+    <relationship identifier="id-rel-044" source="id-valuestream-onboard-customer" target="id-valuestream-deliver-service" xsi:type="Flow">
+    </relationship>
+    <relationship identifier="id-rel-045" source="id-valuestream-deliver-service" target="id-valuestream-bill-and-collect" xsi:type="Flow">
+    </relationship>
+    <relationship identifier="id-rel-046" source="id-valuestream-bill-and-collect" target="id-valuestream-retain-customer" xsi:type="Flow">
+    </relationship>
+    <relationship identifier="id-rel-047" source="id-capability-marketing" target="id-valuestream-attract-customer" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-048" source="id-capability-sales" target="id-valuestream-win-order" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-049" source="id-capability-product-management" target="id-valuestream-win-order" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-050" source="id-capability-customer-onboarding" target="id-valuestream-onboard-customer" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-051" source="id-capability-regulatory-compliance" target="id-valuestream-onboard-customer" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-052" source="id-capability-order-management" target="id-valuestream-deliver-service" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-053" source="id-capability-fulfilment" target="id-valuestream-deliver-service" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-054" source="id-capability-service-design" target="id-valuestream-deliver-service" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-055" source="id-capability-billing" target="id-valuestream-bill-and-collect" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-056" source="id-capability-accounting" target="id-valuestream-bill-and-collect" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-057" source="id-capability-customer-service" target="id-valuestream-retain-customer" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-058" source="id-capability-customer-insight" target="id-valuestream-retain-customer" xsi:type="Serving">
+    </relationship>
+  </relationships>
+  <organizations>
+    <item><label xml:lang="en">Strategy</label>
+      <item identifierRef="id-capability-strategy-and-governance"/>
+      <item identifierRef="id-capability-strategic-planning"/>
+      <item identifierRef="id-capability-portfolio-and-investment-management"/>
+      <item identifierRef="id-capability-enterprise-architecture"/>
+      <item identifierRef="id-capability-performance-management"/>
+      <item identifierRef="id-capability-customer-management"/>
+      <item identifierRef="id-capability-marketing"/>
+      <item identifierRef="id-capability-sales"/>
+      <item identifierRef="id-capability-customer-onboarding"/>
+      <item identifierRef="id-capability-customer-service"/>
+      <item identifierRef="id-capability-customer-insight"/>
+      <item identifierRef="id-capability-product-and-service-delivery"/>
+      <item identifierRef="id-capability-product-management"/>
+      <item identifierRef="id-capability-service-design"/>
+      <item identifierRef="id-capability-order-management"/>
+      <item identifierRef="id-capability-fulfilment"/>
+      <item identifierRef="id-capability-billing"/>
+      <item identifierRef="id-capability-operations"/>
+      <item identifierRef="id-capability-procurement"/>
+      <item identifierRef="id-capability-supplier-management"/>
+      <item identifierRef="id-capability-asset-management"/>
+      <item identifierRef="id-capability-facilities-management"/>
+      <item identifierRef="id-capability-finance"/>
+      <item identifierRef="id-capability-financial-planning"/>
+      <item identifierRef="id-capability-accounting"/>
+      <item identifierRef="id-capability-treasury"/>
+      <item identifierRef="id-capability-financial-reporting"/>
+      <item identifierRef="id-capability-people"/>
+      <item identifierRef="id-capability-workforce-planning"/>
+      <item identifierRef="id-capability-recruitment"/>
+      <item identifierRef="id-capability-learning-and-development"/>
+      <item identifierRef="id-capability-payroll"/>
+      <item identifierRef="id-capability-risk-and-compliance"/>
+      <item identifierRef="id-capability-risk-management"/>
+      <item identifierRef="id-capability-regulatory-compliance"/>
+      <item identifierRef="id-capability-information-security"/>
+      <item identifierRef="id-capability-business-continuity"/>
+      <item identifierRef="id-capability-audit"/>
+      <item identifierRef="id-capability-technology-and-data"/>
+      <item identifierRef="id-capability-data-management"/>
+      <item identifierRef="id-capability-application-management"/>
+      <item identifierRef="id-capability-infrastructure-management"/>
+      <item identifierRef="id-capability-integration-management"/>
+      <item identifierRef="id-valuestream-acquire-to-retain"/>
+      <item identifierRef="id-valuestream-attract-customer"/>
+      <item identifierRef="id-valuestream-win-order"/>
+      <item identifierRef="id-valuestream-onboard-customer"/>
+      <item identifierRef="id-valuestream-deliver-service"/>
+      <item identifierRef="id-valuestream-bill-and-collect"/>
+      <item identifierRef="id-valuestream-retain-customer"/>
+    </item>
+    <item><label xml:lang="en">Relations</label>
+      <item identifierRef="id-rel-001"/>
+      <item identifierRef="id-rel-002"/>
+      <item identifierRef="id-rel-003"/>
+      <item identifierRef="id-rel-004"/>
+      <item identifierRef="id-rel-005"/>
+      <item identifierRef="id-rel-006"/>
+      <item identifierRef="id-rel-007"/>
+      <item identifierRef="id-rel-008"/>
+      <item identifierRef="id-rel-009"/>
+      <item identifierRef="id-rel-010"/>
+      <item identifierRef="id-rel-011"/>
+      <item identifierRef="id-rel-012"/>
+      <item identifierRef="id-rel-013"/>
+      <item identifierRef="id-rel-014"/>
+      <item identifierRef="id-rel-015"/>
+      <item identifierRef="id-rel-016"/>
+      <item identifierRef="id-rel-017"/>
+      <item identifierRef="id-rel-018"/>
+      <item identifierRef="id-rel-019"/>
+      <item identifierRef="id-rel-020"/>
+      <item identifierRef="id-rel-021"/>
+      <item identifierRef="id-rel-022"/>
+      <item identifierRef="id-rel-023"/>
+      <item identifierRef="id-rel-024"/>
+      <item identifierRef="id-rel-025"/>
+      <item identifierRef="id-rel-026"/>
+      <item identifierRef="id-rel-027"/>
+      <item identifierRef="id-rel-028"/>
+      <item identifierRef="id-rel-029"/>
+      <item identifierRef="id-rel-030"/>
+      <item identifierRef="id-rel-031"/>
+      <item identifierRef="id-rel-032"/>
+      <item identifierRef="id-rel-033"/>
+      <item identifierRef="id-rel-034"/>
+      <item identifierRef="id-rel-035"/>
+      <item identifierRef="id-rel-036"/>
+      <item identifierRef="id-rel-037"/>
+      <item identifierRef="id-rel-038"/>
+      <item identifierRef="id-rel-039"/>
+      <item identifierRef="id-rel-040"/>
+      <item identifierRef="id-rel-041"/>
+      <item identifierRef="id-rel-042"/>
+      <item identifierRef="id-rel-043"/>
+      <item identifierRef="id-rel-044"/>
+      <item identifierRef="id-rel-045"/>
+      <item identifierRef="id-rel-046"/>
+      <item identifierRef="id-rel-047"/>
+      <item identifierRef="id-rel-048"/>
+      <item identifierRef="id-rel-049"/>
+      <item identifierRef="id-rel-050"/>
+      <item identifierRef="id-rel-051"/>
+      <item identifierRef="id-rel-052"/>
+      <item identifierRef="id-rel-053"/>
+      <item identifierRef="id-rel-054"/>
+      <item identifierRef="id-rel-055"/>
+      <item identifierRef="id-rel-056"/>
+      <item identifierRef="id-rel-057"/>
+      <item identifierRef="id-rel-058"/>
+    </item>
+    <item><label xml:lang="en">Views</label>
+      <item identifierRef="id-view-capability-map"/>
+      <item identifierRef="id-view-value-stream-and-supporting-capabilities"/>
+    </item>
+  </organizations>
+  <propertyDefinitions>
+    <propertyDefinition identifier="propid-1" type="string"><name xml:lang="en">Strategic importance</name></propertyDefinition>
+    <propertyDefinition identifier="propid-2" type="string"><name xml:lang="en">Maturity 1 to 5</name></propertyDefinition>
+  </propertyDefinitions>
+  <views>
+    <diagrams>
+      <view identifier="id-view-capability-map" xsi:type="Diagram" viewpoint="Capability Map">
+        <name xml:lang="en">Capability map</name>
+        <documentation xml:lang="en">Level 1 areas with their level 2 capabilities. Colour each capability by strategic importance or maturity to turn this into a heat map.</documentation>
+        <node identifier="id-view-capability-map-n1" elementRef="id-capability-strategy-and-governance" xsi:type="Element" x="20" y="20" w="200" h="277">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-capability-map-n2" elementRef="id-capability-strategic-planning" xsi:type="Element" x="35" y="52" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n3" elementRef="id-capability-portfolio-and-investment-management" xsi:type="Element" x="35" y="112" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n4" elementRef="id-capability-enterprise-architecture" xsi:type="Element" x="35" y="172" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n5" elementRef="id-capability-performance-management" xsi:type="Element" x="35" y="232" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-capability-map-n6" elementRef="id-capability-customer-management" xsi:type="Element" x="235" y="20" w="200" h="337">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-capability-map-n7" elementRef="id-capability-marketing" xsi:type="Element" x="250" y="52" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n8" elementRef="id-capability-sales" xsi:type="Element" x="250" y="112" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n9" elementRef="id-capability-customer-onboarding" xsi:type="Element" x="250" y="172" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n10" elementRef="id-capability-customer-service" xsi:type="Element" x="250" y="232" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n11" elementRef="id-capability-customer-insight" xsi:type="Element" x="250" y="292" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-capability-map-n12" elementRef="id-capability-product-and-service-delivery" xsi:type="Element" x="450" y="20" w="200" h="337">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-capability-map-n13" elementRef="id-capability-product-management" xsi:type="Element" x="465" y="52" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n14" elementRef="id-capability-service-design" xsi:type="Element" x="465" y="112" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n15" elementRef="id-capability-order-management" xsi:type="Element" x="465" y="172" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n16" elementRef="id-capability-fulfilment" xsi:type="Element" x="465" y="232" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n17" elementRef="id-capability-billing" xsi:type="Element" x="465" y="292" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-capability-map-n18" elementRef="id-capability-operations" xsi:type="Element" x="665" y="20" w="200" h="277">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-capability-map-n19" elementRef="id-capability-procurement" xsi:type="Element" x="680" y="52" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n20" elementRef="id-capability-supplier-management" xsi:type="Element" x="680" y="112" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n21" elementRef="id-capability-asset-management" xsi:type="Element" x="680" y="172" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n22" elementRef="id-capability-facilities-management" xsi:type="Element" x="680" y="232" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-capability-map-n23" elementRef="id-capability-finance" xsi:type="Element" x="20" y="372" w="200" h="277">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-capability-map-n24" elementRef="id-capability-financial-planning" xsi:type="Element" x="35" y="404" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n25" elementRef="id-capability-accounting" xsi:type="Element" x="35" y="464" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n26" elementRef="id-capability-treasury" xsi:type="Element" x="35" y="524" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n27" elementRef="id-capability-financial-reporting" xsi:type="Element" x="35" y="584" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-capability-map-n28" elementRef="id-capability-people" xsi:type="Element" x="235" y="372" w="200" h="277">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-capability-map-n29" elementRef="id-capability-workforce-planning" xsi:type="Element" x="250" y="404" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n30" elementRef="id-capability-recruitment" xsi:type="Element" x="250" y="464" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n31" elementRef="id-capability-learning-and-development" xsi:type="Element" x="250" y="524" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n32" elementRef="id-capability-payroll" xsi:type="Element" x="250" y="584" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-capability-map-n33" elementRef="id-capability-risk-and-compliance" xsi:type="Element" x="450" y="372" w="200" h="337">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-capability-map-n34" elementRef="id-capability-risk-management" xsi:type="Element" x="465" y="404" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n35" elementRef="id-capability-regulatory-compliance" xsi:type="Element" x="465" y="464" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n36" elementRef="id-capability-information-security" xsi:type="Element" x="465" y="524" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n37" elementRef="id-capability-business-continuity" xsi:type="Element" x="465" y="584" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n38" elementRef="id-capability-audit" xsi:type="Element" x="465" y="644" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-capability-map-n39" elementRef="id-capability-technology-and-data" xsi:type="Element" x="665" y="372" w="200" h="277">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-capability-map-n40" elementRef="id-capability-data-management" xsi:type="Element" x="680" y="404" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n41" elementRef="id-capability-application-management" xsi:type="Element" x="680" y="464" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n42" elementRef="id-capability-infrastructure-management" xsi:type="Element" x="680" y="524" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-capability-map-n43" elementRef="id-capability-integration-management" xsi:type="Element" x="680" y="584" w="170" h="45">
+            <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+      </view>
+      <view identifier="id-view-value-stream-and-supporting-capabilities" xsi:type="Diagram" viewpoint="Value Stream">
+        <name xml:lang="en">Value stream and supporting capabilities</name>
+        <documentation xml:lang="en">Which capabilities each stage of Acquire to Retain depends on. A low-maturity capability beside a critical stage is where investment pays back first.</documentation>
+        <node identifier="id-view-value-stream-and-supporting-capabilities-n1" elementRef="id-valuestream-attract-customer" xsi:type="Element" x="20" y="20" w="190" h="50">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-value-stream-and-supporting-capabilities-n2" elementRef="id-capability-marketing" xsi:type="Element" x="300" y="20" w="200" h="50">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-value-stream-and-supporting-capabilities-n3" elementRef="id-valuestream-win-order" xsi:type="Element" x="20" y="100" w="190" h="110">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-value-stream-and-supporting-capabilities-n4" elementRef="id-capability-sales" xsi:type="Element" x="300" y="100" w="200" h="50">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-value-stream-and-supporting-capabilities-n5" elementRef="id-capability-product-management" xsi:type="Element" x="300" y="160" w="200" h="50">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-value-stream-and-supporting-capabilities-n6" elementRef="id-valuestream-onboard-customer" xsi:type="Element" x="20" y="240" w="190" h="110">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-value-stream-and-supporting-capabilities-n7" elementRef="id-capability-customer-onboarding" xsi:type="Element" x="300" y="240" w="200" h="50">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-value-stream-and-supporting-capabilities-n8" elementRef="id-capability-regulatory-compliance" xsi:type="Element" x="300" y="300" w="200" h="50">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-value-stream-and-supporting-capabilities-n9" elementRef="id-valuestream-deliver-service" xsi:type="Element" x="20" y="380" w="190" h="170">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-value-stream-and-supporting-capabilities-n10" elementRef="id-capability-order-management" xsi:type="Element" x="300" y="380" w="200" h="50">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-value-stream-and-supporting-capabilities-n11" elementRef="id-capability-fulfilment" xsi:type="Element" x="300" y="440" w="200" h="50">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-value-stream-and-supporting-capabilities-n12" elementRef="id-capability-service-design" xsi:type="Element" x="300" y="500" w="200" h="50">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-value-stream-and-supporting-capabilities-n13" elementRef="id-valuestream-bill-and-collect" xsi:type="Element" x="20" y="580" w="190" h="110">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-value-stream-and-supporting-capabilities-n14" elementRef="id-capability-billing" xsi:type="Element" x="300" y="580" w="200" h="50">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-value-stream-and-supporting-capabilities-n15" elementRef="id-capability-accounting" xsi:type="Element" x="300" y="640" w="200" h="50">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-value-stream-and-supporting-capabilities-n16" elementRef="id-valuestream-retain-customer" xsi:type="Element" x="20" y="720" w="190" h="110">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-value-stream-and-supporting-capabilities-n17" elementRef="id-capability-customer-service" xsi:type="Element" x="300" y="720" w="200" h="50">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-value-stream-and-supporting-capabilities-n18" elementRef="id-capability-customer-insight" xsi:type="Element" x="300" y="780" w="200" h="50">
+          <style><fillColor r="245" g="222" b="170"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-value-stream-and-supporting-capabilities-c1" relationshipRef="id-rel-047" xsi:type="Relationship" source="id-view-value-stream-and-supporting-capabilities-n2" target="id-view-value-stream-and-supporting-capabilities-n1"/>
+        <connection identifier="id-view-value-stream-and-supporting-capabilities-c2" relationshipRef="id-rel-048" xsi:type="Relationship" source="id-view-value-stream-and-supporting-capabilities-n4" target="id-view-value-stream-and-supporting-capabilities-n3"/>
+        <connection identifier="id-view-value-stream-and-supporting-capabilities-c3" relationshipRef="id-rel-049" xsi:type="Relationship" source="id-view-value-stream-and-supporting-capabilities-n5" target="id-view-value-stream-and-supporting-capabilities-n3"/>
+        <connection identifier="id-view-value-stream-and-supporting-capabilities-c4" relationshipRef="id-rel-050" xsi:type="Relationship" source="id-view-value-stream-and-supporting-capabilities-n7" target="id-view-value-stream-and-supporting-capabilities-n6"/>
+        <connection identifier="id-view-value-stream-and-supporting-capabilities-c5" relationshipRef="id-rel-051" xsi:type="Relationship" source="id-view-value-stream-and-supporting-capabilities-n8" target="id-view-value-stream-and-supporting-capabilities-n6"/>
+        <connection identifier="id-view-value-stream-and-supporting-capabilities-c6" relationshipRef="id-rel-052" xsi:type="Relationship" source="id-view-value-stream-and-supporting-capabilities-n10" target="id-view-value-stream-and-supporting-capabilities-n9"/>
+        <connection identifier="id-view-value-stream-and-supporting-capabilities-c7" relationshipRef="id-rel-053" xsi:type="Relationship" source="id-view-value-stream-and-supporting-capabilities-n11" target="id-view-value-stream-and-supporting-capabilities-n9"/>
+        <connection identifier="id-view-value-stream-and-supporting-capabilities-c8" relationshipRef="id-rel-054" xsi:type="Relationship" source="id-view-value-stream-and-supporting-capabilities-n12" target="id-view-value-stream-and-supporting-capabilities-n9"/>
+        <connection identifier="id-view-value-stream-and-supporting-capabilities-c9" relationshipRef="id-rel-055" xsi:type="Relationship" source="id-view-value-stream-and-supporting-capabilities-n14" target="id-view-value-stream-and-supporting-capabilities-n13"/>
+        <connection identifier="id-view-value-stream-and-supporting-capabilities-c10" relationshipRef="id-rel-056" xsi:type="Relationship" source="id-view-value-stream-and-supporting-capabilities-n15" target="id-view-value-stream-and-supporting-capabilities-n13"/>
+        <connection identifier="id-view-value-stream-and-supporting-capabilities-c11" relationshipRef="id-rel-057" xsi:type="Relationship" source="id-view-value-stream-and-supporting-capabilities-n17" target="id-view-value-stream-and-supporting-capabilities-n16"/>
+        <connection identifier="id-view-value-stream-and-supporting-capabilities-c12" relationshipRef="id-rel-058" xsi:type="Relationship" source="id-view-value-stream-and-supporting-capabilities-n18" target="id-view-value-stream-and-supporting-capabilities-n16"/>
+        <connection identifier="id-view-value-stream-and-supporting-capabilities-c13" relationshipRef="id-rel-042" xsi:type="Relationship" source="id-view-value-stream-and-supporting-capabilities-n1" target="id-view-value-stream-and-supporting-capabilities-n3"/>
+        <connection identifier="id-view-value-stream-and-supporting-capabilities-c14" relationshipRef="id-rel-043" xsi:type="Relationship" source="id-view-value-stream-and-supporting-capabilities-n3" target="id-view-value-stream-and-supporting-capabilities-n6"/>
+        <connection identifier="id-view-value-stream-and-supporting-capabilities-c15" relationshipRef="id-rel-044" xsi:type="Relationship" source="id-view-value-stream-and-supporting-capabilities-n6" target="id-view-value-stream-and-supporting-capabilities-n9"/>
+        <connection identifier="id-view-value-stream-and-supporting-capabilities-c16" relationshipRef="id-rel-045" xsi:type="Relationship" source="id-view-value-stream-and-supporting-capabilities-n9" target="id-view-value-stream-and-supporting-capabilities-n13"/>
+        <connection identifier="id-view-value-stream-and-supporting-capabilities-c17" relationshipRef="id-rel-046" xsi:type="Relationship" source="id-view-value-stream-and-supporting-capabilities-n13" target="id-view-value-stream-and-supporting-capabilities-n16"/>
+      </view>
+    </diagrams>
+  </views>
+</model>

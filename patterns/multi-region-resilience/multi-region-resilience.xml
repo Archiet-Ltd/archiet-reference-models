@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="id-multi-region-resilience" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd">
+  <name xml:lang="en">Multi-Region Resilience (active-passive)</name>
+  <documentation xml:lang="en">The application runs in a primary region with a warm standby in a second region. The database replicates continuously; if the primary region fails, traffic routing moves users to the standby. Recovery time and recovery point are stated as requirements and tested.</documentation>
+  <elements>
+    <element identifier="id-businessactor-users" xsi:type="BusinessActor">
+      <name xml:lang="en">Users</name>
+    </element>
+    <element identifier="id-technologyservice-global-traffic-routing" xsi:type="TechnologyService">
+      <name xml:lang="en">Global traffic routing</name>
+      <documentation xml:lang="en">Health-checked DNS or anycast that sends users to the healthy region.</documentation>
+    </element>
+    <element identifier="id-location-region-a-primary" xsi:type="Location">
+      <name xml:lang="en">Region A (primary)</name>
+    </element>
+    <element identifier="id-location-region-b-standby" xsi:type="Location">
+      <name xml:lang="en">Region B (standby)</name>
+    </element>
+    <element identifier="id-node-application-cluster-a" xsi:type="Node">
+      <name xml:lang="en">Application cluster A</name>
+    </element>
+    <element identifier="id-node-primary-database" xsi:type="Node">
+      <name xml:lang="en">Primary database</name>
+    </element>
+    <element identifier="id-node-application-cluster-b" xsi:type="Node">
+      <name xml:lang="en">Application cluster B</name>
+      <documentation xml:lang="en">Running at reduced size; scales up on failover.</documentation>
+    </element>
+    <element identifier="id-node-standby-database" xsi:type="Node">
+      <name xml:lang="en">Standby database</name>
+      <documentation xml:lang="en">Continuously replicated replica, promoted on failover.</documentation>
+    </element>
+    <element identifier="id-requirement-recovery-time-objective-15-minutes" xsi:type="Requirement">
+      <name xml:lang="en">Recovery time objective: 15 minutes</name>
+    </element>
+    <element identifier="id-requirement-recovery-point-objective-under-1-minute-of-data" xsi:type="Requirement">
+      <name xml:lang="en">Recovery point objective: under 1 minute of data</name>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="id-rel-001" source="id-technologyservice-global-traffic-routing" target="id-businessactor-users" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-002" source="id-technologyservice-global-traffic-routing" target="id-node-application-cluster-a" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-003" source="id-technologyservice-global-traffic-routing" target="id-node-application-cluster-b" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-004" source="id-node-primary-database" target="id-node-application-cluster-a" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-005" source="id-node-standby-database" target="id-node-application-cluster-b" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-006" source="id-node-primary-database" target="id-node-standby-database" xsi:type="Flow">
+      <name xml:lang="en">replication</name>
+    </relationship>
+    <relationship identifier="id-rel-007" source="id-technologyservice-global-traffic-routing" target="id-requirement-recovery-time-objective-15-minutes" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-008" source="id-node-standby-database" target="id-requirement-recovery-point-objective-under-1-minute-of-data" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-009" source="id-location-region-a-primary" target="id-node-application-cluster-a" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-010" source="id-location-region-a-primary" target="id-node-primary-database" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-011" source="id-location-region-b-standby" target="id-node-application-cluster-b" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-012" source="id-location-region-b-standby" target="id-node-standby-database" xsi:type="Aggregation">
+    </relationship>
+  </relationships>
+  <organizations>
+    <item><label xml:lang="en">Business</label>
+      <item identifierRef="id-businessactor-users"/>
+    </item>
+    <item><label xml:lang="en">Technology</label>
+      <item identifierRef="id-technologyservice-global-traffic-routing"/>
+      <item identifierRef="id-node-application-cluster-a"/>
+      <item identifierRef="id-node-primary-database"/>
+      <item identifierRef="id-node-application-cluster-b"/>
+      <item identifierRef="id-node-standby-database"/>
+    </item>
+    <item><label xml:lang="en">Motivation</label>
+      <item identifierRef="id-requirement-recovery-time-objective-15-minutes"/>
+      <item identifierRef="id-requirement-recovery-point-objective-under-1-minute-of-data"/>
+    </item>
+    <item><label xml:lang="en">Other</label>
+      <item identifierRef="id-location-region-a-primary"/>
+      <item identifierRef="id-location-region-b-standby"/>
+    </item>
+    <item><label xml:lang="en">Relations</label>
+      <item identifierRef="id-rel-001"/>
+      <item identifierRef="id-rel-002"/>
+      <item identifierRef="id-rel-003"/>
+      <item identifierRef="id-rel-004"/>
+      <item identifierRef="id-rel-005"/>
+      <item identifierRef="id-rel-006"/>
+      <item identifierRef="id-rel-007"/>
+      <item identifierRef="id-rel-008"/>
+      <item identifierRef="id-rel-009"/>
+      <item identifierRef="id-rel-010"/>
+      <item identifierRef="id-rel-011"/>
+      <item identifierRef="id-rel-012"/>
+    </item>
+    <item><label xml:lang="en">Views</label>
+      <item identifierRef="id-view-two-regions-one-standby"/>
+    </item>
+  </organizations>
+  <views>
+    <diagrams>
+      <view identifier="id-view-two-regions-one-standby" xsi:type="Diagram">
+        <name xml:lang="en">Two regions, one standby</name>
+        <documentation xml:lang="en">Continuous replication to a standby region, with traffic routing that fails over when the primary is unhealthy.</documentation>
+        <node identifier="id-view-two-regions-one-standby-n1" elementRef="id-businessactor-users" xsi:type="Element" x="400" y="20" w="180" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-two-regions-one-standby-n2" elementRef="id-technologyservice-global-traffic-routing" xsi:type="Element" x="400" y="130" w="180" h="55">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-two-regions-one-standby-n3" elementRef="id-requirement-recovery-time-objective-15-minutes" xsi:type="Element" x="760" y="130" w="180" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-two-regions-one-standby-n4" elementRef="id-location-region-a-primary" xsi:type="Element" x="20" y="250" w="300" h="260">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-two-regions-one-standby-n5" elementRef="id-node-application-cluster-a" xsi:type="Element" x="80" y="300" w="180" h="55">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-two-regions-one-standby-n6" elementRef="id-node-primary-database" xsi:type="Element" x="80" y="420" w="180" h="55">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-two-regions-one-standby-n7" elementRef="id-location-region-b-standby" xsi:type="Element" x="560" y="250" w="300" h="260">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-two-regions-one-standby-n8" elementRef="id-node-application-cluster-b" xsi:type="Element" x="620" y="300" w="180" h="55">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-two-regions-one-standby-n9" elementRef="id-node-standby-database" xsi:type="Element" x="620" y="420" w="180" h="55">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-two-regions-one-standby-n10" elementRef="id-requirement-recovery-point-objective-under-1-minute-of-data" xsi:type="Element" x="590" y="570" w="240" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-two-regions-one-standby-c1" relationshipRef="id-rel-001" xsi:type="Relationship" source="id-view-two-regions-one-standby-n2" target="id-view-two-regions-one-standby-n1"/>
+        <connection identifier="id-view-two-regions-one-standby-c2" relationshipRef="id-rel-002" xsi:type="Relationship" source="id-view-two-regions-one-standby-n2" target="id-view-two-regions-one-standby-n5"/>
+        <connection identifier="id-view-two-regions-one-standby-c3" relationshipRef="id-rel-003" xsi:type="Relationship" source="id-view-two-regions-one-standby-n2" target="id-view-two-regions-one-standby-n8"/>
+        <connection identifier="id-view-two-regions-one-standby-c4" relationshipRef="id-rel-004" xsi:type="Relationship" source="id-view-two-regions-one-standby-n6" target="id-view-two-regions-one-standby-n5"/>
+        <connection identifier="id-view-two-regions-one-standby-c5" relationshipRef="id-rel-005" xsi:type="Relationship" source="id-view-two-regions-one-standby-n9" target="id-view-two-regions-one-standby-n8"/>
+        <connection identifier="id-view-two-regions-one-standby-c6" relationshipRef="id-rel-006" xsi:type="Relationship" source="id-view-two-regions-one-standby-n6" target="id-view-two-regions-one-standby-n9"/>
+        <connection identifier="id-view-two-regions-one-standby-c7" relationshipRef="id-rel-007" xsi:type="Relationship" source="id-view-two-regions-one-standby-n2" target="id-view-two-regions-one-standby-n3"/>
+        <connection identifier="id-view-two-regions-one-standby-c8" relationshipRef="id-rel-008" xsi:type="Relationship" source="id-view-two-regions-one-standby-n9" target="id-view-two-regions-one-standby-n10"/>
+      </view>
+    </diagrams>
+  </views>
+</model>

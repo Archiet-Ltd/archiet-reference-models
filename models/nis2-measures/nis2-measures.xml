@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="id-nis2-measures" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd">
+  <name xml:lang="en">NIS2 Cybersecurity Risk-Management Measures (starter)</name>
+  <documentation xml:lang="en">The ten cybersecurity risk-management measures of Article 21(2) of the NIS2 Directive (EU) 2022/2555, the governance duty of Article 20 and the incident reporting stages of Article 23, each traced to the control that realizes it. Replace the example controls with your own processes and systems; a requirement left without a realizing control is a gap. This model is a structuring aid, not legal advice: confirm scope and national transposition with your compliance team.</documentation>
+  <elements>
+    <element identifier="id-driver-nis2-directive-eu-2022-2555" xsi:type="Driver">
+      <name xml:lang="en">NIS2 Directive (EU) 2022/2555</name>
+      <documentation xml:lang="en">Applies to essential and important entities in the sectors of Annexes I and II, as transposed into national law by member states from 18 October 2024.</documentation>
+    </element>
+    <element identifier="id-stakeholder-management-body" xsi:type="Stakeholder">
+      <name xml:lang="en">Management body</name>
+      <documentation xml:lang="en">Approves the cybersecurity risk-management measures, oversees their implementation and can be held liable for infringements (Article 20).</documentation>
+    </element>
+    <element identifier="id-goal-appropriate-and-proportionate-cybersecurity-risk-management" xsi:type="Goal">
+      <name xml:lang="en">Appropriate and proportionate cybersecurity risk management</name>
+      <documentation xml:lang="en">Article 21(1): technical, operational and organisational measures to manage the risks to the security of network and information systems, and to prevent or minimise the impact of incidents.</documentation>
+    </element>
+    <element identifier="id-requirement-article-21-2-measures" xsi:type="Requirement">
+      <name xml:lang="en">Article 21(2) measures</name>
+      <documentation xml:lang="en">The minimum set of measures, based on an all-hazards approach.</documentation>
+    </element>
+    <element identifier="id-requirement-21-2-a-risk-analysis-and-information-system-security-policies" xsi:type="Requirement">
+      <name xml:lang="en">21(2)(a) Risk analysis and information system security policies</name>
+      <documentation xml:lang="en">Policies on risk analysis and information system security.</documentation>
+    </element>
+    <element identifier="id-businessprocess-information-security-risk-assessment" xsi:type="BusinessProcess">
+      <name xml:lang="en">Information security risk assessment</name>
+      <documentation xml:lang="en">Example control. Replace with the process or system that meets this measure in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-21-2-b-incident-handling" xsi:type="Requirement">
+      <name xml:lang="en">21(2)(b) Incident handling</name>
+      <documentation xml:lang="en">Incident handling.</documentation>
+    </element>
+    <element identifier="id-businessprocess-security-incident-response" xsi:type="BusinessProcess">
+      <name xml:lang="en">Security incident response</name>
+      <documentation xml:lang="en">Example control. Replace with the process or system that meets this measure in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-21-2-c-business-continuity-and-crisis-management" xsi:type="Requirement">
+      <name xml:lang="en">21(2)(c) Business continuity and crisis management</name>
+      <documentation xml:lang="en">Business continuity, such as backup management and disaster recovery, and crisis management.</documentation>
+    </element>
+    <element identifier="id-businessprocess-backup-disaster-recovery-and-crisis-management" xsi:type="BusinessProcess">
+      <name xml:lang="en">Backup, disaster recovery and crisis management</name>
+      <documentation xml:lang="en">Example control. Replace with the process or system that meets this measure in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-21-2-d-supply-chain-security" xsi:type="Requirement">
+      <name xml:lang="en">21(2)(d) Supply chain security</name>
+      <documentation xml:lang="en">Supply chain security, including security-related aspects of the relationships with direct suppliers or service providers.</documentation>
+    </element>
+    <element identifier="id-businessprocess-supplier-security-assessment" xsi:type="BusinessProcess">
+      <name xml:lang="en">Supplier security assessment</name>
+      <documentation xml:lang="en">Example control. Replace with the process or system that meets this measure in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-21-2-e-secure-acquisition-development-and-maintenance" xsi:type="Requirement">
+      <name xml:lang="en">21(2)(e) Secure acquisition, development and maintenance</name>
+      <documentation xml:lang="en">Security in network and information systems acquisition, development and maintenance, including vulnerability handling and disclosure.</documentation>
+    </element>
+    <element identifier="id-businessprocess-secure-development-and-vulnerability-management" xsi:type="BusinessProcess">
+      <name xml:lang="en">Secure development and vulnerability management</name>
+      <documentation xml:lang="en">Example control. Replace with the process or system that meets this measure in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-21-2-f-effectiveness-assessment" xsi:type="Requirement">
+      <name xml:lang="en">21(2)(f) Effectiveness assessment</name>
+      <documentation xml:lang="en">Policies and procedures to assess the effectiveness of cybersecurity risk-management measures.</documentation>
+    </element>
+    <element identifier="id-businessprocess-control-effectiveness-review" xsi:type="BusinessProcess">
+      <name xml:lang="en">Control effectiveness review</name>
+      <documentation xml:lang="en">Example control. Replace with the process or system that meets this measure in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-21-2-g-cyber-hygiene-and-training" xsi:type="Requirement">
+      <name xml:lang="en">21(2)(g) Cyber hygiene and training</name>
+      <documentation xml:lang="en">Basic cyber hygiene practices and cybersecurity training.</documentation>
+    </element>
+    <element identifier="id-businessprocess-security-awareness-and-hygiene-programme" xsi:type="BusinessProcess">
+      <name xml:lang="en">Security awareness and hygiene programme</name>
+      <documentation xml:lang="en">Example control. Replace with the process or system that meets this measure in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-21-2-h-cryptography-and-encryption" xsi:type="Requirement">
+      <name xml:lang="en">21(2)(h) Cryptography and encryption</name>
+      <documentation xml:lang="en">Policies and procedures regarding the use of cryptography and, where appropriate, encryption.</documentation>
+    </element>
+    <element identifier="id-applicationservice-key-and-certificate-management" xsi:type="ApplicationService">
+      <name xml:lang="en">Key and certificate management</name>
+      <documentation xml:lang="en">Example control. Replace with the process or system that meets this measure in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-21-2-i-hr-security-access-control-and-asset-management" xsi:type="Requirement">
+      <name xml:lang="en">21(2)(i) HR security, access control and asset management</name>
+      <documentation xml:lang="en">Human resources security, access control policies and asset management.</documentation>
+    </element>
+    <element identifier="id-applicationservice-identity-and-access-management" xsi:type="ApplicationService">
+      <name xml:lang="en">Identity and access management</name>
+      <documentation xml:lang="en">Example control. Replace with the process or system that meets this measure in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-21-2-j-multi-factor-authentication-and-secured-communications" xsi:type="Requirement">
+      <name xml:lang="en">21(2)(j) Multi-factor authentication and secured communications</name>
+      <documentation xml:lang="en">The use of multi-factor authentication or continuous authentication solutions, secured voice, video and text communications and secured emergency communication systems within the entity, where appropriate.</documentation>
+    </element>
+    <element identifier="id-applicationservice-multi-factor-authentication" xsi:type="ApplicationService">
+      <name xml:lang="en">Multi-factor authentication</name>
+      <documentation xml:lang="en">Example control. Replace with the process or system that meets this measure in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-article-20-governance-and-training" xsi:type="Requirement">
+      <name xml:lang="en">Article 20 governance and training</name>
+      <documentation xml:lang="en">Management bodies approve the measures, oversee implementation and follow cybersecurity training; entities are encouraged to offer similar training to employees regularly.</documentation>
+    </element>
+    <element identifier="id-businessprocess-board-cyber-risk-oversight" xsi:type="BusinessProcess">
+      <name xml:lang="en">Board cyber risk oversight</name>
+      <documentation xml:lang="en">Example control: periodic board review of cyber risk, measures and training records.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-article-23-incident-reporting" xsi:type="Requirement">
+      <name xml:lang="en">Article 23 incident reporting</name>
+      <documentation xml:lang="en">Significant incidents are reported to the CSIRT or competent authority in stages: an early warning within 24 hours of becoming aware, an incident notification within 72 hours, and a final report within one month of the notification.</documentation>
+    </element>
+    <element identifier="id-businessprocess-significant-incident-notification" xsi:type="BusinessProcess">
+      <name xml:lang="en">Significant incident notification</name>
+      <documentation xml:lang="en">Example control: classify incidents against the significance criteria and file the early warning, notification and final report on time.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="id-rel-001" source="id-stakeholder-management-body" target="id-driver-nis2-directive-eu-2022-2555" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-002" source="id-driver-nis2-directive-eu-2022-2555" target="id-goal-appropriate-and-proportionate-cybersecurity-risk-management" xsi:type="Influence">
+    </relationship>
+    <relationship identifier="id-rel-003" source="id-requirement-article-21-2-measures" target="id-goal-appropriate-and-proportionate-cybersecurity-risk-management" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-004" source="id-requirement-article-21-2-measures" target="id-requirement-21-2-a-risk-analysis-and-information-system-security-policies" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-005" source="id-businessprocess-information-security-risk-assessment" target="id-requirement-21-2-a-risk-analysis-and-information-system-security-policies" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-006" source="id-requirement-article-21-2-measures" target="id-requirement-21-2-b-incident-handling" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-007" source="id-businessprocess-security-incident-response" target="id-requirement-21-2-b-incident-handling" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-008" source="id-requirement-article-21-2-measures" target="id-requirement-21-2-c-business-continuity-and-crisis-management" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-009" source="id-businessprocess-backup-disaster-recovery-and-crisis-management" target="id-requirement-21-2-c-business-continuity-and-crisis-management" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-010" source="id-requirement-article-21-2-measures" target="id-requirement-21-2-d-supply-chain-security" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-011" source="id-businessprocess-supplier-security-assessment" target="id-requirement-21-2-d-supply-chain-security" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-012" source="id-requirement-article-21-2-measures" target="id-requirement-21-2-e-secure-acquisition-development-and-maintenance" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-013" source="id-businessprocess-secure-development-and-vulnerability-management" target="id-requirement-21-2-e-secure-acquisition-development-and-maintenance" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-014" source="id-requirement-article-21-2-measures" target="id-requirement-21-2-f-effectiveness-assessment" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-015" source="id-businessprocess-control-effectiveness-review" target="id-requirement-21-2-f-effectiveness-assessment" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-016" source="id-requirement-article-21-2-measures" target="id-requirement-21-2-g-cyber-hygiene-and-training" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-017" source="id-businessprocess-security-awareness-and-hygiene-programme" target="id-requirement-21-2-g-cyber-hygiene-and-training" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-018" source="id-requirement-article-21-2-measures" target="id-requirement-21-2-h-cryptography-and-encryption" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-019" source="id-applicationservice-key-and-certificate-management" target="id-requirement-21-2-h-cryptography-and-encryption" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-020" source="id-requirement-article-21-2-measures" target="id-requirement-21-2-i-hr-security-access-control-and-asset-management" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-021" source="id-applicationservice-identity-and-access-management" target="id-requirement-21-2-i-hr-security-access-control-and-asset-management" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-022" source="id-requirement-article-21-2-measures" target="id-requirement-21-2-j-multi-factor-authentication-and-secured-communications" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-023" source="id-applicationservice-multi-factor-authentication" target="id-requirement-21-2-j-multi-factor-authentication-and-secured-communications" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-024" source="id-requirement-article-20-governance-and-training" target="id-goal-appropriate-and-proportionate-cybersecurity-risk-management" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-025" source="id-businessprocess-board-cyber-risk-oversight" target="id-requirement-article-20-governance-and-training" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-026" source="id-requirement-article-23-incident-reporting" target="id-goal-appropriate-and-proportionate-cybersecurity-risk-management" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-027" source="id-businessprocess-significant-incident-notification" target="id-requirement-article-23-incident-reporting" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-028" source="id-businessprocess-security-incident-response" target="id-businessprocess-significant-incident-notification" xsi:type="Triggering">
+    </relationship>
+  </relationships>
+  <organizations>
+    <item><label xml:lang="en">Business</label>
+      <item identifierRef="id-businessprocess-information-security-risk-assessment"/>
+      <item identifierRef="id-businessprocess-security-incident-response"/>
+      <item identifierRef="id-businessprocess-backup-disaster-recovery-and-crisis-management"/>
+      <item identifierRef="id-businessprocess-supplier-security-assessment"/>
+      <item identifierRef="id-businessprocess-secure-development-and-vulnerability-management"/>
+      <item identifierRef="id-businessprocess-control-effectiveness-review"/>
+      <item identifierRef="id-businessprocess-security-awareness-and-hygiene-programme"/>
+      <item identifierRef="id-businessprocess-board-cyber-risk-oversight"/>
+      <item identifierRef="id-businessprocess-significant-incident-notification"/>
+    </item>
+    <item><label xml:lang="en">Application</label>
+      <item identifierRef="id-applicationservice-key-and-certificate-management"/>
+      <item identifierRef="id-applicationservice-identity-and-access-management"/>
+      <item identifierRef="id-applicationservice-multi-factor-authentication"/>
+    </item>
+    <item><label xml:lang="en">Motivation</label>
+      <item identifierRef="id-driver-nis2-directive-eu-2022-2555"/>
+      <item identifierRef="id-stakeholder-management-body"/>
+      <item identifierRef="id-goal-appropriate-and-proportionate-cybersecurity-risk-management"/>
+      <item identifierRef="id-requirement-article-21-2-measures"/>
+      <item identifierRef="id-requirement-21-2-a-risk-analysis-and-information-system-security-policies"/>
+      <item identifierRef="id-requirement-21-2-b-incident-handling"/>
+      <item identifierRef="id-requirement-21-2-c-business-continuity-and-crisis-management"/>
+      <item identifierRef="id-requirement-21-2-d-supply-chain-security"/>
+      <item identifierRef="id-requirement-21-2-e-secure-acquisition-development-and-maintenance"/>
+      <item identifierRef="id-requirement-21-2-f-effectiveness-assessment"/>
+      <item identifierRef="id-requirement-21-2-g-cyber-hygiene-and-training"/>
+      <item identifierRef="id-requirement-21-2-h-cryptography-and-encryption"/>
+      <item identifierRef="id-requirement-21-2-i-hr-security-access-control-and-asset-management"/>
+      <item identifierRef="id-requirement-21-2-j-multi-factor-authentication-and-secured-communications"/>
+      <item identifierRef="id-requirement-article-20-governance-and-training"/>
+      <item identifierRef="id-requirement-article-23-incident-reporting"/>
+    </item>
+    <item><label xml:lang="en">Relations</label>
+      <item identifierRef="id-rel-001"/>
+      <item identifierRef="id-rel-002"/>
+      <item identifierRef="id-rel-003"/>
+      <item identifierRef="id-rel-004"/>
+      <item identifierRef="id-rel-005"/>
+      <item identifierRef="id-rel-006"/>
+      <item identifierRef="id-rel-007"/>
+      <item identifierRef="id-rel-008"/>
+      <item identifierRef="id-rel-009"/>
+      <item identifierRef="id-rel-010"/>
+      <item identifierRef="id-rel-011"/>
+      <item identifierRef="id-rel-012"/>
+      <item identifierRef="id-rel-013"/>
+      <item identifierRef="id-rel-014"/>
+      <item identifierRef="id-rel-015"/>
+      <item identifierRef="id-rel-016"/>
+      <item identifierRef="id-rel-017"/>
+      <item identifierRef="id-rel-018"/>
+      <item identifierRef="id-rel-019"/>
+      <item identifierRef="id-rel-020"/>
+      <item identifierRef="id-rel-021"/>
+      <item identifierRef="id-rel-022"/>
+      <item identifierRef="id-rel-023"/>
+      <item identifierRef="id-rel-024"/>
+      <item identifierRef="id-rel-025"/>
+      <item identifierRef="id-rel-026"/>
+      <item identifierRef="id-rel-027"/>
+      <item identifierRef="id-rel-028"/>
+    </item>
+    <item><label xml:lang="en">Views</label>
+      <item identifierRef="id-view-nis2-measures-and-controls"/>
+    </item>
+  </organizations>
+  <propertyDefinitions>
+    <propertyDefinition identifier="propid-1" type="string"><name xml:lang="en">Control owner</name></propertyDefinition>
+    <propertyDefinition identifier="propid-2" type="string"><name xml:lang="en">Evidence location</name></propertyDefinition>
+  </propertyDefinitions>
+  <views>
+    <diagrams>
+      <view identifier="id-view-nis2-measures-and-controls" xsi:type="Diagram" viewpoint="Motivation">
+        <name xml:lang="en">NIS2 measures and controls</name>
+        <documentation xml:lang="en">Each Article 21(2) measure with the control that realizes it, plus the governance and reporting duties. Fill in the owner and evidence location of every control; that pair is what an auditor asks for first.</documentation>
+        <node identifier="id-view-nis2-measures-and-controls-n1" elementRef="id-stakeholder-management-body" xsi:type="Element" x="20" y="20" w="170" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n2" elementRef="id-driver-nis2-directive-eu-2022-2555" xsi:type="Element" x="230" y="20" w="210" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n3" elementRef="id-goal-appropriate-and-proportionate-cybersecurity-risk-management" xsi:type="Element" x="480" y="20" w="820" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n4" elementRef="id-requirement-article-21-2-measures" xsi:type="Element" x="480" y="120" w="280" h="50">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n5" elementRef="id-requirement-article-20-governance-and-training" xsi:type="Element" x="820" y="120" w="220" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n6" elementRef="id-requirement-article-23-incident-reporting" xsi:type="Element" x="1080" y="120" w="220" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n7" elementRef="id-businessprocess-board-cyber-risk-oversight" xsi:type="Element" x="820" y="230" w="220" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n8" elementRef="id-businessprocess-significant-incident-notification" xsi:type="Element" x="1080" y="230" w="220" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n9" elementRef="id-requirement-21-2-a-risk-analysis-and-information-system-security-policies" xsi:type="Element" x="20" y="330" w="230" h="80">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n10" elementRef="id-businessprocess-information-security-risk-assessment" xsi:type="Element" x="20" y="455" w="230" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n11" elementRef="id-requirement-21-2-b-incident-handling" xsi:type="Element" x="265" y="330" w="230" h="80">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n12" elementRef="id-businessprocess-security-incident-response" xsi:type="Element" x="265" y="455" w="230" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n13" elementRef="id-requirement-21-2-c-business-continuity-and-crisis-management" xsi:type="Element" x="510" y="330" w="230" h="80">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n14" elementRef="id-businessprocess-backup-disaster-recovery-and-crisis-management" xsi:type="Element" x="510" y="455" w="230" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n15" elementRef="id-requirement-21-2-d-supply-chain-security" xsi:type="Element" x="755" y="330" w="230" h="80">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n16" elementRef="id-businessprocess-supplier-security-assessment" xsi:type="Element" x="755" y="455" w="230" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n17" elementRef="id-requirement-21-2-e-secure-acquisition-development-and-maintenance" xsi:type="Element" x="1000" y="330" w="230" h="80">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n18" elementRef="id-businessprocess-secure-development-and-vulnerability-management" xsi:type="Element" x="1000" y="455" w="230" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n19" elementRef="id-requirement-21-2-f-effectiveness-assessment" xsi:type="Element" x="20" y="560" w="230" h="80">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n20" elementRef="id-businessprocess-control-effectiveness-review" xsi:type="Element" x="20" y="685" w="230" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n21" elementRef="id-requirement-21-2-g-cyber-hygiene-and-training" xsi:type="Element" x="265" y="560" w="230" h="80">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n22" elementRef="id-businessprocess-security-awareness-and-hygiene-programme" xsi:type="Element" x="265" y="685" w="230" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n23" elementRef="id-requirement-21-2-h-cryptography-and-encryption" xsi:type="Element" x="510" y="560" w="230" h="80">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n24" elementRef="id-applicationservice-key-and-certificate-management" xsi:type="Element" x="510" y="685" w="230" h="60">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n25" elementRef="id-requirement-21-2-i-hr-security-access-control-and-asset-management" xsi:type="Element" x="755" y="560" w="230" h="80">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n26" elementRef="id-applicationservice-identity-and-access-management" xsi:type="Element" x="755" y="685" w="230" h="60">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n27" elementRef="id-requirement-21-2-j-multi-factor-authentication-and-secured-communications" xsi:type="Element" x="1000" y="560" w="230" h="80">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-nis2-measures-and-controls-n28" elementRef="id-applicationservice-multi-factor-authentication" xsi:type="Element" x="1000" y="685" w="230" h="60">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-nis2-measures-and-controls-c1" relationshipRef="id-rel-001" xsi:type="Relationship" source="id-view-nis2-measures-and-controls-n1" target="id-view-nis2-measures-and-controls-n2"/>
+        <connection identifier="id-view-nis2-measures-and-controls-c2" relationshipRef="id-rel-002" xsi:type="Relationship" source="id-view-nis2-measures-and-controls-n2" target="id-view-nis2-measures-and-controls-n3"/>
+        <connection identifier="id-view-nis2-measures-and-controls-c3" relationshipRef="id-rel-003" xsi:type="Relationship" source="id-view-nis2-measures-and-controls-n4" target="id-view-nis2-measures-and-controls-n3"/>
+        <connection identifier="id-view-nis2-measures-and-controls-c4" relationshipRef="id-rel-005" xsi:type="Relationship" source="id-view-nis2-measures-and-controls-n10" target="id-view-nis2-measures-and-controls-n9"/>
+        <connection identifier="id-view-nis2-measures-and-controls-c5" relationshipRef="id-rel-007" xsi:type="Relationship" source="id-view-nis2-measures-and-controls-n12" target="id-view-nis2-measures-and-controls-n11"/>
+        <connection identifier="id-view-nis2-measures-and-controls-c6" relationshipRef="id-rel-009" xsi:type="Relationship" source="id-view-nis2-measures-and-controls-n14" target="id-view-nis2-measures-and-controls-n13"/>
+        <connection identifier="id-view-nis2-measures-and-controls-c7" relationshipRef="id-rel-011" xsi:type="Relationship" source="id-view-nis2-measures-and-controls-n16" target="id-view-nis2-measures-and-controls-n15"/>
+        <connection identifier="id-view-nis2-measures-and-controls-c8" relationshipRef="id-rel-013" xsi:type="Relationship" source="id-view-nis2-measures-and-controls-n18" target="id-view-nis2-measures-and-controls-n17"/>
+        <connection identifier="id-view-nis2-measures-and-controls-c9" relationshipRef="id-rel-015" xsi:type="Relationship" source="id-view-nis2-measures-and-controls-n20" target="id-view-nis2-measures-and-controls-n19"/>
+        <connection identifier="id-view-nis2-measures-and-controls-c10" relationshipRef="id-rel-017" xsi:type="Relationship" source="id-view-nis2-measures-and-controls-n22" target="id-view-nis2-measures-and-controls-n21"/>
+        <connection identifier="id-view-nis2-measures-and-controls-c11" relationshipRef="id-rel-019" xsi:type="Relationship" source="id-view-nis2-measures-and-controls-n24" target="id-view-nis2-measures-and-controls-n23"/>
+        <connection identifier="id-view-nis2-measures-and-controls-c12" relationshipRef="id-rel-021" xsi:type="Relationship" source="id-view-nis2-measures-and-controls-n26" target="id-view-nis2-measures-and-controls-n25"/>
+        <connection identifier="id-view-nis2-measures-and-controls-c13" relationshipRef="id-rel-023" xsi:type="Relationship" source="id-view-nis2-measures-and-controls-n28" target="id-view-nis2-measures-and-controls-n27"/>
+        <connection identifier="id-view-nis2-measures-and-controls-c14" relationshipRef="id-rel-024" xsi:type="Relationship" source="id-view-nis2-measures-and-controls-n5" target="id-view-nis2-measures-and-controls-n3"/>
+        <connection identifier="id-view-nis2-measures-and-controls-c15" relationshipRef="id-rel-025" xsi:type="Relationship" source="id-view-nis2-measures-and-controls-n7" target="id-view-nis2-measures-and-controls-n5"/>
+        <connection identifier="id-view-nis2-measures-and-controls-c16" relationshipRef="id-rel-026" xsi:type="Relationship" source="id-view-nis2-measures-and-controls-n6" target="id-view-nis2-measures-and-controls-n3"/>
+        <connection identifier="id-view-nis2-measures-and-controls-c17" relationshipRef="id-rel-027" xsi:type="Relationship" source="id-view-nis2-measures-and-controls-n8" target="id-view-nis2-measures-and-controls-n6"/>
+      </view>
+    </diagrams>
+  </views>
+</model>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="id-multi-tenant-saas" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd">
+  <name xml:lang="en">Multi-Tenant SaaS</name>
+  <documentation xml:lang="en">One application serving many customer organisations (tenants) from shared infrastructure, with tenant isolation enforced in the data layer. Standard tenants share a pooled database protected by row-level security; premium or regulated tenants get a dedicated database. The tenant catalog records where every tenant lives, so the same code serves both.</documentation>
+  <elements>
+    <element identifier="id-businessactor-tenant-users" xsi:type="BusinessActor">
+      <name xml:lang="en">Tenant users</name>
+      <documentation xml:lang="en">People from many customer organisations using one product.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-identity-and-tenant-resolution" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Identity and tenant resolution</name>
+      <documentation xml:lang="en">Signs users in and stamps every token with the tenant it belongs to. Nothing downstream trusts a tenant id from the request body.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-api-gateway" xsi:type="ApplicationComponent">
+      <name xml:lang="en">API gateway</name>
+      <documentation xml:lang="en">Single entry point. Validates the token, applies per-tenant rate limits so one noisy tenant cannot starve the rest, and passes tenant context on.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-tenant-administration-and-billing" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Tenant administration and billing</name>
+      <documentation xml:lang="en">Sign-up, plans, seats and usage metering per tenant.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-application-services" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Application services</name>
+      <documentation xml:lang="en">Stateless business logic. Every call carries tenant context; no service holds tenant state.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-background-workers" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Background workers</name>
+      <documentation xml:lang="en">Asynchronous jobs, queued per tenant so one tenant's backlog does not delay another's.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-tenant-aware-data-access" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Tenant-aware data access</name>
+      <documentation xml:lang="en">The one place tenant isolation is enforced: sets the tenant on every connection and routes each tenant to its pooled or dedicated store using the tenant catalog.</documentation>
+    </element>
+    <element identifier="id-node-container-platform" xsi:type="Node">
+      <name xml:lang="en">Container platform</name>
+      <documentation xml:lang="en">Runs the stateless services and scales them horizontally.</documentation>
+    </element>
+    <element identifier="id-technologyservice-managed-relational-database" xsi:type="TechnologyService">
+      <name xml:lang="en">Managed relational database</name>
+    </element>
+    <element identifier="id-technologyservice-message-queue" xsi:type="TechnologyService">
+      <name xml:lang="en">Message queue</name>
+    </element>
+    <element identifier="id-grouping-standard-tenants-pooled" xsi:type="Grouping">
+      <name xml:lang="en">Standard tenants: pooled</name>
+    </element>
+    <element identifier="id-grouping-premium-tenants-dedicated" xsi:type="Grouping">
+      <name xml:lang="en">Premium tenants: dedicated</name>
+    </element>
+    <element identifier="id-dataobject-shared-database-with-row-level-security" xsi:type="DataObject">
+      <name xml:lang="en">Shared database with row-level security</name>
+      <documentation xml:lang="en">Every row carries a tenant id and the database itself refuses cross-tenant reads.</documentation>
+    </element>
+    <element identifier="id-dataobject-dedicated-tenant-database" xsi:type="DataObject">
+      <name xml:lang="en">Dedicated tenant database</name>
+      <documentation xml:lang="en">One database per tenant, for data residency, contractual isolation or very large tenants.</documentation>
+    </element>
+    <element identifier="id-dataobject-tenant-catalog" xsi:type="DataObject">
+      <name xml:lang="en">Tenant catalog</name>
+      <documentation xml:lang="en">Tenant, plan, region and which store holds its data.</documentation>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="id-rel-001" source="id-applicationcomponent-api-gateway" target="id-businessactor-tenant-users" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-002" source="id-applicationcomponent-identity-and-tenant-resolution" target="id-applicationcomponent-api-gateway" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-003" source="id-applicationcomponent-api-gateway" target="id-applicationcomponent-tenant-administration-and-billing" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-004" source="id-applicationcomponent-api-gateway" target="id-applicationcomponent-application-services" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-005" source="id-applicationcomponent-tenant-aware-data-access" target="id-applicationcomponent-application-services" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-006" source="id-applicationcomponent-tenant-aware-data-access" target="id-applicationcomponent-background-workers" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-007" source="id-technologyservice-message-queue" target="id-applicationcomponent-application-services" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-008" source="id-technologyservice-message-queue" target="id-applicationcomponent-background-workers" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-009" source="id-node-container-platform" target="id-applicationcomponent-application-services" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-010" source="id-technologyservice-managed-relational-database" target="id-applicationcomponent-tenant-aware-data-access" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-011" source="id-applicationcomponent-tenant-aware-data-access" target="id-dataobject-shared-database-with-row-level-security" xsi:type="Access" accessType="ReadWrite">
+    </relationship>
+    <relationship identifier="id-rel-012" source="id-applicationcomponent-tenant-aware-data-access" target="id-dataobject-dedicated-tenant-database" xsi:type="Access" accessType="ReadWrite">
+    </relationship>
+    <relationship identifier="id-rel-013" source="id-applicationcomponent-tenant-aware-data-access" target="id-dataobject-tenant-catalog" xsi:type="Access" accessType="ReadWrite">
+    </relationship>
+    <relationship identifier="id-rel-014" source="id-applicationcomponent-tenant-administration-and-billing" target="id-dataobject-tenant-catalog" xsi:type="Access" accessType="ReadWrite">
+    </relationship>
+    <relationship identifier="id-rel-015" source="id-grouping-standard-tenants-pooled" target="id-dataobject-shared-database-with-row-level-security" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-016" source="id-grouping-premium-tenants-dedicated" target="id-dataobject-dedicated-tenant-database" xsi:type="Aggregation">
+    </relationship>
+  </relationships>
+  <organizations>
+    <item><label xml:lang="en">Business</label>
+      <item identifierRef="id-businessactor-tenant-users"/>
+    </item>
+    <item><label xml:lang="en">Application</label>
+      <item identifierRef="id-applicationcomponent-identity-and-tenant-resolution"/>
+      <item identifierRef="id-applicationcomponent-api-gateway"/>
+      <item identifierRef="id-applicationcomponent-tenant-administration-and-billing"/>
+      <item identifierRef="id-applicationcomponent-application-services"/>
+      <item identifierRef="id-applicationcomponent-background-workers"/>
+      <item identifierRef="id-applicationcomponent-tenant-aware-data-access"/>
+      <item identifierRef="id-dataobject-shared-database-with-row-level-security"/>
+      <item identifierRef="id-dataobject-dedicated-tenant-database"/>
+      <item identifierRef="id-dataobject-tenant-catalog"/>
+    </item>
+    <item><label xml:lang="en">Technology</label>
+      <item identifierRef="id-node-container-platform"/>
+      <item identifierRef="id-technologyservice-managed-relational-database"/>
+      <item identifierRef="id-technologyservice-message-queue"/>
+    </item>
+    <item><label xml:lang="en">Other</label>
+      <item identifierRef="id-grouping-standard-tenants-pooled"/>
+      <item identifierRef="id-grouping-premium-tenants-dedicated"/>
+    </item>
+    <item><label xml:lang="en">Relations</label>
+      <item identifierRef="id-rel-001"/>
+      <item identifierRef="id-rel-002"/>
+      <item identifierRef="id-rel-003"/>
+      <item identifierRef="id-rel-004"/>
+      <item identifierRef="id-rel-005"/>
+      <item identifierRef="id-rel-006"/>
+      <item identifierRef="id-rel-007"/>
+      <item identifierRef="id-rel-008"/>
+      <item identifierRef="id-rel-009"/>
+      <item identifierRef="id-rel-010"/>
+      <item identifierRef="id-rel-011"/>
+      <item identifierRef="id-rel-012"/>
+      <item identifierRef="id-rel-013"/>
+      <item identifierRef="id-rel-014"/>
+      <item identifierRef="id-rel-015"/>
+      <item identifierRef="id-rel-016"/>
+    </item>
+    <item><label xml:lang="en">Views</label>
+      <item identifierRef="id-view-multi-tenant-saas"/>
+    </item>
+  </organizations>
+  <views>
+    <diagrams>
+      <view identifier="id-view-multi-tenant-saas" xsi:type="Diagram">
+        <name xml:lang="en">Multi-tenant SaaS</name>
+        <documentation xml:lang="en">Tenant context flows from the token through every layer; isolation is enforced once, in the data access layer.</documentation>
+        <node identifier="id-view-multi-tenant-saas-n1" elementRef="id-businessactor-tenant-users" xsi:type="Element" x="300" y="20" w="180" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-multi-tenant-saas-n2" elementRef="id-applicationcomponent-identity-and-tenant-resolution" xsi:type="Element" x="20" y="140" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-multi-tenant-saas-n3" elementRef="id-applicationcomponent-api-gateway" xsi:type="Element" x="300" y="140" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-multi-tenant-saas-n4" elementRef="id-applicationcomponent-tenant-administration-and-billing" xsi:type="Element" x="860" y="140" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-multi-tenant-saas-n5" elementRef="id-node-container-platform" xsi:type="Element" x="20" y="270" w="180" h="55">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-multi-tenant-saas-n6" elementRef="id-applicationcomponent-application-services" xsi:type="Element" x="300" y="270" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-multi-tenant-saas-n7" elementRef="id-technologyservice-message-queue" xsi:type="Element" x="580" y="270" w="180" h="55">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-multi-tenant-saas-n8" elementRef="id-technologyservice-managed-relational-database" xsi:type="Element" x="20" y="400" w="180" h="55">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-multi-tenant-saas-n9" elementRef="id-applicationcomponent-tenant-aware-data-access" xsi:type="Element" x="300" y="400" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-multi-tenant-saas-n10" elementRef="id-applicationcomponent-background-workers" xsi:type="Element" x="580" y="400" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-multi-tenant-saas-n11" elementRef="id-dataobject-tenant-catalog" xsi:type="Element" x="860" y="530" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-multi-tenant-saas-n12" elementRef="id-grouping-standard-tenants-pooled" xsi:type="Element" x="20" y="530" w="300" h="113">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-multi-tenant-saas-n13" elementRef="id-dataobject-shared-database-with-row-level-security" xsi:type="Element" x="40" y="568" w="260" h="55">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-multi-tenant-saas-n14" elementRef="id-grouping-premium-tenants-dedicated" xsi:type="Element" x="360" y="530" w="300" h="113">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-multi-tenant-saas-n15" elementRef="id-dataobject-dedicated-tenant-database" xsi:type="Element" x="380" y="568" w="260" h="55">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <connection identifier="id-view-multi-tenant-saas-c1" relationshipRef="id-rel-001" xsi:type="Relationship" source="id-view-multi-tenant-saas-n3" target="id-view-multi-tenant-saas-n1"/>
+        <connection identifier="id-view-multi-tenant-saas-c2" relationshipRef="id-rel-002" xsi:type="Relationship" source="id-view-multi-tenant-saas-n2" target="id-view-multi-tenant-saas-n3"/>
+        <connection identifier="id-view-multi-tenant-saas-c3" relationshipRef="id-rel-003" xsi:type="Relationship" source="id-view-multi-tenant-saas-n3" target="id-view-multi-tenant-saas-n4"/>
+        <connection identifier="id-view-multi-tenant-saas-c4" relationshipRef="id-rel-004" xsi:type="Relationship" source="id-view-multi-tenant-saas-n3" target="id-view-multi-tenant-saas-n6"/>
+        <connection identifier="id-view-multi-tenant-saas-c5" relationshipRef="id-rel-005" xsi:type="Relationship" source="id-view-multi-tenant-saas-n9" target="id-view-multi-tenant-saas-n6"/>
+        <connection identifier="id-view-multi-tenant-saas-c6" relationshipRef="id-rel-006" xsi:type="Relationship" source="id-view-multi-tenant-saas-n9" target="id-view-multi-tenant-saas-n10"/>
+        <connection identifier="id-view-multi-tenant-saas-c7" relationshipRef="id-rel-007" xsi:type="Relationship" source="id-view-multi-tenant-saas-n7" target="id-view-multi-tenant-saas-n6"/>
+        <connection identifier="id-view-multi-tenant-saas-c8" relationshipRef="id-rel-008" xsi:type="Relationship" source="id-view-multi-tenant-saas-n7" target="id-view-multi-tenant-saas-n10"/>
+        <connection identifier="id-view-multi-tenant-saas-c9" relationshipRef="id-rel-009" xsi:type="Relationship" source="id-view-multi-tenant-saas-n5" target="id-view-multi-tenant-saas-n6"/>
+        <connection identifier="id-view-multi-tenant-saas-c10" relationshipRef="id-rel-010" xsi:type="Relationship" source="id-view-multi-tenant-saas-n8" target="id-view-multi-tenant-saas-n9"/>
+        <connection identifier="id-view-multi-tenant-saas-c11" relationshipRef="id-rel-011" xsi:type="Relationship" source="id-view-multi-tenant-saas-n9" target="id-view-multi-tenant-saas-n13"/>
+        <connection identifier="id-view-multi-tenant-saas-c12" relationshipRef="id-rel-012" xsi:type="Relationship" source="id-view-multi-tenant-saas-n9" target="id-view-multi-tenant-saas-n15"/>
+        <connection identifier="id-view-multi-tenant-saas-c13" relationshipRef="id-rel-013" xsi:type="Relationship" source="id-view-multi-tenant-saas-n9" target="id-view-multi-tenant-saas-n11"/>
+        <connection identifier="id-view-multi-tenant-saas-c14" relationshipRef="id-rel-014" xsi:type="Relationship" source="id-view-multi-tenant-saas-n4" target="id-view-multi-tenant-saas-n11"/>
+      </view>
+    </diagrams>
+  </views>
+</model>
