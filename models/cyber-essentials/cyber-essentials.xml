@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="id-cyber-essentials" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd">
+  <name xml:lang="en">UK Cyber Essentials (starter)</name>
+  <documentation xml:lang="en">The five technical control themes of Cyber Essentials, the UK government-backed scheme run by the National Cyber Security Centre, each realized by example controls that are applied to the in-scope estate: network boundary, end user devices, servers and cloud services. It follows Cyber Essentials: Requirements for IT Infrastructure v3.3 (April 2026); Cyber Essentials Plus assesses the same requirements with hands-on technical verification. Requirements are paraphrased; the NCSC document is the reference. Replace the example professional services firm's estate with your own asset register: every in-scope device and cloud service needs each theme that applies to it covered by a control.</documentation>
+  <elements>
+    <element identifier="id-driver-cyber-essentials-requirements-for-it-infrastructure-v3-3" xsi:type="Driver">
+      <name xml:lang="en">Cyber Essentials: Requirements for IT Infrastructure v3.3</name>
+      <documentation xml:lang="en">Published by the NCSC in April 2026. Certification is awarded by a Certification Body against an agreed scope.</documentation>
+    </element>
+    <element identifier="id-goal-protection-against-common-internet-based-attacks" xsi:type="Goal">
+      <name xml:lang="en">Protection against common internet-based attacks</name>
+      <documentation xml:lang="en">Prevent the large majority of commodity cyber attacks: phishing, password guessing, and exploitation of known vulnerabilities and default settings.</documentation>
+    </element>
+    <element identifier="id-requirement-agreed-scope-boundary" xsi:type="Requirement">
+      <name xml:lang="en">Agreed scope boundary</name>
+      <documentation xml:lang="en">The whole IT infrastructure, or a separately managed sub-set, defined by business unit, network boundary and physical location and agreed with the Certification Body. End user devices must be included, and cloud services that hold organisational data or services can never be excluded.</documentation>
+    </element>
+    <element identifier="id-grouping-in-scope" xsi:type="Grouping">
+      <name xml:lang="en">In scope</name>
+      <documentation xml:lang="en">Devices and services that can accept inbound connections from the internet, make outbound connections over it, or control data flows between the two.</documentation>
+    </element>
+    <element identifier="id-grouping-network-boundary" xsi:type="Grouping">
+      <name xml:lang="en">Network boundary</name>
+    </element>
+    <element identifier="id-device-office-boundary-firewall" xsi:type="Device">
+      <name xml:lang="en">Office boundary firewall</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Firmware version</value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-device-office-wireless-access-points" xsi:type="Device">
+      <name xml:lang="en">Office wireless access points</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Firmware version</value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-grouping-end-user-devices" xsi:type="Grouping">
+      <name xml:lang="en">End user devices</name>
+    </element>
+    <element identifier="id-device-office-desktops" xsi:type="Device">
+      <name xml:lang="en">Office desktops</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-device-staff-laptops" xsi:type="Device">
+      <name xml:lang="en">Staff laptops</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-device-company-mobile-phones" xsi:type="Device">
+      <name xml:lang="en">Company mobile phones</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-device-personal-phones-with-work-email" xsi:type="Device">
+      <name xml:lang="en">Personal phones with work email</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-grouping-servers" xsi:type="Grouping">
+      <name xml:lang="en">Servers</name>
+    </element>
+    <element identifier="id-node-office-file-server" xsi:type="Node">
+      <name xml:lang="en">Office file server</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-node-cloud-virtual-servers-iaas" xsi:type="Node">
+      <name xml:lang="en">Cloud virtual servers (IaaS)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">IaaS</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en">Firewalls, secure configuration, updates and malware protection: shared with the provider; user access: your organisation</value></property>
+      </properties>
+    </element>
+    <element identifier="id-grouping-cloud-services" xsi:type="Grouping">
+      <name xml:lang="en">Cloud services</name>
+    </element>
+    <element identifier="id-applicationcomponent-office-suite-and-email-saas" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Office suite and email (SaaS)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">SaaS</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en">Firewalls, updates and malware protection: provider; secure configuration: shared; user access: your organisation</value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-accounting-system-saas" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Accounting system (SaaS)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">SaaS</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en">Firewalls, updates and malware protection: provider; secure configuration: shared; user access: your organisation</value></property>
+      </properties>
+    </element>
+    <element identifier="id-technologyservice-client-portal-hosting-paas" xsi:type="TechnologyService">
+      <name xml:lang="en">Client portal hosting (PaaS)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">PaaS</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en">Firewalls and malware protection: provider, sometimes shared; secure configuration and updates: shared; user access: your organisation</value></property>
+      </properties>
+    </element>
+    <element identifier="id-grouping-out-of-scope" xsi:type="Grouping">
+      <name xml:lang="en">Out of scope</name>
+      <documentation xml:lang="en">Excluded by the scheme's scope rules. Record why each item is out of scope; the assessor will ask.</documentation>
+    </element>
+    <element identifier="id-device-home-broadband-routers-not-supplied-by-the-firm" xsi:type="Device">
+      <name xml:lang="en">Home broadband routers not supplied by the firm</name>
+      <documentation xml:lang="en">Out of scope. Laptops used at home rely on their software firewall instead.</documentation>
+    </element>
+    <element identifier="id-device-phones-used-only-for-calls-texts-and-mfa-apps" xsi:type="Device">
+      <name xml:lang="en">Phones used only for calls, texts and MFA apps</name>
+      <documentation xml:lang="en">Out of scope: devices used only for native voice, native text or MFA applications.</documentation>
+    </element>
+    <element identifier="id-artifact-bespoke-code-of-the-client-portal" xsi:type="Artifact">
+      <name xml:lang="en">Bespoke code of the client portal</name>
+      <documentation xml:lang="en">Out of scope: bespoke and custom web application components. Covered by secure development practice.</documentation>
+    </element>
+    <element identifier="id-requirement-firewalls" xsi:type="Requirement">
+      <name xml:lang="en">Firewalls</name>
+      <documentation xml:lang="en">Every in-scope device sits behind a correctly configured boundary or software firewall. Default administrator passwords are changed, the administration interface is not reachable from the internet without a documented need and MFA or an IP allow list, unauthenticated inbound connections are blocked by default, and every inbound rule is approved, documented with its business need and removed when no longer needed.</documentation>
+    </element>
+    <element identifier="id-businessprocess-boundary-firewall-rule-management" xsi:type="BusinessProcess">
+      <name xml:lang="en">Boundary firewall rule management</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this theme in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en">Network boundary</value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-software-firewalls-on-laptops" xsi:type="BusinessProcess">
+      <name xml:lang="en">Software firewalls on laptops</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this theme in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en">End user devices</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-secure-configuration" xsi:type="Requirement">
+      <name xml:lang="en">Secure configuration</name>
+      <documentation xml:lang="en">Unnecessary accounts and software are removed or disabled, default or guessable passwords are changed, auto-run is disabled, users are authenticated before reaching organisational data or services, and devices lock with a PIN, password or biometric protected against brute force.</documentation>
+    </element>
+    <element identifier="id-businessprocess-hardened-standard-builds" xsi:type="BusinessProcess">
+      <name xml:lang="en">Hardened standard builds</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this theme in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en">End user devices; Servers</value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-secure-cloud-configuration-baseline" xsi:type="BusinessProcess">
+      <name xml:lang="en">Secure cloud configuration baseline</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this theme in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en">Cloud services</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-security-update-management" xsi:type="Requirement">
+      <name xml:lang="en">Security update management</name>
+      <documentation xml:lang="en">All software is licensed and supported, unsupported software is removed or isolated, automatic updates are on where possible, and updates fixing critical or high risk vulnerabilities (CVSS v3 7 or above, or unrated by the vendor) are applied within 14 days of release.</documentation>
+    </element>
+    <element identifier="id-businessprocess-security-updates-within-14-days" xsi:type="BusinessProcess">
+      <name xml:lang="en">Security updates within 14 days</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this theme in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en">Network boundary; End user devices; Servers</value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-supported-software-register" xsi:type="BusinessProcess">
+      <name xml:lang="en">Supported software register</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this theme in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en">End user devices; Servers</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-user-access-control" xsi:type="Requirement">
+      <name xml:lang="en">User access control</name>
+      <documentation xml:lang="en">Accounts are created through an approval process, use unique credentials, are removed when no longer needed and carry only the privileges the role needs. Administrative work uses separate accounts, MFA is used wherever available and is always used for cloud services, and passwords are protected against guessing.</documentation>
+    </element>
+    <element identifier="id-businessprocess-account-lifecycle-and-separate-admin-accounts" xsi:type="BusinessProcess">
+      <name xml:lang="en">Account lifecycle and separate admin accounts</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this theme in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en">Servers; Cloud services</value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-multi-factor-authentication" xsi:type="BusinessProcess">
+      <name xml:lang="en">Multi-factor authentication</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this theme in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en">Cloud services</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-malware-protection" xsi:type="Requirement">
+      <name xml:lang="en">Malware protection</name>
+      <documentation xml:lang="en">Every in-scope device runs an active, up-to-date malware protection mechanism: anti-malware software that blocks malicious code and websites, or application allow-listing that only lets approved, signed applications run.</documentation>
+    </element>
+    <element identifier="id-businessprocess-anti-malware-on-windows-and-macos" xsi:type="BusinessProcess">
+      <name xml:lang="en">Anti-malware on Windows and macOS</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this theme in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en">End user devices; Servers</value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-application-allow-listing-on-mobiles" xsi:type="BusinessProcess">
+      <name xml:lang="en">Application allow-listing on mobiles</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this theme in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en">End user devices</value></property>
+      </properties>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="id-rel-001" source="id-driver-cyber-essentials-requirements-for-it-infrastructure-v3-3" target="id-goal-protection-against-common-internet-based-attacks" xsi:type="Influence">
+    </relationship>
+    <relationship identifier="id-rel-002" source="id-requirement-agreed-scope-boundary" target="id-goal-protection-against-common-internet-based-attacks" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-003" source="id-grouping-in-scope" target="id-grouping-network-boundary" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-004" source="id-grouping-network-boundary" target="id-device-office-boundary-firewall" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-005" source="id-grouping-network-boundary" target="id-device-office-wireless-access-points" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-006" source="id-grouping-in-scope" target="id-grouping-end-user-devices" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-007" source="id-grouping-end-user-devices" target="id-device-office-desktops" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-008" source="id-grouping-end-user-devices" target="id-device-staff-laptops" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-009" source="id-grouping-end-user-devices" target="id-device-company-mobile-phones" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-010" source="id-grouping-end-user-devices" target="id-device-personal-phones-with-work-email" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-011" source="id-grouping-in-scope" target="id-grouping-servers" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-012" source="id-grouping-servers" target="id-node-office-file-server" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-013" source="id-grouping-servers" target="id-node-cloud-virtual-servers-iaas" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-014" source="id-grouping-in-scope" target="id-grouping-cloud-services" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-015" source="id-grouping-cloud-services" target="id-applicationcomponent-office-suite-and-email-saas" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-016" source="id-grouping-cloud-services" target="id-applicationcomponent-accounting-system-saas" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-017" source="id-grouping-cloud-services" target="id-technologyservice-client-portal-hosting-paas" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-018" source="id-grouping-out-of-scope" target="id-device-home-broadband-routers-not-supplied-by-the-firm" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-019" source="id-grouping-out-of-scope" target="id-device-phones-used-only-for-calls-texts-and-mfa-apps" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-020" source="id-grouping-out-of-scope" target="id-artifact-bespoke-code-of-the-client-portal" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-021" source="id-requirement-firewalls" target="id-goal-protection-against-common-internet-based-attacks" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-022" source="id-businessprocess-boundary-firewall-rule-management" target="id-requirement-firewalls" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-023" source="id-businessprocess-boundary-firewall-rule-management" target="id-grouping-network-boundary" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-024" source="id-businessprocess-software-firewalls-on-laptops" target="id-requirement-firewalls" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-025" source="id-businessprocess-software-firewalls-on-laptops" target="id-grouping-end-user-devices" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-026" source="id-requirement-secure-configuration" target="id-goal-protection-against-common-internet-based-attacks" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-027" source="id-businessprocess-hardened-standard-builds" target="id-requirement-secure-configuration" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-028" source="id-businessprocess-hardened-standard-builds" target="id-grouping-end-user-devices" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-029" source="id-businessprocess-hardened-standard-builds" target="id-grouping-servers" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-030" source="id-businessprocess-secure-cloud-configuration-baseline" target="id-requirement-secure-configuration" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-031" source="id-businessprocess-secure-cloud-configuration-baseline" target="id-grouping-cloud-services" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-032" source="id-requirement-security-update-management" target="id-goal-protection-against-common-internet-based-attacks" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-033" source="id-businessprocess-security-updates-within-14-days" target="id-requirement-security-update-management" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-034" source="id-businessprocess-security-updates-within-14-days" target="id-grouping-network-boundary" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-035" source="id-businessprocess-security-updates-within-14-days" target="id-grouping-end-user-devices" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-036" source="id-businessprocess-security-updates-within-14-days" target="id-grouping-servers" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-037" source="id-businessprocess-supported-software-register" target="id-requirement-security-update-management" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-038" source="id-businessprocess-supported-software-register" target="id-grouping-end-user-devices" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-039" source="id-businessprocess-supported-software-register" target="id-grouping-servers" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-040" source="id-requirement-user-access-control" target="id-goal-protection-against-common-internet-based-attacks" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-041" source="id-businessprocess-account-lifecycle-and-separate-admin-accounts" target="id-requirement-user-access-control" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-042" source="id-businessprocess-account-lifecycle-and-separate-admin-accounts" target="id-grouping-servers" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-043" source="id-businessprocess-account-lifecycle-and-separate-admin-accounts" target="id-grouping-cloud-services" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-044" source="id-businessprocess-multi-factor-authentication" target="id-requirement-user-access-control" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-045" source="id-businessprocess-multi-factor-authentication" target="id-grouping-cloud-services" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-046" source="id-requirement-malware-protection" target="id-goal-protection-against-common-internet-based-attacks" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-047" source="id-businessprocess-anti-malware-on-windows-and-macos" target="id-requirement-malware-protection" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-048" source="id-businessprocess-anti-malware-on-windows-and-macos" target="id-grouping-end-user-devices" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-049" source="id-businessprocess-anti-malware-on-windows-and-macos" target="id-grouping-servers" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-050" source="id-businessprocess-application-allow-listing-on-mobiles" target="id-requirement-malware-protection" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-051" source="id-businessprocess-application-allow-listing-on-mobiles" target="id-grouping-end-user-devices" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+  </relationships>
+  <organizations>
+    <item><label xml:lang="en">Business</label>
+      <item identifierRef="id-businessprocess-boundary-firewall-rule-management"/>
+      <item identifierRef="id-businessprocess-software-firewalls-on-laptops"/>
+      <item identifierRef="id-businessprocess-hardened-standard-builds"/>
+      <item identifierRef="id-businessprocess-secure-cloud-configuration-baseline"/>
+      <item identifierRef="id-businessprocess-security-updates-within-14-days"/>
+      <item identifierRef="id-businessprocess-supported-software-register"/>
+      <item identifierRef="id-businessprocess-account-lifecycle-and-separate-admin-accounts"/>
+      <item identifierRef="id-businessprocess-multi-factor-authentication"/>
+      <item identifierRef="id-businessprocess-anti-malware-on-windows-and-macos"/>
+      <item identifierRef="id-businessprocess-application-allow-listing-on-mobiles"/>
+    </item>
+    <item><label xml:lang="en">Application</label>
+      <item identifierRef="id-applicationcomponent-office-suite-and-email-saas"/>
+      <item identifierRef="id-applicationcomponent-accounting-system-saas"/>
+    </item>
+    <item><label xml:lang="en">Technology</label>
+      <item identifierRef="id-device-office-boundary-firewall"/>
+      <item identifierRef="id-device-office-wireless-access-points"/>
+      <item identifierRef="id-device-office-desktops"/>
+      <item identifierRef="id-device-staff-laptops"/>
+      <item identifierRef="id-device-company-mobile-phones"/>
+      <item identifierRef="id-device-personal-phones-with-work-email"/>
+      <item identifierRef="id-node-office-file-server"/>
+      <item identifierRef="id-node-cloud-virtual-servers-iaas"/>
+      <item identifierRef="id-technologyservice-client-portal-hosting-paas"/>
+      <item identifierRef="id-device-home-broadband-routers-not-supplied-by-the-firm"/>
+      <item identifierRef="id-device-phones-used-only-for-calls-texts-and-mfa-apps"/>
+      <item identifierRef="id-artifact-bespoke-code-of-the-client-portal"/>
+    </item>
+    <item><label xml:lang="en">Motivation</label>
+      <item identifierRef="id-driver-cyber-essentials-requirements-for-it-infrastructure-v3-3"/>
+      <item identifierRef="id-goal-protection-against-common-internet-based-attacks"/>
+      <item identifierRef="id-requirement-agreed-scope-boundary"/>
+      <item identifierRef="id-requirement-firewalls"/>
+      <item identifierRef="id-requirement-secure-configuration"/>
+      <item identifierRef="id-requirement-security-update-management"/>
+      <item identifierRef="id-requirement-user-access-control"/>
+      <item identifierRef="id-requirement-malware-protection"/>
+    </item>
+    <item><label xml:lang="en">Other</label>
+      <item identifierRef="id-grouping-in-scope"/>
+      <item identifierRef="id-grouping-network-boundary"/>
+      <item identifierRef="id-grouping-end-user-devices"/>
+      <item identifierRef="id-grouping-servers"/>
+      <item identifierRef="id-grouping-cloud-services"/>
+      <item identifierRef="id-grouping-out-of-scope"/>
+    </item>
+    <item><label xml:lang="en">Relations</label>
+      <item identifierRef="id-rel-001"/>
+      <item identifierRef="id-rel-002"/>
+      <item identifierRef="id-rel-003"/>
+      <item identifierRef="id-rel-004"/>
+      <item identifierRef="id-rel-005"/>
+      <item identifierRef="id-rel-006"/>
+      <item identifierRef="id-rel-007"/>
+      <item identifierRef="id-rel-008"/>
+      <item identifierRef="id-rel-009"/>
+      <item identifierRef="id-rel-010"/>
+      <item identifierRef="id-rel-011"/>
+      <item identifierRef="id-rel-012"/>
+      <item identifierRef="id-rel-013"/>
+      <item identifierRef="id-rel-014"/>
+      <item identifierRef="id-rel-015"/>
+      <item identifierRef="id-rel-016"/>
+      <item identifierRef="id-rel-017"/>
+      <item identifierRef="id-rel-018"/>
+      <item identifierRef="id-rel-019"/>
+      <item identifierRef="id-rel-020"/>
+      <item identifierRef="id-rel-021"/>
+      <item identifierRef="id-rel-022"/>
+      <item identifierRef="id-rel-023"/>
+      <item identifierRef="id-rel-024"/>
+      <item identifierRef="id-rel-025"/>
+      <item identifierRef="id-rel-026"/>
+      <item identifierRef="id-rel-027"/>
+      <item identifierRef="id-rel-028"/>
+      <item identifierRef="id-rel-029"/>
+      <item identifierRef="id-rel-030"/>
+      <item identifierRef="id-rel-031"/>
+      <item identifierRef="id-rel-032"/>
+      <item identifierRef="id-rel-033"/>
+      <item identifierRef="id-rel-034"/>
+      <item identifierRef="id-rel-035"/>
+      <item identifierRef="id-rel-036"/>
+      <item identifierRef="id-rel-037"/>
+      <item identifierRef="id-rel-038"/>
+      <item identifierRef="id-rel-039"/>
+      <item identifierRef="id-rel-040"/>
+      <item identifierRef="id-rel-041"/>
+      <item identifierRef="id-rel-042"/>
+      <item identifierRef="id-rel-043"/>
+      <item identifierRef="id-rel-044"/>
+      <item identifierRef="id-rel-045"/>
+      <item identifierRef="id-rel-046"/>
+      <item identifierRef="id-rel-047"/>
+      <item identifierRef="id-rel-048"/>
+      <item identifierRef="id-rel-049"/>
+      <item identifierRef="id-rel-050"/>
+      <item identifierRef="id-rel-051"/>
+    </item>
+    <item><label xml:lang="en">Views</label>
+      <item identifierRef="id-view-five-control-themes-and-their-controls"/>
+      <item identifierRef="id-view-controls-applied-to-the-in-scope-estate"/>
+      <item identifierRef="id-view-scope-boundary"/>
+    </item>
+  </organizations>
+  <propertyDefinitions>
+    <propertyDefinition identifier="propid-1" type="string"><name xml:lang="en">Asset owner</name></propertyDefinition>
+    <propertyDefinition identifier="propid-2" type="string"><name xml:lang="en">Operating system or version</name></propertyDefinition>
+    <propertyDefinition identifier="propid-3" type="string"><name xml:lang="en">Supported until</name></propertyDefinition>
+    <propertyDefinition identifier="propid-4" type="string"><name xml:lang="en">Cloud service type</name></propertyDefinition>
+    <propertyDefinition identifier="propid-5" type="string"><name xml:lang="en">Controls implemented by</name></propertyDefinition>
+    <propertyDefinition identifier="propid-6" type="string"><name xml:lang="en">Control owner</name></propertyDefinition>
+    <propertyDefinition identifier="propid-7" type="string"><name xml:lang="en">Evidence location</name></propertyDefinition>
+    <propertyDefinition identifier="propid-8" type="string"><name xml:lang="en">Applies to</name></propertyDefinition>
+  </propertyDefinitions>
+  <views>
+    <diagrams>
+      <view identifier="id-view-five-control-themes-and-their-controls" xsi:type="Diagram" viewpoint="Motivation">
+        <name xml:lang="en">Five control themes and their controls</name>
+        <documentation xml:lang="en">Each technical control theme with the example controls that realize it. Fill in the owner and evidence location of every control: the assessment questions ask for exactly this.</documentation>
+        <node identifier="id-view-five-control-themes-and-their-controls-n1" elementRef="id-driver-cyber-essentials-requirements-for-it-infrastructure-v3-3" xsi:type="Element" x="20" y="20" w="230" h="60">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-five-control-themes-and-their-controls-n2" elementRef="id-goal-protection-against-common-internet-based-attacks" xsi:type="Element" x="20" y="340" w="230" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-five-control-themes-and-their-controls-n3" elementRef="id-requirement-agreed-scope-boundary" xsi:type="Element" x="20" y="640" w="230" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-five-control-themes-and-their-controls-n4" elementRef="id-requirement-firewalls" xsi:type="Element" x="340" y="40" w="240" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-five-control-themes-and-their-controls-n5" elementRef="id-businessprocess-boundary-firewall-rule-management" xsi:type="Element" x="680" y="15" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-five-control-themes-and-their-controls-n6" elementRef="id-businessprocess-software-firewalls-on-laptops" xsi:type="Element" x="680" y="85" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-five-control-themes-and-their-controls-n7" elementRef="id-requirement-secure-configuration" xsi:type="Element" x="340" y="190" w="240" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-five-control-themes-and-their-controls-n8" elementRef="id-businessprocess-hardened-standard-builds" xsi:type="Element" x="680" y="165" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-five-control-themes-and-their-controls-n9" elementRef="id-businessprocess-secure-cloud-configuration-baseline" xsi:type="Element" x="680" y="235" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-five-control-themes-and-their-controls-n10" elementRef="id-requirement-security-update-management" xsi:type="Element" x="340" y="340" w="240" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-five-control-themes-and-their-controls-n11" elementRef="id-businessprocess-security-updates-within-14-days" xsi:type="Element" x="680" y="315" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-five-control-themes-and-their-controls-n12" elementRef="id-businessprocess-supported-software-register" xsi:type="Element" x="680" y="385" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-five-control-themes-and-their-controls-n13" elementRef="id-requirement-user-access-control" xsi:type="Element" x="340" y="490" w="240" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-five-control-themes-and-their-controls-n14" elementRef="id-businessprocess-account-lifecycle-and-separate-admin-accounts" xsi:type="Element" x="680" y="465" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-five-control-themes-and-their-controls-n15" elementRef="id-businessprocess-multi-factor-authentication" xsi:type="Element" x="680" y="535" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-five-control-themes-and-their-controls-n16" elementRef="id-requirement-malware-protection" xsi:type="Element" x="340" y="640" w="240" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-five-control-themes-and-their-controls-n17" elementRef="id-businessprocess-anti-malware-on-windows-and-macos" xsi:type="Element" x="680" y="615" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-five-control-themes-and-their-controls-n18" elementRef="id-businessprocess-application-allow-listing-on-mobiles" xsi:type="Element" x="680" y="685" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-five-control-themes-and-their-controls-c1" relationshipRef="id-rel-001" xsi:type="Relationship" source="id-view-five-control-themes-and-their-controls-n1" target="id-view-five-control-themes-and-their-controls-n2"/>
+        <connection identifier="id-view-five-control-themes-and-their-controls-c2" relationshipRef="id-rel-002" xsi:type="Relationship" source="id-view-five-control-themes-and-their-controls-n3" target="id-view-five-control-themes-and-their-controls-n2"/>
+        <connection identifier="id-view-five-control-themes-and-their-controls-c3" relationshipRef="id-rel-021" xsi:type="Relationship" source="id-view-five-control-themes-and-their-controls-n4" target="id-view-five-control-themes-and-their-controls-n2"/>
+        <connection identifier="id-view-five-control-themes-and-their-controls-c4" relationshipRef="id-rel-022" xsi:type="Relationship" source="id-view-five-control-themes-and-their-controls-n5" target="id-view-five-control-themes-and-their-controls-n4"/>
+        <connection identifier="id-view-five-control-themes-and-their-controls-c5" relationshipRef="id-rel-024" xsi:type="Relationship" source="id-view-five-control-themes-and-their-controls-n6" target="id-view-five-control-themes-and-their-controls-n4"/>
+        <connection identifier="id-view-five-control-themes-and-their-controls-c6" relationshipRef="id-rel-026" xsi:type="Relationship" source="id-view-five-control-themes-and-their-controls-n7" target="id-view-five-control-themes-and-their-controls-n2"/>
+        <connection identifier="id-view-five-control-themes-and-their-controls-c7" relationshipRef="id-rel-027" xsi:type="Relationship" source="id-view-five-control-themes-and-their-controls-n8" target="id-view-five-control-themes-and-their-controls-n7"/>
+        <connection identifier="id-view-five-control-themes-and-their-controls-c8" relationshipRef="id-rel-030" xsi:type="Relationship" source="id-view-five-control-themes-and-their-controls-n9" target="id-view-five-control-themes-and-their-controls-n7"/>
+        <connection identifier="id-view-five-control-themes-and-their-controls-c9" relationshipRef="id-rel-032" xsi:type="Relationship" source="id-view-five-control-themes-and-their-controls-n10" target="id-view-five-control-themes-and-their-controls-n2"/>
+        <connection identifier="id-view-five-control-themes-and-their-controls-c10" relationshipRef="id-rel-033" xsi:type="Relationship" source="id-view-five-control-themes-and-their-controls-n11" target="id-view-five-control-themes-and-their-controls-n10"/>
+        <connection identifier="id-view-five-control-themes-and-their-controls-c11" relationshipRef="id-rel-037" xsi:type="Relationship" source="id-view-five-control-themes-and-their-controls-n12" target="id-view-five-control-themes-and-their-controls-n10"/>
+        <connection identifier="id-view-five-control-themes-and-their-controls-c12" relationshipRef="id-rel-040" xsi:type="Relationship" source="id-view-five-control-themes-and-their-controls-n13" target="id-view-five-control-themes-and-their-controls-n2"/>
+        <connection identifier="id-view-five-control-themes-and-their-controls-c13" relationshipRef="id-rel-041" xsi:type="Relationship" source="id-view-five-control-themes-and-their-controls-n14" target="id-view-five-control-themes-and-their-controls-n13"/>
+        <connection identifier="id-view-five-control-themes-and-their-controls-c14" relationshipRef="id-rel-044" xsi:type="Relationship" source="id-view-five-control-themes-and-their-controls-n15" target="id-view-five-control-themes-and-their-controls-n13"/>
+        <connection identifier="id-view-five-control-themes-and-their-controls-c15" relationshipRef="id-rel-046" xsi:type="Relationship" source="id-view-five-control-themes-and-their-controls-n16" target="id-view-five-control-themes-and-their-controls-n2"/>
+        <connection identifier="id-view-five-control-themes-and-their-controls-c16" relationshipRef="id-rel-047" xsi:type="Relationship" source="id-view-five-control-themes-and-their-controls-n17" target="id-view-five-control-themes-and-their-controls-n16"/>
+        <connection identifier="id-view-five-control-themes-and-their-controls-c17" relationshipRef="id-rel-050" xsi:type="Relationship" source="id-view-five-control-themes-and-their-controls-n18" target="id-view-five-control-themes-and-their-controls-n16"/>
+      </view>
+      <view identifier="id-view-controls-applied-to-the-in-scope-estate" xsi:type="Diagram">
+        <name xml:lang="en">Controls applied to the in-scope estate</name>
+        <documentation xml:lang="en">Each control and the part of the estate it is applied to. Every device and cloud service in a category must be covered by the controls drawn to that category; one left out is the finding an assessor raises.</documentation>
+        <node identifier="id-view-controls-applied-to-the-in-scope-estate-n1" elementRef="id-businessprocess-boundary-firewall-rule-management" xsi:type="Element" x="20" y="20" w="150" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-applied-to-the-in-scope-estate-n2" elementRef="id-businessprocess-security-updates-within-14-days" xsi:type="Element" x="185" y="20" w="150" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-applied-to-the-in-scope-estate-n3" elementRef="id-businessprocess-software-firewalls-on-laptops" xsi:type="Element" x="350" y="20" w="150" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-applied-to-the-in-scope-estate-n4" elementRef="id-businessprocess-application-allow-listing-on-mobiles" xsi:type="Element" x="515" y="20" w="150" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-applied-to-the-in-scope-estate-n5" elementRef="id-businessprocess-hardened-standard-builds" xsi:type="Element" x="680" y="20" w="150" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-applied-to-the-in-scope-estate-n6" elementRef="id-businessprocess-anti-malware-on-windows-and-macos" xsi:type="Element" x="845" y="20" w="150" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-applied-to-the-in-scope-estate-n7" elementRef="id-businessprocess-supported-software-register" xsi:type="Element" x="1010" y="20" w="150" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-applied-to-the-in-scope-estate-n8" elementRef="id-businessprocess-account-lifecycle-and-separate-admin-accounts" xsi:type="Element" x="1175" y="20" w="150" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-applied-to-the-in-scope-estate-n9" elementRef="id-businessprocess-secure-cloud-configuration-baseline" xsi:type="Element" x="1340" y="20" w="150" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-applied-to-the-in-scope-estate-n10" elementRef="id-businessprocess-multi-factor-authentication" xsi:type="Element" x="1505" y="20" w="150" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-applied-to-the-in-scope-estate-n11" elementRef="id-grouping-network-boundary" xsi:type="Element" x="20" y="330" w="260" h="167">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-controls-applied-to-the-in-scope-estate-n12" elementRef="id-device-office-boundary-firewall" xsi:type="Element" x="35" y="362" w="230" h="50">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-controls-applied-to-the-in-scope-estate-n13" elementRef="id-device-office-wireless-access-points" xsi:type="Element" x="35" y="427" w="230" h="50">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-controls-applied-to-the-in-scope-estate-n14" elementRef="id-grouping-end-user-devices" xsi:type="Element" x="378" y="330" w="445" h="167">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-controls-applied-to-the-in-scope-estate-n15" elementRef="id-device-office-desktops" xsi:type="Element" x="393" y="362" w="200" h="50">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-controls-applied-to-the-in-scope-estate-n16" elementRef="id-device-staff-laptops" xsi:type="Element" x="608" y="362" w="200" h="50">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-controls-applied-to-the-in-scope-estate-n17" elementRef="id-device-company-mobile-phones" xsi:type="Element" x="393" y="427" w="200" h="50">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-controls-applied-to-the-in-scope-estate-n18" elementRef="id-device-personal-phones-with-work-email" xsi:type="Element" x="608" y="427" w="200" h="50">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-controls-applied-to-the-in-scope-estate-n19" elementRef="id-grouping-servers" xsi:type="Element" x="920" y="330" w="260" h="167">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-controls-applied-to-the-in-scope-estate-n20" elementRef="id-node-office-file-server" xsi:type="Element" x="935" y="362" w="230" h="50">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-controls-applied-to-the-in-scope-estate-n21" elementRef="id-node-cloud-virtual-servers-iaas" xsi:type="Element" x="935" y="427" w="230" h="50">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-controls-applied-to-the-in-scope-estate-n22" elementRef="id-grouping-cloud-services" xsi:type="Element" x="1370" y="330" w="260" h="232">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-controls-applied-to-the-in-scope-estate-n23" elementRef="id-applicationcomponent-office-suite-and-email-saas" xsi:type="Element" x="1385" y="362" w="230" h="50">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-controls-applied-to-the-in-scope-estate-n24" elementRef="id-applicationcomponent-accounting-system-saas" xsi:type="Element" x="1385" y="427" w="230" h="50">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-controls-applied-to-the-in-scope-estate-n25" elementRef="id-technologyservice-client-portal-hosting-paas" xsi:type="Element" x="1385" y="492" w="230" h="50">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <connection identifier="id-view-controls-applied-to-the-in-scope-estate-c1" relationshipRef="id-rel-023" xsi:type="Relationship" source="id-view-controls-applied-to-the-in-scope-estate-n1" target="id-view-controls-applied-to-the-in-scope-estate-n11"/>
+        <connection identifier="id-view-controls-applied-to-the-in-scope-estate-c2" relationshipRef="id-rel-025" xsi:type="Relationship" source="id-view-controls-applied-to-the-in-scope-estate-n3" target="id-view-controls-applied-to-the-in-scope-estate-n14"/>
+        <connection identifier="id-view-controls-applied-to-the-in-scope-estate-c3" relationshipRef="id-rel-028" xsi:type="Relationship" source="id-view-controls-applied-to-the-in-scope-estate-n5" target="id-view-controls-applied-to-the-in-scope-estate-n14"/>
+        <connection identifier="id-view-controls-applied-to-the-in-scope-estate-c4" relationshipRef="id-rel-029" xsi:type="Relationship" source="id-view-controls-applied-to-the-in-scope-estate-n5" target="id-view-controls-applied-to-the-in-scope-estate-n19"/>
+        <connection identifier="id-view-controls-applied-to-the-in-scope-estate-c5" relationshipRef="id-rel-031" xsi:type="Relationship" source="id-view-controls-applied-to-the-in-scope-estate-n9" target="id-view-controls-applied-to-the-in-scope-estate-n22"/>
+        <connection identifier="id-view-controls-applied-to-the-in-scope-estate-c6" relationshipRef="id-rel-034" xsi:type="Relationship" source="id-view-controls-applied-to-the-in-scope-estate-n2" target="id-view-controls-applied-to-the-in-scope-estate-n11"/>
+        <connection identifier="id-view-controls-applied-to-the-in-scope-estate-c7" relationshipRef="id-rel-035" xsi:type="Relationship" source="id-view-controls-applied-to-the-in-scope-estate-n2" target="id-view-controls-applied-to-the-in-scope-estate-n14"/>
+        <connection identifier="id-view-controls-applied-to-the-in-scope-estate-c8" relationshipRef="id-rel-036" xsi:type="Relationship" source="id-view-controls-applied-to-the-in-scope-estate-n2" target="id-view-controls-applied-to-the-in-scope-estate-n19"/>
+        <connection identifier="id-view-controls-applied-to-the-in-scope-estate-c9" relationshipRef="id-rel-038" xsi:type="Relationship" source="id-view-controls-applied-to-the-in-scope-estate-n7" target="id-view-controls-applied-to-the-in-scope-estate-n14"/>
+        <connection identifier="id-view-controls-applied-to-the-in-scope-estate-c10" relationshipRef="id-rel-039" xsi:type="Relationship" source="id-view-controls-applied-to-the-in-scope-estate-n7" target="id-view-controls-applied-to-the-in-scope-estate-n19"/>
+        <connection identifier="id-view-controls-applied-to-the-in-scope-estate-c11" relationshipRef="id-rel-042" xsi:type="Relationship" source="id-view-controls-applied-to-the-in-scope-estate-n8" target="id-view-controls-applied-to-the-in-scope-estate-n19"/>
+        <connection identifier="id-view-controls-applied-to-the-in-scope-estate-c12" relationshipRef="id-rel-043" xsi:type="Relationship" source="id-view-controls-applied-to-the-in-scope-estate-n8" target="id-view-controls-applied-to-the-in-scope-estate-n22"/>
+        <connection identifier="id-view-controls-applied-to-the-in-scope-estate-c13" relationshipRef="id-rel-045" xsi:type="Relationship" source="id-view-controls-applied-to-the-in-scope-estate-n10" target="id-view-controls-applied-to-the-in-scope-estate-n22"/>
+        <connection identifier="id-view-controls-applied-to-the-in-scope-estate-c14" relationshipRef="id-rel-048" xsi:type="Relationship" source="id-view-controls-applied-to-the-in-scope-estate-n6" target="id-view-controls-applied-to-the-in-scope-estate-n14"/>
+        <connection identifier="id-view-controls-applied-to-the-in-scope-estate-c15" relationshipRef="id-rel-049" xsi:type="Relationship" source="id-view-controls-applied-to-the-in-scope-estate-n6" target="id-view-controls-applied-to-the-in-scope-estate-n19"/>
+        <connection identifier="id-view-controls-applied-to-the-in-scope-estate-c16" relationshipRef="id-rel-051" xsi:type="Relationship" source="id-view-controls-applied-to-the-in-scope-estate-n4" target="id-view-controls-applied-to-the-in-scope-estate-n14"/>
+      </view>
+      <view identifier="id-view-scope-boundary" xsi:type="Diagram">
+        <name xml:lang="en">Scope boundary</name>
+        <documentation xml:lang="en">What the assessment covers and what it leaves out, with the reason for each exclusion recorded in the model.</documentation>
+        <node identifier="id-view-scope-boundary-n1" elementRef="id-grouping-in-scope" xsi:type="Element" x="20" y="20" w="1040" h="372">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-scope-boundary-n2" elementRef="id-grouping-network-boundary" xsi:type="Element" x="35" y="75" w="240" h="167">
+            <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+            <node identifier="id-view-scope-boundary-n3" elementRef="id-device-office-boundary-firewall" xsi:type="Element" x="50" y="107" w="210" h="50">
+              <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+            </node>
+            <node identifier="id-view-scope-boundary-n4" elementRef="id-device-office-wireless-access-points" xsi:type="Element" x="50" y="172" w="210" h="50">
+              <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+            </node>
+          </node>
+          <node identifier="id-view-scope-boundary-n5" elementRef="id-grouping-end-user-devices" xsi:type="Element" x="290" y="75" w="240" h="297">
+            <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+            <node identifier="id-view-scope-boundary-n6" elementRef="id-device-office-desktops" xsi:type="Element" x="305" y="107" w="210" h="50">
+              <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+            </node>
+            <node identifier="id-view-scope-boundary-n7" elementRef="id-device-staff-laptops" xsi:type="Element" x="305" y="172" w="210" h="50">
+              <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+            </node>
+            <node identifier="id-view-scope-boundary-n8" elementRef="id-device-company-mobile-phones" xsi:type="Element" x="305" y="237" w="210" h="50">
+              <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+            </node>
+            <node identifier="id-view-scope-boundary-n9" elementRef="id-device-personal-phones-with-work-email" xsi:type="Element" x="305" y="302" w="210" h="50">
+              <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+            </node>
+          </node>
+          <node identifier="id-view-scope-boundary-n10" elementRef="id-grouping-servers" xsi:type="Element" x="545" y="75" w="240" h="167">
+            <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+            <node identifier="id-view-scope-boundary-n11" elementRef="id-node-office-file-server" xsi:type="Element" x="560" y="107" w="210" h="50">
+              <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+            </node>
+            <node identifier="id-view-scope-boundary-n12" elementRef="id-node-cloud-virtual-servers-iaas" xsi:type="Element" x="560" y="172" w="210" h="50">
+              <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+            </node>
+          </node>
+          <node identifier="id-view-scope-boundary-n13" elementRef="id-grouping-cloud-services" xsi:type="Element" x="800" y="75" w="240" h="232">
+            <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+            <node identifier="id-view-scope-boundary-n14" elementRef="id-applicationcomponent-office-suite-and-email-saas" xsi:type="Element" x="815" y="107" w="210" h="50">
+              <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+            </node>
+            <node identifier="id-view-scope-boundary-n15" elementRef="id-applicationcomponent-accounting-system-saas" xsi:type="Element" x="815" y="172" w="210" h="50">
+              <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+            </node>
+            <node identifier="id-view-scope-boundary-n16" elementRef="id-technologyservice-client-portal-hosting-paas" xsi:type="Element" x="815" y="237" w="210" h="50">
+              <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+            </node>
+          </node>
+        </node>
+        <node identifier="id-view-scope-boundary-n17" elementRef="id-grouping-out-of-scope" xsi:type="Element" x="1085" y="20" w="260" h="247">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-scope-boundary-n18" elementRef="id-device-home-broadband-routers-not-supplied-by-the-firm" xsi:type="Element" x="1100" y="52" w="230" h="55">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-scope-boundary-n19" elementRef="id-device-phones-used-only-for-calls-texts-and-mfa-apps" xsi:type="Element" x="1100" y="122" w="230" h="55">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-scope-boundary-n20" elementRef="id-artifact-bespoke-code-of-the-client-portal" xsi:type="Element" x="1100" y="192" w="230" h="55">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-scope-boundary-n21" elementRef="id-requirement-agreed-scope-boundary" xsi:type="Element" x="1085" y="302" w="260" h="90">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+      </view>
+    </diagrams>
+  </views>
+</model>

@@ -941,7 +941,193 @@ def iso22301() -> Model:
     return m
 
 
-ALL = [capability_map, application_portfolio, nis2, dora, layered_onboarding, company_model, iso22301]
+# ------------------------------------------------------------------------------------------------
+# 8. UK Cyber Essentials: five technical control themes applied to the in-scope estate
+# ------------------------------------------------------------------------------------------------
+
+CYBER_ESSENTIALS = [
+    # theme, what it requires (paraphrased from the NCSC requirements), controls: (name, estate categories)
+    ("Firewalls", "Every in-scope device sits behind a correctly configured boundary or software firewall. "
+     "Default administrator passwords are changed, the administration interface is not reachable from the "
+     "internet without a documented need and MFA or an IP allow list, unauthenticated inbound connections "
+     "are blocked by default, and every inbound rule is approved, documented with its business need and "
+     "removed when no longer needed.",
+     [("Boundary firewall rule management", ["Network boundary"]),
+      ("Software firewalls on laptops", ["End user devices"])]),
+    ("Secure configuration", "Unnecessary accounts and software are removed or disabled, default or "
+     "guessable passwords are changed, auto-run is disabled, users are authenticated before reaching "
+     "organisational data or services, and devices lock with a PIN, password or biometric protected "
+     "against brute force.",
+     [("Hardened standard builds", ["End user devices", "Servers"]),
+      ("Secure cloud configuration baseline", ["Cloud services"])]),
+    ("Security update management", "All software is licensed and supported, unsupported software is "
+     "removed or isolated, automatic updates are on where possible, and updates fixing critical or high "
+     "risk vulnerabilities (CVSS v3 7 or above, or unrated by the vendor) are applied within 14 days of "
+     "release.",
+     [("Security updates within 14 days", ["Network boundary", "End user devices", "Servers"]),
+      ("Supported software register", ["End user devices", "Servers"])]),
+    ("User access control", "Accounts are created through an approval process, use unique credentials, "
+     "are removed when no longer needed and carry only the privileges the role needs. Administrative "
+     "work uses separate accounts, MFA is used wherever available and is always used for cloud services, "
+     "and passwords are protected against guessing.",
+     [("Account lifecycle and separate admin accounts", ["Servers", "Cloud services"]),
+      ("Multi-factor authentication", ["Cloud services"])]),
+    ("Malware protection", "Every in-scope device runs an active, up-to-date malware protection mechanism: "
+     "anti-malware software that blocks malicious code and websites, or application allow-listing that "
+     "only lets approved, signed applications run.",
+     [("Anti-malware on Windows and macOS", ["End user devices", "Servers"]),
+      ("Application allow-listing on mobiles", ["End user devices"])]),
+]
+
+CE_ESTATE = {
+    # category: [(name, type, properties)]
+    "Network boundary": [
+        ("Office boundary firewall", "Device", {"operating_system_or_version": "Firmware version",
+                                                "supported_until": ""}),
+        ("Office wireless access points", "Device", {"operating_system_or_version": "Firmware version",
+                                                     "supported_until": ""}),
+    ],
+    "End user devices": [
+        ("Office desktops", "Device", {"operating_system_or_version": "", "supported_until": ""}),
+        ("Staff laptops", "Device", {"operating_system_or_version": "", "supported_until": ""}),
+        ("Company mobile phones", "Device", {"operating_system_or_version": "", "supported_until": ""}),
+        ("Personal phones with work email", "Device", {"operating_system_or_version": "",
+                                                       "supported_until": ""}),
+    ],
+    "Servers": [
+        ("Office file server", "Node", {"operating_system_or_version": "", "supported_until": ""}),
+        ("Cloud virtual servers (IaaS)", "Node", {"cloud_service_type": "IaaS", "controls_implemented_by":
+                                                  "Firewalls, secure configuration, updates and malware "
+                                                  "protection: shared with the provider; user access: your organisation"}),
+    ],
+    "Cloud services": [
+        ("Office suite and email (SaaS)", "ApplicationComponent",
+         {"cloud_service_type": "SaaS", "controls_implemented_by": "Firewalls, updates and malware "
+          "protection: provider; secure configuration: shared; user access: your organisation"}),
+        ("Accounting system (SaaS)", "ApplicationComponent",
+         {"cloud_service_type": "SaaS", "controls_implemented_by": "Firewalls, updates and malware "
+          "protection: provider; secure configuration: shared; user access: your organisation"}),
+        ("Client portal hosting (PaaS)", "TechnologyService",
+         {"cloud_service_type": "PaaS", "controls_implemented_by": "Firewalls and malware protection: "
+          "provider, sometimes shared; secure configuration and updates: shared; user access: your organisation"}),
+    ],
+}
+
+CE_OUT_OF_SCOPE = [
+    ("Home broadband routers not supplied by the firm", "Device",
+     "Out of scope. Laptops used at home rely on their software firewall instead."),
+    ("Phones used only for calls, texts and MFA apps", "Device",
+     "Out of scope: devices used only for native voice, native text or MFA applications."),
+    ("Bespoke code of the client portal", "Artifact",
+     "Out of scope: bespoke and custom web application components. Covered by secure development practice."),
+]
+
+
+def cyber_essentials() -> Model:
+    m = Model("cyber-essentials", "UK Cyber Essentials (starter)",
+              "The five technical control themes of Cyber Essentials, the UK government-backed scheme run by "
+              "the National Cyber Security Centre, each realized by example controls that are applied to the "
+              "in-scope estate: network boundary, end user devices, servers and cloud services. It follows "
+              "Cyber Essentials: Requirements for IT Infrastructure v3.3 (April 2026); Cyber Essentials Plus "
+              "assesses the same requirements with hands-on technical verification. Requirements are "
+              "paraphrased; the NCSC document is the reference. Replace the example professional services "
+              "firm's estate with your own asset register: every in-scope device and cloud service needs "
+              "each theme that applies to it covered by a control.")
+    driver = m.el("Driver", "Cyber Essentials: Requirements for IT Infrastructure v3.3",
+                  "Published by the NCSC in April 2026. Certification is awarded by a Certification Body "
+                  "against an agreed scope.")
+    goal = m.el("Goal", "Protection against common internet-based attacks",
+                "Prevent the large majority of commodity cyber attacks: phishing, password guessing, and "
+                "exploitation of known vulnerabilities and default settings.")
+    m.rel("Influence", driver, goal)
+    scope = m.el("Requirement", "Agreed scope boundary",
+                 "The whole IT infrastructure, or a separately managed sub-set, defined by business unit, "
+                 "network boundary and physical location and agreed with the Certification Body. End user "
+                 "devices must be included, and cloud services that hold organisational data or services can "
+                 "never be excluded.")
+    m.rel("Realization", scope, goal)
+
+    in_scope = m.el("Grouping", "In scope", "Devices and services that can accept inbound connections from "
+                    "the internet, make outbound connections over it, or control data flows between the two.")
+    category, estate = {}, {}
+    for cat, items in CE_ESTATE.items():
+        category[cat] = m.el("Grouping", cat)
+        m.rel("Aggregation", in_scope, category[cat])
+        for name, kind, props in items:
+            estate[name] = m.el(kind, name, "", asset_owner="", **props)
+            m.rel("Aggregation", category[cat], estate[name])
+    out_scope = m.el("Grouping", "Out of scope", "Excluded by the scheme's scope rules. Record why each item "
+                     "is out of scope; the assessor will ask.")
+    outside = []
+    for name, kind, doc in CE_OUT_OF_SCOPE:
+        outside.append(m.el(kind, name, doc))
+        m.rel("Aggregation", out_scope, outside[-1])
+
+    themes, controls = [], []
+    for theme, text, ctls in CYBER_ESSENTIALS:
+        t = m.el("Requirement", theme, text)
+        m.rel("Realization", t, goal)
+        mine = []
+        for name, applies in ctls:
+            c = m.el("BusinessProcess", name, "Example control. Replace with the process or tool that meets "
+                     "this theme in your organisation.", control_owner="", evidence_location="",
+                     applies_to="; ".join(applies))
+            m.rel("Realization", c, t)
+            for cat in applies:
+                m.rel("Association", c, category[cat], "applied to")
+            mine.append(c)
+        themes.append(t)
+        controls.append(mine)
+
+    # View 1: the five themes and the controls that realize them.
+    v = m.view("Five control themes and their controls", "Each technical control theme with the example "
+               "controls that realize it. Fill in the owner and evidence location of every control: the "
+               "assessment questions ask for exactly this.", "Motivation")
+    v.nodes += [Node(driver, 20, 20, 230, 60), Node(goal, 20, 340, 230, 70), Node(scope, 20, 640, 230, 70)]
+    for i, (t, mine) in enumerate(zip(themes, controls)):
+        y = 40 + i * 150
+        v.nodes.append(Node(t, 340, y, 240, 70))
+        v.nodes += [Node(mine[0], 680, y - 25, 260, 55), Node(mine[1], 680, y + 45, 260, 55)]
+    on_view = on_view_of(v)
+    v.connections += [r.id for r in m.relationships if r.source in on_view and r.target in on_view]
+
+    # View 2: which controls apply to which part of the estate.
+    order = ["Boundary firewall rule management", "Security updates within 14 days",
+             "Software firewalls on laptops", "Application allow-listing on mobiles", "Hardened standard builds",
+             "Anti-malware on Windows and macOS", "Supported software register",
+             "Account lifecycle and separate admin accounts", "Secure cloud configuration baseline",
+             "Multi-factor authentication"]
+    by_name = {m.elements[c].name: c for mine in controls for c in mine}
+    e = m.view("Controls applied to the in-scope estate", "Each control and the part of the estate it is "
+               "applied to. Every device and cloud service in a category must be covered by the controls drawn "
+               "to that category; one left out is the finding an assessor raises.")
+    e.nodes += [Node(by_name[n], 20 + i * 165, 20, 150, 70) for i, n in enumerate(order)]
+    # Each category sits under the controls drawn to it, so the lines stay short.
+    for cat, x, cols, w in [("Network boundary", 20, 1, 230), ("End user devices", 378, 2, 200),
+                            ("Servers", 920, 1, 230), ("Cloud services", 1370, 1, 230)]:
+        kids = [estate[n] for n, *_ in CE_ESTATE[cat]]
+        e.nodes.append(container(category[cat], x, 330, kids, cols=cols, w=w, h=50, title=cat))
+    on_view = on_view_of(e)
+    e.connections += [r.id for r in m.relationships
+                      if r.source in on_view and r.target in on_view and r.type == "Association"]
+
+    # View 3: the scope boundary.
+    s = m.view("Scope boundary", "What the assessment covers and what it leaves out, with the reason for each "
+               "exclusion recorded in the model.")
+    x = 35
+    boxes = []
+    for cat, items in CE_ESTATE.items():
+        box = container(category[cat], x, 75, [estate[n] for n, *_ in items], cols=1, w=210, h=50, title=cat)
+        boxes.append(box)
+        x += box.w + GAP
+    tallest = max(b.h for b in boxes)
+    s.nodes.append(Node(in_scope, 20, 20, x - 20 + 5, tallest + 75, boxes))
+    s.nodes.append(container(out_scope, x + 30, 20, outside, cols=1, w=230, h=55, title="Out of scope"))
+    s.nodes.append(Node(scope, x + 30, 20 + 32 + 3 * 70 + 40, 260, 90))
+    return m
+
+
+ALL = [capability_map, application_portfolio, nis2, dora, layered_onboarding, company_model, iso22301, cyber_essentials]
 
 
 # ------------------------------------------------------------------------------------------------
