@@ -1581,7 +1581,249 @@ def pci_dss() -> Model:
     return m
 
 
-ALL = [capability_map, application_portfolio, nis2, dora, layered_onboarding, company_model, iso22301, cyber_essentials, ai_act, pci_dss]
+# ------------------------------------------------------------------------------------------------
+# 11. HIPAA Security Rule: safeguards, standards, implementation specifications, ePHI systems
+# ------------------------------------------------------------------------------------------------
+
+HIPAA_SECTIONS = [
+    ("164.308", "Administrative safeguards"),
+    ("164.310", "Physical safeguards"),
+    ("164.312", "Technical safeguards"),
+    ("164.314", "Organizational requirements"),
+    ("164.316", "Policies, procedures and documentation"),
+]
+
+HIPAA_STANDARDS = [
+    # section, paragraph, standard, summary in our own words, [(specification, R or A)], example control
+    ("164.308", "(a)(1)", "Security management process", "Prevent, detect, contain and correct security "
+     "violations.", [("Risk analysis", "R"), ("Risk management", "R"), ("Sanction policy", "R"),
+                     ("Information system activity review", "R")],
+     "Security risk analysis and risk management plan"),
+    ("164.308", "(a)(2)", "Assigned security responsibility", "Name the security official responsible for the "
+     "security policies and procedures.", [], "Named security official"),
+    ("164.308", "(a)(3)", "Workforce security", "Make sure workforce members have the access to ePHI their work "
+     "needs, and no more.", [("Authorization and/or supervision", "A"), ("Workforce clearance procedure", "A"),
+                             ("Termination procedures", "A")], "Workforce access authorisation and leavers"),
+    ("164.308", "(a)(4)", "Information access management", "Authorise access to ePHI consistently with the "
+     "Privacy Rule.", [("Isolating health care clearinghouse functions", "R"), ("Access authorization", "A"),
+                       ("Access establishment and modification", "A")], "Access approval and periodic review"),
+    ("164.308", "(a)(5)", "Security awareness and training", "Train the whole workforce, management included.",
+     [("Security reminders", "A"), ("Protection from malicious software", "A"), ("Log-in monitoring", "A"),
+      ("Password management", "A")], "Security awareness training"),
+    ("164.308", "(a)(6)", "Security incident procedures", "Identify, respond to, mitigate and document security "
+     "incidents.", [("Response and reporting", "R")], "Security incident response"),
+    ("164.308", "(a)(7)", "Contingency plan", "Respond to emergencies that damage systems holding ePHI.",
+     [("Data backup plan", "R"), ("Disaster recovery plan", "R"), ("Emergency mode operation plan", "R"),
+      ("Testing and revision procedures", "A"), ("Applications and data criticality analysis", "A")],
+     "Backup, disaster recovery and emergency mode plans"),
+    ("164.308", "(a)(8)", "Evaluation", "Evaluate periodically, and after environmental or operational changes, "
+     "how well security policies and procedures meet the rule.", [], "Periodic security evaluation"),
+    ("164.308", "(b)(1)", "Business associate contracts and other arrangements", "Obtain satisfactory "
+     "assurances, documented in a written contract, before a business associate handles ePHI.",
+     [("Written contract or other arrangement", "R")], "Business associate agreement register"),
+    ("164.310", "(a)(1)", "Facility access controls", "Limit physical access to information systems and the "
+     "facilities that house them, while allowing authorised access.",
+     [("Contingency operations", "A"), ("Facility security plan", "A"),
+      ("Access control and validation procedures", "A"), ("Maintenance records", "A")],
+     "Facility security plan and badge access"),
+    ("164.310", "(b)", "Workstation use", "Specify how workstations that access ePHI are used and where.", [],
+     "Workstation use policy"),
+    ("164.310", "(c)", "Workstation security", "Physically safeguard workstations that access ePHI.", [],
+     "Workstation physical safeguards"),
+    ("164.310", "(d)(1)", "Device and media controls", "Govern hardware and media holding ePHI as they move "
+     "into, out of and within a facility.", [("Disposal", "R"), ("Media re-use", "R"), ("Accountability", "A"),
+                                             ("Data backup and storage", "A")],
+     "Device and media disposal and re-use"),
+    ("164.312", "(a)(1)", "Access control", "Allow access to systems holding ePHI only to authorised people and "
+     "software.", [("Unique user identification", "R"), ("Emergency access procedure", "R"),
+                   ("Automatic logoff", "A"), ("Encryption and decryption", "A")],
+     "Role-based access with unique IDs"),
+    ("164.312", "(b)", "Audit controls", "Record and examine activity in systems that contain or use ePHI.", [],
+     "Audit logging of ePHI access"),
+    ("164.312", "(c)(1)", "Integrity", "Protect ePHI from improper alteration or destruction.",
+     [("Mechanism to authenticate ePHI", "A")],
+     "Integrity checking of clinical records"),
+    ("164.312", "(d)", "Person or entity authentication", "Verify that whoever seeks access to ePHI is who they "
+     "claim to be.", [], "Multi-factor authentication"),
+    ("164.312", "(e)(1)", "Transmission security", "Guard ePHI sent over electronic communications networks.",
+     [("Integrity controls", "A"), ("Encryption", "A")], "Encryption in transit"),
+    ("164.314", "(a)(1)", "Business associate contracts or other arrangements", "The business associate "
+     "contract binds the associate to the rule, to flow it down to subcontractors and to report security "
+     "incidents, including breaches.", [("Business associate contracts", "R"), ("Other arrangements", "R"),
+                                        ("Business associate contracts with subcontractors", "R")],
+     "Business associate agreement template"),
+    ("164.314", "(b)(1)", "Requirements for group health plans", "Plan documents require the plan sponsor to "
+     "safeguard ePHI it receives.", [("Plan document provisions", "R")], ""),
+    ("164.316", "(a)", "Policies and procedures", "Adopt reasonable, appropriate policies and procedures for the "
+     "rule, and document any change to them.", [], "Security policies and procedures manual"),
+    ("164.316", "(b)(1)", "Documentation", "Keep written records of policies, procedures and required actions.",
+     [("Time limit", "R"), ("Availability", "R"), ("Updates", "R")], "Documentation retention for six years"),
+]
+
+HIPAA_SYSTEMS = [
+    # name, type, description, business associate (or "")
+    ("Clinical workstations", "Device", "Desktops and laptops in consultation rooms and at reception.", ""),
+    ("Patient portal", "ApplicationComponent", "Lets patients see results, message clinicians and book.", ""),
+    ("Electronic health record system", "ApplicationComponent", "The clinical record for every patient.",
+     "EHR hosting provider"),
+    ("Practice management and billing system", "ApplicationComponent", "Scheduling, claims and payments.",
+     "Medical billing company"),
+    ("Cloud backup", "TechnologyService", "Encrypted off-site copies of the EHR and billing databases.",
+     "Cloud backup provider"),
+]
+
+HIPAA_APPLIED = {
+    # control: systems it is applied to
+    "Multi-factor authentication": ["Clinical workstations", "Patient portal", "Electronic health record system"],
+    "Role-based access with unique IDs": ["Patient portal", "Electronic health record system",
+                                          "Practice management and billing system"],
+    "Integrity checking of clinical records": ["Electronic health record system"],
+    "Audit logging of ePHI access": ["Electronic health record system", "Practice management and billing system"],
+    "Encryption in transit": ["Patient portal", "Practice management and billing system", "Cloud backup"],
+}
+
+
+def hipaa() -> Model:
+    m = Model("hipaa-security-rule", "HIPAA Security Rule (starter)",
+              "The HIPAA Security Rule, 45 CFR Part 164 Subpart C: the administrative, physical and technical "
+              "safeguards of sections 164.308, 164.310 and 164.312 and the organizational, policy and "
+              "documentation requirements of sections 164.314 and 164.316. Every standard is broken into its "
+              "implementation specifications, each marked required or addressable: a required specification "
+              "must be implemented; an addressable one must be implemented where reasonable and appropriate, "
+              "or the alternative and the reasons documented. Each standard is realized by an example control, "
+              "and the technical controls are applied to the example clinic's systems that hold electronic "
+              "protected health information (ePHI), with a business associate agreement behind every "
+              "business associate. Summaries are paraphrased; the Code of Federal Regulations is the "
+              "reference. This model is a structuring aid, not legal advice.")
+    driver = m.el("Driver", "HIPAA Security Rule, 45 CFR Part 164 Subpart C",
+                  "Applies to covered entities (health plans, health care clearinghouses and health care "
+                  "providers that transmit health information electronically) and their business associates.")
+    goal = m.el("Goal", "Confidentiality, integrity and availability of ePHI",
+                "Section 164.306(a): protect all ePHI created, received, maintained or transmitted against "
+                "reasonably anticipated threats, hazards and impermissible uses or disclosures.")
+    m.rel("Influence", driver, goal)
+    section = {}
+    for num, title in HIPAA_SECTIONS:
+        section[num] = m.el("Requirement", f"{num} {title}", "", citation=f"45 CFR {num}")
+        m.rel("Realization", section[num], goal)
+    std, specs, ctl = {}, {}, {}
+    for sec, para, name, text, spec_list, control in HIPAA_STANDARDS:
+        key = sec + para
+        std[key] = m.el("Requirement", f"{key} {name}", text, citation=f"45 CFR {key}",
+                        required_or_addressable="Required (standard)")
+        m.rel("Composition", section[sec], std[key])
+        specs[key] = []
+        for spec, ra in spec_list:
+            word = "required" if ra == "R" else "addressable"
+            s = m.el("Requirement", f"{spec} ({word})", "", citation=f"45 CFR {key}",
+                     required_or_addressable=word.capitalize(),
+                     **({"decision_and_rationale": ""} if ra == "A" else {}))
+            m.rel("Composition", std[key], s)
+            specs[key].append(s)
+        if control:
+            kind = "BusinessObject" if control.endswith("template") else "BusinessProcess"
+            ctl[key] = m.el(kind, control, "Example control. Replace with the process, record or tool that meets "
+                            "this standard in your organisation.", control_owner="", evidence_location="")
+            m.rel("Realization", ctl[key], std[key])
+        else:
+            m.elements[std[key]].props["Applicability"] = ("Not applicable to the example clinic, which does not "
+                                                           "sponsor a group health plan.")
+            if "Applicability" not in m.property_names:
+                m.property_names.append("Applicability")
+
+    ephi = m.el("DataObject", "Electronic protected health information", "Individually identifiable health "
+                "information held or sent in electronic form.")
+    sysid, baa, ba = {}, {}, {}
+    for name, kind, doc, associate in HIPAA_SYSTEMS:
+        sysid[name] = m.el(kind, name, doc, holds_ephi="Yes", system_owner="", encryption_at_rest="")
+        if kind == "ApplicationComponent":
+            m.rel("Access", sysid[name], ephi, access="ReadWrite")
+        if associate:
+            ba[associate] = m.el("BusinessActor", associate, "Business associate: creates, receives, maintains or "
+                                 "transmits ePHI on the clinic's behalf.", baa_signed_date="",
+                                 subcontractors_flowed_down="")
+            baa[associate] = m.el("Contract", f"Business associate agreement: {associate}", "Binds the associate "
+                                  "to the Security Rule, to flow it down to subcontractors and to report security "
+                                  "incidents and breaches.", signed_date="", review_date="")
+            m.rel("Association", ba[associate], baa[associate])
+            m.rel("Association", baa[associate], sysid[name])
+            m.rel("Realization", baa[associate], std["164.314(a)(1)"])
+            m.rel("Realization", baa[associate], std["164.308(b)(1)"])
+    by_name = {m.elements[c].name: c for c in ctl.values()}
+    for control, systems in HIPAA_APPLIED.items():
+        for s in systems:
+            m.rel("Association", by_name[control], sysid[s], "applied to")
+
+    # View 1: the rule's structure.
+    v = m.view("Security Rule safeguards and standards", "The five sections of Subpart C with the standards each "
+               "one sets. The implementation specifications behind every standard are in the next two views.",
+               "Motivation")
+    v.nodes += [Node(driver, 20, 20, 300, 55), Node(goal, 520, 20, 400, 55)]
+    x = 20
+    for sec, cols in [("164.308", 2), ("164.310", 1), ("164.312", 1), ("164.314", 1), ("164.316", 1)]:
+        kids = [std[s + p] for s, p, *_ in HIPAA_STANDARDS if s == sec]
+        box = container(section[sec], x, 150, kids, cols=cols, w=220, h=60, title=m.elements[section[sec]].name)
+        v.nodes.append(box)
+        x += box.w + 25
+    on_view = on_view_of(v)
+    # Each section realizes the goal; drawn by placement rather than by five lines across the sections.
+    v.connections += [r.id for r in m.relationships if r.source == driver and r.target == goal]
+
+    def cells(view, keys, columns):
+        """Each standard as a box holding its specifications, with its control underneath."""
+        y = 20
+        for start in range(0, len(keys), columns):
+            row, bottom = keys[start:start + columns], 0
+            for i, key in enumerate(row):
+                x = 20 + i * 330
+                if specs[key]:
+                    box = container(std[key], x, y, specs[key], cols=1, w=270, h=45,
+                                    title=m.elements[std[key]].name)
+                else:
+                    box = Node(std[key], x, y, 300, 70)
+                view.nodes.append(box)
+                height = box.h
+                if key in ctl:
+                    view.nodes.append(Node(ctl[key], x + 15, y + box.h + 45, 270, 55))
+                    height += 45 + 55
+                bottom = max(bottom, height)
+            y += bottom + 50
+        on_view = on_view_of(view)
+        view.connections += [r.id for r in m.relationships if r.source in on_view and r.target in on_view
+                             and r.type == "Realization"]
+
+    admin = m.view("Administrative safeguards", "Section 164.308: each standard with its implementation "
+                   "specifications, marked required or addressable, and the control that realizes it. For an "
+                   "addressable specification, record what was decided and why.", "Motivation")
+    cells(admin, [s + p for s, p, *_ in HIPAA_STANDARDS if s == "164.308"], 3)
+    other = m.view("Physical, technical and organizational safeguards", "Sections 164.310, 164.312, 164.314 and "
+                   "164.316: each standard with its implementation specifications, marked required or "
+                   "addressable, and the control that realizes it. The group health plan standard has no control "
+                   "because it does not apply to the example clinic; record that reason.", "Motivation")
+    cells(other, [s + p for s, p, *_ in HIPAA_STANDARDS if s != "164.308"], 4)
+
+    # View 4: the systems that hold ePHI and the business associates behind them.
+    e = m.view("Systems holding ePHI and business associates", "The technical controls applied to each system "
+               "that holds ePHI, and the business associate agreement behind every system a business associate "
+               "runs. A system holding ePHI without the controls drawn to it, or an associate without a signed "
+               "agreement, is a finding.")
+    order = ["Multi-factor authentication", "Role-based access with unique IDs",
+             "Integrity checking of clinical records", "Audit logging of ePHI access", "Encryption in transit"]
+    e.nodes += [Node(by_name[c], 20 + i * 220, 20, 200, 60) for i, c in enumerate(order)]
+    for i, (name, *_rest) in enumerate(HIPAA_SYSTEMS):
+        e.nodes.append(Node(sysid[name], 20 + i * 220, 220, 200, 60))
+    e.nodes.append(Node(ephi, 130, 360, 220, 55))
+    for i, (name, _, _, associate) in enumerate(HIPAA_SYSTEMS):
+        if associate:
+            e.nodes += [Node(baa[associate], 20 + i * 220, 480, 200, 70), Node(ba[associate], 20 + i * 220, 620,
+                                                                                200, 55)]
+    e.nodes.append(Node(std["164.314(a)(1)"], 1160, 200, 260, 80))
+    on_view = on_view_of(e)
+    e.connections += [r.id for r in m.relationships if r.source in on_view and r.target in on_view]
+    return m
+
+
+ALL = [capability_map, application_portfolio, nis2, dora, layered_onboarding, company_model, iso22301, cyber_essentials, ai_act, pci_dss, hipaa]
 
 
 # ------------------------------------------------------------------------------------------------
