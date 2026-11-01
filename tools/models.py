@@ -1379,7 +1379,209 @@ def ai_act() -> Model:
     return m
 
 
-ALL = [capability_map, application_portfolio, nis2, dora, layered_onboarding, company_model, iso22301, cyber_essentials, ai_act]
+# ------------------------------------------------------------------------------------------------
+# 10. PCI DSS v4.0.1: six goals, twelve requirements, the cardholder data environment
+# ------------------------------------------------------------------------------------------------
+
+PCI_DSS = [
+    # goal, [(requirement number, short title in our own words, summary, control, system it is applied to)]
+    ("Secure network and systems", [
+        ("1", "Network security controls", "Network security controls, such as firewalls, restrict traffic "
+         "into and out of the cardholder data environment, with rules that are documented, justified and "
+         "reviewed.", "Network security rule management", "CDE segmentation firewall"),
+        ("2", "Secure configuration of system components", "Every system component is built from a hardened "
+         "configuration standard, with vendor defaults changed and unneeded functions removed.",
+         "Hardened configuration standards", "CDE database server"),
+    ]),
+    ("Protect account data", [
+        ("3", "Protection of stored account data", "Store as little account data as possible, never keep "
+         "sensitive authentication data after authorisation, and render stored card numbers unreadable.",
+         "Tokenisation of stored card numbers", "Card data vault"),
+        ("4", "Strong cryptography in transit", "Card numbers are protected with strong cryptography whenever "
+         "they travel over open, public networks.", "TLS for card data in transit", "Payment application"),
+    ]),
+    ("Vulnerability management programme", [
+        ("5", "Protection from malicious software", "Anti-malware runs on systems at risk, stays current, and "
+         "is backed by protection against phishing.", "Anti-malware on CDE systems", "Jump host"),
+        ("6", "Secure systems and software", "Software is developed securely, vulnerabilities are found and "
+         "patched by risk (critical patches within one month), and scripts on payment pages are controlled.",
+         "Secure development and patching", "Payment application"),
+    ]),
+    ("Strong access control", [
+        ("7", "Access by business need to know", "Access to system components and cardholder data is granted "
+         "only to those whose job needs it, and reviewed.", "Role-based access to card data", "Card data vault"),
+        ("8", "Identification and authentication", "Every user is uniquely identified and strongly "
+         "authenticated, with multi-factor authentication for all access into the cardholder data "
+         "environment.", "Multi-factor authentication into the CDE", "Jump host"),
+        ("9", "Physical access restrictions", "Physical access to cardholder data and the systems that hold it "
+         "is controlled, media is protected, and card-reading devices are inspected for tampering.",
+         "Card terminal inspection and physical security", "Card terminals"),
+    ]),
+    ("Regular monitoring and testing", [
+        ("10", "Logging and monitoring of all access", "All access to system components and cardholder data is "
+         "logged, logs are protected, and they are reviewed at least daily.", "Central audit logging and "
+         "daily review", "Logging platform"),
+        ("11", "Regular security testing", "Systems and networks are tested regularly: quarterly internal and "
+         "external vulnerability scans, annual penetration tests, and tests that prove segmentation works.",
+         "Scans, penetration and segmentation tests", "CDE segmentation firewall"),
+    ]),
+    ("Information security policy", [
+        ("12", "Information security policies and programmes", "Policies, risk analysis, awareness training, "
+         "incident response, management of third-party service providers, and confirmation of scope at "
+         "least once every twelve months.", "Security policy, scoping and provider management",
+         "Payment service provider"),
+    ]),
+]
+
+PCI_SYSTEMS = [
+    # name, type, PCI scope, stores card numbers, description
+    ("Payment application", "ApplicationComponent", "Cardholder data environment", "No (tokens only)",
+     "Takes card payments from the online shop and the telephone order desk."),
+    ("Card data vault", "ApplicationComponent", "Cardholder data environment", "Yes (encrypted)",
+     "Swaps card numbers for tokens and holds the only stored copy."),
+    ("CDE database server", "Node", "Cardholder data environment", "Yes (encrypted)",
+     "Hosts the card data vault's database."),
+    ("Card terminals", "Device", "Cardholder data environment", "No",
+     "Card-reading devices at the telephone order desk."),
+    ("Jump host", "Node", "Connected-to and security-impacting", "No",
+     "The only administrative route into the cardholder data environment."),
+    ("Logging platform", "ApplicationComponent", "Connected-to and security-impacting", "No",
+     "Collects and stores audit logs from every in-scope system."),
+    ("CDE segmentation firewall", "Device", "Connected-to and security-impacting", "No",
+     "Separates the cardholder data environment from the corporate network."),
+    ("Corporate office network", "CommunicationNetwork", "Out of scope", "No",
+     "Kept out of scope by segmentation; tested to prove it."),
+    ("Marketing website", "ApplicationComponent", "Out of scope", "No",
+     "Links to the online shop but never handles card data."),
+]
+
+
+def pci_dss() -> Model:
+    m = Model("pci-dss", "PCI DSS v4.0.1 (starter)",
+              "The Payment Card Industry Data Security Standard v4.0.1: its twelve requirements under six goals, "
+              "each realized by an example control applied to the systems in scope. The cardholder data "
+              "environment is shown with the connected-to and security-impacting systems around it and the "
+              "segmentation that keeps the rest of the network out of scope, because scope is what decides how "
+              "much of the standard applies. Requirement numbers are the standard's; titles and summaries are "
+              "our own words, and the standard itself, from the PCI Security Standards Council, is the "
+              "reference. Replace the example retailer's systems with your own.")
+    driver = m.el("Driver", "PCI DSS v4.0.1", "Published by the PCI Security Standards Council in June 2024. "
+                  "Applies to every entity that stores, processes or transmits cardholder data or sensitive "
+                  "authentication data, or could affect its security.")
+    goal_ids, req, ctl = {}, {}, {}
+    for goal, reqs in PCI_DSS:
+        g = m.el("Goal", goal)
+        m.rel("Influence", driver, g)
+        goal_ids[goal] = g
+        for num, title, text, control, _ in reqs:
+            req[num] = m.el("Requirement", f"Requirement {num}: {title}", text)
+            m.rel("Realization", req[num], g)
+            ctl[num] = m.el("BusinessProcess", control, "Example control. Replace with the process or tool that "
+                            "meets this requirement in your organisation.", control_owner="",
+                            evidence_location="", applied_to=reqs[[r[0] for r in reqs].index(num)][4])
+            m.rel("Realization", ctl[num], req[num])
+
+    sysid = {}
+    for name, kind, scope, stores, doc in PCI_SYSTEMS:
+        sysid[name] = m.el(kind, name, doc, pci_scope=scope, stores_card_numbers=stores, system_owner="")
+    psp = m.el("BusinessActor", "Payment service provider", "Third-party service provider that authorises "
+               "payments. Its responsibilities are recorded in the written agreement and checked against its "
+               "attestation of compliance every year.", attestation_of_compliance_date="")
+    agreement = m.el("Contract", "Payment services agreement", "Acknowledges the provider's responsibility for "
+                     "the security of the account data it handles.", responsibility_matrix="")
+    m.rel("Association", psp, agreement)
+    m.rel("Association", agreement, sysid["Payment application"])
+    data = m.el("DataObject", "Account data", "Cardholder data (card number, name, expiry date, service code) "
+                "and sensitive authentication data. Sensitive authentication data is never kept after "
+                "authorisation.")
+    m.rel("Access", sysid["Card data vault"], data, access="Write")
+    m.rel("Access", sysid["Payment application"], data, access="Read")
+    m.rel("Serving", sysid["CDE database server"], sysid["Card data vault"])
+
+    cde = m.el("Grouping", "Cardholder data environment", "The people, processes and technology that store, "
+               "process or transmit account data.")
+    connected = m.el("Grouping", "Connected-to and security-impacting systems", "In scope because they connect "
+                     "to the cardholder data environment or could affect its security.")
+    out = m.el("Grouping", "Out of scope", "Isolated from the cardholder data environment by segmentation.")
+    zone = {"Cardholder data environment": cde, "Connected-to and security-impacting": connected,
+            "Out of scope": out}
+    for name, _, scope, *_ in PCI_SYSTEMS:
+        if name != "CDE segmentation firewall":
+            m.rel("Aggregation", zone[scope], sysid[name])
+    m.rel("Aggregation", cde, data)
+    m.rel("Aggregation", connected, sysid["CDE segmentation firewall"])
+    m.rel("Association", sysid["CDE segmentation firewall"], cde, "segments")
+    m.rel("Association", sysid["CDE segmentation firewall"], out, "segments")
+    for num, *_ in [r for _, reqs in PCI_DSS for r in reqs]:
+        target = psp if num == "12" else sysid[[r for _, rs in PCI_DSS for r in rs if r[0] == num][0][4]]
+        m.rel("Association", ctl[num], target, "applied to")
+
+    # View 1: goals, requirements and controls.
+    v = m.view("Six goals and twelve requirements", "Each goal holds its requirements; under each requirement "
+               "is the control that realizes it. Fill in the owner and evidence location of every control: "
+               "they are what the assessor samples.", "Motivation")
+    y = 20
+    for row in (PCI_DSS[:3], PCI_DSS[3:]):
+        x, bottom = 20, 0
+        for goal, reqs in row:
+            box = container(goal_ids[goal], x, y, [req[r[0]] for r in reqs], cols=len(reqs), w=200, h=85,
+                            title=goal)
+            v.nodes.append(box)
+            for i, r in enumerate(reqs):
+                v.nodes.append(Node(ctl[r[0]], x + GAP + i * (200 + GAP), y + box.h + 60, 200, 60))
+            bottom = max(bottom, box.h)
+            x += box.w + 30
+        y += bottom + 60 + 60 + 50
+    on_view = on_view_of(v)
+    v.connections += [r.id for r in m.relationships if r.source in on_view and r.target in on_view
+                      and r.type == "Realization" and m.elements[r.target].type == "Requirement"]
+
+    # View 2: scope and segmentation.
+    s = m.view("Cardholder data environment and segmentation", "What is in scope and why: the cardholder data "
+               "environment, the systems connected to it or able to affect its security, and the segmentation "
+               "firewall that keeps the corporate network and marketing website out of scope. Segmentation "
+               "must be proven by testing, not assumed.")
+    s.nodes += [Node(cde, 20, 20, 470, 340, [Node(sysid["Card data vault"], 40, 60, 200, 55),
+                                             Node(sysid["Payment application"], 270, 60, 200, 55),
+                                             Node(sysid["CDE database server"], 40, 170, 200, 55),
+                                             Node(data, 270, 170, 200, 55),
+                                             Node(sysid["Card terminals"], 40, 280, 200, 55)]),
+                Node(connected, 20, 400, 470, 120, [Node(sysid["Jump host"], 40, 445, 200, 55),
+                                                    Node(sysid["Logging platform"], 270, 445, 200, 55)]),
+                Node(sysid["CDE segmentation firewall"], 580, 110, 180, 60),
+                Node(out, 850, 20, 240, 200, [Node(sysid["Corporate office network"], 870, 60, 200, 55),
+                                              Node(sysid["Marketing website"], 870, 140, 200, 55)]),
+                Node(agreement, 580, 260, 200, 55), Node(psp, 580, 380, 200, 55)]
+    on_view = on_view_of(s)
+    s.connections += [r.id for r in m.relationships if r.source in on_view and r.target in on_view
+                      and r.type != "Aggregation"
+                      and not (r.type == "Association" and m.elements[r.source].type == "BusinessProcess")]
+
+    # View 3: controls on the in-scope systems.
+    c = m.view("Controls on in-scope systems", "Each control and the system it is applied to. A system in scope "
+               "with no control drawn to it is where an assessment finding will land.")
+    columns = ["CDE segmentation firewall", "CDE database server", "Card data vault", "Payment application",
+               "Jump host", "Card terminals", "Logging platform"]
+    above = {"CDE segmentation firewall": "1", "CDE database server": "2", "Card data vault": "3",
+             "Payment application": "4", "Jump host": "8", "Logging platform": "10"}
+    below = {"CDE segmentation firewall": "11", "Card data vault": "7", "Payment application": "6",
+             "Jump host": "5", "Card terminals": "9"}
+    for i, name in enumerate(columns + ["Payment service provider"]):
+        x = 20 + i * 200
+        c.nodes.append(Node(psp if name == "Payment service provider" else sysid[name], x, 170, 180, 55))
+        if name in above:
+            c.nodes.append(Node(ctl[above[name]], x, 20, 180, 70))
+        if name in below:
+            c.nodes.append(Node(ctl[below[name]], x, 305, 180, 70))
+        if name == "Payment service provider":
+            c.nodes.append(Node(ctl["12"], x, 20, 180, 70))
+    on_view = on_view_of(c)
+    c.connections += [r.id for r in m.relationships if r.source in on_view and r.target in on_view
+                      and r.name == "applied to"]
+    return m
+
+
+ALL = [capability_map, application_portfolio, nis2, dora, layered_onboarding, company_model, iso22301, cyber_essentials, ai_act, pci_dss]
 
 
 # ------------------------------------------------------------------------------------------------
