@@ -1,0 +1,1784 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="id-hipaa-security-rule" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd">
+  <name xml:lang="en">HIPAA Security Rule (starter)</name>
+  <documentation xml:lang="en">The HIPAA Security Rule, 45 CFR Part 164 Subpart C: the administrative, physical and technical safeguards of sections 164.308, 164.310 and 164.312 and the organizational, policy and documentation requirements of sections 164.314 and 164.316. Every standard is broken into its implementation specifications, each marked required or addressable: a required specification must be implemented; an addressable one must be implemented where reasonable and appropriate, or the alternative and the reasons documented. Each standard is realized by an example control, and the technical controls are applied to the example clinic's systems that hold electronic protected health information (ePHI), with a business associate agreement behind every business associate. Summaries are paraphrased; the Code of Federal Regulations is the reference. This model is a structuring aid, not legal advice.</documentation>
+  <elements>
+    <element identifier="id-driver-hipaa-security-rule-45-cfr-part-164-subpart-c" xsi:type="Driver">
+      <name xml:lang="en">HIPAA Security Rule, 45 CFR Part 164 Subpart C</name>
+      <documentation xml:lang="en">Applies to covered entities (health plans, health care clearinghouses and health care providers that transmit health information electronically) and their business associates.</documentation>
+    </element>
+    <element identifier="id-goal-confidentiality-integrity-and-availability-of-ephi" xsi:type="Goal">
+      <name xml:lang="en">Confidentiality, integrity and availability of ePHI</name>
+      <documentation xml:lang="en">Section 164.306(a): protect all ePHI created, received, maintained or transmitted against reasonably anticipated threats, hazards and impermissible uses or disclosures.</documentation>
+    </element>
+    <element identifier="id-requirement-164-308-administrative-safeguards" xsi:type="Requirement">
+      <name xml:lang="en">164.308 Administrative safeguards</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-310-physical-safeguards" xsi:type="Requirement">
+      <name xml:lang="en">164.310 Physical safeguards</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.310</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-312-technical-safeguards" xsi:type="Requirement">
+      <name xml:lang="en">164.312 Technical safeguards</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.312</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-314-organizational-requirements" xsi:type="Requirement">
+      <name xml:lang="en">164.314 Organizational requirements</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.314</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-316-policies-procedures-and-documentation" xsi:type="Requirement">
+      <name xml:lang="en">164.316 Policies, procedures and documentation</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.316</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-308-a-1-security-management-process" xsi:type="Requirement">
+      <name xml:lang="en">164.308(a)(1) Security management process</name>
+      <documentation xml:lang="en">Prevent, detect, contain and correct security violations.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-risk-analysis-required" xsi:type="Requirement">
+      <name xml:lang="en">Risk analysis (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-risk-management-required" xsi:type="Requirement">
+      <name xml:lang="en">Risk management (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-sanction-policy-required" xsi:type="Requirement">
+      <name xml:lang="en">Sanction policy (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-information-system-activity-review-required" xsi:type="Requirement">
+      <name xml:lang="en">Information system activity review (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-security-risk-analysis-and-risk-management-plan" xsi:type="BusinessProcess">
+      <name xml:lang="en">Security risk analysis and risk management plan</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-308-a-2-assigned-security-responsibility" xsi:type="Requirement">
+      <name xml:lang="en">164.308(a)(2) Assigned security responsibility</name>
+      <documentation xml:lang="en">Name the security official responsible for the security policies and procedures.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(2)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-named-security-official" xsi:type="BusinessProcess">
+      <name xml:lang="en">Named security official</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-308-a-3-workforce-security" xsi:type="Requirement">
+      <name xml:lang="en">164.308(a)(3) Workforce security</name>
+      <documentation xml:lang="en">Make sure workforce members have the access to ePHI their work needs, and no more.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(3)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-authorization-and-or-supervision-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Authorization and/or supervision (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(3)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-workforce-clearance-procedure-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Workforce clearance procedure (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(3)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-termination-procedures-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Termination procedures (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(3)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-workforce-access-authorisation-and-leavers" xsi:type="BusinessProcess">
+      <name xml:lang="en">Workforce access authorisation and leavers</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-308-a-4-information-access-management" xsi:type="Requirement">
+      <name xml:lang="en">164.308(a)(4) Information access management</name>
+      <documentation xml:lang="en">Authorise access to ePHI consistently with the Privacy Rule.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(4)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-isolating-health-care-clearinghouse-functions-required" xsi:type="Requirement">
+      <name xml:lang="en">Isolating health care clearinghouse functions (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(4)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-access-authorization-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Access authorization (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(4)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-access-establishment-and-modification-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Access establishment and modification (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(4)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-access-approval-and-periodic-review" xsi:type="BusinessProcess">
+      <name xml:lang="en">Access approval and periodic review</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-308-a-5-security-awareness-and-training" xsi:type="Requirement">
+      <name xml:lang="en">164.308(a)(5) Security awareness and training</name>
+      <documentation xml:lang="en">Train the whole workforce, management included.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(5)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-security-reminders-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Security reminders (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(5)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-protection-from-malicious-software-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Protection from malicious software (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(5)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-log-in-monitoring-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Log-in monitoring (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(5)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-password-management-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Password management (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(5)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-security-awareness-training" xsi:type="BusinessProcess">
+      <name xml:lang="en">Security awareness training</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-308-a-6-security-incident-procedures" xsi:type="Requirement">
+      <name xml:lang="en">164.308(a)(6) Security incident procedures</name>
+      <documentation xml:lang="en">Identify, respond to, mitigate and document security incidents.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(6)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-response-and-reporting-required" xsi:type="Requirement">
+      <name xml:lang="en">Response and reporting (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(6)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-security-incident-response" xsi:type="BusinessProcess">
+      <name xml:lang="en">Security incident response</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-308-a-7-contingency-plan" xsi:type="Requirement">
+      <name xml:lang="en">164.308(a)(7) Contingency plan</name>
+      <documentation xml:lang="en">Respond to emergencies that damage systems holding ePHI.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(7)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-data-backup-plan-required" xsi:type="Requirement">
+      <name xml:lang="en">Data backup plan (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(7)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-disaster-recovery-plan-required" xsi:type="Requirement">
+      <name xml:lang="en">Disaster recovery plan (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(7)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-emergency-mode-operation-plan-required" xsi:type="Requirement">
+      <name xml:lang="en">Emergency mode operation plan (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(7)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-testing-and-revision-procedures-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Testing and revision procedures (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(7)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-applications-and-data-criticality-analysis-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Applications and data criticality analysis (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(7)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-backup-disaster-recovery-and-emergency-mode-plans" xsi:type="BusinessProcess">
+      <name xml:lang="en">Backup, disaster recovery and emergency mode plans</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-308-a-8-evaluation" xsi:type="Requirement">
+      <name xml:lang="en">164.308(a)(8) Evaluation</name>
+      <documentation xml:lang="en">Evaluate periodically, and after environmental or operational changes, how well security policies and procedures meet the rule.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(a)(8)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-periodic-security-evaluation" xsi:type="BusinessProcess">
+      <name xml:lang="en">Periodic security evaluation</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-308-b-1-business-associate-contracts-and-other-arrangements" xsi:type="Requirement">
+      <name xml:lang="en">164.308(b)(1) Business associate contracts and other arrangements</name>
+      <documentation xml:lang="en">Obtain satisfactory assurances, documented in a written contract, before a business associate handles ePHI.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(b)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-written-contract-or-other-arrangement-required" xsi:type="Requirement">
+      <name xml:lang="en">Written contract or other arrangement (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.308(b)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-business-associate-agreement-register" xsi:type="BusinessProcess">
+      <name xml:lang="en">Business associate agreement register</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-310-a-1-facility-access-controls" xsi:type="Requirement">
+      <name xml:lang="en">164.310(a)(1) Facility access controls</name>
+      <documentation xml:lang="en">Limit physical access to information systems and the facilities that house them, while allowing authorised access.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.310(a)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-contingency-operations-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Contingency operations (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.310(a)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-facility-security-plan-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Facility security plan (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.310(a)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-access-control-and-validation-procedures-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Access control and validation procedures (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.310(a)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-maintenance-records-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Maintenance records (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.310(a)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-facility-security-plan-and-badge-access" xsi:type="BusinessProcess">
+      <name xml:lang="en">Facility security plan and badge access</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-310-b-workstation-use" xsi:type="Requirement">
+      <name xml:lang="en">164.310(b) Workstation use</name>
+      <documentation xml:lang="en">Specify how workstations that access ePHI are used and where.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.310(b)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-workstation-use-policy" xsi:type="BusinessProcess">
+      <name xml:lang="en">Workstation use policy</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-310-c-workstation-security" xsi:type="Requirement">
+      <name xml:lang="en">164.310(c) Workstation security</name>
+      <documentation xml:lang="en">Physically safeguard workstations that access ePHI.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.310(c)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-workstation-physical-safeguards" xsi:type="BusinessProcess">
+      <name xml:lang="en">Workstation physical safeguards</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-310-d-1-device-and-media-controls" xsi:type="Requirement">
+      <name xml:lang="en">164.310(d)(1) Device and media controls</name>
+      <documentation xml:lang="en">Govern hardware and media holding ePHI as they move into, out of and within a facility.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.310(d)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-disposal-required" xsi:type="Requirement">
+      <name xml:lang="en">Disposal (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.310(d)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-media-re-use-required" xsi:type="Requirement">
+      <name xml:lang="en">Media re-use (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.310(d)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-accountability-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Accountability (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.310(d)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-data-backup-and-storage-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Data backup and storage (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.310(d)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-device-and-media-disposal-and-re-use" xsi:type="BusinessProcess">
+      <name xml:lang="en">Device and media disposal and re-use</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-312-a-1-access-control" xsi:type="Requirement">
+      <name xml:lang="en">164.312(a)(1) Access control</name>
+      <documentation xml:lang="en">Allow access to systems holding ePHI only to authorised people and software.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.312(a)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-unique-user-identification-required" xsi:type="Requirement">
+      <name xml:lang="en">Unique user identification (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.312(a)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-emergency-access-procedure-required" xsi:type="Requirement">
+      <name xml:lang="en">Emergency access procedure (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.312(a)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-automatic-logoff-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Automatic logoff (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.312(a)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-encryption-and-decryption-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Encryption and decryption (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.312(a)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-role-based-access-with-unique-ids" xsi:type="BusinessProcess">
+      <name xml:lang="en">Role-based access with unique IDs</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-312-b-audit-controls" xsi:type="Requirement">
+      <name xml:lang="en">164.312(b) Audit controls</name>
+      <documentation xml:lang="en">Record and examine activity in systems that contain or use ePHI.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.312(b)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-audit-logging-of-ephi-access" xsi:type="BusinessProcess">
+      <name xml:lang="en">Audit logging of ePHI access</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-312-c-1-integrity" xsi:type="Requirement">
+      <name xml:lang="en">164.312(c)(1) Integrity</name>
+      <documentation xml:lang="en">Protect ePHI from improper alteration or destruction.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.312(c)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-mechanism-to-authenticate-ephi-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Mechanism to authenticate ePHI (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.312(c)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-integrity-checking-of-clinical-records" xsi:type="BusinessProcess">
+      <name xml:lang="en">Integrity checking of clinical records</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-312-d-person-or-entity-authentication" xsi:type="Requirement">
+      <name xml:lang="en">164.312(d) Person or entity authentication</name>
+      <documentation xml:lang="en">Verify that whoever seeks access to ePHI is who they claim to be.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.312(d)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-multi-factor-authentication" xsi:type="BusinessProcess">
+      <name xml:lang="en">Multi-factor authentication</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-312-e-1-transmission-security" xsi:type="Requirement">
+      <name xml:lang="en">164.312(e)(1) Transmission security</name>
+      <documentation xml:lang="en">Guard ePHI sent over electronic communications networks.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.312(e)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-integrity-controls-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Integrity controls (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.312(e)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-encryption-addressable" xsi:type="Requirement">
+      <name xml:lang="en">Encryption (addressable)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.312(e)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Addressable</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-encryption-in-transit" xsi:type="BusinessProcess">
+      <name xml:lang="en">Encryption in transit</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-314-a-1-business-associate-contracts-or-other-arrangements" xsi:type="Requirement">
+      <name xml:lang="en">164.314(a)(1) Business associate contracts or other arrangements</name>
+      <documentation xml:lang="en">The business associate contract binds the associate to the rule, to flow it down to subcontractors and to report security incidents, including breaches.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.314(a)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-business-associate-contracts-required" xsi:type="Requirement">
+      <name xml:lang="en">Business associate contracts (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.314(a)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-other-arrangements-required" xsi:type="Requirement">
+      <name xml:lang="en">Other arrangements (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.314(a)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-business-associate-contracts-with-subcontractors-required" xsi:type="Requirement">
+      <name xml:lang="en">Business associate contracts with subcontractors (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.314(a)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessobject-business-associate-agreement-template" xsi:type="BusinessObject">
+      <name xml:lang="en">Business associate agreement template</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-314-b-1-requirements-for-group-health-plans" xsi:type="Requirement">
+      <name xml:lang="en">164.314(b)(1) Requirements for group health plans</name>
+      <documentation xml:lang="en">Plan documents require the plan sponsor to safeguard ePHI it receives.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.314(b)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en">Not applicable to the example clinic, which does not sponsor a group health plan.</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-plan-document-provisions-required" xsi:type="Requirement">
+      <name xml:lang="en">Plan document provisions (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.314(b)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-316-a-policies-and-procedures" xsi:type="Requirement">
+      <name xml:lang="en">164.316(a) Policies and procedures</name>
+      <documentation xml:lang="en">Adopt reasonable, appropriate policies and procedures for the rule, and document any change to them.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.316(a)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-security-policies-and-procedures-manual" xsi:type="BusinessProcess">
+      <name xml:lang="en">Security policies and procedures manual</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-164-316-b-1-documentation" xsi:type="Requirement">
+      <name xml:lang="en">164.316(b)(1) Documentation</name>
+      <documentation xml:lang="en">Keep written records of policies, procedures and required actions.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.316(b)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required (standard)</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-time-limit-required" xsi:type="Requirement">
+      <name xml:lang="en">Time limit (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.316(b)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-availability-required" xsi:type="Requirement">
+      <name xml:lang="en">Availability (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.316(b)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-updates-required" xsi:type="Requirement">
+      <name xml:lang="en">Updates (required)</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">45 CFR 164.316(b)(1)</value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Required</value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-documentation-retention-for-six-years" xsi:type="BusinessProcess">
+      <name xml:lang="en">Documentation retention for six years</name>
+      <documentation xml:lang="en">Example control. Replace with the process, record or tool that meets this standard in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-dataobject-electronic-protected-health-information" xsi:type="DataObject">
+      <name xml:lang="en">Electronic protected health information</name>
+      <documentation xml:lang="en">Individually identifiable health information held or sent in electronic form.</documentation>
+    </element>
+    <element identifier="id-device-clinical-workstations" xsi:type="Device">
+      <name xml:lang="en">Clinical workstations</name>
+      <documentation xml:lang="en">Desktops and laptops in consultation rooms and at reception.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en">Yes</value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-9"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-patient-portal" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Patient portal</name>
+      <documentation xml:lang="en">Lets patients see results, message clinicians and book.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en">Yes</value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-9"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-electronic-health-record-system" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Electronic health record system</name>
+      <documentation xml:lang="en">The clinical record for every patient.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en">Yes</value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-9"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessactor-ehr-hosting-provider" xsi:type="BusinessActor">
+      <name xml:lang="en">EHR hosting provider</name>
+      <documentation xml:lang="en">Business associate: creates, receives, maintains or transmits ePHI on the clinic's behalf.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-10"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-11"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-contract-business-associate-agreement-ehr-hosting-provider" xsi:type="Contract">
+      <name xml:lang="en">Business associate agreement: EHR hosting provider</name>
+      <documentation xml:lang="en">Binds the associate to the Security Rule, to flow it down to subcontractors and to report security incidents and breaches.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-12"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-13"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-practice-management-and-billing-system" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Practice management and billing system</name>
+      <documentation xml:lang="en">Scheduling, claims and payments.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en">Yes</value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-9"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessactor-medical-billing-company" xsi:type="BusinessActor">
+      <name xml:lang="en">Medical billing company</name>
+      <documentation xml:lang="en">Business associate: creates, receives, maintains or transmits ePHI on the clinic's behalf.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-10"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-11"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-contract-business-associate-agreement-medical-billing-company" xsi:type="Contract">
+      <name xml:lang="en">Business associate agreement: Medical billing company</name>
+      <documentation xml:lang="en">Binds the associate to the Security Rule, to flow it down to subcontractors and to report security incidents and breaches.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-12"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-13"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-technologyservice-cloud-backup" xsi:type="TechnologyService">
+      <name xml:lang="en">Cloud backup</name>
+      <documentation xml:lang="en">Encrypted off-site copies of the EHR and billing databases.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en">Yes</value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-9"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessactor-cloud-backup-provider" xsi:type="BusinessActor">
+      <name xml:lang="en">Cloud backup provider</name>
+      <documentation xml:lang="en">Business associate: creates, receives, maintains or transmits ePHI on the clinic's behalf.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-10"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-11"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-contract-business-associate-agreement-cloud-backup-provider" xsi:type="Contract">
+      <name xml:lang="en">Business associate agreement: Cloud backup provider</name>
+      <documentation xml:lang="en">Binds the associate to the Security Rule, to flow it down to subcontractors and to report security incidents and breaches.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-12"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-13"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="id-rel-001" source="id-driver-hipaa-security-rule-45-cfr-part-164-subpart-c" target="id-goal-confidentiality-integrity-and-availability-of-ephi" xsi:type="Influence">
+    </relationship>
+    <relationship identifier="id-rel-002" source="id-requirement-164-308-administrative-safeguards" target="id-goal-confidentiality-integrity-and-availability-of-ephi" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-003" source="id-requirement-164-310-physical-safeguards" target="id-goal-confidentiality-integrity-and-availability-of-ephi" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-004" source="id-requirement-164-312-technical-safeguards" target="id-goal-confidentiality-integrity-and-availability-of-ephi" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-005" source="id-requirement-164-314-organizational-requirements" target="id-goal-confidentiality-integrity-and-availability-of-ephi" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-006" source="id-requirement-164-316-policies-procedures-and-documentation" target="id-goal-confidentiality-integrity-and-availability-of-ephi" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-007" source="id-requirement-164-308-administrative-safeguards" target="id-requirement-164-308-a-1-security-management-process" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-008" source="id-requirement-164-308-a-1-security-management-process" target="id-requirement-risk-analysis-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-009" source="id-requirement-164-308-a-1-security-management-process" target="id-requirement-risk-management-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-010" source="id-requirement-164-308-a-1-security-management-process" target="id-requirement-sanction-policy-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-011" source="id-requirement-164-308-a-1-security-management-process" target="id-requirement-information-system-activity-review-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-012" source="id-businessprocess-security-risk-analysis-and-risk-management-plan" target="id-requirement-164-308-a-1-security-management-process" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-013" source="id-requirement-164-308-administrative-safeguards" target="id-requirement-164-308-a-2-assigned-security-responsibility" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-014" source="id-businessprocess-named-security-official" target="id-requirement-164-308-a-2-assigned-security-responsibility" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-015" source="id-requirement-164-308-administrative-safeguards" target="id-requirement-164-308-a-3-workforce-security" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-016" source="id-requirement-164-308-a-3-workforce-security" target="id-requirement-authorization-and-or-supervision-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-017" source="id-requirement-164-308-a-3-workforce-security" target="id-requirement-workforce-clearance-procedure-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-018" source="id-requirement-164-308-a-3-workforce-security" target="id-requirement-termination-procedures-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-019" source="id-businessprocess-workforce-access-authorisation-and-leavers" target="id-requirement-164-308-a-3-workforce-security" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-020" source="id-requirement-164-308-administrative-safeguards" target="id-requirement-164-308-a-4-information-access-management" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-021" source="id-requirement-164-308-a-4-information-access-management" target="id-requirement-isolating-health-care-clearinghouse-functions-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-022" source="id-requirement-164-308-a-4-information-access-management" target="id-requirement-access-authorization-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-023" source="id-requirement-164-308-a-4-information-access-management" target="id-requirement-access-establishment-and-modification-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-024" source="id-businessprocess-access-approval-and-periodic-review" target="id-requirement-164-308-a-4-information-access-management" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-025" source="id-requirement-164-308-administrative-safeguards" target="id-requirement-164-308-a-5-security-awareness-and-training" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-026" source="id-requirement-164-308-a-5-security-awareness-and-training" target="id-requirement-security-reminders-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-027" source="id-requirement-164-308-a-5-security-awareness-and-training" target="id-requirement-protection-from-malicious-software-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-028" source="id-requirement-164-308-a-5-security-awareness-and-training" target="id-requirement-log-in-monitoring-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-029" source="id-requirement-164-308-a-5-security-awareness-and-training" target="id-requirement-password-management-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-030" source="id-businessprocess-security-awareness-training" target="id-requirement-164-308-a-5-security-awareness-and-training" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-031" source="id-requirement-164-308-administrative-safeguards" target="id-requirement-164-308-a-6-security-incident-procedures" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-032" source="id-requirement-164-308-a-6-security-incident-procedures" target="id-requirement-response-and-reporting-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-033" source="id-businessprocess-security-incident-response" target="id-requirement-164-308-a-6-security-incident-procedures" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-034" source="id-requirement-164-308-administrative-safeguards" target="id-requirement-164-308-a-7-contingency-plan" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-035" source="id-requirement-164-308-a-7-contingency-plan" target="id-requirement-data-backup-plan-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-036" source="id-requirement-164-308-a-7-contingency-plan" target="id-requirement-disaster-recovery-plan-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-037" source="id-requirement-164-308-a-7-contingency-plan" target="id-requirement-emergency-mode-operation-plan-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-038" source="id-requirement-164-308-a-7-contingency-plan" target="id-requirement-testing-and-revision-procedures-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-039" source="id-requirement-164-308-a-7-contingency-plan" target="id-requirement-applications-and-data-criticality-analysis-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-040" source="id-businessprocess-backup-disaster-recovery-and-emergency-mode-plans" target="id-requirement-164-308-a-7-contingency-plan" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-041" source="id-requirement-164-308-administrative-safeguards" target="id-requirement-164-308-a-8-evaluation" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-042" source="id-businessprocess-periodic-security-evaluation" target="id-requirement-164-308-a-8-evaluation" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-043" source="id-requirement-164-308-administrative-safeguards" target="id-requirement-164-308-b-1-business-associate-contracts-and-other-arrangements" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-044" source="id-requirement-164-308-b-1-business-associate-contracts-and-other-arrangements" target="id-requirement-written-contract-or-other-arrangement-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-045" source="id-businessprocess-business-associate-agreement-register" target="id-requirement-164-308-b-1-business-associate-contracts-and-other-arrangements" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-046" source="id-requirement-164-310-physical-safeguards" target="id-requirement-164-310-a-1-facility-access-controls" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-047" source="id-requirement-164-310-a-1-facility-access-controls" target="id-requirement-contingency-operations-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-048" source="id-requirement-164-310-a-1-facility-access-controls" target="id-requirement-facility-security-plan-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-049" source="id-requirement-164-310-a-1-facility-access-controls" target="id-requirement-access-control-and-validation-procedures-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-050" source="id-requirement-164-310-a-1-facility-access-controls" target="id-requirement-maintenance-records-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-051" source="id-businessprocess-facility-security-plan-and-badge-access" target="id-requirement-164-310-a-1-facility-access-controls" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-052" source="id-requirement-164-310-physical-safeguards" target="id-requirement-164-310-b-workstation-use" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-053" source="id-businessprocess-workstation-use-policy" target="id-requirement-164-310-b-workstation-use" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-054" source="id-requirement-164-310-physical-safeguards" target="id-requirement-164-310-c-workstation-security" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-055" source="id-businessprocess-workstation-physical-safeguards" target="id-requirement-164-310-c-workstation-security" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-056" source="id-requirement-164-310-physical-safeguards" target="id-requirement-164-310-d-1-device-and-media-controls" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-057" source="id-requirement-164-310-d-1-device-and-media-controls" target="id-requirement-disposal-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-058" source="id-requirement-164-310-d-1-device-and-media-controls" target="id-requirement-media-re-use-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-059" source="id-requirement-164-310-d-1-device-and-media-controls" target="id-requirement-accountability-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-060" source="id-requirement-164-310-d-1-device-and-media-controls" target="id-requirement-data-backup-and-storage-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-061" source="id-businessprocess-device-and-media-disposal-and-re-use" target="id-requirement-164-310-d-1-device-and-media-controls" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-062" source="id-requirement-164-312-technical-safeguards" target="id-requirement-164-312-a-1-access-control" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-063" source="id-requirement-164-312-a-1-access-control" target="id-requirement-unique-user-identification-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-064" source="id-requirement-164-312-a-1-access-control" target="id-requirement-emergency-access-procedure-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-065" source="id-requirement-164-312-a-1-access-control" target="id-requirement-automatic-logoff-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-066" source="id-requirement-164-312-a-1-access-control" target="id-requirement-encryption-and-decryption-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-067" source="id-businessprocess-role-based-access-with-unique-ids" target="id-requirement-164-312-a-1-access-control" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-068" source="id-requirement-164-312-technical-safeguards" target="id-requirement-164-312-b-audit-controls" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-069" source="id-businessprocess-audit-logging-of-ephi-access" target="id-requirement-164-312-b-audit-controls" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-070" source="id-requirement-164-312-technical-safeguards" target="id-requirement-164-312-c-1-integrity" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-071" source="id-requirement-164-312-c-1-integrity" target="id-requirement-mechanism-to-authenticate-ephi-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-072" source="id-businessprocess-integrity-checking-of-clinical-records" target="id-requirement-164-312-c-1-integrity" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-073" source="id-requirement-164-312-technical-safeguards" target="id-requirement-164-312-d-person-or-entity-authentication" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-074" source="id-businessprocess-multi-factor-authentication" target="id-requirement-164-312-d-person-or-entity-authentication" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-075" source="id-requirement-164-312-technical-safeguards" target="id-requirement-164-312-e-1-transmission-security" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-076" source="id-requirement-164-312-e-1-transmission-security" target="id-requirement-integrity-controls-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-077" source="id-requirement-164-312-e-1-transmission-security" target="id-requirement-encryption-addressable" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-078" source="id-businessprocess-encryption-in-transit" target="id-requirement-164-312-e-1-transmission-security" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-079" source="id-requirement-164-314-organizational-requirements" target="id-requirement-164-314-a-1-business-associate-contracts-or-other-arrangements" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-080" source="id-requirement-164-314-a-1-business-associate-contracts-or-other-arrangements" target="id-requirement-business-associate-contracts-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-081" source="id-requirement-164-314-a-1-business-associate-contracts-or-other-arrangements" target="id-requirement-other-arrangements-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-082" source="id-requirement-164-314-a-1-business-associate-contracts-or-other-arrangements" target="id-requirement-business-associate-contracts-with-subcontractors-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-083" source="id-businessobject-business-associate-agreement-template" target="id-requirement-164-314-a-1-business-associate-contracts-or-other-arrangements" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-084" source="id-requirement-164-314-organizational-requirements" target="id-requirement-164-314-b-1-requirements-for-group-health-plans" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-085" source="id-requirement-164-314-b-1-requirements-for-group-health-plans" target="id-requirement-plan-document-provisions-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-086" source="id-requirement-164-316-policies-procedures-and-documentation" target="id-requirement-164-316-a-policies-and-procedures" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-087" source="id-businessprocess-security-policies-and-procedures-manual" target="id-requirement-164-316-a-policies-and-procedures" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-088" source="id-requirement-164-316-policies-procedures-and-documentation" target="id-requirement-164-316-b-1-documentation" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-089" source="id-requirement-164-316-b-1-documentation" target="id-requirement-time-limit-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-090" source="id-requirement-164-316-b-1-documentation" target="id-requirement-availability-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-091" source="id-requirement-164-316-b-1-documentation" target="id-requirement-updates-required" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-092" source="id-businessprocess-documentation-retention-for-six-years" target="id-requirement-164-316-b-1-documentation" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-093" source="id-applicationcomponent-patient-portal" target="id-dataobject-electronic-protected-health-information" xsi:type="Access" accessType="ReadWrite">
+    </relationship>
+    <relationship identifier="id-rel-094" source="id-applicationcomponent-electronic-health-record-system" target="id-dataobject-electronic-protected-health-information" xsi:type="Access" accessType="ReadWrite">
+    </relationship>
+    <relationship identifier="id-rel-095" source="id-businessactor-ehr-hosting-provider" target="id-contract-business-associate-agreement-ehr-hosting-provider" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-096" source="id-contract-business-associate-agreement-ehr-hosting-provider" target="id-applicationcomponent-electronic-health-record-system" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-097" source="id-contract-business-associate-agreement-ehr-hosting-provider" target="id-requirement-164-314-a-1-business-associate-contracts-or-other-arrangements" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-098" source="id-contract-business-associate-agreement-ehr-hosting-provider" target="id-requirement-164-308-b-1-business-associate-contracts-and-other-arrangements" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-099" source="id-applicationcomponent-practice-management-and-billing-system" target="id-dataobject-electronic-protected-health-information" xsi:type="Access" accessType="ReadWrite">
+    </relationship>
+    <relationship identifier="id-rel-100" source="id-businessactor-medical-billing-company" target="id-contract-business-associate-agreement-medical-billing-company" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-101" source="id-contract-business-associate-agreement-medical-billing-company" target="id-applicationcomponent-practice-management-and-billing-system" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-102" source="id-contract-business-associate-agreement-medical-billing-company" target="id-requirement-164-314-a-1-business-associate-contracts-or-other-arrangements" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-103" source="id-contract-business-associate-agreement-medical-billing-company" target="id-requirement-164-308-b-1-business-associate-contracts-and-other-arrangements" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-104" source="id-businessactor-cloud-backup-provider" target="id-contract-business-associate-agreement-cloud-backup-provider" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-105" source="id-contract-business-associate-agreement-cloud-backup-provider" target="id-technologyservice-cloud-backup" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-106" source="id-contract-business-associate-agreement-cloud-backup-provider" target="id-requirement-164-314-a-1-business-associate-contracts-or-other-arrangements" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-107" source="id-contract-business-associate-agreement-cloud-backup-provider" target="id-requirement-164-308-b-1-business-associate-contracts-and-other-arrangements" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-108" source="id-businessprocess-multi-factor-authentication" target="id-device-clinical-workstations" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-109" source="id-businessprocess-multi-factor-authentication" target="id-applicationcomponent-patient-portal" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-110" source="id-businessprocess-multi-factor-authentication" target="id-applicationcomponent-electronic-health-record-system" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-111" source="id-businessprocess-role-based-access-with-unique-ids" target="id-applicationcomponent-patient-portal" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-112" source="id-businessprocess-role-based-access-with-unique-ids" target="id-applicationcomponent-electronic-health-record-system" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-113" source="id-businessprocess-role-based-access-with-unique-ids" target="id-applicationcomponent-practice-management-and-billing-system" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-114" source="id-businessprocess-integrity-checking-of-clinical-records" target="id-applicationcomponent-electronic-health-record-system" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-115" source="id-businessprocess-audit-logging-of-ephi-access" target="id-applicationcomponent-electronic-health-record-system" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-116" source="id-businessprocess-audit-logging-of-ephi-access" target="id-applicationcomponent-practice-management-and-billing-system" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-117" source="id-businessprocess-encryption-in-transit" target="id-applicationcomponent-patient-portal" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-118" source="id-businessprocess-encryption-in-transit" target="id-applicationcomponent-practice-management-and-billing-system" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-119" source="id-businessprocess-encryption-in-transit" target="id-technologyservice-cloud-backup" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+  </relationships>
+  <organizations>
+    <item><label xml:lang="en">Business</label>
+      <item identifierRef="id-businessprocess-security-risk-analysis-and-risk-management-plan"/>
+      <item identifierRef="id-businessprocess-named-security-official"/>
+      <item identifierRef="id-businessprocess-workforce-access-authorisation-and-leavers"/>
+      <item identifierRef="id-businessprocess-access-approval-and-periodic-review"/>
+      <item identifierRef="id-businessprocess-security-awareness-training"/>
+      <item identifierRef="id-businessprocess-security-incident-response"/>
+      <item identifierRef="id-businessprocess-backup-disaster-recovery-and-emergency-mode-plans"/>
+      <item identifierRef="id-businessprocess-periodic-security-evaluation"/>
+      <item identifierRef="id-businessprocess-business-associate-agreement-register"/>
+      <item identifierRef="id-businessprocess-facility-security-plan-and-badge-access"/>
+      <item identifierRef="id-businessprocess-workstation-use-policy"/>
+      <item identifierRef="id-businessprocess-workstation-physical-safeguards"/>
+      <item identifierRef="id-businessprocess-device-and-media-disposal-and-re-use"/>
+      <item identifierRef="id-businessprocess-role-based-access-with-unique-ids"/>
+      <item identifierRef="id-businessprocess-audit-logging-of-ephi-access"/>
+      <item identifierRef="id-businessprocess-integrity-checking-of-clinical-records"/>
+      <item identifierRef="id-businessprocess-multi-factor-authentication"/>
+      <item identifierRef="id-businessprocess-encryption-in-transit"/>
+      <item identifierRef="id-businessobject-business-associate-agreement-template"/>
+      <item identifierRef="id-businessprocess-security-policies-and-procedures-manual"/>
+      <item identifierRef="id-businessprocess-documentation-retention-for-six-years"/>
+      <item identifierRef="id-businessactor-ehr-hosting-provider"/>
+      <item identifierRef="id-contract-business-associate-agreement-ehr-hosting-provider"/>
+      <item identifierRef="id-businessactor-medical-billing-company"/>
+      <item identifierRef="id-contract-business-associate-agreement-medical-billing-company"/>
+      <item identifierRef="id-businessactor-cloud-backup-provider"/>
+      <item identifierRef="id-contract-business-associate-agreement-cloud-backup-provider"/>
+    </item>
+    <item><label xml:lang="en">Application</label>
+      <item identifierRef="id-dataobject-electronic-protected-health-information"/>
+      <item identifierRef="id-applicationcomponent-patient-portal"/>
+      <item identifierRef="id-applicationcomponent-electronic-health-record-system"/>
+      <item identifierRef="id-applicationcomponent-practice-management-and-billing-system"/>
+    </item>
+    <item><label xml:lang="en">Technology</label>
+      <item identifierRef="id-device-clinical-workstations"/>
+      <item identifierRef="id-technologyservice-cloud-backup"/>
+    </item>
+    <item><label xml:lang="en">Motivation</label>
+      <item identifierRef="id-driver-hipaa-security-rule-45-cfr-part-164-subpart-c"/>
+      <item identifierRef="id-goal-confidentiality-integrity-and-availability-of-ephi"/>
+      <item identifierRef="id-requirement-164-308-administrative-safeguards"/>
+      <item identifierRef="id-requirement-164-310-physical-safeguards"/>
+      <item identifierRef="id-requirement-164-312-technical-safeguards"/>
+      <item identifierRef="id-requirement-164-314-organizational-requirements"/>
+      <item identifierRef="id-requirement-164-316-policies-procedures-and-documentation"/>
+      <item identifierRef="id-requirement-164-308-a-1-security-management-process"/>
+      <item identifierRef="id-requirement-risk-analysis-required"/>
+      <item identifierRef="id-requirement-risk-management-required"/>
+      <item identifierRef="id-requirement-sanction-policy-required"/>
+      <item identifierRef="id-requirement-information-system-activity-review-required"/>
+      <item identifierRef="id-requirement-164-308-a-2-assigned-security-responsibility"/>
+      <item identifierRef="id-requirement-164-308-a-3-workforce-security"/>
+      <item identifierRef="id-requirement-authorization-and-or-supervision-addressable"/>
+      <item identifierRef="id-requirement-workforce-clearance-procedure-addressable"/>
+      <item identifierRef="id-requirement-termination-procedures-addressable"/>
+      <item identifierRef="id-requirement-164-308-a-4-information-access-management"/>
+      <item identifierRef="id-requirement-isolating-health-care-clearinghouse-functions-required"/>
+      <item identifierRef="id-requirement-access-authorization-addressable"/>
+      <item identifierRef="id-requirement-access-establishment-and-modification-addressable"/>
+      <item identifierRef="id-requirement-164-308-a-5-security-awareness-and-training"/>
+      <item identifierRef="id-requirement-security-reminders-addressable"/>
+      <item identifierRef="id-requirement-protection-from-malicious-software-addressable"/>
+      <item identifierRef="id-requirement-log-in-monitoring-addressable"/>
+      <item identifierRef="id-requirement-password-management-addressable"/>
+      <item identifierRef="id-requirement-164-308-a-6-security-incident-procedures"/>
+      <item identifierRef="id-requirement-response-and-reporting-required"/>
+      <item identifierRef="id-requirement-164-308-a-7-contingency-plan"/>
+      <item identifierRef="id-requirement-data-backup-plan-required"/>
+      <item identifierRef="id-requirement-disaster-recovery-plan-required"/>
+      <item identifierRef="id-requirement-emergency-mode-operation-plan-required"/>
+      <item identifierRef="id-requirement-testing-and-revision-procedures-addressable"/>
+      <item identifierRef="id-requirement-applications-and-data-criticality-analysis-addressable"/>
+      <item identifierRef="id-requirement-164-308-a-8-evaluation"/>
+      <item identifierRef="id-requirement-164-308-b-1-business-associate-contracts-and-other-arrangements"/>
+      <item identifierRef="id-requirement-written-contract-or-other-arrangement-required"/>
+      <item identifierRef="id-requirement-164-310-a-1-facility-access-controls"/>
+      <item identifierRef="id-requirement-contingency-operations-addressable"/>
+      <item identifierRef="id-requirement-facility-security-plan-addressable"/>
+      <item identifierRef="id-requirement-access-control-and-validation-procedures-addressable"/>
+      <item identifierRef="id-requirement-maintenance-records-addressable"/>
+      <item identifierRef="id-requirement-164-310-b-workstation-use"/>
+      <item identifierRef="id-requirement-164-310-c-workstation-security"/>
+      <item identifierRef="id-requirement-164-310-d-1-device-and-media-controls"/>
+      <item identifierRef="id-requirement-disposal-required"/>
+      <item identifierRef="id-requirement-media-re-use-required"/>
+      <item identifierRef="id-requirement-accountability-addressable"/>
+      <item identifierRef="id-requirement-data-backup-and-storage-addressable"/>
+      <item identifierRef="id-requirement-164-312-a-1-access-control"/>
+      <item identifierRef="id-requirement-unique-user-identification-required"/>
+      <item identifierRef="id-requirement-emergency-access-procedure-required"/>
+      <item identifierRef="id-requirement-automatic-logoff-addressable"/>
+      <item identifierRef="id-requirement-encryption-and-decryption-addressable"/>
+      <item identifierRef="id-requirement-164-312-b-audit-controls"/>
+      <item identifierRef="id-requirement-164-312-c-1-integrity"/>
+      <item identifierRef="id-requirement-mechanism-to-authenticate-ephi-addressable"/>
+      <item identifierRef="id-requirement-164-312-d-person-or-entity-authentication"/>
+      <item identifierRef="id-requirement-164-312-e-1-transmission-security"/>
+      <item identifierRef="id-requirement-integrity-controls-addressable"/>
+      <item identifierRef="id-requirement-encryption-addressable"/>
+      <item identifierRef="id-requirement-164-314-a-1-business-associate-contracts-or-other-arrangements"/>
+      <item identifierRef="id-requirement-business-associate-contracts-required"/>
+      <item identifierRef="id-requirement-other-arrangements-required"/>
+      <item identifierRef="id-requirement-business-associate-contracts-with-subcontractors-required"/>
+      <item identifierRef="id-requirement-164-314-b-1-requirements-for-group-health-plans"/>
+      <item identifierRef="id-requirement-plan-document-provisions-required"/>
+      <item identifierRef="id-requirement-164-316-a-policies-and-procedures"/>
+      <item identifierRef="id-requirement-164-316-b-1-documentation"/>
+      <item identifierRef="id-requirement-time-limit-required"/>
+      <item identifierRef="id-requirement-availability-required"/>
+      <item identifierRef="id-requirement-updates-required"/>
+    </item>
+    <item><label xml:lang="en">Relations</label>
+      <item identifierRef="id-rel-001"/>
+      <item identifierRef="id-rel-002"/>
+      <item identifierRef="id-rel-003"/>
+      <item identifierRef="id-rel-004"/>
+      <item identifierRef="id-rel-005"/>
+      <item identifierRef="id-rel-006"/>
+      <item identifierRef="id-rel-007"/>
+      <item identifierRef="id-rel-008"/>
+      <item identifierRef="id-rel-009"/>
+      <item identifierRef="id-rel-010"/>
+      <item identifierRef="id-rel-011"/>
+      <item identifierRef="id-rel-012"/>
+      <item identifierRef="id-rel-013"/>
+      <item identifierRef="id-rel-014"/>
+      <item identifierRef="id-rel-015"/>
+      <item identifierRef="id-rel-016"/>
+      <item identifierRef="id-rel-017"/>
+      <item identifierRef="id-rel-018"/>
+      <item identifierRef="id-rel-019"/>
+      <item identifierRef="id-rel-020"/>
+      <item identifierRef="id-rel-021"/>
+      <item identifierRef="id-rel-022"/>
+      <item identifierRef="id-rel-023"/>
+      <item identifierRef="id-rel-024"/>
+      <item identifierRef="id-rel-025"/>
+      <item identifierRef="id-rel-026"/>
+      <item identifierRef="id-rel-027"/>
+      <item identifierRef="id-rel-028"/>
+      <item identifierRef="id-rel-029"/>
+      <item identifierRef="id-rel-030"/>
+      <item identifierRef="id-rel-031"/>
+      <item identifierRef="id-rel-032"/>
+      <item identifierRef="id-rel-033"/>
+      <item identifierRef="id-rel-034"/>
+      <item identifierRef="id-rel-035"/>
+      <item identifierRef="id-rel-036"/>
+      <item identifierRef="id-rel-037"/>
+      <item identifierRef="id-rel-038"/>
+      <item identifierRef="id-rel-039"/>
+      <item identifierRef="id-rel-040"/>
+      <item identifierRef="id-rel-041"/>
+      <item identifierRef="id-rel-042"/>
+      <item identifierRef="id-rel-043"/>
+      <item identifierRef="id-rel-044"/>
+      <item identifierRef="id-rel-045"/>
+      <item identifierRef="id-rel-046"/>
+      <item identifierRef="id-rel-047"/>
+      <item identifierRef="id-rel-048"/>
+      <item identifierRef="id-rel-049"/>
+      <item identifierRef="id-rel-050"/>
+      <item identifierRef="id-rel-051"/>
+      <item identifierRef="id-rel-052"/>
+      <item identifierRef="id-rel-053"/>
+      <item identifierRef="id-rel-054"/>
+      <item identifierRef="id-rel-055"/>
+      <item identifierRef="id-rel-056"/>
+      <item identifierRef="id-rel-057"/>
+      <item identifierRef="id-rel-058"/>
+      <item identifierRef="id-rel-059"/>
+      <item identifierRef="id-rel-060"/>
+      <item identifierRef="id-rel-061"/>
+      <item identifierRef="id-rel-062"/>
+      <item identifierRef="id-rel-063"/>
+      <item identifierRef="id-rel-064"/>
+      <item identifierRef="id-rel-065"/>
+      <item identifierRef="id-rel-066"/>
+      <item identifierRef="id-rel-067"/>
+      <item identifierRef="id-rel-068"/>
+      <item identifierRef="id-rel-069"/>
+      <item identifierRef="id-rel-070"/>
+      <item identifierRef="id-rel-071"/>
+      <item identifierRef="id-rel-072"/>
+      <item identifierRef="id-rel-073"/>
+      <item identifierRef="id-rel-074"/>
+      <item identifierRef="id-rel-075"/>
+      <item identifierRef="id-rel-076"/>
+      <item identifierRef="id-rel-077"/>
+      <item identifierRef="id-rel-078"/>
+      <item identifierRef="id-rel-079"/>
+      <item identifierRef="id-rel-080"/>
+      <item identifierRef="id-rel-081"/>
+      <item identifierRef="id-rel-082"/>
+      <item identifierRef="id-rel-083"/>
+      <item identifierRef="id-rel-084"/>
+      <item identifierRef="id-rel-085"/>
+      <item identifierRef="id-rel-086"/>
+      <item identifierRef="id-rel-087"/>
+      <item identifierRef="id-rel-088"/>
+      <item identifierRef="id-rel-089"/>
+      <item identifierRef="id-rel-090"/>
+      <item identifierRef="id-rel-091"/>
+      <item identifierRef="id-rel-092"/>
+      <item identifierRef="id-rel-093"/>
+      <item identifierRef="id-rel-094"/>
+      <item identifierRef="id-rel-095"/>
+      <item identifierRef="id-rel-096"/>
+      <item identifierRef="id-rel-097"/>
+      <item identifierRef="id-rel-098"/>
+      <item identifierRef="id-rel-099"/>
+      <item identifierRef="id-rel-100"/>
+      <item identifierRef="id-rel-101"/>
+      <item identifierRef="id-rel-102"/>
+      <item identifierRef="id-rel-103"/>
+      <item identifierRef="id-rel-104"/>
+      <item identifierRef="id-rel-105"/>
+      <item identifierRef="id-rel-106"/>
+      <item identifierRef="id-rel-107"/>
+      <item identifierRef="id-rel-108"/>
+      <item identifierRef="id-rel-109"/>
+      <item identifierRef="id-rel-110"/>
+      <item identifierRef="id-rel-111"/>
+      <item identifierRef="id-rel-112"/>
+      <item identifierRef="id-rel-113"/>
+      <item identifierRef="id-rel-114"/>
+      <item identifierRef="id-rel-115"/>
+      <item identifierRef="id-rel-116"/>
+      <item identifierRef="id-rel-117"/>
+      <item identifierRef="id-rel-118"/>
+      <item identifierRef="id-rel-119"/>
+    </item>
+    <item><label xml:lang="en">Views</label>
+      <item identifierRef="id-view-security-rule-safeguards-and-standards"/>
+      <item identifierRef="id-view-administrative-safeguards"/>
+      <item identifierRef="id-view-physical-technical-and-organizational-safeguards"/>
+      <item identifierRef="id-view-systems-holding-ephi-and-business-associates"/>
+    </item>
+  </organizations>
+  <propertyDefinitions>
+    <propertyDefinition identifier="propid-1" type="string"><name xml:lang="en">Citation</name></propertyDefinition>
+    <propertyDefinition identifier="propid-2" type="string"><name xml:lang="en">Required or addressable</name></propertyDefinition>
+    <propertyDefinition identifier="propid-3" type="string"><name xml:lang="en">Control owner</name></propertyDefinition>
+    <propertyDefinition identifier="propid-4" type="string"><name xml:lang="en">Evidence location</name></propertyDefinition>
+    <propertyDefinition identifier="propid-5" type="string"><name xml:lang="en">Decision and rationale</name></propertyDefinition>
+    <propertyDefinition identifier="propid-6" type="string"><name xml:lang="en">Applicability</name></propertyDefinition>
+    <propertyDefinition identifier="propid-7" type="string"><name xml:lang="en">Holds ephi</name></propertyDefinition>
+    <propertyDefinition identifier="propid-8" type="string"><name xml:lang="en">System owner</name></propertyDefinition>
+    <propertyDefinition identifier="propid-9" type="string"><name xml:lang="en">Encryption at rest</name></propertyDefinition>
+    <propertyDefinition identifier="propid-10" type="string"><name xml:lang="en">Baa signed date</name></propertyDefinition>
+    <propertyDefinition identifier="propid-11" type="string"><name xml:lang="en">Subcontractors flowed down</name></propertyDefinition>
+    <propertyDefinition identifier="propid-12" type="string"><name xml:lang="en">Signed date</name></propertyDefinition>
+    <propertyDefinition identifier="propid-13" type="string"><name xml:lang="en">Review date</name></propertyDefinition>
+  </propertyDefinitions>
+  <views>
+    <diagrams>
+      <view identifier="id-view-security-rule-safeguards-and-standards" xsi:type="Diagram" viewpoint="Motivation">
+        <name xml:lang="en">Security Rule safeguards and standards</name>
+        <documentation xml:lang="en">The five sections of Subpart C with the standards each one sets. The implementation specifications behind every standard are in the next two views.</documentation>
+        <node identifier="id-view-security-rule-safeguards-and-standards-n1" elementRef="id-driver-hipaa-security-rule-45-cfr-part-164-subpart-c" xsi:type="Element" x="20" y="20" w="300" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-security-rule-safeguards-and-standards-n2" elementRef="id-goal-confidentiality-integrity-and-availability-of-ephi" xsi:type="Element" x="520" y="20" w="400" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-security-rule-safeguards-and-standards-n3" elementRef="id-requirement-164-308-administrative-safeguards" xsi:type="Element" x="20" y="150" w="485" h="412">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n4" elementRef="id-requirement-164-308-a-1-security-management-process" xsi:type="Element" x="35" y="182" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n5" elementRef="id-requirement-164-308-a-2-assigned-security-responsibility" xsi:type="Element" x="270" y="182" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n6" elementRef="id-requirement-164-308-a-3-workforce-security" xsi:type="Element" x="35" y="257" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n7" elementRef="id-requirement-164-308-a-4-information-access-management" xsi:type="Element" x="270" y="257" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n8" elementRef="id-requirement-164-308-a-5-security-awareness-and-training" xsi:type="Element" x="35" y="332" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n9" elementRef="id-requirement-164-308-a-6-security-incident-procedures" xsi:type="Element" x="270" y="332" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n10" elementRef="id-requirement-164-308-a-7-contingency-plan" xsi:type="Element" x="35" y="407" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n11" elementRef="id-requirement-164-308-a-8-evaluation" xsi:type="Element" x="270" y="407" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n12" elementRef="id-requirement-164-308-b-1-business-associate-contracts-and-other-arrangements" xsi:type="Element" x="35" y="482" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-security-rule-safeguards-and-standards-n13" elementRef="id-requirement-164-310-physical-safeguards" xsi:type="Element" x="530" y="150" w="250" h="337">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n14" elementRef="id-requirement-164-310-a-1-facility-access-controls" xsi:type="Element" x="545" y="182" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n15" elementRef="id-requirement-164-310-b-workstation-use" xsi:type="Element" x="545" y="257" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n16" elementRef="id-requirement-164-310-c-workstation-security" xsi:type="Element" x="545" y="332" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n17" elementRef="id-requirement-164-310-d-1-device-and-media-controls" xsi:type="Element" x="545" y="407" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-security-rule-safeguards-and-standards-n18" elementRef="id-requirement-164-312-technical-safeguards" xsi:type="Element" x="805" y="150" w="250" h="412">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n19" elementRef="id-requirement-164-312-a-1-access-control" xsi:type="Element" x="820" y="182" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n20" elementRef="id-requirement-164-312-b-audit-controls" xsi:type="Element" x="820" y="257" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n21" elementRef="id-requirement-164-312-c-1-integrity" xsi:type="Element" x="820" y="332" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n22" elementRef="id-requirement-164-312-d-person-or-entity-authentication" xsi:type="Element" x="820" y="407" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n23" elementRef="id-requirement-164-312-e-1-transmission-security" xsi:type="Element" x="820" y="482" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-security-rule-safeguards-and-standards-n24" elementRef="id-requirement-164-314-organizational-requirements" xsi:type="Element" x="1080" y="150" w="250" h="202">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n25" elementRef="id-requirement-164-314-a-1-business-associate-contracts-or-other-arrangements" xsi:type="Element" x="1095" y="197" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n26" elementRef="id-requirement-164-314-b-1-requirements-for-group-health-plans" xsi:type="Element" x="1095" y="272" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-security-rule-safeguards-and-standards-n27" elementRef="id-requirement-164-316-policies-procedures-and-documentation" xsi:type="Element" x="1355" y="150" w="250" h="202">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n28" elementRef="id-requirement-164-316-a-policies-and-procedures" xsi:type="Element" x="1370" y="197" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-security-rule-safeguards-and-standards-n29" elementRef="id-requirement-164-316-b-1-documentation" xsi:type="Element" x="1370" y="272" w="220" h="60">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <connection identifier="id-view-security-rule-safeguards-and-standards-c1" relationshipRef="id-rel-001" xsi:type="Relationship" source="id-view-security-rule-safeguards-and-standards-n1" target="id-view-security-rule-safeguards-and-standards-n2"/>
+      </view>
+      <view identifier="id-view-administrative-safeguards" xsi:type="Diagram" viewpoint="Motivation">
+        <name xml:lang="en">Administrative safeguards</name>
+        <documentation xml:lang="en">Section 164.308: each standard with its implementation specifications, marked required or addressable, and the control that realizes it. For an addressable specification, record what was decided and why.</documentation>
+        <node identifier="id-view-administrative-safeguards-n1" elementRef="id-requirement-164-308-a-1-security-management-process" xsi:type="Element" x="20" y="20" w="300" h="292">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-administrative-safeguards-n2" elementRef="id-requirement-risk-analysis-required" xsi:type="Element" x="35" y="67" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-administrative-safeguards-n3" elementRef="id-requirement-risk-management-required" xsi:type="Element" x="35" y="127" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-administrative-safeguards-n4" elementRef="id-requirement-sanction-policy-required" xsi:type="Element" x="35" y="187" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-administrative-safeguards-n5" elementRef="id-requirement-information-system-activity-review-required" xsi:type="Element" x="35" y="247" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-administrative-safeguards-n6" elementRef="id-businessprocess-security-risk-analysis-and-risk-management-plan" xsi:type="Element" x="35" y="357" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-administrative-safeguards-n7" elementRef="id-requirement-164-308-a-2-assigned-security-responsibility" xsi:type="Element" x="350" y="20" w="300" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-administrative-safeguards-n8" elementRef="id-businessprocess-named-security-official" xsi:type="Element" x="365" y="135" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-administrative-safeguards-n9" elementRef="id-requirement-164-308-a-3-workforce-security" xsi:type="Element" x="680" y="20" w="300" h="217">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-administrative-safeguards-n10" elementRef="id-requirement-authorization-and-or-supervision-addressable" xsi:type="Element" x="695" y="52" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-administrative-safeguards-n11" elementRef="id-requirement-workforce-clearance-procedure-addressable" xsi:type="Element" x="695" y="112" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-administrative-safeguards-n12" elementRef="id-requirement-termination-procedures-addressable" xsi:type="Element" x="695" y="172" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-administrative-safeguards-n13" elementRef="id-businessprocess-workforce-access-authorisation-and-leavers" xsi:type="Element" x="695" y="282" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-administrative-safeguards-n14" elementRef="id-requirement-164-308-a-4-information-access-management" xsi:type="Element" x="20" y="462" w="300" h="232">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-administrative-safeguards-n15" elementRef="id-requirement-isolating-health-care-clearinghouse-functions-required" xsi:type="Element" x="35" y="509" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-administrative-safeguards-n16" elementRef="id-requirement-access-authorization-addressable" xsi:type="Element" x="35" y="569" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-administrative-safeguards-n17" elementRef="id-requirement-access-establishment-and-modification-addressable" xsi:type="Element" x="35" y="629" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-administrative-safeguards-n18" elementRef="id-businessprocess-access-approval-and-periodic-review" xsi:type="Element" x="35" y="739" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-administrative-safeguards-n19" elementRef="id-requirement-164-308-a-5-security-awareness-and-training" xsi:type="Element" x="350" y="462" w="300" h="292">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-administrative-safeguards-n20" elementRef="id-requirement-security-reminders-addressable" xsi:type="Element" x="365" y="509" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-administrative-safeguards-n21" elementRef="id-requirement-protection-from-malicious-software-addressable" xsi:type="Element" x="365" y="569" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-administrative-safeguards-n22" elementRef="id-requirement-log-in-monitoring-addressable" xsi:type="Element" x="365" y="629" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-administrative-safeguards-n23" elementRef="id-requirement-password-management-addressable" xsi:type="Element" x="365" y="689" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-administrative-safeguards-n24" elementRef="id-businessprocess-security-awareness-training" xsi:type="Element" x="365" y="799" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-administrative-safeguards-n25" elementRef="id-requirement-164-308-a-6-security-incident-procedures" xsi:type="Element" x="680" y="462" w="300" h="112">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-administrative-safeguards-n26" elementRef="id-requirement-response-and-reporting-required" xsi:type="Element" x="695" y="509" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-administrative-safeguards-n27" elementRef="id-businessprocess-security-incident-response" xsi:type="Element" x="695" y="619" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-administrative-safeguards-n28" elementRef="id-requirement-164-308-a-7-contingency-plan" xsi:type="Element" x="20" y="904" w="300" h="337">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-administrative-safeguards-n29" elementRef="id-requirement-data-backup-plan-required" xsi:type="Element" x="35" y="936" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-administrative-safeguards-n30" elementRef="id-requirement-disaster-recovery-plan-required" xsi:type="Element" x="35" y="996" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-administrative-safeguards-n31" elementRef="id-requirement-emergency-mode-operation-plan-required" xsi:type="Element" x="35" y="1056" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-administrative-safeguards-n32" elementRef="id-requirement-testing-and-revision-procedures-addressable" xsi:type="Element" x="35" y="1116" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-administrative-safeguards-n33" elementRef="id-requirement-applications-and-data-criticality-analysis-addressable" xsi:type="Element" x="35" y="1176" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-administrative-safeguards-n34" elementRef="id-businessprocess-backup-disaster-recovery-and-emergency-mode-plans" xsi:type="Element" x="35" y="1286" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-administrative-safeguards-n35" elementRef="id-requirement-164-308-a-8-evaluation" xsi:type="Element" x="350" y="904" w="300" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-administrative-safeguards-n36" elementRef="id-businessprocess-periodic-security-evaluation" xsi:type="Element" x="365" y="1019" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-administrative-safeguards-n37" elementRef="id-requirement-164-308-b-1-business-associate-contracts-and-other-arrangements" xsi:type="Element" x="680" y="904" w="300" h="112">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-administrative-safeguards-n38" elementRef="id-requirement-written-contract-or-other-arrangement-required" xsi:type="Element" x="695" y="951" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-administrative-safeguards-n39" elementRef="id-businessprocess-business-associate-agreement-register" xsi:type="Element" x="695" y="1061" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-administrative-safeguards-c1" relationshipRef="id-rel-012" xsi:type="Relationship" source="id-view-administrative-safeguards-n6" target="id-view-administrative-safeguards-n1"/>
+        <connection identifier="id-view-administrative-safeguards-c2" relationshipRef="id-rel-014" xsi:type="Relationship" source="id-view-administrative-safeguards-n8" target="id-view-administrative-safeguards-n7"/>
+        <connection identifier="id-view-administrative-safeguards-c3" relationshipRef="id-rel-019" xsi:type="Relationship" source="id-view-administrative-safeguards-n13" target="id-view-administrative-safeguards-n9"/>
+        <connection identifier="id-view-administrative-safeguards-c4" relationshipRef="id-rel-024" xsi:type="Relationship" source="id-view-administrative-safeguards-n18" target="id-view-administrative-safeguards-n14"/>
+        <connection identifier="id-view-administrative-safeguards-c5" relationshipRef="id-rel-030" xsi:type="Relationship" source="id-view-administrative-safeguards-n24" target="id-view-administrative-safeguards-n19"/>
+        <connection identifier="id-view-administrative-safeguards-c6" relationshipRef="id-rel-033" xsi:type="Relationship" source="id-view-administrative-safeguards-n27" target="id-view-administrative-safeguards-n25"/>
+        <connection identifier="id-view-administrative-safeguards-c7" relationshipRef="id-rel-040" xsi:type="Relationship" source="id-view-administrative-safeguards-n34" target="id-view-administrative-safeguards-n28"/>
+        <connection identifier="id-view-administrative-safeguards-c8" relationshipRef="id-rel-042" xsi:type="Relationship" source="id-view-administrative-safeguards-n36" target="id-view-administrative-safeguards-n35"/>
+        <connection identifier="id-view-administrative-safeguards-c9" relationshipRef="id-rel-045" xsi:type="Relationship" source="id-view-administrative-safeguards-n39" target="id-view-administrative-safeguards-n37"/>
+      </view>
+      <view identifier="id-view-physical-technical-and-organizational-safeguards" xsi:type="Diagram" viewpoint="Motivation">
+        <name xml:lang="en">Physical, technical and organizational safeguards</name>
+        <documentation xml:lang="en">Sections 164.310, 164.312, 164.314 and 164.316: each standard with its implementation specifications, marked required or addressable, and the control that realizes it. The group health plan standard has no control because it does not apply to the example clinic; record that reason.</documentation>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n1" elementRef="id-requirement-164-310-a-1-facility-access-controls" xsi:type="Element" x="20" y="20" w="300" h="277">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n2" elementRef="id-requirement-contingency-operations-addressable" xsi:type="Element" x="35" y="52" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n3" elementRef="id-requirement-facility-security-plan-addressable" xsi:type="Element" x="35" y="112" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n4" elementRef="id-requirement-access-control-and-validation-procedures-addressable" xsi:type="Element" x="35" y="172" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n5" elementRef="id-requirement-maintenance-records-addressable" xsi:type="Element" x="35" y="232" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n6" elementRef="id-businessprocess-facility-security-plan-and-badge-access" xsi:type="Element" x="35" y="342" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n7" elementRef="id-requirement-164-310-b-workstation-use" xsi:type="Element" x="350" y="20" w="300" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n8" elementRef="id-businessprocess-workstation-use-policy" xsi:type="Element" x="365" y="135" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n9" elementRef="id-requirement-164-310-c-workstation-security" xsi:type="Element" x="680" y="20" w="300" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n10" elementRef="id-businessprocess-workstation-physical-safeguards" xsi:type="Element" x="695" y="135" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n11" elementRef="id-requirement-164-310-d-1-device-and-media-controls" xsi:type="Element" x="1010" y="20" w="300" h="277">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n12" elementRef="id-requirement-disposal-required" xsi:type="Element" x="1025" y="52" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n13" elementRef="id-requirement-media-re-use-required" xsi:type="Element" x="1025" y="112" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n14" elementRef="id-requirement-accountability-addressable" xsi:type="Element" x="1025" y="172" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n15" elementRef="id-requirement-data-backup-and-storage-addressable" xsi:type="Element" x="1025" y="232" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n16" elementRef="id-businessprocess-device-and-media-disposal-and-re-use" xsi:type="Element" x="1025" y="342" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n17" elementRef="id-requirement-164-312-a-1-access-control" xsi:type="Element" x="20" y="447" w="300" h="277">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n18" elementRef="id-requirement-unique-user-identification-required" xsi:type="Element" x="35" y="479" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n19" elementRef="id-requirement-emergency-access-procedure-required" xsi:type="Element" x="35" y="539" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n20" elementRef="id-requirement-automatic-logoff-addressable" xsi:type="Element" x="35" y="599" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n21" elementRef="id-requirement-encryption-and-decryption-addressable" xsi:type="Element" x="35" y="659" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n22" elementRef="id-businessprocess-role-based-access-with-unique-ids" xsi:type="Element" x="35" y="769" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n23" elementRef="id-requirement-164-312-b-audit-controls" xsi:type="Element" x="350" y="447" w="300" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n24" elementRef="id-businessprocess-audit-logging-of-ephi-access" xsi:type="Element" x="365" y="562" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n25" elementRef="id-requirement-164-312-c-1-integrity" xsi:type="Element" x="680" y="447" w="300" h="97">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n26" elementRef="id-requirement-mechanism-to-authenticate-ephi-addressable" xsi:type="Element" x="695" y="479" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n27" elementRef="id-businessprocess-integrity-checking-of-clinical-records" xsi:type="Element" x="695" y="589" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n28" elementRef="id-requirement-164-312-d-person-or-entity-authentication" xsi:type="Element" x="1010" y="447" w="300" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n29" elementRef="id-businessprocess-multi-factor-authentication" xsi:type="Element" x="1025" y="562" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n30" elementRef="id-requirement-164-312-e-1-transmission-security" xsi:type="Element" x="20" y="874" w="300" h="157">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n31" elementRef="id-requirement-integrity-controls-addressable" xsi:type="Element" x="35" y="906" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n32" elementRef="id-requirement-encryption-addressable" xsi:type="Element" x="35" y="966" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n33" elementRef="id-businessprocess-encryption-in-transit" xsi:type="Element" x="35" y="1076" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n34" elementRef="id-requirement-164-314-a-1-business-associate-contracts-or-other-arrangements" xsi:type="Element" x="350" y="874" w="300" h="232">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n35" elementRef="id-requirement-business-associate-contracts-required" xsi:type="Element" x="365" y="921" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n36" elementRef="id-requirement-other-arrangements-required" xsi:type="Element" x="365" y="981" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n37" elementRef="id-requirement-business-associate-contracts-with-subcontractors-required" xsi:type="Element" x="365" y="1041" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n38" elementRef="id-businessobject-business-associate-agreement-template" xsi:type="Element" x="365" y="1151" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n39" elementRef="id-requirement-164-314-b-1-requirements-for-group-health-plans" xsi:type="Element" x="680" y="874" w="300" h="112">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n40" elementRef="id-requirement-plan-document-provisions-required" xsi:type="Element" x="695" y="921" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n41" elementRef="id-requirement-164-316-a-policies-and-procedures" xsi:type="Element" x="1010" y="874" w="300" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n42" elementRef="id-businessprocess-security-policies-and-procedures-manual" xsi:type="Element" x="1025" y="989" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n43" elementRef="id-requirement-164-316-b-1-documentation" xsi:type="Element" x="20" y="1256" w="300" h="217">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n44" elementRef="id-requirement-time-limit-required" xsi:type="Element" x="35" y="1288" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n45" elementRef="id-requirement-availability-required" xsi:type="Element" x="35" y="1348" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-physical-technical-and-organizational-safeguards-n46" elementRef="id-requirement-updates-required" xsi:type="Element" x="35" y="1408" w="270" h="45">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-physical-technical-and-organizational-safeguards-n47" elementRef="id-businessprocess-documentation-retention-for-six-years" xsi:type="Element" x="35" y="1518" w="270" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-physical-technical-and-organizational-safeguards-c1" relationshipRef="id-rel-051" xsi:type="Relationship" source="id-view-physical-technical-and-organizational-safeguards-n6" target="id-view-physical-technical-and-organizational-safeguards-n1"/>
+        <connection identifier="id-view-physical-technical-and-organizational-safeguards-c2" relationshipRef="id-rel-053" xsi:type="Relationship" source="id-view-physical-technical-and-organizational-safeguards-n8" target="id-view-physical-technical-and-organizational-safeguards-n7"/>
+        <connection identifier="id-view-physical-technical-and-organizational-safeguards-c3" relationshipRef="id-rel-055" xsi:type="Relationship" source="id-view-physical-technical-and-organizational-safeguards-n10" target="id-view-physical-technical-and-organizational-safeguards-n9"/>
+        <connection identifier="id-view-physical-technical-and-organizational-safeguards-c4" relationshipRef="id-rel-061" xsi:type="Relationship" source="id-view-physical-technical-and-organizational-safeguards-n16" target="id-view-physical-technical-and-organizational-safeguards-n11"/>
+        <connection identifier="id-view-physical-technical-and-organizational-safeguards-c5" relationshipRef="id-rel-067" xsi:type="Relationship" source="id-view-physical-technical-and-organizational-safeguards-n22" target="id-view-physical-technical-and-organizational-safeguards-n17"/>
+        <connection identifier="id-view-physical-technical-and-organizational-safeguards-c6" relationshipRef="id-rel-069" xsi:type="Relationship" source="id-view-physical-technical-and-organizational-safeguards-n24" target="id-view-physical-technical-and-organizational-safeguards-n23"/>
+        <connection identifier="id-view-physical-technical-and-organizational-safeguards-c7" relationshipRef="id-rel-072" xsi:type="Relationship" source="id-view-physical-technical-and-organizational-safeguards-n27" target="id-view-physical-technical-and-organizational-safeguards-n25"/>
+        <connection identifier="id-view-physical-technical-and-organizational-safeguards-c8" relationshipRef="id-rel-074" xsi:type="Relationship" source="id-view-physical-technical-and-organizational-safeguards-n29" target="id-view-physical-technical-and-organizational-safeguards-n28"/>
+        <connection identifier="id-view-physical-technical-and-organizational-safeguards-c9" relationshipRef="id-rel-078" xsi:type="Relationship" source="id-view-physical-technical-and-organizational-safeguards-n33" target="id-view-physical-technical-and-organizational-safeguards-n30"/>
+        <connection identifier="id-view-physical-technical-and-organizational-safeguards-c10" relationshipRef="id-rel-083" xsi:type="Relationship" source="id-view-physical-technical-and-organizational-safeguards-n38" target="id-view-physical-technical-and-organizational-safeguards-n34"/>
+        <connection identifier="id-view-physical-technical-and-organizational-safeguards-c11" relationshipRef="id-rel-087" xsi:type="Relationship" source="id-view-physical-technical-and-organizational-safeguards-n42" target="id-view-physical-technical-and-organizational-safeguards-n41"/>
+        <connection identifier="id-view-physical-technical-and-organizational-safeguards-c12" relationshipRef="id-rel-092" xsi:type="Relationship" source="id-view-physical-technical-and-organizational-safeguards-n47" target="id-view-physical-technical-and-organizational-safeguards-n43"/>
+      </view>
+      <view identifier="id-view-systems-holding-ephi-and-business-associates" xsi:type="Diagram">
+        <name xml:lang="en">Systems holding ePHI and business associates</name>
+        <documentation xml:lang="en">The technical controls applied to each system that holds ePHI, and the business associate agreement behind every system a business associate runs. A system holding ePHI without the controls drawn to it, or an associate without a signed agreement, is a finding.</documentation>
+        <node identifier="id-view-systems-holding-ephi-and-business-associates-n1" elementRef="id-businessprocess-multi-factor-authentication" xsi:type="Element" x="20" y="20" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-systems-holding-ephi-and-business-associates-n2" elementRef="id-businessprocess-role-based-access-with-unique-ids" xsi:type="Element" x="240" y="20" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-systems-holding-ephi-and-business-associates-n3" elementRef="id-businessprocess-integrity-checking-of-clinical-records" xsi:type="Element" x="460" y="20" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-systems-holding-ephi-and-business-associates-n4" elementRef="id-businessprocess-audit-logging-of-ephi-access" xsi:type="Element" x="680" y="20" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-systems-holding-ephi-and-business-associates-n5" elementRef="id-businessprocess-encryption-in-transit" xsi:type="Element" x="900" y="20" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-systems-holding-ephi-and-business-associates-n6" elementRef="id-device-clinical-workstations" xsi:type="Element" x="20" y="220" w="200" h="60">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-systems-holding-ephi-and-business-associates-n7" elementRef="id-applicationcomponent-patient-portal" xsi:type="Element" x="240" y="220" w="200" h="60">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-systems-holding-ephi-and-business-associates-n8" elementRef="id-applicationcomponent-electronic-health-record-system" xsi:type="Element" x="460" y="220" w="200" h="60">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-systems-holding-ephi-and-business-associates-n9" elementRef="id-applicationcomponent-practice-management-and-billing-system" xsi:type="Element" x="680" y="220" w="200" h="60">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-systems-holding-ephi-and-business-associates-n10" elementRef="id-technologyservice-cloud-backup" xsi:type="Element" x="900" y="220" w="200" h="60">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-systems-holding-ephi-and-business-associates-n11" elementRef="id-dataobject-electronic-protected-health-information" xsi:type="Element" x="130" y="360" w="220" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-systems-holding-ephi-and-business-associates-n12" elementRef="id-contract-business-associate-agreement-ehr-hosting-provider" xsi:type="Element" x="460" y="480" w="200" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-systems-holding-ephi-and-business-associates-n13" elementRef="id-businessactor-ehr-hosting-provider" xsi:type="Element" x="460" y="620" w="200" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-systems-holding-ephi-and-business-associates-n14" elementRef="id-contract-business-associate-agreement-medical-billing-company" xsi:type="Element" x="680" y="480" w="200" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-systems-holding-ephi-and-business-associates-n15" elementRef="id-businessactor-medical-billing-company" xsi:type="Element" x="680" y="620" w="200" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-systems-holding-ephi-and-business-associates-n16" elementRef="id-contract-business-associate-agreement-cloud-backup-provider" xsi:type="Element" x="900" y="480" w="200" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-systems-holding-ephi-and-business-associates-n17" elementRef="id-businessactor-cloud-backup-provider" xsi:type="Element" x="900" y="620" w="200" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-systems-holding-ephi-and-business-associates-n18" elementRef="id-requirement-164-314-a-1-business-associate-contracts-or-other-arrangements" xsi:type="Element" x="1160" y="200" w="260" h="80">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c1" relationshipRef="id-rel-093" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n7" target="id-view-systems-holding-ephi-and-business-associates-n11"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c2" relationshipRef="id-rel-094" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n8" target="id-view-systems-holding-ephi-and-business-associates-n11"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c3" relationshipRef="id-rel-095" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n13" target="id-view-systems-holding-ephi-and-business-associates-n12"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c4" relationshipRef="id-rel-096" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n12" target="id-view-systems-holding-ephi-and-business-associates-n8"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c5" relationshipRef="id-rel-097" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n12" target="id-view-systems-holding-ephi-and-business-associates-n18"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c6" relationshipRef="id-rel-099" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n9" target="id-view-systems-holding-ephi-and-business-associates-n11"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c7" relationshipRef="id-rel-100" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n15" target="id-view-systems-holding-ephi-and-business-associates-n14"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c8" relationshipRef="id-rel-101" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n14" target="id-view-systems-holding-ephi-and-business-associates-n9"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c9" relationshipRef="id-rel-102" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n14" target="id-view-systems-holding-ephi-and-business-associates-n18"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c10" relationshipRef="id-rel-104" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n17" target="id-view-systems-holding-ephi-and-business-associates-n16"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c11" relationshipRef="id-rel-105" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n16" target="id-view-systems-holding-ephi-and-business-associates-n10"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c12" relationshipRef="id-rel-106" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n16" target="id-view-systems-holding-ephi-and-business-associates-n18"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c13" relationshipRef="id-rel-108" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n1" target="id-view-systems-holding-ephi-and-business-associates-n6"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c14" relationshipRef="id-rel-109" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n1" target="id-view-systems-holding-ephi-and-business-associates-n7"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c15" relationshipRef="id-rel-110" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n1" target="id-view-systems-holding-ephi-and-business-associates-n8"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c16" relationshipRef="id-rel-111" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n2" target="id-view-systems-holding-ephi-and-business-associates-n7"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c17" relationshipRef="id-rel-112" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n2" target="id-view-systems-holding-ephi-and-business-associates-n8"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c18" relationshipRef="id-rel-113" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n2" target="id-view-systems-holding-ephi-and-business-associates-n9"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c19" relationshipRef="id-rel-114" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n3" target="id-view-systems-holding-ephi-and-business-associates-n8"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c20" relationshipRef="id-rel-115" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n4" target="id-view-systems-holding-ephi-and-business-associates-n8"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c21" relationshipRef="id-rel-116" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n4" target="id-view-systems-holding-ephi-and-business-associates-n9"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c22" relationshipRef="id-rel-117" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n5" target="id-view-systems-holding-ephi-and-business-associates-n7"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c23" relationshipRef="id-rel-118" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n5" target="id-view-systems-holding-ephi-and-business-associates-n9"/>
+        <connection identifier="id-view-systems-holding-ephi-and-business-associates-c24" relationshipRef="id-rel-119" xsi:type="Relationship" source="id-view-systems-holding-ephi-and-business-associates-n5" target="id-view-systems-holding-ephi-and-business-associates-n10"/>
+      </view>
+    </diagrams>
+  </views>
+</model>
