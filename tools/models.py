@@ -1127,7 +1127,259 @@ def cyber_essentials() -> Model:
     return m
 
 
-ALL = [capability_map, application_portfolio, nis2, dora, layered_onboarding, company_model, iso22301, cyber_essentials]
+# ------------------------------------------------------------------------------------------------
+# 9. EU AI Act with ISO/IEC 42001: AI inventory, obligations by article, management system controls
+# ------------------------------------------------------------------------------------------------
+
+AI_ACT_ARTICLES = [
+    # article, short title, who it binds, summary in our own words
+    ("5", "Prohibited AI practices", "All", "AI practices that may not be placed on the market or used at all, "
+     "among them emotion recognition in the workplace or in education except for medical or safety reasons."),
+    ("9", "Risk management system", "Provider", "A risk management process run across the whole life cycle of "
+     "a high-risk system: identify and evaluate risks, adopt measures, and test against them."),
+    ("10", "Data and data governance", "Provider", "Training, validation and testing data governed for "
+     "relevance, representativeness, errors, completeness and possible bias."),
+    ("11", "Technical documentation", "Provider", "Technical documentation drawn up before the system is placed "
+     "on the market and kept up to date, covering the elements set out in Annex IV."),
+    ("12", "Record-keeping", "Provider", "Automatic logging of events over the system's lifetime, so its "
+     "operation can be traced."),
+    ("13", "Transparency and information to deployers", "Provider", "Instructions for use that let deployers "
+     "understand the system's output, capabilities, limitations and oversight measures."),
+    ("14", "Human oversight", "Provider", "Design that lets natural persons oversee the system effectively, "
+     "understand its limits, override its output and stop it."),
+    ("15", "Accuracy, robustness and cybersecurity", "Provider", "Appropriate, declared levels of accuracy, "
+     "resilience to errors and inconsistencies, and protection against attempts to alter use or performance."),
+    ("17", "Quality management system", "Provider", "Documented policies, procedures and accountability that "
+     "assure compliance across design, development, testing, data management and monitoring."),
+    ("26", "Obligations of deployers of high-risk AI systems", "Deployer", "Use the system as instructed, assign "
+     "competent human oversight, keep input data relevant, monitor operation and report risks and serious "
+     "incidents, keep logs for at least six months, inform workers' representatives before workplace use, "
+     "and tell people when a high-risk system helps make decisions about them."),
+    ("27", "Fundamental rights impact assessment", "Deployer", "Before first use, public bodies, private "
+     "entities providing public services, and deployers of credit scoring or life and health insurance "
+     "pricing systems assess the processes, affected groups, risks of harm, oversight and remedies."),
+    ("50", "Transparency for certain AI systems", "Provider and deployer", "People are told when they interact "
+     "with an AI system; generated content is marked as such in a machine-readable way; deep fakes and "
+     "emotion recognition are disclosed."),
+    ("72", "Post-market monitoring", "Provider", "A post-market monitoring system and plan that collects and "
+     "analyses performance data throughout the system's lifetime."),
+    ("73", "Reporting of serious incidents", "Provider", "Serious incidents reported to the market surveillance "
+     "authority immediately and at the latest within 15 days of awareness; 2 days for a widespread "
+     "infringement or serious disruption of critical infrastructure; 10 days where a person has died."),
+]
+
+ISO42001_ANNEX_A = [
+    # area, short title, summary in our own words, Act articles it helps meet
+    ("A.2", "Policies related to AI", "An AI policy aligned with other organisational policies and reviewed.",
+     ["17"]),
+    ("A.3", "Internal organisation", "Defined AI roles and responsibilities and a way to report concerns.",
+     ["17"]),
+    ("A.4", "Resources for AI systems", "Data, tooling, computing and human resources documented for each AI "
+     "system.", ["11"]),
+    ("A.5", "Assessing impacts of AI systems", "A process to assess and document impacts of AI systems on "
+     "individuals, groups and society.", ["27"]),
+    ("A.6", "AI system life cycle", "Responsible design, development, verification, deployment, operation, "
+     "monitoring and event logging of AI systems.", ["9", "11", "12", "15", "72"]),
+    ("A.7", "Data for AI systems", "Data acquisition, quality, provenance and preparation managed for AI "
+     "systems.", ["10"]),
+    ("A.8", "Information for interested parties", "Documentation and information for users, reporting of "
+     "adverse impacts and communication of incidents.", ["13", "50", "73"]),
+    ("A.9", "Use of AI systems", "Processes and objectives for responsible use of AI systems within their "
+     "intended use.", ["14", "26"]),
+    ("A.10", "Third-party and customer relationships", "Responsibilities shared with suppliers, partners and "
+     "customers, and supplier management.", ["26"]),
+]
+
+ISO42001_CLAUSES = [
+    ("4", "Context of the organisation", "Internal and external issues, interested parties, the organisation's "
+     "roles towards AI systems, and the scope of the AI management system.",
+     "AI management system scope and inventory"),
+    ("5", "Leadership", "Top management commitment, an AI policy, and assigned roles, responsibilities and "
+     "authorities.", "AI policy approval and role assignment"),
+    ("6", "Planning", "AI risk assessment and treatment, AI system impact assessment, a statement of "
+     "applicability for the Annex A controls, and AI objectives.", "AI risk assessment and treatment"),
+    ("7", "Support", "Resources, competence, awareness, communication and documented information.",
+     "AI competence and awareness programme"),
+    ("8", "Operation", "Operational planning and control, with risk assessments, risk treatment and impact "
+     "assessments carried out when planned and when things change.", "AI use case intake and classification"),
+    ("9", "Performance evaluation", "Monitoring, measurement, analysis and evaluation, internal audit and "
+     "management review.", "AI internal audit and management review"),
+    ("10", "Improvement", "Continual improvement, nonconformity and corrective action.", "AI corrective action"),
+]
+
+AI_SYSTEMS = [
+    # name, risk class, role, basis, intended purpose, obligations it is subject to
+    ("Staff emotion monitoring", "Prohibited", "Proposed deployer",
+     "Article 5: emotion recognition in the workplace",
+     "Proposal to read staff emotions on video calls. Rejected at intake and never deployed.", ["5"]),
+    ("CV screening assistant", "High-risk", "Deployer", "Annex III point 4: recruitment and selection",
+     "Ranks job applications for recruiters. Bought from a vendor, who is the provider.", ["26"]),
+    ("Credit scoring model", "High-risk", "Provider and deployer",
+     "Annex III point 5(b): creditworthiness of natural persons",
+     "Scores consumer loan applications. Built in-house and used by the lending team.",
+     ["provider", "26", "27"]),
+    ("Customer service chatbot", "Limited risk", "Provider", "Article 50: interacts directly with people",
+     "Answers customer questions on the website, built on a third-party general-purpose model.", ["50"]),
+    ("Email spam and phishing filter", "Minimal risk", "Deployer", "No specific obligations",
+     "Filters inbound email. Voluntary codes of conduct apply.", []),
+    ("General-purpose language model", "General-purpose AI model", "Downstream user",
+     "Chapter V: obligations rest on the model provider",
+     "Third-party model accessed through an API. Powers the customer service chatbot.", ["53"]),
+]
+
+AI_CLASSES = [
+    ("Prohibited", "Article 5. May not be placed on the market, put into service or used."),
+    ("High-risk", "Article 6 with Annexes I and III. Subject to Chapter III requirements before and after "
+     "being placed on the market."),
+    ("Limited risk", "Article 50 transparency obligations."),
+    ("Minimal risk", "No specific obligations under the Act."),
+    ("General-purpose AI model", "Chapter V. Obligations on the model provider, with more for models with "
+     "systemic risk."),
+]
+
+
+def ai_act() -> Model:
+    m = Model("eu-ai-act-iso42001", "EU AI Act with ISO/IEC 42001 (starter)",
+              "An AI system inventory classified by the risk tiers of the EU Artificial Intelligence Act, "
+              "Regulation (EU) 2024/1689, the provider and deployer obligations that follow, article by "
+              "article, and the ISO/IEC 42001:2023 AI management system clauses and Annex A control areas that "
+              "meet them. Each AI system records its risk classification, the organisation's role towards it "
+              "(provider, deployer or both) and the legal basis for the classification. Article summaries are "
+              "paraphrased and ISO/IEC 42001 is cited by clause and control area title only. Replace the "
+              "example lender's AI systems with your own inventory. This model is a structuring aid, not "
+              "legal advice.")
+    act = m.el("Driver", "EU AI Act, Regulation (EU) 2024/1689",
+               "In force since 1 August 2024 and amended by Regulation (EU) 2026/1744. Prohibitions have applied "
+               "since 2 February 2025 and general-purpose AI model obligations since 2 August 2025. High-risk "
+               "obligations apply from 2 December 2027 for Annex III systems and from 2 August 2028 for "
+               "systems covered by Annex I.")
+    iso = m.el("Driver", "ISO/IEC 42001:2023 AI management systems",
+               "The international standard for an AI management system. Certification is against clauses 4 to "
+               "10, with Annex A as the reference set of controls.")
+    goal = m.el("Goal", "Lawful, trustworthy use of AI",
+                "Every AI system the organisation builds or uses is known, classified, and governed in line with "
+                "its risk.")
+    m.rel("Influence", act, goal)
+    m.rel("Influence", iso, goal)
+
+    # Obligations under the Act, grouped by who they bind.
+    art = {}
+    groups = {"Provider": m.el("Requirement", "Provider obligations for high-risk AI systems",
+                               "Chapter III, Sections 2 and 3: requirements for the system and duties of its "
+                               "provider."),
+              "Deployer": m.el("Requirement", "Deployer obligations for high-risk AI systems",
+                               "Duties of the organisation using a high-risk system under its authority."),
+              "Other": m.el("Requirement", "Obligations for every AI system",
+                            "Prohibited practices and transparency duties, whatever the risk tier.")}
+    for g in groups.values():
+        m.rel("Realization", g, goal)
+    for num, title, binds, text in AI_ACT_ARTICLES:
+        art[num] = m.el("Requirement", f"Article {num}: {title}", text, binds=binds)
+        key = binds if binds in ("Provider", "Deployer") else "Other"
+        m.rel("Composition", groups[key], art[num])
+    art["53"] = m.el("Requirement", "Article 53: Obligations of general-purpose AI model providers",
+                     "Technical documentation, information for downstream providers, a copyright policy and a "
+                     "public summary of training content.", binds="General-purpose AI model provider")
+
+    # The inventory.
+    cls = {c: m.el("Grouping", c, doc) for c, doc in AI_CLASSES}
+    system = {}
+    for name, risk, role, basis, purpose, subject in AI_SYSTEMS:
+        system[name] = m.el("ApplicationComponent", name, purpose, risk_classification=risk, our_role=role,
+                            classification_basis=basis, system_owner="", provider="")
+        m.rel("Aggregation", cls[risk], system[name])
+        for s in subject:
+            target = groups["Provider"] if s == "provider" else art[s]
+            m.rel("Association", system[name], target, "subject to")
+    m.rel("Serving", system["General-purpose language model"], system["Customer service chatbot"])
+    model_provider = m.el("BusinessActor", "Model provider", "Provider of the general-purpose model, bound by "
+                          "Article 53.")
+    m.rel("Association", model_provider, system["General-purpose language model"], "provides")
+
+    # The AI management system: clause processes and Annex A control areas.
+    clause, process = {}, {}
+    iso_req = m.el("Requirement", "ISO/IEC 42001 requirements (clauses 4 to 10)",
+                   "The requirements a certified AI management system must meet.")
+    m.rel("Realization", iso_req, goal)
+    for num, title, text, proc in ISO42001_CLAUSES:
+        clause[num] = m.el("Requirement", f"Clause {num}: {title}", text)
+        m.rel("Composition", iso_req, clause[num])
+        process[num] = m.el("BusinessProcess", proc, "Example control. Replace with the process that meets this "
+                            "clause in your organisation.", control_owner="", evidence_location="")
+        m.rel("Realization", process[num], clause[num])
+    m.rel("Realization", process["6"], art["9"])
+    m.rel("Realization", process["8"], art["5"])
+    m.rel("Association", process["4"], cls["High-risk"], "classifies")
+    soa = m.el("BusinessObject", "Statement of applicability", "Lists each Annex A control, whether it applies, "
+               "why, and whether it is implemented.", owner="", last_reviewed="")
+    m.rel("Realization", soa, clause["6"])
+    annex = m.el("Grouping", "ISO/IEC 42001 Annex A control areas", "Nine control objective areas, A.2 to A.10.")
+    m.rel("Association", soa, annex, "selects from")
+    area = {}
+    for code, title, text, arts in ISO42001_ANNEX_A:
+        area[code] = m.el("BusinessFunction", f"{code} {title}", text + " Example control area; record the "
+                          "controls you apply in the statement of applicability.", control_owner="",
+                          evidence_location="")
+        m.rel("Aggregation", annex, area[code])
+        for a in arts:
+            m.rel("Realization", area[code], art[a])
+
+    # View 1: the inventory by risk tier and what each system is subject to.
+    v = m.view("AI system inventory and risk classification", "Every AI system in the organisation, sorted "
+               "into the Act's risk tiers, with the obligations each one brings. Record the organisation's "
+               "role for each system: a deployer that substantially modifies a high-risk system, or puts its "
+               "own name on it, becomes its provider.")
+    order = ["Prohibited", "High-risk", "Limited risk", "General-purpose AI model", "Minimal risk"]
+    x = 20
+    for c in order:
+        members = [system[n] for n, risk, *_ in AI_SYSTEMS if risk == c]
+        box = container(cls[c], x, 20, members, cols=len(members), w=200, h=60, title=c)
+        v.nodes.append(box)
+        x += box.w + 30
+    # Each obligation sits under the system it applies to; the impact assessment drops a row to keep
+    # its line clear of the provider obligations.
+    v.nodes += [Node(art["5"], 20, 230, 230, 80), Node(art["26"], 280, 230, 200, 80),
+                Node(groups["Provider"], 495, 230, 200, 80), Node(art["27"], 740, 380, 200, 80),
+                Node(art["50"], 790, 230, 190, 80), Node(art["53"], 1015, 230, 230, 80)]
+    on_view = on_view_of(v)
+    v.connections += [r.id for r in m.relationships if r.source in on_view and r.target in on_view
+                      and r.type in ("Association", "Serving")]
+
+    # View 2: obligations by article and the ISO/IEC 42001 controls that meet them.
+    o = m.view("AI Act obligations and ISO 42001 controls", "Each obligation of the Act beside the ISO/IEC "
+               "42001 control area or process that meets it, grouped so each control's obligations sit together. "
+               "An article with nothing drawn to it is a gap in the management system.", "Motivation")
+    rows = ["5", "9", "12", "15", "72", "11", "10", "13", "50", "73", "14", "26", "27", "17"]
+    for i, a in enumerate(rows):
+        o.nodes.append(Node(art[a], 20, 20 + i * 70, 260, 55))
+    for el, row in [(process["8"], 0), (process["6"], 1), (area["A.6"], 3), (area["A.4"], 5), (area["A.7"], 6),
+                    (area["A.8"], 8), (area["A.9"], 10), (area["A.10"], 11), (area["A.5"], 12), (area["A.2"], 13),
+                    (area["A.3"], 14)]:
+        o.nodes.append(Node(el, 850, 20 + row * 70, 260, 55))
+    on_view = on_view_of(o)
+    o.connections += [r.id for r in m.relationships if r.source in on_view and r.target in on_view]
+
+    # View 3: the ISO/IEC 42001 management system.
+    s = m.view("ISO 42001 AI management system", "Clauses 4 to 10 of ISO/IEC 42001, each with the process that "
+               "meets it, and the statement of applicability that selects the Annex A controls.", "Motivation")
+    s.nodes += [Node(iso, 20, 20, 260, 55), Node(goal, 360, 20, 300, 55), Node(iso_req, 740, 20, 320, 55)]
+    x = 20
+    for num in ["4", "5", "6", "7", "8", "9", "10"]:
+        width = 395 if num == "6" else 190
+        s.nodes += [Node(clause[num], x, 150, width, 70), Node(process[num], x, 290, 190, 60)]
+        if num == "6":
+            s.nodes.append(Node(soa, x + 205, 290, 190, 60))
+        x += width + 15
+    codes = [c for c, *_ in ISO42001_ANNEX_A]
+    s.nodes.append(container(annex, 20, 430, [area[c] for c in codes], cols=5, w=250, h=55,
+                             title="ISO/IEC 42001 Annex A control areas"))
+    on_view = on_view_of(s)
+    s.connections += [r.id for r in m.relationships if r.source in on_view and r.target in on_view
+                      and r.type not in ("Composition", "Aggregation")]
+    return m
+
+
+ALL = [capability_map, application_portfolio, nis2, dora, layered_onboarding, company_model, iso22301, cyber_essentials, ai_act]
 
 
 # ------------------------------------------------------------------------------------------------
