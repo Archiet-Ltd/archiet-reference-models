@@ -331,8 +331,10 @@ def dora() -> Model:
               "third-party providers behind those services, alongside the five areas of the Digital "
               "Operational Resilience Act, Regulation (EU) 2022/2554, applicable since 17 January 2025. "
               "The function-to-service-to-provider chain is the backbone of the register of information "
-              "on contractual arrangements (Article 28(3)) and of exit planning (Article 28(8)). This model "
-              "is a structuring aid, not legal advice.")
+              "on contractual arrangements (Article 28(3)) and of exit planning (Article 28(8)). Behind each "
+              "provider sit the subcontractors that effectively underpin its service, ranked as the register's "
+              "ICT service supply chain template (B_05.02 of Implementing Regulation (EU) 2024/2956) asks. "
+              "This model is a structuring aid, not legal advice.")
     driver = m.el("Driver", "DORA Regulation (EU) 2022/2554")
     goal = m.el("Goal", "Digital operational resilience",
                 "The ability to build, assure and review operational integrity and reliability by ensuring "
@@ -397,8 +399,8 @@ def dora() -> Model:
     }
     p_rel = []
     for prov, (svc, supported) in providers.items():
-        actor = m.el("BusinessActor", prov, "ICT third-party service provider.", lei="", country="",
-                     substitutability="")
+        actor = m.el("BusinessActor", prov, "ICT third-party service provider, rank 1 in its ICT service "
+                     "supply chain.", lei="", country="", substitutability="", rank="1")
         service = m.el("TechnologyService", svc, "ICT service provided by the third party.")
         contract = m.el("Contract", f"{svc} agreement", "Contractual arrangement recorded in the register of "
                         "information. Check the mandatory provisions of Article 30.", contract_reference="",
@@ -408,6 +410,46 @@ def dora() -> Model:
         p_rel.append((actor, contract, service))
         for app in supported:
             m.rel("Serving", service, a_ids[app])
+
+    # The ICT service supply chain: subcontractors that effectively underpin each provider's service.
+    # Rank follows the register (B_05.02): the direct provider is rank 1, its subcontractor rank 2, and
+    # a subcontractor's own subcontractor rank 3. The data centre operator appears in both chains.
+    by_name = {m.elements[a].name: (a, s) for a, _, s in p_rel}
+    subcontractors = [
+        # name, service, ICT service type (Annex III), recipient, rank, substitutability, documentation
+        ("Payments hosting provider", "Managed hosting", "S17 Cloud services: IaaS",
+         "Payments software vendor", "2", "Medium complexity in terms of substitutability",
+         "Hosts the payments software vendor's managed service."),
+        ("Network connectivity provider", "Network connectivity", "S10 Telecom carrier",
+         "Payments software vendor", "2", "Easily substitutable",
+         "Carries traffic between the payments software vendor and the payment schemes."),
+        ("Managed security monitoring provider", "Security monitoring", "S04 ICT security management services",
+         "Cloud infrastructure provider", "2", "Medium complexity in terms of substitutability",
+         "Runs round-the-clock security monitoring for the cloud infrastructure provider."),
+        ("Data centre operator", "Data centre colocation",
+         "S07 ICT, facilities and hosting services (excluding Cloud services)",
+         "Cloud infrastructure provider; Payments hosting provider", "2 (Cloud hosting); 3 (Managed payments service)",
+         "Highly complex substitutability",
+         "Operates the data centres used by both the cloud infrastructure provider and the payments hosting "
+         "provider: a concentration that neither direct contract shows."),
+    ]
+    s_ids = {}
+    for name, svc, ict_type, recipient, rank, subst, text in subcontractors:
+        actor = m.el("BusinessActor", name, f"ICT subcontractor. {text} Record the date the provider last "
+                     "confirmed this subcontracting arrangement.",
+                     rank=rank, **{"Recipient of sub-contracted ICT services": recipient},
+                     lei="", country="", ict_service_type=ict_type,
+                     supports_critical_or_important_function="Yes", substitutability=subst,
+                     last_confirmed_by_provider="")
+        service = m.el("TechnologyService", svc, "ICT service delivered by the subcontractor.")
+        m.rel("Association", actor, service)
+        s_ids[name] = (actor, service)
+    sub_of = {name: rec for name, _, _, rec, *_ in subcontractors}
+    for name, (actor, service) in s_ids.items():
+        for recipient in sub_of[name].split("; "):
+            r_actor, r_service = by_name.get(recipient) or s_ids[recipient]
+            m.rel("Serving", actor, r_actor, "subcontractor to")
+            m.rel("Serving", service, r_service)
 
     v = m.view("Critical functions and ICT third parties", "Read top to bottom: a critical or important "
                "function, the applications that serve it, the ICT services they run on, and the "
@@ -420,6 +462,28 @@ def dora() -> Model:
         v.nodes += [Node(service, x, 300, 220, 55), Node(contract, x, 410, 220, 55), Node(actor, x, 520, 220, 55)]
     on_view = on_view_of(v)
     v.connections += [r.id for r in m.relationships if r.source in on_view and r.target in on_view]
+
+    sv = m.view("ICT subcontracting chain", "Read top to bottom: a critical or important function, the "
+                "applications that serve it, the provider's ICT service and contract, the rank 1 provider, and "
+                "the subcontractors behind it with the services they deliver. The data centre operator serves "
+                "both chains, at rank 2 behind the cloud infrastructure provider and rank 3 behind the payments "
+                "software vendor: a concentration the direct contracts do not show.")
+    pay, cloud = p_rel
+    sv.nodes += [Node(f_ids["Payments processing"], 120, 20, 240, 60),
+                 Node(f_ids["Customer account servicing"], 620, 20, 240, 60),
+                 Node(f_ids["Regulatory reporting"], 960, 20, 240, 60)]
+    sv.nodes += [Node(a_ids["Payments engine"], 220, 150, 180, 55),
+                 Node(a_ids["Core banking platform"], 540, 150, 180, 55),
+                 Node(a_ids["Customer portal"], 760, 150, 180, 55),
+                 Node(a_ids["Reporting platform"], 1000, 150, 180, 55)]
+    for (actor, contract, service), x in [(pay, 220), (cloud, 860)]:
+        sv.nodes += [Node(service, x, 280, 180, 55), Node(contract, x, 390, 180, 55), Node(actor, x, 500, 180, 55)]
+    for name, x, y in [("Network connectivity provider", 20, 620), ("Payments hosting provider", 420, 620),
+                       ("Data centre operator", 640, 720), ("Managed security monitoring provider", 1060, 620)]:
+        actor, service = s_ids[name]
+        sv.nodes += [Node(service, x, 280, 180, 55), Node(actor, x, y, 180, 55)]
+    on_view = on_view_of(sv)
+    sv.connections += [r.id for r in m.relationships if r.source in on_view and r.target in on_view]
 
     pv = m.view("DORA requirement areas", "The five areas of the regulation, with the two third-party "
                 "duties this model's map feeds directly.", "Motivation")

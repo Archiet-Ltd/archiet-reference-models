@@ -58,6 +58,16 @@ def slug(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
 
 
+# Abbreviations kept in capitals when a property key becomes its display name.
+ACRONYMS = {"ict": "ICT", "lei": "LEI"}
+
+
+def label(key: str) -> str:
+    """Display name of a property: underscores become spaces, first letter capitalised, acronyms kept."""
+    text = " ".join(ACRONYMS.get(w.lower(), w) for w in key.replace("_", " ").split(" "))
+    return text[:1].upper() + text[1:]
+
+
 @dataclass
 class Element:
     id: str
@@ -114,11 +124,9 @@ class Model:
         if ident in self.elements:
             raise ValueError(f"duplicate element {type_} {name}")
         for key in props:
-            label = key.replace("_", " ").capitalize()
-            if label not in self.property_names:
-                self.property_names.append(label)
-        self.elements[ident] = Element(ident, type_, name, doc,
-                                       {k.replace("_", " ").capitalize(): v for k, v in props.items()})
+            if label(key) not in self.property_names:
+                self.property_names.append(label(key))
+        self.elements[ident] = Element(ident, type_, name, doc, {label(k): v for k, v in props.items()})
         return ident
 
     def rel(self, type_: str, source: str, target: str, name: str = "", access: str = "") -> str:
@@ -364,6 +372,7 @@ ALLOWED = {
     ("Access", "ApplicationProcess", "DataObject"), ("Access", "ApplicationEvent", "DataObject"),
     ("Realization", "Artifact", "DataObject"), ("Realization", "Device", "TechnologyService"),
     ("Access", "TechnologyService", "Artifact"), ("Access", "Node", "Artifact"),
+    ("Serving", "TechnologyService", "TechnologyService"),
 }
 
 
