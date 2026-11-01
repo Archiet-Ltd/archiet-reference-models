@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="id-pci-dss" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd">
+  <name xml:lang="en">PCI DSS v4.0.1 (starter)</name>
+  <documentation xml:lang="en">The Payment Card Industry Data Security Standard v4.0.1: its twelve requirements under six goals, each realized by an example control applied to the systems in scope. The cardholder data environment is shown with the connected-to and security-impacting systems around it and the segmentation that keeps the rest of the network out of scope, because scope is what decides how much of the standard applies. Requirement numbers are the standard's; titles and summaries are our own words, and the standard itself, from the PCI Security Standards Council, is the reference. Replace the example retailer's systems with your own.</documentation>
+  <elements>
+    <element identifier="id-driver-pci-dss-v4-0-1" xsi:type="Driver">
+      <name xml:lang="en">PCI DSS v4.0.1</name>
+      <documentation xml:lang="en">Published by the PCI Security Standards Council in June 2024. Applies to every entity that stores, processes or transmits cardholder data or sensitive authentication data, or could affect its security.</documentation>
+    </element>
+    <element identifier="id-goal-secure-network-and-systems" xsi:type="Goal">
+      <name xml:lang="en">Secure network and systems</name>
+    </element>
+    <element identifier="id-requirement-requirement-1-network-security-controls" xsi:type="Requirement">
+      <name xml:lang="en">Requirement 1: Network security controls</name>
+      <documentation xml:lang="en">Network security controls, such as firewalls, restrict traffic into and out of the cardholder data environment, with rules that are documented, justified and reviewed.</documentation>
+    </element>
+    <element identifier="id-businessprocess-network-security-rule-management" xsi:type="BusinessProcess">
+      <name xml:lang="en">Network security rule management</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this requirement in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">CDE segmentation firewall</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-requirement-2-secure-configuration-of-system-components" xsi:type="Requirement">
+      <name xml:lang="en">Requirement 2: Secure configuration of system components</name>
+      <documentation xml:lang="en">Every system component is built from a hardened configuration standard, with vendor defaults changed and unneeded functions removed.</documentation>
+    </element>
+    <element identifier="id-businessprocess-hardened-configuration-standards" xsi:type="BusinessProcess">
+      <name xml:lang="en">Hardened configuration standards</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this requirement in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">CDE database server</value></property>
+      </properties>
+    </element>
+    <element identifier="id-goal-protect-account-data" xsi:type="Goal">
+      <name xml:lang="en">Protect account data</name>
+    </element>
+    <element identifier="id-requirement-requirement-3-protection-of-stored-account-data" xsi:type="Requirement">
+      <name xml:lang="en">Requirement 3: Protection of stored account data</name>
+      <documentation xml:lang="en">Store as little account data as possible, never keep sensitive authentication data after authorisation, and render stored card numbers unreadable.</documentation>
+    </element>
+    <element identifier="id-businessprocess-tokenisation-of-stored-card-numbers" xsi:type="BusinessProcess">
+      <name xml:lang="en">Tokenisation of stored card numbers</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this requirement in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">Card data vault</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-requirement-4-strong-cryptography-in-transit" xsi:type="Requirement">
+      <name xml:lang="en">Requirement 4: Strong cryptography in transit</name>
+      <documentation xml:lang="en">Card numbers are protected with strong cryptography whenever they travel over open, public networks.</documentation>
+    </element>
+    <element identifier="id-businessprocess-tls-for-card-data-in-transit" xsi:type="BusinessProcess">
+      <name xml:lang="en">TLS for card data in transit</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this requirement in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">Payment application</value></property>
+      </properties>
+    </element>
+    <element identifier="id-goal-vulnerability-management-programme" xsi:type="Goal">
+      <name xml:lang="en">Vulnerability management programme</name>
+    </element>
+    <element identifier="id-requirement-requirement-5-protection-from-malicious-software" xsi:type="Requirement">
+      <name xml:lang="en">Requirement 5: Protection from malicious software</name>
+      <documentation xml:lang="en">Anti-malware runs on systems at risk, stays current, and is backed by protection against phishing.</documentation>
+    </element>
+    <element identifier="id-businessprocess-anti-malware-on-cde-systems" xsi:type="BusinessProcess">
+      <name xml:lang="en">Anti-malware on CDE systems</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this requirement in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">Jump host</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-requirement-6-secure-systems-and-software" xsi:type="Requirement">
+      <name xml:lang="en">Requirement 6: Secure systems and software</name>
+      <documentation xml:lang="en">Software is developed securely, vulnerabilities are found and patched by risk (critical patches within one month), and scripts on payment pages are controlled.</documentation>
+    </element>
+    <element identifier="id-businessprocess-secure-development-and-patching" xsi:type="BusinessProcess">
+      <name xml:lang="en">Secure development and patching</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this requirement in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">Payment application</value></property>
+      </properties>
+    </element>
+    <element identifier="id-goal-strong-access-control" xsi:type="Goal">
+      <name xml:lang="en">Strong access control</name>
+    </element>
+    <element identifier="id-requirement-requirement-7-access-by-business-need-to-know" xsi:type="Requirement">
+      <name xml:lang="en">Requirement 7: Access by business need to know</name>
+      <documentation xml:lang="en">Access to system components and cardholder data is granted only to those whose job needs it, and reviewed.</documentation>
+    </element>
+    <element identifier="id-businessprocess-role-based-access-to-card-data" xsi:type="BusinessProcess">
+      <name xml:lang="en">Role-based access to card data</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this requirement in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">Card data vault</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-requirement-8-identification-and-authentication" xsi:type="Requirement">
+      <name xml:lang="en">Requirement 8: Identification and authentication</name>
+      <documentation xml:lang="en">Every user is uniquely identified and strongly authenticated, with multi-factor authentication for all access into the cardholder data environment.</documentation>
+    </element>
+    <element identifier="id-businessprocess-multi-factor-authentication-into-the-cde" xsi:type="BusinessProcess">
+      <name xml:lang="en">Multi-factor authentication into the CDE</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this requirement in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">Jump host</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-requirement-9-physical-access-restrictions" xsi:type="Requirement">
+      <name xml:lang="en">Requirement 9: Physical access restrictions</name>
+      <documentation xml:lang="en">Physical access to cardholder data and the systems that hold it is controlled, media is protected, and card-reading devices are inspected for tampering.</documentation>
+    </element>
+    <element identifier="id-businessprocess-card-terminal-inspection-and-physical-security" xsi:type="BusinessProcess">
+      <name xml:lang="en">Card terminal inspection and physical security</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this requirement in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">Card terminals</value></property>
+      </properties>
+    </element>
+    <element identifier="id-goal-regular-monitoring-and-testing" xsi:type="Goal">
+      <name xml:lang="en">Regular monitoring and testing</name>
+    </element>
+    <element identifier="id-requirement-requirement-10-logging-and-monitoring-of-all-access" xsi:type="Requirement">
+      <name xml:lang="en">Requirement 10: Logging and monitoring of all access</name>
+      <documentation xml:lang="en">All access to system components and cardholder data is logged, logs are protected, and they are reviewed at least daily.</documentation>
+    </element>
+    <element identifier="id-businessprocess-central-audit-logging-and-daily-review" xsi:type="BusinessProcess">
+      <name xml:lang="en">Central audit logging and daily review</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this requirement in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">Logging platform</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-requirement-11-regular-security-testing" xsi:type="Requirement">
+      <name xml:lang="en">Requirement 11: Regular security testing</name>
+      <documentation xml:lang="en">Systems and networks are tested regularly: quarterly internal and external vulnerability scans, annual penetration tests, and tests that prove segmentation works.</documentation>
+    </element>
+    <element identifier="id-businessprocess-scans-penetration-and-segmentation-tests" xsi:type="BusinessProcess">
+      <name xml:lang="en">Scans, penetration and segmentation tests</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this requirement in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">CDE segmentation firewall</value></property>
+      </properties>
+    </element>
+    <element identifier="id-goal-information-security-policy" xsi:type="Goal">
+      <name xml:lang="en">Information security policy</name>
+    </element>
+    <element identifier="id-requirement-requirement-12-information-security-policies-and-programmes" xsi:type="Requirement">
+      <name xml:lang="en">Requirement 12: Information security policies and programmes</name>
+      <documentation xml:lang="en">Policies, risk analysis, awareness training, incident response, management of third-party service providers, and confirmation of scope at least once every twelve months.</documentation>
+    </element>
+    <element identifier="id-businessprocess-security-policy-scoping-and-provider-management" xsi:type="BusinessProcess">
+      <name xml:lang="en">Security policy, scoping and provider management</name>
+      <documentation xml:lang="en">Example control. Replace with the process or tool that meets this requirement in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">Payment service provider</value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-payment-application" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Payment application</name>
+      <documentation xml:lang="en">Takes card payments from the online shop and the telephone order desk.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">Cardholder data environment</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en">No (tokens only)</value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-card-data-vault" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Card data vault</name>
+      <documentation xml:lang="en">Swaps card numbers for tokens and holds the only stored copy.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">Cardholder data environment</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en">Yes (encrypted)</value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-node-cde-database-server" xsi:type="Node">
+      <name xml:lang="en">CDE database server</name>
+      <documentation xml:lang="en">Hosts the card data vault's database.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">Cardholder data environment</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en">Yes (encrypted)</value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-device-card-terminals" xsi:type="Device">
+      <name xml:lang="en">Card terminals</name>
+      <documentation xml:lang="en">Card-reading devices at the telephone order desk.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">Cardholder data environment</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en">No</value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-node-jump-host" xsi:type="Node">
+      <name xml:lang="en">Jump host</name>
+      <documentation xml:lang="en">The only administrative route into the cardholder data environment.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">Connected-to and security-impacting</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en">No</value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-logging-platform" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Logging platform</name>
+      <documentation xml:lang="en">Collects and stores audit logs from every in-scope system.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">Connected-to and security-impacting</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en">No</value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-device-cde-segmentation-firewall" xsi:type="Device">
+      <name xml:lang="en">CDE segmentation firewall</name>
+      <documentation xml:lang="en">Separates the cardholder data environment from the corporate network.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">Connected-to and security-impacting</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en">No</value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-communicationnetwork-corporate-office-network" xsi:type="CommunicationNetwork">
+      <name xml:lang="en">Corporate office network</name>
+      <documentation xml:lang="en">Kept out of scope by segmentation; tested to prove it.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">Out of scope</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en">No</value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-marketing-website" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Marketing website</name>
+      <documentation xml:lang="en">Links to the online shop but never handles card data.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">Out of scope</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en">No</value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessactor-payment-service-provider" xsi:type="BusinessActor">
+      <name xml:lang="en">Payment service provider</name>
+      <documentation xml:lang="en">Third-party service provider that authorises payments. Its responsibilities are recorded in the written agreement and checked against its attestation of compliance every year.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-contract-payment-services-agreement" xsi:type="Contract">
+      <name xml:lang="en">Payment services agreement</name>
+      <documentation xml:lang="en">Acknowledges the provider's responsibility for the security of the account data it handles.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-dataobject-account-data" xsi:type="DataObject">
+      <name xml:lang="en">Account data</name>
+      <documentation xml:lang="en">Cardholder data (card number, name, expiry date, service code) and sensitive authentication data. Sensitive authentication data is never kept after authorisation.</documentation>
+    </element>
+    <element identifier="id-grouping-cardholder-data-environment" xsi:type="Grouping">
+      <name xml:lang="en">Cardholder data environment</name>
+      <documentation xml:lang="en">The people, processes and technology that store, process or transmit account data.</documentation>
+    </element>
+    <element identifier="id-grouping-connected-to-and-security-impacting-systems" xsi:type="Grouping">
+      <name xml:lang="en">Connected-to and security-impacting systems</name>
+      <documentation xml:lang="en">In scope because they connect to the cardholder data environment or could affect its security.</documentation>
+    </element>
+    <element identifier="id-grouping-out-of-scope" xsi:type="Grouping">
+      <name xml:lang="en">Out of scope</name>
+      <documentation xml:lang="en">Isolated from the cardholder data environment by segmentation.</documentation>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="id-rel-001" source="id-driver-pci-dss-v4-0-1" target="id-goal-secure-network-and-systems" xsi:type="Influence">
+    </relationship>
+    <relationship identifier="id-rel-002" source="id-requirement-requirement-1-network-security-controls" target="id-goal-secure-network-and-systems" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-003" source="id-businessprocess-network-security-rule-management" target="id-requirement-requirement-1-network-security-controls" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-004" source="id-requirement-requirement-2-secure-configuration-of-system-components" target="id-goal-secure-network-and-systems" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-005" source="id-businessprocess-hardened-configuration-standards" target="id-requirement-requirement-2-secure-configuration-of-system-components" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-006" source="id-driver-pci-dss-v4-0-1" target="id-goal-protect-account-data" xsi:type="Influence">
+    </relationship>
+    <relationship identifier="id-rel-007" source="id-requirement-requirement-3-protection-of-stored-account-data" target="id-goal-protect-account-data" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-008" source="id-businessprocess-tokenisation-of-stored-card-numbers" target="id-requirement-requirement-3-protection-of-stored-account-data" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-009" source="id-requirement-requirement-4-strong-cryptography-in-transit" target="id-goal-protect-account-data" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-010" source="id-businessprocess-tls-for-card-data-in-transit" target="id-requirement-requirement-4-strong-cryptography-in-transit" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-011" source="id-driver-pci-dss-v4-0-1" target="id-goal-vulnerability-management-programme" xsi:type="Influence">
+    </relationship>
+    <relationship identifier="id-rel-012" source="id-requirement-requirement-5-protection-from-malicious-software" target="id-goal-vulnerability-management-programme" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-013" source="id-businessprocess-anti-malware-on-cde-systems" target="id-requirement-requirement-5-protection-from-malicious-software" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-014" source="id-requirement-requirement-6-secure-systems-and-software" target="id-goal-vulnerability-management-programme" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-015" source="id-businessprocess-secure-development-and-patching" target="id-requirement-requirement-6-secure-systems-and-software" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-016" source="id-driver-pci-dss-v4-0-1" target="id-goal-strong-access-control" xsi:type="Influence">
+    </relationship>
+    <relationship identifier="id-rel-017" source="id-requirement-requirement-7-access-by-business-need-to-know" target="id-goal-strong-access-control" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-018" source="id-businessprocess-role-based-access-to-card-data" target="id-requirement-requirement-7-access-by-business-need-to-know" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-019" source="id-requirement-requirement-8-identification-and-authentication" target="id-goal-strong-access-control" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-020" source="id-businessprocess-multi-factor-authentication-into-the-cde" target="id-requirement-requirement-8-identification-and-authentication" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-021" source="id-requirement-requirement-9-physical-access-restrictions" target="id-goal-strong-access-control" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-022" source="id-businessprocess-card-terminal-inspection-and-physical-security" target="id-requirement-requirement-9-physical-access-restrictions" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-023" source="id-driver-pci-dss-v4-0-1" target="id-goal-regular-monitoring-and-testing" xsi:type="Influence">
+    </relationship>
+    <relationship identifier="id-rel-024" source="id-requirement-requirement-10-logging-and-monitoring-of-all-access" target="id-goal-regular-monitoring-and-testing" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-025" source="id-businessprocess-central-audit-logging-and-daily-review" target="id-requirement-requirement-10-logging-and-monitoring-of-all-access" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-026" source="id-requirement-requirement-11-regular-security-testing" target="id-goal-regular-monitoring-and-testing" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-027" source="id-businessprocess-scans-penetration-and-segmentation-tests" target="id-requirement-requirement-11-regular-security-testing" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-028" source="id-driver-pci-dss-v4-0-1" target="id-goal-information-security-policy" xsi:type="Influence">
+    </relationship>
+    <relationship identifier="id-rel-029" source="id-requirement-requirement-12-information-security-policies-and-programmes" target="id-goal-information-security-policy" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-030" source="id-businessprocess-security-policy-scoping-and-provider-management" target="id-requirement-requirement-12-information-security-policies-and-programmes" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-031" source="id-businessactor-payment-service-provider" target="id-contract-payment-services-agreement" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-032" source="id-contract-payment-services-agreement" target="id-applicationcomponent-payment-application" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-033" source="id-applicationcomponent-card-data-vault" target="id-dataobject-account-data" xsi:type="Access" accessType="Write">
+    </relationship>
+    <relationship identifier="id-rel-034" source="id-applicationcomponent-payment-application" target="id-dataobject-account-data" xsi:type="Access" accessType="Read">
+    </relationship>
+    <relationship identifier="id-rel-035" source="id-node-cde-database-server" target="id-applicationcomponent-card-data-vault" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-036" source="id-grouping-cardholder-data-environment" target="id-applicationcomponent-payment-application" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-037" source="id-grouping-cardholder-data-environment" target="id-applicationcomponent-card-data-vault" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-038" source="id-grouping-cardholder-data-environment" target="id-node-cde-database-server" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-039" source="id-grouping-cardholder-data-environment" target="id-device-card-terminals" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-040" source="id-grouping-connected-to-and-security-impacting-systems" target="id-node-jump-host" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-041" source="id-grouping-connected-to-and-security-impacting-systems" target="id-applicationcomponent-logging-platform" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-042" source="id-grouping-out-of-scope" target="id-communicationnetwork-corporate-office-network" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-043" source="id-grouping-out-of-scope" target="id-applicationcomponent-marketing-website" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-044" source="id-grouping-cardholder-data-environment" target="id-dataobject-account-data" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-045" source="id-grouping-connected-to-and-security-impacting-systems" target="id-device-cde-segmentation-firewall" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-046" source="id-device-cde-segmentation-firewall" target="id-grouping-cardholder-data-environment" xsi:type="Association">
+      <name xml:lang="en">segments</name>
+    </relationship>
+    <relationship identifier="id-rel-047" source="id-device-cde-segmentation-firewall" target="id-grouping-out-of-scope" xsi:type="Association">
+      <name xml:lang="en">segments</name>
+    </relationship>
+    <relationship identifier="id-rel-048" source="id-businessprocess-network-security-rule-management" target="id-device-cde-segmentation-firewall" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-049" source="id-businessprocess-hardened-configuration-standards" target="id-node-cde-database-server" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-050" source="id-businessprocess-tokenisation-of-stored-card-numbers" target="id-applicationcomponent-card-data-vault" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-051" source="id-businessprocess-tls-for-card-data-in-transit" target="id-applicationcomponent-payment-application" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-052" source="id-businessprocess-anti-malware-on-cde-systems" target="id-node-jump-host" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-053" source="id-businessprocess-secure-development-and-patching" target="id-applicationcomponent-payment-application" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-054" source="id-businessprocess-role-based-access-to-card-data" target="id-applicationcomponent-card-data-vault" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-055" source="id-businessprocess-multi-factor-authentication-into-the-cde" target="id-node-jump-host" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-056" source="id-businessprocess-card-terminal-inspection-and-physical-security" target="id-device-card-terminals" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-057" source="id-businessprocess-central-audit-logging-and-daily-review" target="id-applicationcomponent-logging-platform" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-058" source="id-businessprocess-scans-penetration-and-segmentation-tests" target="id-device-cde-segmentation-firewall" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+    <relationship identifier="id-rel-059" source="id-businessprocess-security-policy-scoping-and-provider-management" target="id-businessactor-payment-service-provider" xsi:type="Association">
+      <name xml:lang="en">applied to</name>
+    </relationship>
+  </relationships>
+  <organizations>
+    <item><label xml:lang="en">Business</label>
+      <item identifierRef="id-businessprocess-network-security-rule-management"/>
+      <item identifierRef="id-businessprocess-hardened-configuration-standards"/>
+      <item identifierRef="id-businessprocess-tokenisation-of-stored-card-numbers"/>
+      <item identifierRef="id-businessprocess-tls-for-card-data-in-transit"/>
+      <item identifierRef="id-businessprocess-anti-malware-on-cde-systems"/>
+      <item identifierRef="id-businessprocess-secure-development-and-patching"/>
+      <item identifierRef="id-businessprocess-role-based-access-to-card-data"/>
+      <item identifierRef="id-businessprocess-multi-factor-authentication-into-the-cde"/>
+      <item identifierRef="id-businessprocess-card-terminal-inspection-and-physical-security"/>
+      <item identifierRef="id-businessprocess-central-audit-logging-and-daily-review"/>
+      <item identifierRef="id-businessprocess-scans-penetration-and-segmentation-tests"/>
+      <item identifierRef="id-businessprocess-security-policy-scoping-and-provider-management"/>
+      <item identifierRef="id-businessactor-payment-service-provider"/>
+      <item identifierRef="id-contract-payment-services-agreement"/>
+    </item>
+    <item><label xml:lang="en">Application</label>
+      <item identifierRef="id-applicationcomponent-payment-application"/>
+      <item identifierRef="id-applicationcomponent-card-data-vault"/>
+      <item identifierRef="id-applicationcomponent-logging-platform"/>
+      <item identifierRef="id-applicationcomponent-marketing-website"/>
+      <item identifierRef="id-dataobject-account-data"/>
+    </item>
+    <item><label xml:lang="en">Technology</label>
+      <item identifierRef="id-node-cde-database-server"/>
+      <item identifierRef="id-device-card-terminals"/>
+      <item identifierRef="id-node-jump-host"/>
+      <item identifierRef="id-device-cde-segmentation-firewall"/>
+      <item identifierRef="id-communicationnetwork-corporate-office-network"/>
+    </item>
+    <item><label xml:lang="en">Motivation</label>
+      <item identifierRef="id-driver-pci-dss-v4-0-1"/>
+      <item identifierRef="id-goal-secure-network-and-systems"/>
+      <item identifierRef="id-requirement-requirement-1-network-security-controls"/>
+      <item identifierRef="id-requirement-requirement-2-secure-configuration-of-system-components"/>
+      <item identifierRef="id-goal-protect-account-data"/>
+      <item identifierRef="id-requirement-requirement-3-protection-of-stored-account-data"/>
+      <item identifierRef="id-requirement-requirement-4-strong-cryptography-in-transit"/>
+      <item identifierRef="id-goal-vulnerability-management-programme"/>
+      <item identifierRef="id-requirement-requirement-5-protection-from-malicious-software"/>
+      <item identifierRef="id-requirement-requirement-6-secure-systems-and-software"/>
+      <item identifierRef="id-goal-strong-access-control"/>
+      <item identifierRef="id-requirement-requirement-7-access-by-business-need-to-know"/>
+      <item identifierRef="id-requirement-requirement-8-identification-and-authentication"/>
+      <item identifierRef="id-requirement-requirement-9-physical-access-restrictions"/>
+      <item identifierRef="id-goal-regular-monitoring-and-testing"/>
+      <item identifierRef="id-requirement-requirement-10-logging-and-monitoring-of-all-access"/>
+      <item identifierRef="id-requirement-requirement-11-regular-security-testing"/>
+      <item identifierRef="id-goal-information-security-policy"/>
+      <item identifierRef="id-requirement-requirement-12-information-security-policies-and-programmes"/>
+    </item>
+    <item><label xml:lang="en">Other</label>
+      <item identifierRef="id-grouping-cardholder-data-environment"/>
+      <item identifierRef="id-grouping-connected-to-and-security-impacting-systems"/>
+      <item identifierRef="id-grouping-out-of-scope"/>
+    </item>
+    <item><label xml:lang="en">Relations</label>
+      <item identifierRef="id-rel-001"/>
+      <item identifierRef="id-rel-002"/>
+      <item identifierRef="id-rel-003"/>
+      <item identifierRef="id-rel-004"/>
+      <item identifierRef="id-rel-005"/>
+      <item identifierRef="id-rel-006"/>
+      <item identifierRef="id-rel-007"/>
+      <item identifierRef="id-rel-008"/>
+      <item identifierRef="id-rel-009"/>
+      <item identifierRef="id-rel-010"/>
+      <item identifierRef="id-rel-011"/>
+      <item identifierRef="id-rel-012"/>
+      <item identifierRef="id-rel-013"/>
+      <item identifierRef="id-rel-014"/>
+      <item identifierRef="id-rel-015"/>
+      <item identifierRef="id-rel-016"/>
+      <item identifierRef="id-rel-017"/>
+      <item identifierRef="id-rel-018"/>
+      <item identifierRef="id-rel-019"/>
+      <item identifierRef="id-rel-020"/>
+      <item identifierRef="id-rel-021"/>
+      <item identifierRef="id-rel-022"/>
+      <item identifierRef="id-rel-023"/>
+      <item identifierRef="id-rel-024"/>
+      <item identifierRef="id-rel-025"/>
+      <item identifierRef="id-rel-026"/>
+      <item identifierRef="id-rel-027"/>
+      <item identifierRef="id-rel-028"/>
+      <item identifierRef="id-rel-029"/>
+      <item identifierRef="id-rel-030"/>
+      <item identifierRef="id-rel-031"/>
+      <item identifierRef="id-rel-032"/>
+      <item identifierRef="id-rel-033"/>
+      <item identifierRef="id-rel-034"/>
+      <item identifierRef="id-rel-035"/>
+      <item identifierRef="id-rel-036"/>
+      <item identifierRef="id-rel-037"/>
+      <item identifierRef="id-rel-038"/>
+      <item identifierRef="id-rel-039"/>
+      <item identifierRef="id-rel-040"/>
+      <item identifierRef="id-rel-041"/>
+      <item identifierRef="id-rel-042"/>
+      <item identifierRef="id-rel-043"/>
+      <item identifierRef="id-rel-044"/>
+      <item identifierRef="id-rel-045"/>
+      <item identifierRef="id-rel-046"/>
+      <item identifierRef="id-rel-047"/>
+      <item identifierRef="id-rel-048"/>
+      <item identifierRef="id-rel-049"/>
+      <item identifierRef="id-rel-050"/>
+      <item identifierRef="id-rel-051"/>
+      <item identifierRef="id-rel-052"/>
+      <item identifierRef="id-rel-053"/>
+      <item identifierRef="id-rel-054"/>
+      <item identifierRef="id-rel-055"/>
+      <item identifierRef="id-rel-056"/>
+      <item identifierRef="id-rel-057"/>
+      <item identifierRef="id-rel-058"/>
+      <item identifierRef="id-rel-059"/>
+    </item>
+    <item><label xml:lang="en">Views</label>
+      <item identifierRef="id-view-six-goals-and-twelve-requirements"/>
+      <item identifierRef="id-view-cardholder-data-environment-and-segmentation"/>
+      <item identifierRef="id-view-controls-on-in-scope-systems"/>
+    </item>
+  </organizations>
+  <propertyDefinitions>
+    <propertyDefinition identifier="propid-1" type="string"><name xml:lang="en">Control owner</name></propertyDefinition>
+    <propertyDefinition identifier="propid-2" type="string"><name xml:lang="en">Evidence location</name></propertyDefinition>
+    <propertyDefinition identifier="propid-3" type="string"><name xml:lang="en">Applied to</name></propertyDefinition>
+    <propertyDefinition identifier="propid-4" type="string"><name xml:lang="en">Pci scope</name></propertyDefinition>
+    <propertyDefinition identifier="propid-5" type="string"><name xml:lang="en">Stores card numbers</name></propertyDefinition>
+    <propertyDefinition identifier="propid-6" type="string"><name xml:lang="en">System owner</name></propertyDefinition>
+    <propertyDefinition identifier="propid-7" type="string"><name xml:lang="en">Attestation of compliance date</name></propertyDefinition>
+    <propertyDefinition identifier="propid-8" type="string"><name xml:lang="en">Responsibility matrix</name></propertyDefinition>
+  </propertyDefinitions>
+  <views>
+    <diagrams>
+      <view identifier="id-view-six-goals-and-twelve-requirements" xsi:type="Diagram" viewpoint="Motivation">
+        <name xml:lang="en">Six goals and twelve requirements</name>
+        <documentation xml:lang="en">Each goal holds its requirements; under each requirement is the control that realizes it. Fill in the owner and evidence location of every control: they are what the assessor samples.</documentation>
+        <node identifier="id-view-six-goals-and-twelve-requirements-n1" elementRef="id-goal-secure-network-and-systems" xsi:type="Element" x="20" y="20" w="445" h="137">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-six-goals-and-twelve-requirements-n2" elementRef="id-requirement-requirement-1-network-security-controls" xsi:type="Element" x="35" y="52" w="200" h="85">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-six-goals-and-twelve-requirements-n3" elementRef="id-requirement-requirement-2-secure-configuration-of-system-components" xsi:type="Element" x="250" y="52" w="200" h="85">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-six-goals-and-twelve-requirements-n4" elementRef="id-businessprocess-network-security-rule-management" xsi:type="Element" x="35" y="217" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-six-goals-and-twelve-requirements-n5" elementRef="id-businessprocess-hardened-configuration-standards" xsi:type="Element" x="250" y="217" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-six-goals-and-twelve-requirements-n6" elementRef="id-goal-protect-account-data" xsi:type="Element" x="495" y="20" w="445" h="137">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-six-goals-and-twelve-requirements-n7" elementRef="id-requirement-requirement-3-protection-of-stored-account-data" xsi:type="Element" x="510" y="52" w="200" h="85">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-six-goals-and-twelve-requirements-n8" elementRef="id-requirement-requirement-4-strong-cryptography-in-transit" xsi:type="Element" x="725" y="52" w="200" h="85">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-six-goals-and-twelve-requirements-n9" elementRef="id-businessprocess-tokenisation-of-stored-card-numbers" xsi:type="Element" x="510" y="217" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-six-goals-and-twelve-requirements-n10" elementRef="id-businessprocess-tls-for-card-data-in-transit" xsi:type="Element" x="725" y="217" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-six-goals-and-twelve-requirements-n11" elementRef="id-goal-vulnerability-management-programme" xsi:type="Element" x="970" y="20" w="445" h="137">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-six-goals-and-twelve-requirements-n12" elementRef="id-requirement-requirement-5-protection-from-malicious-software" xsi:type="Element" x="985" y="52" w="200" h="85">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-six-goals-and-twelve-requirements-n13" elementRef="id-requirement-requirement-6-secure-systems-and-software" xsi:type="Element" x="1200" y="52" w="200" h="85">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-six-goals-and-twelve-requirements-n14" elementRef="id-businessprocess-anti-malware-on-cde-systems" xsi:type="Element" x="985" y="217" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-six-goals-and-twelve-requirements-n15" elementRef="id-businessprocess-secure-development-and-patching" xsi:type="Element" x="1200" y="217" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-six-goals-and-twelve-requirements-n16" elementRef="id-goal-strong-access-control" xsi:type="Element" x="20" y="327" w="660" h="137">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-six-goals-and-twelve-requirements-n17" elementRef="id-requirement-requirement-7-access-by-business-need-to-know" xsi:type="Element" x="35" y="359" w="200" h="85">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-six-goals-and-twelve-requirements-n18" elementRef="id-requirement-requirement-8-identification-and-authentication" xsi:type="Element" x="250" y="359" w="200" h="85">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-six-goals-and-twelve-requirements-n19" elementRef="id-requirement-requirement-9-physical-access-restrictions" xsi:type="Element" x="465" y="359" w="200" h="85">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-six-goals-and-twelve-requirements-n20" elementRef="id-businessprocess-role-based-access-to-card-data" xsi:type="Element" x="35" y="524" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-six-goals-and-twelve-requirements-n21" elementRef="id-businessprocess-multi-factor-authentication-into-the-cde" xsi:type="Element" x="250" y="524" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-six-goals-and-twelve-requirements-n22" elementRef="id-businessprocess-card-terminal-inspection-and-physical-security" xsi:type="Element" x="465" y="524" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-six-goals-and-twelve-requirements-n23" elementRef="id-goal-regular-monitoring-and-testing" xsi:type="Element" x="710" y="327" w="445" h="137">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-six-goals-and-twelve-requirements-n24" elementRef="id-requirement-requirement-10-logging-and-monitoring-of-all-access" xsi:type="Element" x="725" y="359" w="200" h="85">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-six-goals-and-twelve-requirements-n25" elementRef="id-requirement-requirement-11-regular-security-testing" xsi:type="Element" x="940" y="359" w="200" h="85">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-six-goals-and-twelve-requirements-n26" elementRef="id-businessprocess-central-audit-logging-and-daily-review" xsi:type="Element" x="725" y="524" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-six-goals-and-twelve-requirements-n27" elementRef="id-businessprocess-scans-penetration-and-segmentation-tests" xsi:type="Element" x="940" y="524" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-six-goals-and-twelve-requirements-n28" elementRef="id-goal-information-security-policy" xsi:type="Element" x="1185" y="327" w="230" h="137">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-six-goals-and-twelve-requirements-n29" elementRef="id-requirement-requirement-12-information-security-policies-and-programmes" xsi:type="Element" x="1200" y="359" w="200" h="85">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-six-goals-and-twelve-requirements-n30" elementRef="id-businessprocess-security-policy-scoping-and-provider-management" xsi:type="Element" x="1200" y="524" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-six-goals-and-twelve-requirements-c1" relationshipRef="id-rel-003" xsi:type="Relationship" source="id-view-six-goals-and-twelve-requirements-n4" target="id-view-six-goals-and-twelve-requirements-n2"/>
+        <connection identifier="id-view-six-goals-and-twelve-requirements-c2" relationshipRef="id-rel-005" xsi:type="Relationship" source="id-view-six-goals-and-twelve-requirements-n5" target="id-view-six-goals-and-twelve-requirements-n3"/>
+        <connection identifier="id-view-six-goals-and-twelve-requirements-c3" relationshipRef="id-rel-008" xsi:type="Relationship" source="id-view-six-goals-and-twelve-requirements-n9" target="id-view-six-goals-and-twelve-requirements-n7"/>
+        <connection identifier="id-view-six-goals-and-twelve-requirements-c4" relationshipRef="id-rel-010" xsi:type="Relationship" source="id-view-six-goals-and-twelve-requirements-n10" target="id-view-six-goals-and-twelve-requirements-n8"/>
+        <connection identifier="id-view-six-goals-and-twelve-requirements-c5" relationshipRef="id-rel-013" xsi:type="Relationship" source="id-view-six-goals-and-twelve-requirements-n14" target="id-view-six-goals-and-twelve-requirements-n12"/>
+        <connection identifier="id-view-six-goals-and-twelve-requirements-c6" relationshipRef="id-rel-015" xsi:type="Relationship" source="id-view-six-goals-and-twelve-requirements-n15" target="id-view-six-goals-and-twelve-requirements-n13"/>
+        <connection identifier="id-view-six-goals-and-twelve-requirements-c7" relationshipRef="id-rel-018" xsi:type="Relationship" source="id-view-six-goals-and-twelve-requirements-n20" target="id-view-six-goals-and-twelve-requirements-n17"/>
+        <connection identifier="id-view-six-goals-and-twelve-requirements-c8" relationshipRef="id-rel-020" xsi:type="Relationship" source="id-view-six-goals-and-twelve-requirements-n21" target="id-view-six-goals-and-twelve-requirements-n18"/>
+        <connection identifier="id-view-six-goals-and-twelve-requirements-c9" relationshipRef="id-rel-022" xsi:type="Relationship" source="id-view-six-goals-and-twelve-requirements-n22" target="id-view-six-goals-and-twelve-requirements-n19"/>
+        <connection identifier="id-view-six-goals-and-twelve-requirements-c10" relationshipRef="id-rel-025" xsi:type="Relationship" source="id-view-six-goals-and-twelve-requirements-n26" target="id-view-six-goals-and-twelve-requirements-n24"/>
+        <connection identifier="id-view-six-goals-and-twelve-requirements-c11" relationshipRef="id-rel-027" xsi:type="Relationship" source="id-view-six-goals-and-twelve-requirements-n27" target="id-view-six-goals-and-twelve-requirements-n25"/>
+        <connection identifier="id-view-six-goals-and-twelve-requirements-c12" relationshipRef="id-rel-030" xsi:type="Relationship" source="id-view-six-goals-and-twelve-requirements-n30" target="id-view-six-goals-and-twelve-requirements-n29"/>
+      </view>
+      <view identifier="id-view-cardholder-data-environment-and-segmentation" xsi:type="Diagram">
+        <name xml:lang="en">Cardholder data environment and segmentation</name>
+        <documentation xml:lang="en">What is in scope and why: the cardholder data environment, the systems connected to it or able to affect its security, and the segmentation firewall that keeps the corporate network and marketing website out of scope. Segmentation must be proven by testing, not assumed.</documentation>
+        <node identifier="id-view-cardholder-data-environment-and-segmentation-n1" elementRef="id-grouping-cardholder-data-environment" xsi:type="Element" x="20" y="20" w="470" h="340">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-cardholder-data-environment-and-segmentation-n2" elementRef="id-applicationcomponent-card-data-vault" xsi:type="Element" x="40" y="60" w="200" h="55">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-cardholder-data-environment-and-segmentation-n3" elementRef="id-applicationcomponent-payment-application" xsi:type="Element" x="270" y="60" w="200" h="55">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-cardholder-data-environment-and-segmentation-n4" elementRef="id-node-cde-database-server" xsi:type="Element" x="40" y="170" w="200" h="55">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-cardholder-data-environment-and-segmentation-n5" elementRef="id-dataobject-account-data" xsi:type="Element" x="270" y="170" w="200" h="55">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-cardholder-data-environment-and-segmentation-n6" elementRef="id-device-card-terminals" xsi:type="Element" x="40" y="280" w="200" h="55">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-cardholder-data-environment-and-segmentation-n7" elementRef="id-grouping-connected-to-and-security-impacting-systems" xsi:type="Element" x="20" y="400" w="470" h="120">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-cardholder-data-environment-and-segmentation-n8" elementRef="id-node-jump-host" xsi:type="Element" x="40" y="445" w="200" h="55">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-cardholder-data-environment-and-segmentation-n9" elementRef="id-applicationcomponent-logging-platform" xsi:type="Element" x="270" y="445" w="200" h="55">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-cardholder-data-environment-and-segmentation-n10" elementRef="id-device-cde-segmentation-firewall" xsi:type="Element" x="580" y="110" w="180" h="60">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-cardholder-data-environment-and-segmentation-n11" elementRef="id-grouping-out-of-scope" xsi:type="Element" x="850" y="20" w="240" h="200">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-cardholder-data-environment-and-segmentation-n12" elementRef="id-communicationnetwork-corporate-office-network" xsi:type="Element" x="870" y="60" w="200" h="55">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-cardholder-data-environment-and-segmentation-n13" elementRef="id-applicationcomponent-marketing-website" xsi:type="Element" x="870" y="140" w="200" h="55">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-cardholder-data-environment-and-segmentation-n14" elementRef="id-contract-payment-services-agreement" xsi:type="Element" x="580" y="260" w="200" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-cardholder-data-environment-and-segmentation-n15" elementRef="id-businessactor-payment-service-provider" xsi:type="Element" x="580" y="380" w="200" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-cardholder-data-environment-and-segmentation-c1" relationshipRef="id-rel-031" xsi:type="Relationship" source="id-view-cardholder-data-environment-and-segmentation-n15" target="id-view-cardholder-data-environment-and-segmentation-n14"/>
+        <connection identifier="id-view-cardholder-data-environment-and-segmentation-c2" relationshipRef="id-rel-032" xsi:type="Relationship" source="id-view-cardholder-data-environment-and-segmentation-n14" target="id-view-cardholder-data-environment-and-segmentation-n3"/>
+        <connection identifier="id-view-cardholder-data-environment-and-segmentation-c3" relationshipRef="id-rel-033" xsi:type="Relationship" source="id-view-cardholder-data-environment-and-segmentation-n2" target="id-view-cardholder-data-environment-and-segmentation-n5"/>
+        <connection identifier="id-view-cardholder-data-environment-and-segmentation-c4" relationshipRef="id-rel-034" xsi:type="Relationship" source="id-view-cardholder-data-environment-and-segmentation-n3" target="id-view-cardholder-data-environment-and-segmentation-n5"/>
+        <connection identifier="id-view-cardholder-data-environment-and-segmentation-c5" relationshipRef="id-rel-035" xsi:type="Relationship" source="id-view-cardholder-data-environment-and-segmentation-n4" target="id-view-cardholder-data-environment-and-segmentation-n2"/>
+        <connection identifier="id-view-cardholder-data-environment-and-segmentation-c6" relationshipRef="id-rel-046" xsi:type="Relationship" source="id-view-cardholder-data-environment-and-segmentation-n10" target="id-view-cardholder-data-environment-and-segmentation-n1"/>
+        <connection identifier="id-view-cardholder-data-environment-and-segmentation-c7" relationshipRef="id-rel-047" xsi:type="Relationship" source="id-view-cardholder-data-environment-and-segmentation-n10" target="id-view-cardholder-data-environment-and-segmentation-n11"/>
+      </view>
+      <view identifier="id-view-controls-on-in-scope-systems" xsi:type="Diagram">
+        <name xml:lang="en">Controls on in-scope systems</name>
+        <documentation xml:lang="en">Each control and the system it is applied to. A system in scope with no control drawn to it is where an assessment finding will land.</documentation>
+        <node identifier="id-view-controls-on-in-scope-systems-n1" elementRef="id-device-cde-segmentation-firewall" xsi:type="Element" x="20" y="170" w="180" h="55">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-on-in-scope-systems-n2" elementRef="id-businessprocess-network-security-rule-management" xsi:type="Element" x="20" y="20" w="180" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-on-in-scope-systems-n3" elementRef="id-businessprocess-scans-penetration-and-segmentation-tests" xsi:type="Element" x="20" y="305" w="180" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-on-in-scope-systems-n4" elementRef="id-node-cde-database-server" xsi:type="Element" x="220" y="170" w="180" h="55">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-on-in-scope-systems-n5" elementRef="id-businessprocess-hardened-configuration-standards" xsi:type="Element" x="220" y="20" w="180" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-on-in-scope-systems-n6" elementRef="id-applicationcomponent-card-data-vault" xsi:type="Element" x="420" y="170" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-on-in-scope-systems-n7" elementRef="id-businessprocess-tokenisation-of-stored-card-numbers" xsi:type="Element" x="420" y="20" w="180" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-on-in-scope-systems-n8" elementRef="id-businessprocess-role-based-access-to-card-data" xsi:type="Element" x="420" y="305" w="180" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-on-in-scope-systems-n9" elementRef="id-applicationcomponent-payment-application" xsi:type="Element" x="620" y="170" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-on-in-scope-systems-n10" elementRef="id-businessprocess-tls-for-card-data-in-transit" xsi:type="Element" x="620" y="20" w="180" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-on-in-scope-systems-n11" elementRef="id-businessprocess-secure-development-and-patching" xsi:type="Element" x="620" y="305" w="180" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-on-in-scope-systems-n12" elementRef="id-node-jump-host" xsi:type="Element" x="820" y="170" w="180" h="55">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-on-in-scope-systems-n13" elementRef="id-businessprocess-multi-factor-authentication-into-the-cde" xsi:type="Element" x="820" y="20" w="180" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-on-in-scope-systems-n14" elementRef="id-businessprocess-anti-malware-on-cde-systems" xsi:type="Element" x="820" y="305" w="180" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-on-in-scope-systems-n15" elementRef="id-device-card-terminals" xsi:type="Element" x="1020" y="170" w="180" h="55">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-on-in-scope-systems-n16" elementRef="id-businessprocess-card-terminal-inspection-and-physical-security" xsi:type="Element" x="1020" y="305" w="180" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-on-in-scope-systems-n17" elementRef="id-applicationcomponent-logging-platform" xsi:type="Element" x="1220" y="170" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-on-in-scope-systems-n18" elementRef="id-businessprocess-central-audit-logging-and-daily-review" xsi:type="Element" x="1220" y="20" w="180" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-on-in-scope-systems-n19" elementRef="id-businessactor-payment-service-provider" xsi:type="Element" x="1420" y="170" w="180" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-controls-on-in-scope-systems-n20" elementRef="id-businessprocess-security-policy-scoping-and-provider-management" xsi:type="Element" x="1420" y="20" w="180" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-controls-on-in-scope-systems-c1" relationshipRef="id-rel-048" xsi:type="Relationship" source="id-view-controls-on-in-scope-systems-n2" target="id-view-controls-on-in-scope-systems-n1"/>
+        <connection identifier="id-view-controls-on-in-scope-systems-c2" relationshipRef="id-rel-049" xsi:type="Relationship" source="id-view-controls-on-in-scope-systems-n5" target="id-view-controls-on-in-scope-systems-n4"/>
+        <connection identifier="id-view-controls-on-in-scope-systems-c3" relationshipRef="id-rel-050" xsi:type="Relationship" source="id-view-controls-on-in-scope-systems-n7" target="id-view-controls-on-in-scope-systems-n6"/>
+        <connection identifier="id-view-controls-on-in-scope-systems-c4" relationshipRef="id-rel-051" xsi:type="Relationship" source="id-view-controls-on-in-scope-systems-n10" target="id-view-controls-on-in-scope-systems-n9"/>
+        <connection identifier="id-view-controls-on-in-scope-systems-c5" relationshipRef="id-rel-052" xsi:type="Relationship" source="id-view-controls-on-in-scope-systems-n14" target="id-view-controls-on-in-scope-systems-n12"/>
+        <connection identifier="id-view-controls-on-in-scope-systems-c6" relationshipRef="id-rel-053" xsi:type="Relationship" source="id-view-controls-on-in-scope-systems-n11" target="id-view-controls-on-in-scope-systems-n9"/>
+        <connection identifier="id-view-controls-on-in-scope-systems-c7" relationshipRef="id-rel-054" xsi:type="Relationship" source="id-view-controls-on-in-scope-systems-n8" target="id-view-controls-on-in-scope-systems-n6"/>
+        <connection identifier="id-view-controls-on-in-scope-systems-c8" relationshipRef="id-rel-055" xsi:type="Relationship" source="id-view-controls-on-in-scope-systems-n13" target="id-view-controls-on-in-scope-systems-n12"/>
+        <connection identifier="id-view-controls-on-in-scope-systems-c9" relationshipRef="id-rel-056" xsi:type="Relationship" source="id-view-controls-on-in-scope-systems-n16" target="id-view-controls-on-in-scope-systems-n15"/>
+        <connection identifier="id-view-controls-on-in-scope-systems-c10" relationshipRef="id-rel-057" xsi:type="Relationship" source="id-view-controls-on-in-scope-systems-n18" target="id-view-controls-on-in-scope-systems-n17"/>
+        <connection identifier="id-view-controls-on-in-scope-systems-c11" relationshipRef="id-rel-058" xsi:type="Relationship" source="id-view-controls-on-in-scope-systems-n3" target="id-view-controls-on-in-scope-systems-n1"/>
+        <connection identifier="id-view-controls-on-in-scope-systems-c12" relationshipRef="id-rel-059" xsi:type="Relationship" source="id-view-controls-on-in-scope-systems-n20" target="id-view-controls-on-in-scope-systems-n19"/>
+      </view>
+    </diagrams>
+  </views>
+</model>
