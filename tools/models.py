@@ -1,4 +1,4 @@
-"""The five reference models. Run build.py to regenerate the exchange files and previews."""
+"""The reference models. Run build.py to regenerate the exchange files and previews."""
 
 from __future__ import annotations
 
@@ -683,7 +683,265 @@ def company_model() -> Model:
     return m
 
 
-ALL = [capability_map, application_portfolio, nis2, dora, layered_onboarding, company_model]
+# ------------------------------------------------------------------------------------------------
+# 7. ISO 22301 business continuity: clauses, impact analysis, strategies and dependencies
+# ------------------------------------------------------------------------------------------------
+
+ISO22301_CLAUSES = [
+    # number, short title, summary in our own words, realizing control
+    ("4", "Context of the organisation", "Know the organisation, its interested parties and their legal and "
+     "regulatory requirements, and set the scope of the management system.",
+     "BCMS scope and interested parties review"),
+    ("5", "Leadership", "Top management commits to the management system, sets a business continuity policy "
+     "and assigns roles, responsibilities and authorities.", "Business continuity policy approval"),
+    ("6", "Planning", "Address risks and opportunities, set business continuity objectives with plans to "
+     "achieve them, and plan changes to the management system.", "Continuity objectives planning"),
+    ("7", "Support", "Provide resources, competence, awareness, communication and documented information.",
+     "Continuity awareness and competence programme"),
+    ("9", "Performance evaluation", "Monitor, measure, analyse and evaluate, run internal audits and hold "
+     "management reviews.", "Internal audit and management review"),
+    ("10", "Improvement", "Handle nonconformities with corrective action and improve the management system "
+     "continually.", "Corrective action and improvement"),
+]
+
+ISO22301_OPERATION = [
+    ("8.1", "Operational planning and control", "Plan, run and control the processes the management system "
+     "needs, including outsourced processes and the supply chain.", "Supplier and outsourced process control"),
+    ("8.2", "Business impact analysis and risk assessment", "Analyse the impact of disrupting each activity "
+     "over time, set recovery priorities and objectives, and assess the risks of disruption.",
+     "Business impact analysis"),
+    ("8.3", "Business continuity strategies and solutions", "Identify, select and put in place the strategies "
+     "and resources that meet the recovery objectives.", "Continuity strategy selection"),
+    ("8.4", "Business continuity plans and procedures", "Set up a response structure, warning and "
+     "communication arrangements, and documented plans for response and recovery.",
+     "Incident management team"),
+    ("8.5", "Exercise programme", "Exercise and test the strategies and plans on a schedule, and act on "
+     "what the exercises show.", "Exercise and test programme"),
+    ("8.6", "Evaluation of business continuity documentation and capabilities", "Evaluate whether the "
+     "impact analysis, risk assessment, strategies, plans and suppliers' capabilities remain suitable and "
+     "effective.", "Continuity plan and supplier capability review"),
+]
+
+
+def iso22301() -> Model:
+    m = Model("iso22301-business-continuity", "ISO 22301 Business Continuity (starter)",
+              "A business continuity management system (BCMS) traced from the requirements of ISO 22301:2019 "
+              "(clauses 4 to 10) to the work that meets them, and from there to an example organisation's "
+              "prioritised activities. Each activity carries its recovery time objective, maximum tolerable "
+              "period of disruption, recovery point objective and minimum business continuity objective, set "
+              "by the business impact analysis, and is linked to the applications, technology, people and "
+              "suppliers it depends on and to the continuity strategy and plan that protect it. Because every "
+              "dependency is connected, the model answers what stops, and how soon it must be back, when a "
+              "system or supplier fails. Clause numbers and titles are given for reference only; read the "
+              "requirements in the standard itself. Replace the example online retailer with your own "
+              "activities and recovery objectives.")
+    driver = m.el("Driver", "ISO 22301:2019 Business continuity management systems",
+                  "The international standard for a business continuity management system, read with "
+                  "Amendment 1:2024 on climate action changes. Certification is against clauses 4 to 10.")
+    board = m.el("Stakeholder", "Top management", "Owns the business continuity policy and objectives, and "
+                 "reviews the management system at planned intervals.")
+    m.rel("Association", board, driver)
+    goal = m.el("Goal", "Keep prioritised activities within their recovery objectives",
+                "Continue delivering products and services at an acceptable, agreed capacity during a "
+                "disruption, and recover them within the agreed time.")
+    m.rel("Influence", driver, goal)
+    bcms = m.el("Requirement", "ISO 22301 requirements (clauses 4 to 10)",
+                "The requirements a certified management system must meet.")
+    m.rel("Realization", bcms, goal)
+    clause, control = {}, {}
+    for num, title, text, ctl in ISO22301_CLAUSES:
+        clause[num] = m.el("Requirement", f"Clause {num}: {title}", text)
+        m.rel("Composition", bcms, clause[num])
+    clause["8"] = m.el("Requirement", "Clause 8: Operation", "Plan and run the business continuity "
+                       "processes: impact analysis, risk assessment, strategies, plans, exercises and evaluation.")
+    m.rel("Composition", bcms, clause["8"])
+    for num, title, text, ctl in ISO22301_OPERATION:
+        clause[num] = m.el("Requirement", f"{num} {title}", text)
+        m.rel("Composition", clause["8"], clause[num])
+    for num, _, _, ctl in ISO22301_CLAUSES + ISO22301_OPERATION:
+        kind = "BusinessActor" if num == "8.4" else "BusinessProcess"
+        control[num] = m.el(kind, ctl, "Example control. Replace with the process, team or record that meets "
+                            "this clause in your organisation.", control_owner="", evidence_location="")
+        m.rel("Realization", control[num], clause[num])
+    risk_assessment = m.el("BusinessProcess", "Continuity risk assessment", "Identifies the risks of "
+                           "disruption to prioritised activities and the resources they need, and decides how "
+                           "to treat them.", control_owner="", evidence_location="")
+    m.rel("Realization", risk_assessment, clause["8.2"])
+
+    # The example organisation: an online retailer and its prioritised activities.
+    activities = [
+        # name, RTO, MTPD, RPO, MBCO, owner
+        ("Take customer orders", "4 hours", "24 hours", "15 minutes",
+         "Website orders accepted at half of normal volume", "Head of E-commerce"),
+        ("Dispatch orders", "24 hours", "3 days", "1 hour", "Priority orders dispatched next day",
+         "Operations Director"),
+        ("Take customer payments", "4 hours", "24 hours", "No lost transactions",
+         "Card payments taken for every accepted order", "Finance Director"),
+        ("Answer customer enquiries", "24 hours", "5 days", "24 hours",
+         "Email and phone enquiries answered within two working days", "Head of Customer Service"),
+    ]
+    act = {}
+    for name, rto, mtpd, rpo, mbco, owner in activities:
+        act[name] = m.el("BusinessProcess", name, "Prioritised activity. Recovery objectives set by the business "
+                         "impact analysis and agreed by top management.", activity_owner=owner,
+                         recovery_time_objective=rto, maximum_tolerable_period_of_disruption=mtpd,
+                         recovery_point_objective=rpo, minimum_business_continuity_objective=mbco,
+                         last_impact_analysis="")
+        m.rel("Association", control["8.2"], act[name], "sets recovery objectives for")
+
+    apps = {
+        "E-commerce platform": ["Take customer orders"],
+        "Order management system": ["Take customer orders", "Dispatch orders"],
+        "Warehouse management system": ["Dispatch orders"],
+        "Payment gateway": ["Take customer payments"],
+        "Customer service desk": ["Answer customer enquiries"],
+    }
+    app = {}
+    for name, served in apps.items():
+        app[name] = m.el("ApplicationComponent", name, "", recovery_time_objective="", recovery_point_objective="")
+        for a in served:
+            m.rel("Serving", app[name], act[a])
+    team = m.el("BusinessActor", "Warehouse team", "Staff who pick, pack and hand over parcels at the "
+                "distribution centre.", minimum_staffing="")
+    m.rel("Assignment", team, act["Dispatch orders"])
+    site = m.el("Location", "Distribution centre", "The single site that stores and dispatches stock.")
+    cloud = m.el("TechnologyService", "Cloud hosting", "Runs the e-commerce platform and the order management "
+                 "system in one primary region.")
+    server = m.el("Node", "Warehouse server", "On-site server running the warehouse management system.")
+    delivery = m.el("BusinessService", "Parcel delivery", "Collection and delivery of customer parcels.")
+    m.rel("Serving", cloud, app["E-commerce platform"])
+    m.rel("Serving", cloud, app["Order management system"])
+    m.rel("Serving", server, app["Warehouse management system"])
+    m.rel("Serving", delivery, act["Dispatch orders"])
+    m.rel("Aggregation", site, server)
+    m.rel("Aggregation", site, team)
+
+    suppliers = [
+        # supplier, contract, what the contract covers, exit plan tested
+        ("Cloud provider", "Cloud hosting agreement", cloud, "No"),
+        ("Courier", "Courier agreement", delivery, "No"),
+        ("Payment service provider", "Payment services agreement", app["Payment gateway"], "Yes"),
+        ("Service desk vendor", "Service desk subscription", app["Customer service desk"], "No"),
+    ]
+    sup, con = {}, {}
+    for supplier, contract, covers, exit_plan in suppliers:
+        sup[supplier] = m.el("BusinessActor", supplier, "Supplier.", supplier_continuity_capability_assessed="")
+        con[supplier] = m.el("Contract", contract, "", exit_plan_tested=exit_plan, renewal_date="")
+        m.rel("Association", sup[supplier], con[supplier])
+        m.rel("Association", con[supplier], covers)
+    single = m.el("Assessment", "Orders stop if the cloud region fails",
+                  "The e-commerce platform and the order management system share one cloud region and one "
+                  "provider, so a regional outage stops order taking and dispatch together. Fail-over to the "
+                  "secondary region has not been exercised.")
+    m.rel("Association", single, con["Cloud provider"])
+    m.rel("Influence", single, goal)
+
+    strategies = [
+        # strategy, activities it protects, plan
+        ("Fail over to the secondary cloud region", ["Take customer orders", "Dispatch orders"],
+         "Website and order recovery plan"),
+        ("Take phone orders on a manual form", ["Take customer orders"], "Website and order recovery plan"),
+        ("Switch to the standby courier", ["Dispatch orders"], "Dispatch continuity plan"),
+        ("Route payments to the secondary provider", ["Take customer payments"], "Payments continuity plan"),
+        ("Answer enquiries from home on the cloud service desk", ["Answer customer enquiries"],
+         "Customer service continuity plan"),
+    ]
+    strat, plan = {}, {}
+    for name, protects, plan_name in strategies:
+        strat[name] = m.el("BusinessProcess", name, "Continuity strategy chosen to meet the recovery objectives "
+                           "of the activities it protects.", last_exercised="")
+        m.rel("Realization", strat[name], clause["8.3"])
+        for a in protects:
+            m.rel("Association", strat[name], act[a], "protects")
+        if plan_name not in plan:
+            plan[plan_name] = m.el("BusinessObject", plan_name, "Documented response and recovery plan.",
+                                   plan_owner="", last_reviewed="")
+            m.rel("Realization", plan[plan_name], clause["8.4"])
+        m.rel("Access", strat[name], plan[plan_name], access="Read")
+
+    # View 1: the clauses and the controls that realize them.
+    v = m.view("BCMS requirements by clause", "Clauses 4 to 10 of ISO 22301, with clause 8 opened into its six "
+               "operational subclauses, each with the control that realizes it. Fill in the owner and evidence "
+               "location of every control; that pair is what a certification auditor asks for first.",
+               "Motivation")
+    v.nodes += [Node(board, 20, 20, 170, 55), Node(driver, 230, 20, 230, 55), Node(goal, 500, 20, 800, 55),
+                Node(bcms, 750, 120, 300, 50)]
+    for i, num in enumerate(["4", "5", "6", "7", "9", "10"]):
+        x = 20 + i * 215
+        v.nodes += [Node(clause[num], x, 230, 200, 70), Node(control[num], x, 360, 200, 60)]
+    ops = ["8.1", "8.2", "8.3", "8.4", "8.5", "8.6"]
+    box = container(clause["8"], 20, 480, [clause[n] for n in ops], cols=6, w=200, h=85,
+                    title="Clause 8: Operation")
+    v.nodes.append(box)
+    y = box.y + box.h + 55
+    for i, num in enumerate(ops):
+        v.nodes.append(Node(control[num], 35 + i * 215, y, 200, 60))
+    on_view = on_view_of(v)
+    v.connections += [r.id for r in m.relationships
+                      if r.source in on_view and r.target in on_view and r.type != "Composition"]
+
+    # View 2: what each prioritised activity depends on.
+    d = m.view("Prioritised activities and their dependencies", "Read top to bottom: each prioritised activity "
+               "with its recovery objectives, the applications and services it needs, what they run on, and the "
+               "contract and supplier behind each. Any activity whose chain ends in a supplier with no tested "
+               "exit plan, or in a single site, cannot recover faster than that supplier or site.")
+    d.nodes += [Node(team, 400, 20, 220, 50)]
+    for name, x in [("Take customer orders", 100), ("Dispatch orders", 400), ("Take customer payments", 770),
+                    ("Answer customer enquiries", 1020)]:
+        d.nodes.append(Node(act[name], x, 130, 220, 60))
+    for name, x in [("E-commerce platform", 20), ("Order management system", 220),
+                    ("Warehouse management system", 420)]:
+        d.nodes.append(Node(app[name], x, 280, 180, 55))
+    d.nodes += [Node(delivery, 620, 280, 180, 55), Node(app["Payment gateway"], 820, 280, 180, 55),
+                Node(app["Customer service desk"], 1060, 280, 180, 55)]
+    d.nodes += [Node(cloud, 110, 410, 200, 50), Node(site, 400, 395, 220, 120, [Node(server, 420, 435, 180, 55)])]
+    for supplier, x, y in [("Cloud provider", 110, 520), ("Courier", 620, 410), ("Payment service provider", 820, 410),
+                           ("Service desk vendor", 1060, 410)]:
+        d.nodes += [Node(con[supplier], x, y, 200 if x == 110 else 180, 55),
+                    Node(sup[supplier], x, y + 110, 200 if x == 110 else 180, 55)]
+    on_view = on_view_of(d)
+    # The site holds the server and the team by nesting and by placement; no aggregation lines needed.
+    d.connections += [r.id for r in m.relationships
+                      if r.source in on_view and r.target in on_view and r.type != "Aggregation"]
+
+    # View 3: strategies and plans for each activity.
+    s = m.view("Continuity strategies and plans", "The business impact analysis sets the recovery objectives of "
+               "each prioritised activity; each activity is protected by one or more continuity strategies, and "
+               "each strategy is carried out from a documented plan. An activity with no strategy, or a plan "
+               "never exercised, is the gap to close first.")
+    s.nodes.append(Node(control["8.2"], 20, 300, 200, 60))
+    for name, y in [("Take customer orders", 100), ("Dispatch orders", 230), ("Take customer payments", 380),
+                    ("Answer customer enquiries", 530)]:
+        s.nodes.append(Node(act[name], 320, y, 220, 60))
+    for name, y in [("Take phone orders on a manual form", 20), ("Fail over to the secondary cloud region", 120),
+                    ("Switch to the standby courier", 250), ("Route payments to the secondary provider", 380),
+                    ("Answer enquiries from home on the cloud service desk", 530)]:
+        s.nodes.append(Node(strat[name], 650, y, 240, 60))
+    for name, y in [("Website and order recovery plan", 75), ("Dispatch continuity plan", 255),
+                    ("Payments continuity plan", 383), ("Customer service continuity plan", 533)]:
+        s.nodes.append(Node(plan[name], 1000, y, 220, 55))
+    on_view = on_view_of(s)
+    s.connections += [r.id for r in m.relationships if r.source in on_view and r.target in on_view]
+
+    # View 4: the impact question walked end to end.
+    w = m.view("What breaks if the cloud provider fails", "The chain an impact question walks: supplier, "
+               "contract, hosting service, the two applications on it, the prioritised activities they serve "
+               "with their recovery objectives, and the strategy that is meant to bring them back.")
+    chain = [sup["Cloud provider"], con["Cloud provider"], cloud]
+    for i, el in enumerate(chain):
+        w.nodes.append(Node(el, 20 + i * 230, 300, 200, 55))
+    w.nodes += [Node(app["E-commerce platform"], 720, 220, 200, 55),
+                Node(app["Order management system"], 720, 380, 200, 55),
+                Node(act["Take customer orders"], 1000, 220, 220, 55),
+                Node(act["Dispatch orders"], 1000, 380, 220, 55),
+                Node(strat["Fail over to the secondary cloud region"], 1300, 290, 220, 70),
+                Node(single, 250, 100, 300, 70), Node(goal, 700, 20, 300, 55)]
+    on_view = on_view_of(w)
+    w.connections += [r.id for r in m.relationships if r.source in on_view and r.target in on_view]
+    return m
+
+
+ALL = [capability_map, application_portfolio, nis2, dora, layered_onboarding, company_model, iso22301]
 
 
 # ------------------------------------------------------------------------------------------------

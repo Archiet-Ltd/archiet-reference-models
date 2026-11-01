@@ -372,7 +372,7 @@ ALLOWED = {
     ("Access", "ApplicationProcess", "DataObject"), ("Access", "ApplicationEvent", "DataObject"),
     ("Realization", "Artifact", "DataObject"), ("Realization", "Device", "TechnologyService"),
     ("Access", "TechnologyService", "Artifact"), ("Access", "Node", "Artifact"),
-    ("Serving", "TechnologyService", "TechnologyService"),
+    ("Serving", "TechnologyService", "TechnologyService"), ("Serving", "BusinessService", "BusinessProcess"),
 }
 
 
