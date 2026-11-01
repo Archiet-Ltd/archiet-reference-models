@@ -1,0 +1,1056 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="id-iso22301-business-continuity" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd">
+  <name xml:lang="en">ISO 22301 Business Continuity (starter)</name>
+  <documentation xml:lang="en">A business continuity management system (BCMS) traced from the requirements of ISO 22301:2019 (clauses 4 to 10) to the work that meets them, and from there to an example organisation's prioritised activities. Each activity carries its recovery time objective, maximum tolerable period of disruption, recovery point objective and minimum business continuity objective, set by the business impact analysis, and is linked to the applications, technology, people and suppliers it depends on and to the continuity strategy and plan that protect it. Because every dependency is connected, the model answers what stops, and how soon it must be back, when a system or supplier fails. Clause numbers and titles are given for reference only; read the requirements in the standard itself. Replace the example online retailer with your own activities and recovery objectives.</documentation>
+  <elements>
+    <element identifier="id-driver-iso-22301-2019-business-continuity-management-systems" xsi:type="Driver">
+      <name xml:lang="en">ISO 22301:2019 Business continuity management systems</name>
+      <documentation xml:lang="en">The international standard for a business continuity management system, read with Amendment 1:2024 on climate action changes. Certification is against clauses 4 to 10.</documentation>
+    </element>
+    <element identifier="id-stakeholder-top-management" xsi:type="Stakeholder">
+      <name xml:lang="en">Top management</name>
+      <documentation xml:lang="en">Owns the business continuity policy and objectives, and reviews the management system at planned intervals.</documentation>
+    </element>
+    <element identifier="id-goal-keep-prioritised-activities-within-their-recovery-objectives" xsi:type="Goal">
+      <name xml:lang="en">Keep prioritised activities within their recovery objectives</name>
+      <documentation xml:lang="en">Continue delivering products and services at an acceptable, agreed capacity during a disruption, and recover them within the agreed time.</documentation>
+    </element>
+    <element identifier="id-requirement-iso-22301-requirements-clauses-4-to-10" xsi:type="Requirement">
+      <name xml:lang="en">ISO 22301 requirements (clauses 4 to 10)</name>
+      <documentation xml:lang="en">The requirements a certified management system must meet.</documentation>
+    </element>
+    <element identifier="id-requirement-clause-4-context-of-the-organisation" xsi:type="Requirement">
+      <name xml:lang="en">Clause 4: Context of the organisation</name>
+      <documentation xml:lang="en">Know the organisation, its interested parties and their legal and regulatory requirements, and set the scope of the management system.</documentation>
+    </element>
+    <element identifier="id-requirement-clause-5-leadership" xsi:type="Requirement">
+      <name xml:lang="en">Clause 5: Leadership</name>
+      <documentation xml:lang="en">Top management commits to the management system, sets a business continuity policy and assigns roles, responsibilities and authorities.</documentation>
+    </element>
+    <element identifier="id-requirement-clause-6-planning" xsi:type="Requirement">
+      <name xml:lang="en">Clause 6: Planning</name>
+      <documentation xml:lang="en">Address risks and opportunities, set business continuity objectives with plans to achieve them, and plan changes to the management system.</documentation>
+    </element>
+    <element identifier="id-requirement-clause-7-support" xsi:type="Requirement">
+      <name xml:lang="en">Clause 7: Support</name>
+      <documentation xml:lang="en">Provide resources, competence, awareness, communication and documented information.</documentation>
+    </element>
+    <element identifier="id-requirement-clause-9-performance-evaluation" xsi:type="Requirement">
+      <name xml:lang="en">Clause 9: Performance evaluation</name>
+      <documentation xml:lang="en">Monitor, measure, analyse and evaluate, run internal audits and hold management reviews.</documentation>
+    </element>
+    <element identifier="id-requirement-clause-10-improvement" xsi:type="Requirement">
+      <name xml:lang="en">Clause 10: Improvement</name>
+      <documentation xml:lang="en">Handle nonconformities with corrective action and improve the management system continually.</documentation>
+    </element>
+    <element identifier="id-requirement-clause-8-operation" xsi:type="Requirement">
+      <name xml:lang="en">Clause 8: Operation</name>
+      <documentation xml:lang="en">Plan and run the business continuity processes: impact analysis, risk assessment, strategies, plans, exercises and evaluation.</documentation>
+    </element>
+    <element identifier="id-requirement-8-1-operational-planning-and-control" xsi:type="Requirement">
+      <name xml:lang="en">8.1 Operational planning and control</name>
+      <documentation xml:lang="en">Plan, run and control the processes the management system needs, including outsourced processes and the supply chain.</documentation>
+    </element>
+    <element identifier="id-requirement-8-2-business-impact-analysis-and-risk-assessment" xsi:type="Requirement">
+      <name xml:lang="en">8.2 Business impact analysis and risk assessment</name>
+      <documentation xml:lang="en">Analyse the impact of disrupting each activity over time, set recovery priorities and objectives, and assess the risks of disruption.</documentation>
+    </element>
+    <element identifier="id-requirement-8-3-business-continuity-strategies-and-solutions" xsi:type="Requirement">
+      <name xml:lang="en">8.3 Business continuity strategies and solutions</name>
+      <documentation xml:lang="en">Identify, select and put in place the strategies and resources that meet the recovery objectives.</documentation>
+    </element>
+    <element identifier="id-requirement-8-4-business-continuity-plans-and-procedures" xsi:type="Requirement">
+      <name xml:lang="en">8.4 Business continuity plans and procedures</name>
+      <documentation xml:lang="en">Set up a response structure, warning and communication arrangements, and documented plans for response and recovery.</documentation>
+    </element>
+    <element identifier="id-requirement-8-5-exercise-programme" xsi:type="Requirement">
+      <name xml:lang="en">8.5 Exercise programme</name>
+      <documentation xml:lang="en">Exercise and test the strategies and plans on a schedule, and act on what the exercises show.</documentation>
+    </element>
+    <element identifier="id-requirement-8-6-evaluation-of-business-continuity-documentation-and-capabilities" xsi:type="Requirement">
+      <name xml:lang="en">8.6 Evaluation of business continuity documentation and capabilities</name>
+      <documentation xml:lang="en">Evaluate whether the impact analysis, risk assessment, strategies, plans and suppliers' capabilities remain suitable and effective.</documentation>
+    </element>
+    <element identifier="id-businessprocess-bcms-scope-and-interested-parties-review" xsi:type="BusinessProcess">
+      <name xml:lang="en">BCMS scope and interested parties review</name>
+      <documentation xml:lang="en">Example control. Replace with the process, team or record that meets this clause in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-business-continuity-policy-approval" xsi:type="BusinessProcess">
+      <name xml:lang="en">Business continuity policy approval</name>
+      <documentation xml:lang="en">Example control. Replace with the process, team or record that meets this clause in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-continuity-objectives-planning" xsi:type="BusinessProcess">
+      <name xml:lang="en">Continuity objectives planning</name>
+      <documentation xml:lang="en">Example control. Replace with the process, team or record that meets this clause in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-continuity-awareness-and-competence-programme" xsi:type="BusinessProcess">
+      <name xml:lang="en">Continuity awareness and competence programme</name>
+      <documentation xml:lang="en">Example control. Replace with the process, team or record that meets this clause in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-internal-audit-and-management-review" xsi:type="BusinessProcess">
+      <name xml:lang="en">Internal audit and management review</name>
+      <documentation xml:lang="en">Example control. Replace with the process, team or record that meets this clause in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-corrective-action-and-improvement" xsi:type="BusinessProcess">
+      <name xml:lang="en">Corrective action and improvement</name>
+      <documentation xml:lang="en">Example control. Replace with the process, team or record that meets this clause in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-supplier-and-outsourced-process-control" xsi:type="BusinessProcess">
+      <name xml:lang="en">Supplier and outsourced process control</name>
+      <documentation xml:lang="en">Example control. Replace with the process, team or record that meets this clause in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-business-impact-analysis" xsi:type="BusinessProcess">
+      <name xml:lang="en">Business impact analysis</name>
+      <documentation xml:lang="en">Example control. Replace with the process, team or record that meets this clause in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-continuity-strategy-selection" xsi:type="BusinessProcess">
+      <name xml:lang="en">Continuity strategy selection</name>
+      <documentation xml:lang="en">Example control. Replace with the process, team or record that meets this clause in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessactor-incident-management-team" xsi:type="BusinessActor">
+      <name xml:lang="en">Incident management team</name>
+      <documentation xml:lang="en">Example control. Replace with the process, team or record that meets this clause in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-exercise-and-test-programme" xsi:type="BusinessProcess">
+      <name xml:lang="en">Exercise and test programme</name>
+      <documentation xml:lang="en">Example control. Replace with the process, team or record that meets this clause in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-continuity-plan-and-supplier-capability-review" xsi:type="BusinessProcess">
+      <name xml:lang="en">Continuity plan and supplier capability review</name>
+      <documentation xml:lang="en">Example control. Replace with the process, team or record that meets this clause in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-continuity-risk-assessment" xsi:type="BusinessProcess">
+      <name xml:lang="en">Continuity risk assessment</name>
+      <documentation xml:lang="en">Identifies the risks of disruption to prioritised activities and the resources they need, and decides how to treat them.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-take-customer-orders" xsi:type="BusinessProcess">
+      <name xml:lang="en">Take customer orders</name>
+      <documentation xml:lang="en">Prioritised activity. Recovery objectives set by the business impact analysis and agreed by top management.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">Head of E-commerce</value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">4 hours</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en">24 hours</value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en">15 minutes</value></property>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en">Website orders accepted at half of normal volume</value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-dispatch-orders" xsi:type="BusinessProcess">
+      <name xml:lang="en">Dispatch orders</name>
+      <documentation xml:lang="en">Prioritised activity. Recovery objectives set by the business impact analysis and agreed by top management.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">Operations Director</value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">24 hours</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en">3 days</value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en">1 hour</value></property>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en">Priority orders dispatched next day</value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-take-customer-payments" xsi:type="BusinessProcess">
+      <name xml:lang="en">Take customer payments</name>
+      <documentation xml:lang="en">Prioritised activity. Recovery objectives set by the business impact analysis and agreed by top management.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">Finance Director</value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">4 hours</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en">24 hours</value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en">No lost transactions</value></property>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en">Card payments taken for every accepted order</value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-answer-customer-enquiries" xsi:type="BusinessProcess">
+      <name xml:lang="en">Answer customer enquiries</name>
+      <documentation xml:lang="en">Prioritised activity. Recovery objectives set by the business impact analysis and agreed by top management.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">Head of Customer Service</value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">24 hours</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en">5 days</value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en">24 hours</value></property>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en">Email and phone enquiries answered within two working days</value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-e-commerce-platform" xsi:type="ApplicationComponent">
+      <name xml:lang="en">E-commerce platform</name>
+      <properties>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-order-management-system" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Order management system</name>
+      <properties>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-warehouse-management-system" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Warehouse management system</name>
+      <properties>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-payment-gateway" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Payment gateway</name>
+      <properties>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-customer-service-desk" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Customer service desk</name>
+      <properties>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessactor-warehouse-team" xsi:type="BusinessActor">
+      <name xml:lang="en">Warehouse team</name>
+      <documentation xml:lang="en">Staff who pick, pack and hand over parcels at the distribution centre.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-9"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-location-distribution-centre" xsi:type="Location">
+      <name xml:lang="en">Distribution centre</name>
+      <documentation xml:lang="en">The single site that stores and dispatches stock.</documentation>
+    </element>
+    <element identifier="id-technologyservice-cloud-hosting" xsi:type="TechnologyService">
+      <name xml:lang="en">Cloud hosting</name>
+      <documentation xml:lang="en">Runs the e-commerce platform and the order management system in one primary region.</documentation>
+    </element>
+    <element identifier="id-node-warehouse-server" xsi:type="Node">
+      <name xml:lang="en">Warehouse server</name>
+      <documentation xml:lang="en">On-site server running the warehouse management system.</documentation>
+    </element>
+    <element identifier="id-businessservice-parcel-delivery" xsi:type="BusinessService">
+      <name xml:lang="en">Parcel delivery</name>
+      <documentation xml:lang="en">Collection and delivery of customer parcels.</documentation>
+    </element>
+    <element identifier="id-businessactor-cloud-provider" xsi:type="BusinessActor">
+      <name xml:lang="en">Cloud provider</name>
+      <documentation xml:lang="en">Supplier.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-10"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-contract-cloud-hosting-agreement" xsi:type="Contract">
+      <name xml:lang="en">Cloud hosting agreement</name>
+      <properties>
+        <property propertyDefinitionRef="propid-11"><value xml:lang="en">No</value></property>
+        <property propertyDefinitionRef="propid-12"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessactor-courier" xsi:type="BusinessActor">
+      <name xml:lang="en">Courier</name>
+      <documentation xml:lang="en">Supplier.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-10"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-contract-courier-agreement" xsi:type="Contract">
+      <name xml:lang="en">Courier agreement</name>
+      <properties>
+        <property propertyDefinitionRef="propid-11"><value xml:lang="en">No</value></property>
+        <property propertyDefinitionRef="propid-12"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessactor-payment-service-provider" xsi:type="BusinessActor">
+      <name xml:lang="en">Payment service provider</name>
+      <documentation xml:lang="en">Supplier.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-10"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-contract-payment-services-agreement" xsi:type="Contract">
+      <name xml:lang="en">Payment services agreement</name>
+      <properties>
+        <property propertyDefinitionRef="propid-11"><value xml:lang="en">Yes</value></property>
+        <property propertyDefinitionRef="propid-12"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessactor-service-desk-vendor" xsi:type="BusinessActor">
+      <name xml:lang="en">Service desk vendor</name>
+      <documentation xml:lang="en">Supplier.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-10"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-contract-service-desk-subscription" xsi:type="Contract">
+      <name xml:lang="en">Service desk subscription</name>
+      <properties>
+        <property propertyDefinitionRef="propid-11"><value xml:lang="en">No</value></property>
+        <property propertyDefinitionRef="propid-12"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-assessment-orders-stop-if-the-cloud-region-fails" xsi:type="Assessment">
+      <name xml:lang="en">Orders stop if the cloud region fails</name>
+      <documentation xml:lang="en">The e-commerce platform and the order management system share one cloud region and one provider, so a regional outage stops order taking and dispatch together. Fail-over to the secondary region has not been exercised.</documentation>
+    </element>
+    <element identifier="id-businessprocess-fail-over-to-the-secondary-cloud-region" xsi:type="BusinessProcess">
+      <name xml:lang="en">Fail over to the secondary cloud region</name>
+      <documentation xml:lang="en">Continuity strategy chosen to meet the recovery objectives of the activities it protects.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-13"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessobject-website-and-order-recovery-plan" xsi:type="BusinessObject">
+      <name xml:lang="en">Website and order recovery plan</name>
+      <documentation xml:lang="en">Documented response and recovery plan.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-14"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-15"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-take-phone-orders-on-a-manual-form" xsi:type="BusinessProcess">
+      <name xml:lang="en">Take phone orders on a manual form</name>
+      <documentation xml:lang="en">Continuity strategy chosen to meet the recovery objectives of the activities it protects.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-13"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-switch-to-the-standby-courier" xsi:type="BusinessProcess">
+      <name xml:lang="en">Switch to the standby courier</name>
+      <documentation xml:lang="en">Continuity strategy chosen to meet the recovery objectives of the activities it protects.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-13"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessobject-dispatch-continuity-plan" xsi:type="BusinessObject">
+      <name xml:lang="en">Dispatch continuity plan</name>
+      <documentation xml:lang="en">Documented response and recovery plan.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-14"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-15"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-route-payments-to-the-secondary-provider" xsi:type="BusinessProcess">
+      <name xml:lang="en">Route payments to the secondary provider</name>
+      <documentation xml:lang="en">Continuity strategy chosen to meet the recovery objectives of the activities it protects.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-13"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessobject-payments-continuity-plan" xsi:type="BusinessObject">
+      <name xml:lang="en">Payments continuity plan</name>
+      <documentation xml:lang="en">Documented response and recovery plan.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-14"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-15"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessprocess-answer-enquiries-from-home-on-the-cloud-service-desk" xsi:type="BusinessProcess">
+      <name xml:lang="en">Answer enquiries from home on the cloud service desk</name>
+      <documentation xml:lang="en">Continuity strategy chosen to meet the recovery objectives of the activities it protects.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-13"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessobject-customer-service-continuity-plan" xsi:type="BusinessObject">
+      <name xml:lang="en">Customer service continuity plan</name>
+      <documentation xml:lang="en">Documented response and recovery plan.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-14"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-15"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="id-rel-001" source="id-stakeholder-top-management" target="id-driver-iso-22301-2019-business-continuity-management-systems" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-002" source="id-driver-iso-22301-2019-business-continuity-management-systems" target="id-goal-keep-prioritised-activities-within-their-recovery-objectives" xsi:type="Influence">
+    </relationship>
+    <relationship identifier="id-rel-003" source="id-requirement-iso-22301-requirements-clauses-4-to-10" target="id-goal-keep-prioritised-activities-within-their-recovery-objectives" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-004" source="id-requirement-iso-22301-requirements-clauses-4-to-10" target="id-requirement-clause-4-context-of-the-organisation" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-005" source="id-requirement-iso-22301-requirements-clauses-4-to-10" target="id-requirement-clause-5-leadership" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-006" source="id-requirement-iso-22301-requirements-clauses-4-to-10" target="id-requirement-clause-6-planning" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-007" source="id-requirement-iso-22301-requirements-clauses-4-to-10" target="id-requirement-clause-7-support" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-008" source="id-requirement-iso-22301-requirements-clauses-4-to-10" target="id-requirement-clause-9-performance-evaluation" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-009" source="id-requirement-iso-22301-requirements-clauses-4-to-10" target="id-requirement-clause-10-improvement" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-010" source="id-requirement-iso-22301-requirements-clauses-4-to-10" target="id-requirement-clause-8-operation" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-011" source="id-requirement-clause-8-operation" target="id-requirement-8-1-operational-planning-and-control" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-012" source="id-requirement-clause-8-operation" target="id-requirement-8-2-business-impact-analysis-and-risk-assessment" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-013" source="id-requirement-clause-8-operation" target="id-requirement-8-3-business-continuity-strategies-and-solutions" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-014" source="id-requirement-clause-8-operation" target="id-requirement-8-4-business-continuity-plans-and-procedures" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-015" source="id-requirement-clause-8-operation" target="id-requirement-8-5-exercise-programme" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-016" source="id-requirement-clause-8-operation" target="id-requirement-8-6-evaluation-of-business-continuity-documentation-and-capabilities" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-017" source="id-businessprocess-bcms-scope-and-interested-parties-review" target="id-requirement-clause-4-context-of-the-organisation" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-018" source="id-businessprocess-business-continuity-policy-approval" target="id-requirement-clause-5-leadership" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-019" source="id-businessprocess-continuity-objectives-planning" target="id-requirement-clause-6-planning" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-020" source="id-businessprocess-continuity-awareness-and-competence-programme" target="id-requirement-clause-7-support" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-021" source="id-businessprocess-internal-audit-and-management-review" target="id-requirement-clause-9-performance-evaluation" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-022" source="id-businessprocess-corrective-action-and-improvement" target="id-requirement-clause-10-improvement" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-023" source="id-businessprocess-supplier-and-outsourced-process-control" target="id-requirement-8-1-operational-planning-and-control" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-024" source="id-businessprocess-business-impact-analysis" target="id-requirement-8-2-business-impact-analysis-and-risk-assessment" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-025" source="id-businessprocess-continuity-strategy-selection" target="id-requirement-8-3-business-continuity-strategies-and-solutions" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-026" source="id-businessactor-incident-management-team" target="id-requirement-8-4-business-continuity-plans-and-procedures" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-027" source="id-businessprocess-exercise-and-test-programme" target="id-requirement-8-5-exercise-programme" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-028" source="id-businessprocess-continuity-plan-and-supplier-capability-review" target="id-requirement-8-6-evaluation-of-business-continuity-documentation-and-capabilities" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-029" source="id-businessprocess-continuity-risk-assessment" target="id-requirement-8-2-business-impact-analysis-and-risk-assessment" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-030" source="id-businessprocess-business-impact-analysis" target="id-businessprocess-take-customer-orders" xsi:type="Association">
+      <name xml:lang="en">sets recovery objectives for</name>
+    </relationship>
+    <relationship identifier="id-rel-031" source="id-businessprocess-business-impact-analysis" target="id-businessprocess-dispatch-orders" xsi:type="Association">
+      <name xml:lang="en">sets recovery objectives for</name>
+    </relationship>
+    <relationship identifier="id-rel-032" source="id-businessprocess-business-impact-analysis" target="id-businessprocess-take-customer-payments" xsi:type="Association">
+      <name xml:lang="en">sets recovery objectives for</name>
+    </relationship>
+    <relationship identifier="id-rel-033" source="id-businessprocess-business-impact-analysis" target="id-businessprocess-answer-customer-enquiries" xsi:type="Association">
+      <name xml:lang="en">sets recovery objectives for</name>
+    </relationship>
+    <relationship identifier="id-rel-034" source="id-applicationcomponent-e-commerce-platform" target="id-businessprocess-take-customer-orders" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-035" source="id-applicationcomponent-order-management-system" target="id-businessprocess-take-customer-orders" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-036" source="id-applicationcomponent-order-management-system" target="id-businessprocess-dispatch-orders" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-037" source="id-applicationcomponent-warehouse-management-system" target="id-businessprocess-dispatch-orders" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-038" source="id-applicationcomponent-payment-gateway" target="id-businessprocess-take-customer-payments" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-039" source="id-applicationcomponent-customer-service-desk" target="id-businessprocess-answer-customer-enquiries" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-040" source="id-businessactor-warehouse-team" target="id-businessprocess-dispatch-orders" xsi:type="Assignment">
+    </relationship>
+    <relationship identifier="id-rel-041" source="id-technologyservice-cloud-hosting" target="id-applicationcomponent-e-commerce-platform" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-042" source="id-technologyservice-cloud-hosting" target="id-applicationcomponent-order-management-system" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-043" source="id-node-warehouse-server" target="id-applicationcomponent-warehouse-management-system" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-044" source="id-businessservice-parcel-delivery" target="id-businessprocess-dispatch-orders" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-045" source="id-location-distribution-centre" target="id-node-warehouse-server" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-046" source="id-location-distribution-centre" target="id-businessactor-warehouse-team" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-047" source="id-businessactor-cloud-provider" target="id-contract-cloud-hosting-agreement" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-048" source="id-contract-cloud-hosting-agreement" target="id-technologyservice-cloud-hosting" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-049" source="id-businessactor-courier" target="id-contract-courier-agreement" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-050" source="id-contract-courier-agreement" target="id-businessservice-parcel-delivery" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-051" source="id-businessactor-payment-service-provider" target="id-contract-payment-services-agreement" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-052" source="id-contract-payment-services-agreement" target="id-applicationcomponent-payment-gateway" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-053" source="id-businessactor-service-desk-vendor" target="id-contract-service-desk-subscription" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-054" source="id-contract-service-desk-subscription" target="id-applicationcomponent-customer-service-desk" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-055" source="id-assessment-orders-stop-if-the-cloud-region-fails" target="id-contract-cloud-hosting-agreement" xsi:type="Association">
+    </relationship>
+    <relationship identifier="id-rel-056" source="id-assessment-orders-stop-if-the-cloud-region-fails" target="id-goal-keep-prioritised-activities-within-their-recovery-objectives" xsi:type="Influence">
+    </relationship>
+    <relationship identifier="id-rel-057" source="id-businessprocess-fail-over-to-the-secondary-cloud-region" target="id-requirement-8-3-business-continuity-strategies-and-solutions" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-058" source="id-businessprocess-fail-over-to-the-secondary-cloud-region" target="id-businessprocess-take-customer-orders" xsi:type="Association">
+      <name xml:lang="en">protects</name>
+    </relationship>
+    <relationship identifier="id-rel-059" source="id-businessprocess-fail-over-to-the-secondary-cloud-region" target="id-businessprocess-dispatch-orders" xsi:type="Association">
+      <name xml:lang="en">protects</name>
+    </relationship>
+    <relationship identifier="id-rel-060" source="id-businessobject-website-and-order-recovery-plan" target="id-requirement-8-4-business-continuity-plans-and-procedures" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-061" source="id-businessprocess-fail-over-to-the-secondary-cloud-region" target="id-businessobject-website-and-order-recovery-plan" xsi:type="Access" accessType="Read">
+    </relationship>
+    <relationship identifier="id-rel-062" source="id-businessprocess-take-phone-orders-on-a-manual-form" target="id-requirement-8-3-business-continuity-strategies-and-solutions" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-063" source="id-businessprocess-take-phone-orders-on-a-manual-form" target="id-businessprocess-take-customer-orders" xsi:type="Association">
+      <name xml:lang="en">protects</name>
+    </relationship>
+    <relationship identifier="id-rel-064" source="id-businessprocess-take-phone-orders-on-a-manual-form" target="id-businessobject-website-and-order-recovery-plan" xsi:type="Access" accessType="Read">
+    </relationship>
+    <relationship identifier="id-rel-065" source="id-businessprocess-switch-to-the-standby-courier" target="id-requirement-8-3-business-continuity-strategies-and-solutions" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-066" source="id-businessprocess-switch-to-the-standby-courier" target="id-businessprocess-dispatch-orders" xsi:type="Association">
+      <name xml:lang="en">protects</name>
+    </relationship>
+    <relationship identifier="id-rel-067" source="id-businessobject-dispatch-continuity-plan" target="id-requirement-8-4-business-continuity-plans-and-procedures" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-068" source="id-businessprocess-switch-to-the-standby-courier" target="id-businessobject-dispatch-continuity-plan" xsi:type="Access" accessType="Read">
+    </relationship>
+    <relationship identifier="id-rel-069" source="id-businessprocess-route-payments-to-the-secondary-provider" target="id-requirement-8-3-business-continuity-strategies-and-solutions" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-070" source="id-businessprocess-route-payments-to-the-secondary-provider" target="id-businessprocess-take-customer-payments" xsi:type="Association">
+      <name xml:lang="en">protects</name>
+    </relationship>
+    <relationship identifier="id-rel-071" source="id-businessobject-payments-continuity-plan" target="id-requirement-8-4-business-continuity-plans-and-procedures" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-072" source="id-businessprocess-route-payments-to-the-secondary-provider" target="id-businessobject-payments-continuity-plan" xsi:type="Access" accessType="Read">
+    </relationship>
+    <relationship identifier="id-rel-073" source="id-businessprocess-answer-enquiries-from-home-on-the-cloud-service-desk" target="id-requirement-8-3-business-continuity-strategies-and-solutions" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-074" source="id-businessprocess-answer-enquiries-from-home-on-the-cloud-service-desk" target="id-businessprocess-answer-customer-enquiries" xsi:type="Association">
+      <name xml:lang="en">protects</name>
+    </relationship>
+    <relationship identifier="id-rel-075" source="id-businessobject-customer-service-continuity-plan" target="id-requirement-8-4-business-continuity-plans-and-procedures" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-076" source="id-businessprocess-answer-enquiries-from-home-on-the-cloud-service-desk" target="id-businessobject-customer-service-continuity-plan" xsi:type="Access" accessType="Read">
+    </relationship>
+  </relationships>
+  <organizations>
+    <item><label xml:lang="en">Business</label>
+      <item identifierRef="id-businessprocess-bcms-scope-and-interested-parties-review"/>
+      <item identifierRef="id-businessprocess-business-continuity-policy-approval"/>
+      <item identifierRef="id-businessprocess-continuity-objectives-planning"/>
+      <item identifierRef="id-businessprocess-continuity-awareness-and-competence-programme"/>
+      <item identifierRef="id-businessprocess-internal-audit-and-management-review"/>
+      <item identifierRef="id-businessprocess-corrective-action-and-improvement"/>
+      <item identifierRef="id-businessprocess-supplier-and-outsourced-process-control"/>
+      <item identifierRef="id-businessprocess-business-impact-analysis"/>
+      <item identifierRef="id-businessprocess-continuity-strategy-selection"/>
+      <item identifierRef="id-businessactor-incident-management-team"/>
+      <item identifierRef="id-businessprocess-exercise-and-test-programme"/>
+      <item identifierRef="id-businessprocess-continuity-plan-and-supplier-capability-review"/>
+      <item identifierRef="id-businessprocess-continuity-risk-assessment"/>
+      <item identifierRef="id-businessprocess-take-customer-orders"/>
+      <item identifierRef="id-businessprocess-dispatch-orders"/>
+      <item identifierRef="id-businessprocess-take-customer-payments"/>
+      <item identifierRef="id-businessprocess-answer-customer-enquiries"/>
+      <item identifierRef="id-businessactor-warehouse-team"/>
+      <item identifierRef="id-businessservice-parcel-delivery"/>
+      <item identifierRef="id-businessactor-cloud-provider"/>
+      <item identifierRef="id-contract-cloud-hosting-agreement"/>
+      <item identifierRef="id-businessactor-courier"/>
+      <item identifierRef="id-contract-courier-agreement"/>
+      <item identifierRef="id-businessactor-payment-service-provider"/>
+      <item identifierRef="id-contract-payment-services-agreement"/>
+      <item identifierRef="id-businessactor-service-desk-vendor"/>
+      <item identifierRef="id-contract-service-desk-subscription"/>
+      <item identifierRef="id-businessprocess-fail-over-to-the-secondary-cloud-region"/>
+      <item identifierRef="id-businessobject-website-and-order-recovery-plan"/>
+      <item identifierRef="id-businessprocess-take-phone-orders-on-a-manual-form"/>
+      <item identifierRef="id-businessprocess-switch-to-the-standby-courier"/>
+      <item identifierRef="id-businessobject-dispatch-continuity-plan"/>
+      <item identifierRef="id-businessprocess-route-payments-to-the-secondary-provider"/>
+      <item identifierRef="id-businessobject-payments-continuity-plan"/>
+      <item identifierRef="id-businessprocess-answer-enquiries-from-home-on-the-cloud-service-desk"/>
+      <item identifierRef="id-businessobject-customer-service-continuity-plan"/>
+    </item>
+    <item><label xml:lang="en">Application</label>
+      <item identifierRef="id-applicationcomponent-e-commerce-platform"/>
+      <item identifierRef="id-applicationcomponent-order-management-system"/>
+      <item identifierRef="id-applicationcomponent-warehouse-management-system"/>
+      <item identifierRef="id-applicationcomponent-payment-gateway"/>
+      <item identifierRef="id-applicationcomponent-customer-service-desk"/>
+    </item>
+    <item><label xml:lang="en">Technology</label>
+      <item identifierRef="id-technologyservice-cloud-hosting"/>
+      <item identifierRef="id-node-warehouse-server"/>
+    </item>
+    <item><label xml:lang="en">Motivation</label>
+      <item identifierRef="id-driver-iso-22301-2019-business-continuity-management-systems"/>
+      <item identifierRef="id-stakeholder-top-management"/>
+      <item identifierRef="id-goal-keep-prioritised-activities-within-their-recovery-objectives"/>
+      <item identifierRef="id-requirement-iso-22301-requirements-clauses-4-to-10"/>
+      <item identifierRef="id-requirement-clause-4-context-of-the-organisation"/>
+      <item identifierRef="id-requirement-clause-5-leadership"/>
+      <item identifierRef="id-requirement-clause-6-planning"/>
+      <item identifierRef="id-requirement-clause-7-support"/>
+      <item identifierRef="id-requirement-clause-9-performance-evaluation"/>
+      <item identifierRef="id-requirement-clause-10-improvement"/>
+      <item identifierRef="id-requirement-clause-8-operation"/>
+      <item identifierRef="id-requirement-8-1-operational-planning-and-control"/>
+      <item identifierRef="id-requirement-8-2-business-impact-analysis-and-risk-assessment"/>
+      <item identifierRef="id-requirement-8-3-business-continuity-strategies-and-solutions"/>
+      <item identifierRef="id-requirement-8-4-business-continuity-plans-and-procedures"/>
+      <item identifierRef="id-requirement-8-5-exercise-programme"/>
+      <item identifierRef="id-requirement-8-6-evaluation-of-business-continuity-documentation-and-capabilities"/>
+      <item identifierRef="id-assessment-orders-stop-if-the-cloud-region-fails"/>
+    </item>
+    <item><label xml:lang="en">Other</label>
+      <item identifierRef="id-location-distribution-centre"/>
+    </item>
+    <item><label xml:lang="en">Relations</label>
+      <item identifierRef="id-rel-001"/>
+      <item identifierRef="id-rel-002"/>
+      <item identifierRef="id-rel-003"/>
+      <item identifierRef="id-rel-004"/>
+      <item identifierRef="id-rel-005"/>
+      <item identifierRef="id-rel-006"/>
+      <item identifierRef="id-rel-007"/>
+      <item identifierRef="id-rel-008"/>
+      <item identifierRef="id-rel-009"/>
+      <item identifierRef="id-rel-010"/>
+      <item identifierRef="id-rel-011"/>
+      <item identifierRef="id-rel-012"/>
+      <item identifierRef="id-rel-013"/>
+      <item identifierRef="id-rel-014"/>
+      <item identifierRef="id-rel-015"/>
+      <item identifierRef="id-rel-016"/>
+      <item identifierRef="id-rel-017"/>
+      <item identifierRef="id-rel-018"/>
+      <item identifierRef="id-rel-019"/>
+      <item identifierRef="id-rel-020"/>
+      <item identifierRef="id-rel-021"/>
+      <item identifierRef="id-rel-022"/>
+      <item identifierRef="id-rel-023"/>
+      <item identifierRef="id-rel-024"/>
+      <item identifierRef="id-rel-025"/>
+      <item identifierRef="id-rel-026"/>
+      <item identifierRef="id-rel-027"/>
+      <item identifierRef="id-rel-028"/>
+      <item identifierRef="id-rel-029"/>
+      <item identifierRef="id-rel-030"/>
+      <item identifierRef="id-rel-031"/>
+      <item identifierRef="id-rel-032"/>
+      <item identifierRef="id-rel-033"/>
+      <item identifierRef="id-rel-034"/>
+      <item identifierRef="id-rel-035"/>
+      <item identifierRef="id-rel-036"/>
+      <item identifierRef="id-rel-037"/>
+      <item identifierRef="id-rel-038"/>
+      <item identifierRef="id-rel-039"/>
+      <item identifierRef="id-rel-040"/>
+      <item identifierRef="id-rel-041"/>
+      <item identifierRef="id-rel-042"/>
+      <item identifierRef="id-rel-043"/>
+      <item identifierRef="id-rel-044"/>
+      <item identifierRef="id-rel-045"/>
+      <item identifierRef="id-rel-046"/>
+      <item identifierRef="id-rel-047"/>
+      <item identifierRef="id-rel-048"/>
+      <item identifierRef="id-rel-049"/>
+      <item identifierRef="id-rel-050"/>
+      <item identifierRef="id-rel-051"/>
+      <item identifierRef="id-rel-052"/>
+      <item identifierRef="id-rel-053"/>
+      <item identifierRef="id-rel-054"/>
+      <item identifierRef="id-rel-055"/>
+      <item identifierRef="id-rel-056"/>
+      <item identifierRef="id-rel-057"/>
+      <item identifierRef="id-rel-058"/>
+      <item identifierRef="id-rel-059"/>
+      <item identifierRef="id-rel-060"/>
+      <item identifierRef="id-rel-061"/>
+      <item identifierRef="id-rel-062"/>
+      <item identifierRef="id-rel-063"/>
+      <item identifierRef="id-rel-064"/>
+      <item identifierRef="id-rel-065"/>
+      <item identifierRef="id-rel-066"/>
+      <item identifierRef="id-rel-067"/>
+      <item identifierRef="id-rel-068"/>
+      <item identifierRef="id-rel-069"/>
+      <item identifierRef="id-rel-070"/>
+      <item identifierRef="id-rel-071"/>
+      <item identifierRef="id-rel-072"/>
+      <item identifierRef="id-rel-073"/>
+      <item identifierRef="id-rel-074"/>
+      <item identifierRef="id-rel-075"/>
+      <item identifierRef="id-rel-076"/>
+    </item>
+    <item><label xml:lang="en">Views</label>
+      <item identifierRef="id-view-bcms-requirements-by-clause"/>
+      <item identifierRef="id-view-prioritised-activities-and-their-dependencies"/>
+      <item identifierRef="id-view-continuity-strategies-and-plans"/>
+      <item identifierRef="id-view-what-breaks-if-the-cloud-provider-fails"/>
+    </item>
+  </organizations>
+  <propertyDefinitions>
+    <propertyDefinition identifier="propid-1" type="string"><name xml:lang="en">Control owner</name></propertyDefinition>
+    <propertyDefinition identifier="propid-2" type="string"><name xml:lang="en">Evidence location</name></propertyDefinition>
+    <propertyDefinition identifier="propid-3" type="string"><name xml:lang="en">Activity owner</name></propertyDefinition>
+    <propertyDefinition identifier="propid-4" type="string"><name xml:lang="en">Recovery time objective</name></propertyDefinition>
+    <propertyDefinition identifier="propid-5" type="string"><name xml:lang="en">Maximum tolerable period of disruption</name></propertyDefinition>
+    <propertyDefinition identifier="propid-6" type="string"><name xml:lang="en">Recovery point objective</name></propertyDefinition>
+    <propertyDefinition identifier="propid-7" type="string"><name xml:lang="en">Minimum business continuity objective</name></propertyDefinition>
+    <propertyDefinition identifier="propid-8" type="string"><name xml:lang="en">Last impact analysis</name></propertyDefinition>
+    <propertyDefinition identifier="propid-9" type="string"><name xml:lang="en">Minimum staffing</name></propertyDefinition>
+    <propertyDefinition identifier="propid-10" type="string"><name xml:lang="en">Supplier continuity capability assessed</name></propertyDefinition>
+    <propertyDefinition identifier="propid-11" type="string"><name xml:lang="en">Exit plan tested</name></propertyDefinition>
+    <propertyDefinition identifier="propid-12" type="string"><name xml:lang="en">Renewal date</name></propertyDefinition>
+    <propertyDefinition identifier="propid-13" type="string"><name xml:lang="en">Last exercised</name></propertyDefinition>
+    <propertyDefinition identifier="propid-14" type="string"><name xml:lang="en">Plan owner</name></propertyDefinition>
+    <propertyDefinition identifier="propid-15" type="string"><name xml:lang="en">Last reviewed</name></propertyDefinition>
+  </propertyDefinitions>
+  <views>
+    <diagrams>
+      <view identifier="id-view-bcms-requirements-by-clause" xsi:type="Diagram" viewpoint="Motivation">
+        <name xml:lang="en">BCMS requirements by clause</name>
+        <documentation xml:lang="en">Clauses 4 to 10 of ISO 22301, with clause 8 opened into its six operational subclauses, each with the control that realizes it. Fill in the owner and evidence location of every control; that pair is what a certification auditor asks for first.</documentation>
+        <node identifier="id-view-bcms-requirements-by-clause-n1" elementRef="id-stakeholder-top-management" xsi:type="Element" x="20" y="20" w="170" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n2" elementRef="id-driver-iso-22301-2019-business-continuity-management-systems" xsi:type="Element" x="230" y="20" w="230" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n3" elementRef="id-goal-keep-prioritised-activities-within-their-recovery-objectives" xsi:type="Element" x="500" y="20" w="800" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n4" elementRef="id-requirement-iso-22301-requirements-clauses-4-to-10" xsi:type="Element" x="750" y="120" w="300" h="50">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n5" elementRef="id-requirement-clause-4-context-of-the-organisation" xsi:type="Element" x="20" y="230" w="200" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n6" elementRef="id-businessprocess-bcms-scope-and-interested-parties-review" xsi:type="Element" x="20" y="360" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n7" elementRef="id-requirement-clause-5-leadership" xsi:type="Element" x="235" y="230" w="200" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n8" elementRef="id-businessprocess-business-continuity-policy-approval" xsi:type="Element" x="235" y="360" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n9" elementRef="id-requirement-clause-6-planning" xsi:type="Element" x="450" y="230" w="200" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n10" elementRef="id-businessprocess-continuity-objectives-planning" xsi:type="Element" x="450" y="360" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n11" elementRef="id-requirement-clause-7-support" xsi:type="Element" x="665" y="230" w="200" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n12" elementRef="id-businessprocess-continuity-awareness-and-competence-programme" xsi:type="Element" x="665" y="360" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n13" elementRef="id-requirement-clause-9-performance-evaluation" xsi:type="Element" x="880" y="230" w="200" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n14" elementRef="id-businessprocess-internal-audit-and-management-review" xsi:type="Element" x="880" y="360" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n15" elementRef="id-requirement-clause-10-improvement" xsi:type="Element" x="1095" y="230" w="200" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n16" elementRef="id-businessprocess-corrective-action-and-improvement" xsi:type="Element" x="1095" y="360" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n17" elementRef="id-requirement-clause-8-operation" xsi:type="Element" x="20" y="480" w="1305" h="137">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-bcms-requirements-by-clause-n18" elementRef="id-requirement-8-1-operational-planning-and-control" xsi:type="Element" x="35" y="512" w="200" h="85">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-bcms-requirements-by-clause-n19" elementRef="id-requirement-8-2-business-impact-analysis-and-risk-assessment" xsi:type="Element" x="250" y="512" w="200" h="85">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-bcms-requirements-by-clause-n20" elementRef="id-requirement-8-3-business-continuity-strategies-and-solutions" xsi:type="Element" x="465" y="512" w="200" h="85">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-bcms-requirements-by-clause-n21" elementRef="id-requirement-8-4-business-continuity-plans-and-procedures" xsi:type="Element" x="680" y="512" w="200" h="85">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-bcms-requirements-by-clause-n22" elementRef="id-requirement-8-5-exercise-programme" xsi:type="Element" x="895" y="512" w="200" h="85">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-bcms-requirements-by-clause-n23" elementRef="id-requirement-8-6-evaluation-of-business-continuity-documentation-and-capabilities" xsi:type="Element" x="1110" y="512" w="200" h="85">
+            <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n24" elementRef="id-businessprocess-supplier-and-outsourced-process-control" xsi:type="Element" x="35" y="672" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n25" elementRef="id-businessprocess-business-impact-analysis" xsi:type="Element" x="250" y="672" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n26" elementRef="id-businessprocess-continuity-strategy-selection" xsi:type="Element" x="465" y="672" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n27" elementRef="id-businessactor-incident-management-team" xsi:type="Element" x="680" y="672" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n28" elementRef="id-businessprocess-exercise-and-test-programme" xsi:type="Element" x="895" y="672" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-bcms-requirements-by-clause-n29" elementRef="id-businessprocess-continuity-plan-and-supplier-capability-review" xsi:type="Element" x="1110" y="672" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-bcms-requirements-by-clause-c1" relationshipRef="id-rel-001" xsi:type="Relationship" source="id-view-bcms-requirements-by-clause-n1" target="id-view-bcms-requirements-by-clause-n2"/>
+        <connection identifier="id-view-bcms-requirements-by-clause-c2" relationshipRef="id-rel-002" xsi:type="Relationship" source="id-view-bcms-requirements-by-clause-n2" target="id-view-bcms-requirements-by-clause-n3"/>
+        <connection identifier="id-view-bcms-requirements-by-clause-c3" relationshipRef="id-rel-003" xsi:type="Relationship" source="id-view-bcms-requirements-by-clause-n4" target="id-view-bcms-requirements-by-clause-n3"/>
+        <connection identifier="id-view-bcms-requirements-by-clause-c4" relationshipRef="id-rel-017" xsi:type="Relationship" source="id-view-bcms-requirements-by-clause-n6" target="id-view-bcms-requirements-by-clause-n5"/>
+        <connection identifier="id-view-bcms-requirements-by-clause-c5" relationshipRef="id-rel-018" xsi:type="Relationship" source="id-view-bcms-requirements-by-clause-n8" target="id-view-bcms-requirements-by-clause-n7"/>
+        <connection identifier="id-view-bcms-requirements-by-clause-c6" relationshipRef="id-rel-019" xsi:type="Relationship" source="id-view-bcms-requirements-by-clause-n10" target="id-view-bcms-requirements-by-clause-n9"/>
+        <connection identifier="id-view-bcms-requirements-by-clause-c7" relationshipRef="id-rel-020" xsi:type="Relationship" source="id-view-bcms-requirements-by-clause-n12" target="id-view-bcms-requirements-by-clause-n11"/>
+        <connection identifier="id-view-bcms-requirements-by-clause-c8" relationshipRef="id-rel-021" xsi:type="Relationship" source="id-view-bcms-requirements-by-clause-n14" target="id-view-bcms-requirements-by-clause-n13"/>
+        <connection identifier="id-view-bcms-requirements-by-clause-c9" relationshipRef="id-rel-022" xsi:type="Relationship" source="id-view-bcms-requirements-by-clause-n16" target="id-view-bcms-requirements-by-clause-n15"/>
+        <connection identifier="id-view-bcms-requirements-by-clause-c10" relationshipRef="id-rel-023" xsi:type="Relationship" source="id-view-bcms-requirements-by-clause-n24" target="id-view-bcms-requirements-by-clause-n18"/>
+        <connection identifier="id-view-bcms-requirements-by-clause-c11" relationshipRef="id-rel-024" xsi:type="Relationship" source="id-view-bcms-requirements-by-clause-n25" target="id-view-bcms-requirements-by-clause-n19"/>
+        <connection identifier="id-view-bcms-requirements-by-clause-c12" relationshipRef="id-rel-025" xsi:type="Relationship" source="id-view-bcms-requirements-by-clause-n26" target="id-view-bcms-requirements-by-clause-n20"/>
+        <connection identifier="id-view-bcms-requirements-by-clause-c13" relationshipRef="id-rel-026" xsi:type="Relationship" source="id-view-bcms-requirements-by-clause-n27" target="id-view-bcms-requirements-by-clause-n21"/>
+        <connection identifier="id-view-bcms-requirements-by-clause-c14" relationshipRef="id-rel-027" xsi:type="Relationship" source="id-view-bcms-requirements-by-clause-n28" target="id-view-bcms-requirements-by-clause-n22"/>
+        <connection identifier="id-view-bcms-requirements-by-clause-c15" relationshipRef="id-rel-028" xsi:type="Relationship" source="id-view-bcms-requirements-by-clause-n29" target="id-view-bcms-requirements-by-clause-n23"/>
+      </view>
+      <view identifier="id-view-prioritised-activities-and-their-dependencies" xsi:type="Diagram">
+        <name xml:lang="en">Prioritised activities and their dependencies</name>
+        <documentation xml:lang="en">Read top to bottom: each prioritised activity with its recovery objectives, the applications and services it needs, what they run on, and the contract and supplier behind each. Any activity whose chain ends in a supplier with no tested exit plan, or in a single site, cannot recover faster than that supplier or site.</documentation>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n1" elementRef="id-businessactor-warehouse-team" xsi:type="Element" x="400" y="20" w="220" h="50">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n2" elementRef="id-businessprocess-take-customer-orders" xsi:type="Element" x="100" y="130" w="220" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n3" elementRef="id-businessprocess-dispatch-orders" xsi:type="Element" x="400" y="130" w="220" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n4" elementRef="id-businessprocess-take-customer-payments" xsi:type="Element" x="770" y="130" w="220" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n5" elementRef="id-businessprocess-answer-customer-enquiries" xsi:type="Element" x="1020" y="130" w="220" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n6" elementRef="id-applicationcomponent-e-commerce-platform" xsi:type="Element" x="20" y="280" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n7" elementRef="id-applicationcomponent-order-management-system" xsi:type="Element" x="220" y="280" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n8" elementRef="id-applicationcomponent-warehouse-management-system" xsi:type="Element" x="420" y="280" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n9" elementRef="id-businessservice-parcel-delivery" xsi:type="Element" x="620" y="280" w="180" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n10" elementRef="id-applicationcomponent-payment-gateway" xsi:type="Element" x="820" y="280" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n11" elementRef="id-applicationcomponent-customer-service-desk" xsi:type="Element" x="1060" y="280" w="180" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n12" elementRef="id-technologyservice-cloud-hosting" xsi:type="Element" x="110" y="410" w="200" h="50">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n13" elementRef="id-location-distribution-centre" xsi:type="Element" x="400" y="395" w="220" h="120">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-prioritised-activities-and-their-dependencies-n14" elementRef="id-node-warehouse-server" xsi:type="Element" x="420" y="435" w="180" h="55">
+            <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n15" elementRef="id-contract-cloud-hosting-agreement" xsi:type="Element" x="110" y="520" w="200" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n16" elementRef="id-businessactor-cloud-provider" xsi:type="Element" x="110" y="630" w="200" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n17" elementRef="id-contract-courier-agreement" xsi:type="Element" x="620" y="410" w="180" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n18" elementRef="id-businessactor-courier" xsi:type="Element" x="620" y="520" w="180" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n19" elementRef="id-contract-payment-services-agreement" xsi:type="Element" x="820" y="410" w="180" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n20" elementRef="id-businessactor-payment-service-provider" xsi:type="Element" x="820" y="520" w="180" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n21" elementRef="id-contract-service-desk-subscription" xsi:type="Element" x="1060" y="410" w="180" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-prioritised-activities-and-their-dependencies-n22" elementRef="id-businessactor-service-desk-vendor" xsi:type="Element" x="1060" y="520" w="180" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-prioritised-activities-and-their-dependencies-c1" relationshipRef="id-rel-034" xsi:type="Relationship" source="id-view-prioritised-activities-and-their-dependencies-n6" target="id-view-prioritised-activities-and-their-dependencies-n2"/>
+        <connection identifier="id-view-prioritised-activities-and-their-dependencies-c2" relationshipRef="id-rel-035" xsi:type="Relationship" source="id-view-prioritised-activities-and-their-dependencies-n7" target="id-view-prioritised-activities-and-their-dependencies-n2"/>
+        <connection identifier="id-view-prioritised-activities-and-their-dependencies-c3" relationshipRef="id-rel-036" xsi:type="Relationship" source="id-view-prioritised-activities-and-their-dependencies-n7" target="id-view-prioritised-activities-and-their-dependencies-n3"/>
+        <connection identifier="id-view-prioritised-activities-and-their-dependencies-c4" relationshipRef="id-rel-037" xsi:type="Relationship" source="id-view-prioritised-activities-and-their-dependencies-n8" target="id-view-prioritised-activities-and-their-dependencies-n3"/>
+        <connection identifier="id-view-prioritised-activities-and-their-dependencies-c5" relationshipRef="id-rel-038" xsi:type="Relationship" source="id-view-prioritised-activities-and-their-dependencies-n10" target="id-view-prioritised-activities-and-their-dependencies-n4"/>
+        <connection identifier="id-view-prioritised-activities-and-their-dependencies-c6" relationshipRef="id-rel-039" xsi:type="Relationship" source="id-view-prioritised-activities-and-their-dependencies-n11" target="id-view-prioritised-activities-and-their-dependencies-n5"/>
+        <connection identifier="id-view-prioritised-activities-and-their-dependencies-c7" relationshipRef="id-rel-040" xsi:type="Relationship" source="id-view-prioritised-activities-and-their-dependencies-n1" target="id-view-prioritised-activities-and-their-dependencies-n3"/>
+        <connection identifier="id-view-prioritised-activities-and-their-dependencies-c8" relationshipRef="id-rel-041" xsi:type="Relationship" source="id-view-prioritised-activities-and-their-dependencies-n12" target="id-view-prioritised-activities-and-their-dependencies-n6"/>
+        <connection identifier="id-view-prioritised-activities-and-their-dependencies-c9" relationshipRef="id-rel-042" xsi:type="Relationship" source="id-view-prioritised-activities-and-their-dependencies-n12" target="id-view-prioritised-activities-and-their-dependencies-n7"/>
+        <connection identifier="id-view-prioritised-activities-and-their-dependencies-c10" relationshipRef="id-rel-043" xsi:type="Relationship" source="id-view-prioritised-activities-and-their-dependencies-n14" target="id-view-prioritised-activities-and-their-dependencies-n8"/>
+        <connection identifier="id-view-prioritised-activities-and-their-dependencies-c11" relationshipRef="id-rel-044" xsi:type="Relationship" source="id-view-prioritised-activities-and-their-dependencies-n9" target="id-view-prioritised-activities-and-their-dependencies-n3"/>
+        <connection identifier="id-view-prioritised-activities-and-their-dependencies-c12" relationshipRef="id-rel-047" xsi:type="Relationship" source="id-view-prioritised-activities-and-their-dependencies-n16" target="id-view-prioritised-activities-and-their-dependencies-n15"/>
+        <connection identifier="id-view-prioritised-activities-and-their-dependencies-c13" relationshipRef="id-rel-048" xsi:type="Relationship" source="id-view-prioritised-activities-and-their-dependencies-n15" target="id-view-prioritised-activities-and-their-dependencies-n12"/>
+        <connection identifier="id-view-prioritised-activities-and-their-dependencies-c14" relationshipRef="id-rel-049" xsi:type="Relationship" source="id-view-prioritised-activities-and-their-dependencies-n18" target="id-view-prioritised-activities-and-their-dependencies-n17"/>
+        <connection identifier="id-view-prioritised-activities-and-their-dependencies-c15" relationshipRef="id-rel-050" xsi:type="Relationship" source="id-view-prioritised-activities-and-their-dependencies-n17" target="id-view-prioritised-activities-and-their-dependencies-n9"/>
+        <connection identifier="id-view-prioritised-activities-and-their-dependencies-c16" relationshipRef="id-rel-051" xsi:type="Relationship" source="id-view-prioritised-activities-and-their-dependencies-n20" target="id-view-prioritised-activities-and-their-dependencies-n19"/>
+        <connection identifier="id-view-prioritised-activities-and-their-dependencies-c17" relationshipRef="id-rel-052" xsi:type="Relationship" source="id-view-prioritised-activities-and-their-dependencies-n19" target="id-view-prioritised-activities-and-their-dependencies-n10"/>
+        <connection identifier="id-view-prioritised-activities-and-their-dependencies-c18" relationshipRef="id-rel-053" xsi:type="Relationship" source="id-view-prioritised-activities-and-their-dependencies-n22" target="id-view-prioritised-activities-and-their-dependencies-n21"/>
+        <connection identifier="id-view-prioritised-activities-and-their-dependencies-c19" relationshipRef="id-rel-054" xsi:type="Relationship" source="id-view-prioritised-activities-and-their-dependencies-n21" target="id-view-prioritised-activities-and-their-dependencies-n11"/>
+      </view>
+      <view identifier="id-view-continuity-strategies-and-plans" xsi:type="Diagram">
+        <name xml:lang="en">Continuity strategies and plans</name>
+        <documentation xml:lang="en">The business impact analysis sets the recovery objectives of each prioritised activity; each activity is protected by one or more continuity strategies, and each strategy is carried out from a documented plan. An activity with no strategy, or a plan never exercised, is the gap to close first.</documentation>
+        <node identifier="id-view-continuity-strategies-and-plans-n1" elementRef="id-businessprocess-business-impact-analysis" xsi:type="Element" x="20" y="300" w="200" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-continuity-strategies-and-plans-n2" elementRef="id-businessprocess-take-customer-orders" xsi:type="Element" x="320" y="100" w="220" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-continuity-strategies-and-plans-n3" elementRef="id-businessprocess-dispatch-orders" xsi:type="Element" x="320" y="230" w="220" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-continuity-strategies-and-plans-n4" elementRef="id-businessprocess-take-customer-payments" xsi:type="Element" x="320" y="380" w="220" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-continuity-strategies-and-plans-n5" elementRef="id-businessprocess-answer-customer-enquiries" xsi:type="Element" x="320" y="530" w="220" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-continuity-strategies-and-plans-n6" elementRef="id-businessprocess-take-phone-orders-on-a-manual-form" xsi:type="Element" x="650" y="20" w="240" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-continuity-strategies-and-plans-n7" elementRef="id-businessprocess-fail-over-to-the-secondary-cloud-region" xsi:type="Element" x="650" y="120" w="240" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-continuity-strategies-and-plans-n8" elementRef="id-businessprocess-switch-to-the-standby-courier" xsi:type="Element" x="650" y="250" w="240" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-continuity-strategies-and-plans-n9" elementRef="id-businessprocess-route-payments-to-the-secondary-provider" xsi:type="Element" x="650" y="380" w="240" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-continuity-strategies-and-plans-n10" elementRef="id-businessprocess-answer-enquiries-from-home-on-the-cloud-service-desk" xsi:type="Element" x="650" y="530" w="240" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-continuity-strategies-and-plans-n11" elementRef="id-businessobject-website-and-order-recovery-plan" xsi:type="Element" x="1000" y="75" w="220" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-continuity-strategies-and-plans-n12" elementRef="id-businessobject-dispatch-continuity-plan" xsi:type="Element" x="1000" y="255" w="220" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-continuity-strategies-and-plans-n13" elementRef="id-businessobject-payments-continuity-plan" xsi:type="Element" x="1000" y="383" w="220" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-continuity-strategies-and-plans-n14" elementRef="id-businessobject-customer-service-continuity-plan" xsi:type="Element" x="1000" y="533" w="220" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-continuity-strategies-and-plans-c1" relationshipRef="id-rel-030" xsi:type="Relationship" source="id-view-continuity-strategies-and-plans-n1" target="id-view-continuity-strategies-and-plans-n2"/>
+        <connection identifier="id-view-continuity-strategies-and-plans-c2" relationshipRef="id-rel-031" xsi:type="Relationship" source="id-view-continuity-strategies-and-plans-n1" target="id-view-continuity-strategies-and-plans-n3"/>
+        <connection identifier="id-view-continuity-strategies-and-plans-c3" relationshipRef="id-rel-032" xsi:type="Relationship" source="id-view-continuity-strategies-and-plans-n1" target="id-view-continuity-strategies-and-plans-n4"/>
+        <connection identifier="id-view-continuity-strategies-and-plans-c4" relationshipRef="id-rel-033" xsi:type="Relationship" source="id-view-continuity-strategies-and-plans-n1" target="id-view-continuity-strategies-and-plans-n5"/>
+        <connection identifier="id-view-continuity-strategies-and-plans-c5" relationshipRef="id-rel-058" xsi:type="Relationship" source="id-view-continuity-strategies-and-plans-n7" target="id-view-continuity-strategies-and-plans-n2"/>
+        <connection identifier="id-view-continuity-strategies-and-plans-c6" relationshipRef="id-rel-059" xsi:type="Relationship" source="id-view-continuity-strategies-and-plans-n7" target="id-view-continuity-strategies-and-plans-n3"/>
+        <connection identifier="id-view-continuity-strategies-and-plans-c7" relationshipRef="id-rel-061" xsi:type="Relationship" source="id-view-continuity-strategies-and-plans-n7" target="id-view-continuity-strategies-and-plans-n11"/>
+        <connection identifier="id-view-continuity-strategies-and-plans-c8" relationshipRef="id-rel-063" xsi:type="Relationship" source="id-view-continuity-strategies-and-plans-n6" target="id-view-continuity-strategies-and-plans-n2"/>
+        <connection identifier="id-view-continuity-strategies-and-plans-c9" relationshipRef="id-rel-064" xsi:type="Relationship" source="id-view-continuity-strategies-and-plans-n6" target="id-view-continuity-strategies-and-plans-n11"/>
+        <connection identifier="id-view-continuity-strategies-and-plans-c10" relationshipRef="id-rel-066" xsi:type="Relationship" source="id-view-continuity-strategies-and-plans-n8" target="id-view-continuity-strategies-and-plans-n3"/>
+        <connection identifier="id-view-continuity-strategies-and-plans-c11" relationshipRef="id-rel-068" xsi:type="Relationship" source="id-view-continuity-strategies-and-plans-n8" target="id-view-continuity-strategies-and-plans-n12"/>
+        <connection identifier="id-view-continuity-strategies-and-plans-c12" relationshipRef="id-rel-070" xsi:type="Relationship" source="id-view-continuity-strategies-and-plans-n9" target="id-view-continuity-strategies-and-plans-n4"/>
+        <connection identifier="id-view-continuity-strategies-and-plans-c13" relationshipRef="id-rel-072" xsi:type="Relationship" source="id-view-continuity-strategies-and-plans-n9" target="id-view-continuity-strategies-and-plans-n13"/>
+        <connection identifier="id-view-continuity-strategies-and-plans-c14" relationshipRef="id-rel-074" xsi:type="Relationship" source="id-view-continuity-strategies-and-plans-n10" target="id-view-continuity-strategies-and-plans-n5"/>
+        <connection identifier="id-view-continuity-strategies-and-plans-c15" relationshipRef="id-rel-076" xsi:type="Relationship" source="id-view-continuity-strategies-and-plans-n10" target="id-view-continuity-strategies-and-plans-n14"/>
+      </view>
+      <view identifier="id-view-what-breaks-if-the-cloud-provider-fails" xsi:type="Diagram">
+        <name xml:lang="en">What breaks if the cloud provider fails</name>
+        <documentation xml:lang="en">The chain an impact question walks: supplier, contract, hosting service, the two applications on it, the prioritised activities they serve with their recovery objectives, and the strategy that is meant to bring them back.</documentation>
+        <node identifier="id-view-what-breaks-if-the-cloud-provider-fails-n1" elementRef="id-businessactor-cloud-provider" xsi:type="Element" x="20" y="300" w="200" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-what-breaks-if-the-cloud-provider-fails-n2" elementRef="id-contract-cloud-hosting-agreement" xsi:type="Element" x="250" y="300" w="200" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-what-breaks-if-the-cloud-provider-fails-n3" elementRef="id-technologyservice-cloud-hosting" xsi:type="Element" x="480" y="300" w="200" h="55">
+          <style><fillColor r="201" g="231" b="183"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-what-breaks-if-the-cloud-provider-fails-n4" elementRef="id-applicationcomponent-e-commerce-platform" xsi:type="Element" x="720" y="220" w="200" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-what-breaks-if-the-cloud-provider-fails-n5" elementRef="id-applicationcomponent-order-management-system" xsi:type="Element" x="720" y="380" w="200" h="55">
+          <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-what-breaks-if-the-cloud-provider-fails-n6" elementRef="id-businessprocess-take-customer-orders" xsi:type="Element" x="1000" y="220" w="220" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-what-breaks-if-the-cloud-provider-fails-n7" elementRef="id-businessprocess-dispatch-orders" xsi:type="Element" x="1000" y="380" w="220" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-what-breaks-if-the-cloud-provider-fails-n8" elementRef="id-businessprocess-fail-over-to-the-secondary-cloud-region" xsi:type="Element" x="1300" y="290" w="220" h="70">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-what-breaks-if-the-cloud-provider-fails-n9" elementRef="id-assessment-orders-stop-if-the-cloud-region-fails" xsi:type="Element" x="250" y="100" w="300" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-what-breaks-if-the-cloud-provider-fails-n10" elementRef="id-goal-keep-prioritised-activities-within-their-recovery-objectives" xsi:type="Element" x="700" y="20" w="300" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-what-breaks-if-the-cloud-provider-fails-c1" relationshipRef="id-rel-034" xsi:type="Relationship" source="id-view-what-breaks-if-the-cloud-provider-fails-n4" target="id-view-what-breaks-if-the-cloud-provider-fails-n6"/>
+        <connection identifier="id-view-what-breaks-if-the-cloud-provider-fails-c2" relationshipRef="id-rel-035" xsi:type="Relationship" source="id-view-what-breaks-if-the-cloud-provider-fails-n5" target="id-view-what-breaks-if-the-cloud-provider-fails-n6"/>
+        <connection identifier="id-view-what-breaks-if-the-cloud-provider-fails-c3" relationshipRef="id-rel-036" xsi:type="Relationship" source="id-view-what-breaks-if-the-cloud-provider-fails-n5" target="id-view-what-breaks-if-the-cloud-provider-fails-n7"/>
+        <connection identifier="id-view-what-breaks-if-the-cloud-provider-fails-c4" relationshipRef="id-rel-041" xsi:type="Relationship" source="id-view-what-breaks-if-the-cloud-provider-fails-n3" target="id-view-what-breaks-if-the-cloud-provider-fails-n4"/>
+        <connection identifier="id-view-what-breaks-if-the-cloud-provider-fails-c5" relationshipRef="id-rel-042" xsi:type="Relationship" source="id-view-what-breaks-if-the-cloud-provider-fails-n3" target="id-view-what-breaks-if-the-cloud-provider-fails-n5"/>
+        <connection identifier="id-view-what-breaks-if-the-cloud-provider-fails-c6" relationshipRef="id-rel-047" xsi:type="Relationship" source="id-view-what-breaks-if-the-cloud-provider-fails-n1" target="id-view-what-breaks-if-the-cloud-provider-fails-n2"/>
+        <connection identifier="id-view-what-breaks-if-the-cloud-provider-fails-c7" relationshipRef="id-rel-048" xsi:type="Relationship" source="id-view-what-breaks-if-the-cloud-provider-fails-n2" target="id-view-what-breaks-if-the-cloud-provider-fails-n3"/>
+        <connection identifier="id-view-what-breaks-if-the-cloud-provider-fails-c8" relationshipRef="id-rel-055" xsi:type="Relationship" source="id-view-what-breaks-if-the-cloud-provider-fails-n9" target="id-view-what-breaks-if-the-cloud-provider-fails-n2"/>
+        <connection identifier="id-view-what-breaks-if-the-cloud-provider-fails-c9" relationshipRef="id-rel-056" xsi:type="Relationship" source="id-view-what-breaks-if-the-cloud-provider-fails-n9" target="id-view-what-breaks-if-the-cloud-provider-fails-n10"/>
+        <connection identifier="id-view-what-breaks-if-the-cloud-provider-fails-c10" relationshipRef="id-rel-058" xsi:type="Relationship" source="id-view-what-breaks-if-the-cloud-provider-fails-n8" target="id-view-what-breaks-if-the-cloud-provider-fails-n6"/>
+        <connection identifier="id-view-what-breaks-if-the-cloud-provider-fails-c11" relationshipRef="id-rel-059" xsi:type="Relationship" source="id-view-what-breaks-if-the-cloud-provider-fails-n8" target="id-view-what-breaks-if-the-cloud-provider-fails-n7"/>
+      </view>
+    </diagrams>
+  </views>
+</model>
