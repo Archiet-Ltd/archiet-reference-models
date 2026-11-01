@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="id-eu-ai-act-iso42001" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd">
+  <name xml:lang="en">EU AI Act with ISO/IEC 42001 (starter)</name>
+  <documentation xml:lang="en">An AI system inventory classified by the risk tiers of the EU Artificial Intelligence Act, Regulation (EU) 2024/1689, the provider and deployer obligations that follow, article by article, and the ISO/IEC 42001:2023 AI management system clauses and Annex A control areas that meet them. Each AI system records its risk classification, the organisation's role towards it (provider, deployer or both) and the legal basis for the classification. Article summaries are paraphrased and ISO/IEC 42001 is cited by clause and control area title only. Replace the example lender's AI systems with your own inventory. This model is a structuring aid, not legal advice.</documentation>
+  <elements>
+    <element identifier="id-driver-eu-ai-act-regulation-eu-2024-1689" xsi:type="Driver">
+      <name xml:lang="en">EU AI Act, Regulation (EU) 2024/1689</name>
+      <documentation xml:lang="en">In force since 1 August 2024 and amended by Regulation (EU) 2026/1744. Prohibitions have applied since 2 February 2025 and general-purpose AI model obligations since 2 August 2025. High-risk obligations apply from 2 December 2027 for Annex III systems and from 2 August 2028 for systems covered by Annex I.</documentation>
+    </element>
+    <element identifier="id-driver-iso-iec-42001-2023-ai-management-systems" xsi:type="Driver">
+      <name xml:lang="en">ISO/IEC 42001:2023 AI management systems</name>
+      <documentation xml:lang="en">The international standard for an AI management system. Certification is against clauses 4 to 10, with Annex A as the reference set of controls.</documentation>
+    </element>
+    <element identifier="id-goal-lawful-trustworthy-use-of-ai" xsi:type="Goal">
+      <name xml:lang="en">Lawful, trustworthy use of AI</name>
+      <documentation xml:lang="en">Every AI system the organisation builds or uses is known, classified, and governed in line with its risk.</documentation>
+    </element>
+    <element identifier="id-requirement-provider-obligations-for-high-risk-ai-systems" xsi:type="Requirement">
+      <name xml:lang="en">Provider obligations for high-risk AI systems</name>
+      <documentation xml:lang="en">Chapter III, Sections 2 and 3: requirements for the system and duties of its provider.</documentation>
+    </element>
+    <element identifier="id-requirement-deployer-obligations-for-high-risk-ai-systems" xsi:type="Requirement">
+      <name xml:lang="en">Deployer obligations for high-risk AI systems</name>
+      <documentation xml:lang="en">Duties of the organisation using a high-risk system under its authority.</documentation>
+    </element>
+    <element identifier="id-requirement-obligations-for-every-ai-system" xsi:type="Requirement">
+      <name xml:lang="en">Obligations for every AI system</name>
+      <documentation xml:lang="en">Prohibited practices and transparency duties, whatever the risk tier.</documentation>
+    </element>
+    <element identifier="id-requirement-article-5-prohibited-ai-practices" xsi:type="Requirement">
+      <name xml:lang="en">Article 5: Prohibited AI practices</name>
+      <documentation xml:lang="en">AI practices that may not be placed on the market or used at all, among them emotion recognition in the workplace or in education except for medical or safety reasons.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">All</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-article-9-risk-management-system" xsi:type="Requirement">
+      <name xml:lang="en">Article 9: Risk management system</name>
+      <documentation xml:lang="en">A risk management process run across the whole life cycle of a high-risk system: identify and evaluate risks, adopt measures, and test against them.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Provider</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-article-10-data-and-data-governance" xsi:type="Requirement">
+      <name xml:lang="en">Article 10: Data and data governance</name>
+      <documentation xml:lang="en">Training, validation and testing data governed for relevance, representativeness, errors, completeness and possible bias.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Provider</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-article-11-technical-documentation" xsi:type="Requirement">
+      <name xml:lang="en">Article 11: Technical documentation</name>
+      <documentation xml:lang="en">Technical documentation drawn up before the system is placed on the market and kept up to date, covering the elements set out in Annex IV.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Provider</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-article-12-record-keeping" xsi:type="Requirement">
+      <name xml:lang="en">Article 12: Record-keeping</name>
+      <documentation xml:lang="en">Automatic logging of events over the system's lifetime, so its operation can be traced.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Provider</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-article-13-transparency-and-information-to-deployers" xsi:type="Requirement">
+      <name xml:lang="en">Article 13: Transparency and information to deployers</name>
+      <documentation xml:lang="en">Instructions for use that let deployers understand the system's output, capabilities, limitations and oversight measures.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Provider</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-article-14-human-oversight" xsi:type="Requirement">
+      <name xml:lang="en">Article 14: Human oversight</name>
+      <documentation xml:lang="en">Design that lets natural persons oversee the system effectively, understand its limits, override its output and stop it.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Provider</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-article-15-accuracy-robustness-and-cybersecurity" xsi:type="Requirement">
+      <name xml:lang="en">Article 15: Accuracy, robustness and cybersecurity</name>
+      <documentation xml:lang="en">Appropriate, declared levels of accuracy, resilience to errors and inconsistencies, and protection against attempts to alter use or performance.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Provider</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-article-17-quality-management-system" xsi:type="Requirement">
+      <name xml:lang="en">Article 17: Quality management system</name>
+      <documentation xml:lang="en">Documented policies, procedures and accountability that assure compliance across design, development, testing, data management and monitoring.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Provider</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-article-26-obligations-of-deployers-of-high-risk-ai-systems" xsi:type="Requirement">
+      <name xml:lang="en">Article 26: Obligations of deployers of high-risk AI systems</name>
+      <documentation xml:lang="en">Use the system as instructed, assign competent human oversight, keep input data relevant, monitor operation and report risks and serious incidents, keep logs for at least six months, inform workers' representatives before workplace use, and tell people when a high-risk system helps make decisions about them.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Deployer</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-article-27-fundamental-rights-impact-assessment" xsi:type="Requirement">
+      <name xml:lang="en">Article 27: Fundamental rights impact assessment</name>
+      <documentation xml:lang="en">Before first use, public bodies, private entities providing public services, and deployers of credit scoring or life and health insurance pricing systems assess the processes, affected groups, risks of harm, oversight and remedies.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Deployer</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-article-50-transparency-for-certain-ai-systems" xsi:type="Requirement">
+      <name xml:lang="en">Article 50: Transparency for certain AI systems</name>
+      <documentation xml:lang="en">People are told when they interact with an AI system; generated content is marked as such in a machine-readable way; deep fakes and emotion recognition are disclosed.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Provider and deployer</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-article-72-post-market-monitoring" xsi:type="Requirement">
+      <name xml:lang="en">Article 72: Post-market monitoring</name>
+      <documentation xml:lang="en">A post-market monitoring system and plan that collects and analyses performance data throughout the system's lifetime.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Provider</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-article-73-reporting-of-serious-incidents" xsi:type="Requirement">
+      <name xml:lang="en">Article 73: Reporting of serious incidents</name>
+      <documentation xml:lang="en">Serious incidents reported to the market surveillance authority immediately and at the latest within 15 days of awareness; 2 days for a widespread infringement or serious disruption of critical infrastructure; 10 days where a person has died.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">Provider</value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-article-53-obligations-of-general-purpose-ai-model-providers" xsi:type="Requirement">
+      <name xml:lang="en">Article 53: Obligations of general-purpose AI model providers</name>
+      <documentation xml:lang="en">Technical documentation, information for downstream providers, a copyright policy and a public summary of training content.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1"><value xml:lang="en">General-purpose AI model provider</value></property>
+      </properties>
+    </element>
+    <element identifier="id-grouping-prohibited" xsi:type="Grouping">
+      <name xml:lang="en">Prohibited</name>
+      <documentation xml:lang="en">Article 5. May not be placed on the market, put into service or used.</documentation>
+    </element>
+    <element identifier="id-grouping-high-risk" xsi:type="Grouping">
+      <name xml:lang="en">High-risk</name>
+      <documentation xml:lang="en">Article 6 with Annexes I and III. Subject to Chapter III requirements before and after being placed on the market.</documentation>
+    </element>
+    <element identifier="id-grouping-limited-risk" xsi:type="Grouping">
+      <name xml:lang="en">Limited risk</name>
+      <documentation xml:lang="en">Article 50 transparency obligations.</documentation>
+    </element>
+    <element identifier="id-grouping-minimal-risk" xsi:type="Grouping">
+      <name xml:lang="en">Minimal risk</name>
+      <documentation xml:lang="en">No specific obligations under the Act.</documentation>
+    </element>
+    <element identifier="id-grouping-general-purpose-ai-model" xsi:type="Grouping">
+      <name xml:lang="en">General-purpose AI model</name>
+      <documentation xml:lang="en">Chapter V. Obligations on the model provider, with more for models with systemic risk.</documentation>
+    </element>
+    <element identifier="id-applicationcomponent-staff-emotion-monitoring" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Staff emotion monitoring</name>
+      <documentation xml:lang="en">Proposal to read staff emotions on video calls. Rejected at intake and never deployed.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Prohibited</value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">Proposed deployer</value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">Article 5: emotion recognition in the workplace</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-cv-screening-assistant" xsi:type="ApplicationComponent">
+      <name xml:lang="en">CV screening assistant</name>
+      <documentation xml:lang="en">Ranks job applications for recruiters. Bought from a vendor, who is the provider.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">High-risk</value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">Deployer</value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">Annex III point 4: recruitment and selection</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-credit-scoring-model" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Credit scoring model</name>
+      <documentation xml:lang="en">Scores consumer loan applications. Built in-house and used by the lending team.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">High-risk</value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">Provider and deployer</value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">Annex III point 5(b): creditworthiness of natural persons</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-customer-service-chatbot" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Customer service chatbot</name>
+      <documentation xml:lang="en">Answers customer questions on the website, built on a third-party general-purpose model.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Limited risk</value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">Provider</value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">Article 50: interacts directly with people</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-email-spam-and-phishing-filter" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Email spam and phishing filter</name>
+      <documentation xml:lang="en">Filters inbound email. Voluntary codes of conduct apply.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">Minimal risk</value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">Deployer</value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">No specific obligations</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-applicationcomponent-general-purpose-language-model" xsi:type="ApplicationComponent">
+      <name xml:lang="en">General-purpose language model</name>
+      <documentation xml:lang="en">Third-party model accessed through an API. Powers the customer service chatbot.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-2"><value xml:lang="en">General-purpose AI model</value></property>
+        <property propertyDefinitionRef="propid-3"><value xml:lang="en">Downstream user</value></property>
+        <property propertyDefinitionRef="propid-4"><value xml:lang="en">Chapter V: obligations rest on the model provider</value></property>
+        <property propertyDefinitionRef="propid-5"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-6"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessactor-model-provider" xsi:type="BusinessActor">
+      <name xml:lang="en">Model provider</name>
+      <documentation xml:lang="en">Provider of the general-purpose model, bound by Article 53.</documentation>
+    </element>
+    <element identifier="id-requirement-iso-iec-42001-requirements-clauses-4-to-10" xsi:type="Requirement">
+      <name xml:lang="en">ISO/IEC 42001 requirements (clauses 4 to 10)</name>
+      <documentation xml:lang="en">The requirements a certified AI management system must meet.</documentation>
+    </element>
+    <element identifier="id-requirement-clause-4-context-of-the-organisation" xsi:type="Requirement">
+      <name xml:lang="en">Clause 4: Context of the organisation</name>
+      <documentation xml:lang="en">Internal and external issues, interested parties, the organisation's roles towards AI systems, and the scope of the AI management system.</documentation>
+    </element>
+    <element identifier="id-businessprocess-ai-management-system-scope-and-inventory" xsi:type="BusinessProcess">
+      <name xml:lang="en">AI management system scope and inventory</name>
+      <documentation xml:lang="en">Example control. Replace with the process that meets this clause in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-clause-5-leadership" xsi:type="Requirement">
+      <name xml:lang="en">Clause 5: Leadership</name>
+      <documentation xml:lang="en">Top management commitment, an AI policy, and assigned roles, responsibilities and authorities.</documentation>
+    </element>
+    <element identifier="id-businessprocess-ai-policy-approval-and-role-assignment" xsi:type="BusinessProcess">
+      <name xml:lang="en">AI policy approval and role assignment</name>
+      <documentation xml:lang="en">Example control. Replace with the process that meets this clause in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-clause-6-planning" xsi:type="Requirement">
+      <name xml:lang="en">Clause 6: Planning</name>
+      <documentation xml:lang="en">AI risk assessment and treatment, AI system impact assessment, a statement of applicability for the Annex A controls, and AI objectives.</documentation>
+    </element>
+    <element identifier="id-businessprocess-ai-risk-assessment-and-treatment" xsi:type="BusinessProcess">
+      <name xml:lang="en">AI risk assessment and treatment</name>
+      <documentation xml:lang="en">Example control. Replace with the process that meets this clause in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-clause-7-support" xsi:type="Requirement">
+      <name xml:lang="en">Clause 7: Support</name>
+      <documentation xml:lang="en">Resources, competence, awareness, communication and documented information.</documentation>
+    </element>
+    <element identifier="id-businessprocess-ai-competence-and-awareness-programme" xsi:type="BusinessProcess">
+      <name xml:lang="en">AI competence and awareness programme</name>
+      <documentation xml:lang="en">Example control. Replace with the process that meets this clause in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-clause-8-operation" xsi:type="Requirement">
+      <name xml:lang="en">Clause 8: Operation</name>
+      <documentation xml:lang="en">Operational planning and control, with risk assessments, risk treatment and impact assessments carried out when planned and when things change.</documentation>
+    </element>
+    <element identifier="id-businessprocess-ai-use-case-intake-and-classification" xsi:type="BusinessProcess">
+      <name xml:lang="en">AI use case intake and classification</name>
+      <documentation xml:lang="en">Example control. Replace with the process that meets this clause in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-clause-9-performance-evaluation" xsi:type="Requirement">
+      <name xml:lang="en">Clause 9: Performance evaluation</name>
+      <documentation xml:lang="en">Monitoring, measurement, analysis and evaluation, internal audit and management review.</documentation>
+    </element>
+    <element identifier="id-businessprocess-ai-internal-audit-and-management-review" xsi:type="BusinessProcess">
+      <name xml:lang="en">AI internal audit and management review</name>
+      <documentation xml:lang="en">Example control. Replace with the process that meets this clause in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-requirement-clause-10-improvement" xsi:type="Requirement">
+      <name xml:lang="en">Clause 10: Improvement</name>
+      <documentation xml:lang="en">Continual improvement, nonconformity and corrective action.</documentation>
+    </element>
+    <element identifier="id-businessprocess-ai-corrective-action" xsi:type="BusinessProcess">
+      <name xml:lang="en">AI corrective action</name>
+      <documentation xml:lang="en">Example control. Replace with the process that meets this clause in your organisation.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessobject-statement-of-applicability" xsi:type="BusinessObject">
+      <name xml:lang="en">Statement of applicability</name>
+      <documentation xml:lang="en">Lists each Annex A control, whether it applies, why, and whether it is implemented.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-9"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-10"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-grouping-iso-iec-42001-annex-a-control-areas" xsi:type="Grouping">
+      <name xml:lang="en">ISO/IEC 42001 Annex A control areas</name>
+      <documentation xml:lang="en">Nine control objective areas, A.2 to A.10.</documentation>
+    </element>
+    <element identifier="id-businessfunction-a-2-policies-related-to-ai" xsi:type="BusinessFunction">
+      <name xml:lang="en">A.2 Policies related to AI</name>
+      <documentation xml:lang="en">An AI policy aligned with other organisational policies and reviewed. Example control area; record the controls you apply in the statement of applicability.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessfunction-a-3-internal-organisation" xsi:type="BusinessFunction">
+      <name xml:lang="en">A.3 Internal organisation</name>
+      <documentation xml:lang="en">Defined AI roles and responsibilities and a way to report concerns. Example control area; record the controls you apply in the statement of applicability.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessfunction-a-4-resources-for-ai-systems" xsi:type="BusinessFunction">
+      <name xml:lang="en">A.4 Resources for AI systems</name>
+      <documentation xml:lang="en">Data, tooling, computing and human resources documented for each AI system. Example control area; record the controls you apply in the statement of applicability.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessfunction-a-5-assessing-impacts-of-ai-systems" xsi:type="BusinessFunction">
+      <name xml:lang="en">A.5 Assessing impacts of AI systems</name>
+      <documentation xml:lang="en">A process to assess and document impacts of AI systems on individuals, groups and society. Example control area; record the controls you apply in the statement of applicability.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessfunction-a-6-ai-system-life-cycle" xsi:type="BusinessFunction">
+      <name xml:lang="en">A.6 AI system life cycle</name>
+      <documentation xml:lang="en">Responsible design, development, verification, deployment, operation, monitoring and event logging of AI systems. Example control area; record the controls you apply in the statement of applicability.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessfunction-a-7-data-for-ai-systems" xsi:type="BusinessFunction">
+      <name xml:lang="en">A.7 Data for AI systems</name>
+      <documentation xml:lang="en">Data acquisition, quality, provenance and preparation managed for AI systems. Example control area; record the controls you apply in the statement of applicability.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessfunction-a-8-information-for-interested-parties" xsi:type="BusinessFunction">
+      <name xml:lang="en">A.8 Information for interested parties</name>
+      <documentation xml:lang="en">Documentation and information for users, reporting of adverse impacts and communication of incidents. Example control area; record the controls you apply in the statement of applicability.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessfunction-a-9-use-of-ai-systems" xsi:type="BusinessFunction">
+      <name xml:lang="en">A.9 Use of AI systems</name>
+      <documentation xml:lang="en">Processes and objectives for responsible use of AI systems within their intended use. Example control area; record the controls you apply in the statement of applicability.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+    <element identifier="id-businessfunction-a-10-third-party-and-customer-relationships" xsi:type="BusinessFunction">
+      <name xml:lang="en">A.10 Third-party and customer relationships</name>
+      <documentation xml:lang="en">Responsibilities shared with suppliers, partners and customers, and supplier management. Example control area; record the controls you apply in the statement of applicability.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-7"><value xml:lang="en"></value></property>
+        <property propertyDefinitionRef="propid-8"><value xml:lang="en"></value></property>
+      </properties>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="id-rel-001" source="id-driver-eu-ai-act-regulation-eu-2024-1689" target="id-goal-lawful-trustworthy-use-of-ai" xsi:type="Influence">
+    </relationship>
+    <relationship identifier="id-rel-002" source="id-driver-iso-iec-42001-2023-ai-management-systems" target="id-goal-lawful-trustworthy-use-of-ai" xsi:type="Influence">
+    </relationship>
+    <relationship identifier="id-rel-003" source="id-requirement-provider-obligations-for-high-risk-ai-systems" target="id-goal-lawful-trustworthy-use-of-ai" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-004" source="id-requirement-deployer-obligations-for-high-risk-ai-systems" target="id-goal-lawful-trustworthy-use-of-ai" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-005" source="id-requirement-obligations-for-every-ai-system" target="id-goal-lawful-trustworthy-use-of-ai" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-006" source="id-requirement-obligations-for-every-ai-system" target="id-requirement-article-5-prohibited-ai-practices" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-007" source="id-requirement-provider-obligations-for-high-risk-ai-systems" target="id-requirement-article-9-risk-management-system" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-008" source="id-requirement-provider-obligations-for-high-risk-ai-systems" target="id-requirement-article-10-data-and-data-governance" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-009" source="id-requirement-provider-obligations-for-high-risk-ai-systems" target="id-requirement-article-11-technical-documentation" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-010" source="id-requirement-provider-obligations-for-high-risk-ai-systems" target="id-requirement-article-12-record-keeping" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-011" source="id-requirement-provider-obligations-for-high-risk-ai-systems" target="id-requirement-article-13-transparency-and-information-to-deployers" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-012" source="id-requirement-provider-obligations-for-high-risk-ai-systems" target="id-requirement-article-14-human-oversight" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-013" source="id-requirement-provider-obligations-for-high-risk-ai-systems" target="id-requirement-article-15-accuracy-robustness-and-cybersecurity" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-014" source="id-requirement-provider-obligations-for-high-risk-ai-systems" target="id-requirement-article-17-quality-management-system" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-015" source="id-requirement-deployer-obligations-for-high-risk-ai-systems" target="id-requirement-article-26-obligations-of-deployers-of-high-risk-ai-systems" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-016" source="id-requirement-deployer-obligations-for-high-risk-ai-systems" target="id-requirement-article-27-fundamental-rights-impact-assessment" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-017" source="id-requirement-obligations-for-every-ai-system" target="id-requirement-article-50-transparency-for-certain-ai-systems" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-018" source="id-requirement-provider-obligations-for-high-risk-ai-systems" target="id-requirement-article-72-post-market-monitoring" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-019" source="id-requirement-provider-obligations-for-high-risk-ai-systems" target="id-requirement-article-73-reporting-of-serious-incidents" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-020" source="id-grouping-prohibited" target="id-applicationcomponent-staff-emotion-monitoring" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-021" source="id-applicationcomponent-staff-emotion-monitoring" target="id-requirement-article-5-prohibited-ai-practices" xsi:type="Association">
+      <name xml:lang="en">subject to</name>
+    </relationship>
+    <relationship identifier="id-rel-022" source="id-grouping-high-risk" target="id-applicationcomponent-cv-screening-assistant" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-023" source="id-applicationcomponent-cv-screening-assistant" target="id-requirement-article-26-obligations-of-deployers-of-high-risk-ai-systems" xsi:type="Association">
+      <name xml:lang="en">subject to</name>
+    </relationship>
+    <relationship identifier="id-rel-024" source="id-grouping-high-risk" target="id-applicationcomponent-credit-scoring-model" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-025" source="id-applicationcomponent-credit-scoring-model" target="id-requirement-provider-obligations-for-high-risk-ai-systems" xsi:type="Association">
+      <name xml:lang="en">subject to</name>
+    </relationship>
+    <relationship identifier="id-rel-026" source="id-applicationcomponent-credit-scoring-model" target="id-requirement-article-26-obligations-of-deployers-of-high-risk-ai-systems" xsi:type="Association">
+      <name xml:lang="en">subject to</name>
+    </relationship>
+    <relationship identifier="id-rel-027" source="id-applicationcomponent-credit-scoring-model" target="id-requirement-article-27-fundamental-rights-impact-assessment" xsi:type="Association">
+      <name xml:lang="en">subject to</name>
+    </relationship>
+    <relationship identifier="id-rel-028" source="id-grouping-limited-risk" target="id-applicationcomponent-customer-service-chatbot" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-029" source="id-applicationcomponent-customer-service-chatbot" target="id-requirement-article-50-transparency-for-certain-ai-systems" xsi:type="Association">
+      <name xml:lang="en">subject to</name>
+    </relationship>
+    <relationship identifier="id-rel-030" source="id-grouping-minimal-risk" target="id-applicationcomponent-email-spam-and-phishing-filter" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-031" source="id-grouping-general-purpose-ai-model" target="id-applicationcomponent-general-purpose-language-model" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-032" source="id-applicationcomponent-general-purpose-language-model" target="id-requirement-article-53-obligations-of-general-purpose-ai-model-providers" xsi:type="Association">
+      <name xml:lang="en">subject to</name>
+    </relationship>
+    <relationship identifier="id-rel-033" source="id-applicationcomponent-general-purpose-language-model" target="id-applicationcomponent-customer-service-chatbot" xsi:type="Serving">
+    </relationship>
+    <relationship identifier="id-rel-034" source="id-businessactor-model-provider" target="id-applicationcomponent-general-purpose-language-model" xsi:type="Association">
+      <name xml:lang="en">provides</name>
+    </relationship>
+    <relationship identifier="id-rel-035" source="id-requirement-iso-iec-42001-requirements-clauses-4-to-10" target="id-goal-lawful-trustworthy-use-of-ai" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-036" source="id-requirement-iso-iec-42001-requirements-clauses-4-to-10" target="id-requirement-clause-4-context-of-the-organisation" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-037" source="id-businessprocess-ai-management-system-scope-and-inventory" target="id-requirement-clause-4-context-of-the-organisation" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-038" source="id-requirement-iso-iec-42001-requirements-clauses-4-to-10" target="id-requirement-clause-5-leadership" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-039" source="id-businessprocess-ai-policy-approval-and-role-assignment" target="id-requirement-clause-5-leadership" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-040" source="id-requirement-iso-iec-42001-requirements-clauses-4-to-10" target="id-requirement-clause-6-planning" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-041" source="id-businessprocess-ai-risk-assessment-and-treatment" target="id-requirement-clause-6-planning" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-042" source="id-requirement-iso-iec-42001-requirements-clauses-4-to-10" target="id-requirement-clause-7-support" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-043" source="id-businessprocess-ai-competence-and-awareness-programme" target="id-requirement-clause-7-support" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-044" source="id-requirement-iso-iec-42001-requirements-clauses-4-to-10" target="id-requirement-clause-8-operation" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-045" source="id-businessprocess-ai-use-case-intake-and-classification" target="id-requirement-clause-8-operation" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-046" source="id-requirement-iso-iec-42001-requirements-clauses-4-to-10" target="id-requirement-clause-9-performance-evaluation" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-047" source="id-businessprocess-ai-internal-audit-and-management-review" target="id-requirement-clause-9-performance-evaluation" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-048" source="id-requirement-iso-iec-42001-requirements-clauses-4-to-10" target="id-requirement-clause-10-improvement" xsi:type="Composition">
+    </relationship>
+    <relationship identifier="id-rel-049" source="id-businessprocess-ai-corrective-action" target="id-requirement-clause-10-improvement" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-050" source="id-businessprocess-ai-risk-assessment-and-treatment" target="id-requirement-article-9-risk-management-system" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-051" source="id-businessprocess-ai-use-case-intake-and-classification" target="id-requirement-article-5-prohibited-ai-practices" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-052" source="id-businessprocess-ai-management-system-scope-and-inventory" target="id-grouping-high-risk" xsi:type="Association">
+      <name xml:lang="en">classifies</name>
+    </relationship>
+    <relationship identifier="id-rel-053" source="id-businessobject-statement-of-applicability" target="id-requirement-clause-6-planning" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-054" source="id-businessobject-statement-of-applicability" target="id-grouping-iso-iec-42001-annex-a-control-areas" xsi:type="Association">
+      <name xml:lang="en">selects from</name>
+    </relationship>
+    <relationship identifier="id-rel-055" source="id-grouping-iso-iec-42001-annex-a-control-areas" target="id-businessfunction-a-2-policies-related-to-ai" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-056" source="id-businessfunction-a-2-policies-related-to-ai" target="id-requirement-article-17-quality-management-system" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-057" source="id-grouping-iso-iec-42001-annex-a-control-areas" target="id-businessfunction-a-3-internal-organisation" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-058" source="id-businessfunction-a-3-internal-organisation" target="id-requirement-article-17-quality-management-system" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-059" source="id-grouping-iso-iec-42001-annex-a-control-areas" target="id-businessfunction-a-4-resources-for-ai-systems" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-060" source="id-businessfunction-a-4-resources-for-ai-systems" target="id-requirement-article-11-technical-documentation" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-061" source="id-grouping-iso-iec-42001-annex-a-control-areas" target="id-businessfunction-a-5-assessing-impacts-of-ai-systems" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-062" source="id-businessfunction-a-5-assessing-impacts-of-ai-systems" target="id-requirement-article-27-fundamental-rights-impact-assessment" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-063" source="id-grouping-iso-iec-42001-annex-a-control-areas" target="id-businessfunction-a-6-ai-system-life-cycle" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-064" source="id-businessfunction-a-6-ai-system-life-cycle" target="id-requirement-article-9-risk-management-system" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-065" source="id-businessfunction-a-6-ai-system-life-cycle" target="id-requirement-article-11-technical-documentation" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-066" source="id-businessfunction-a-6-ai-system-life-cycle" target="id-requirement-article-12-record-keeping" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-067" source="id-businessfunction-a-6-ai-system-life-cycle" target="id-requirement-article-15-accuracy-robustness-and-cybersecurity" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-068" source="id-businessfunction-a-6-ai-system-life-cycle" target="id-requirement-article-72-post-market-monitoring" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-069" source="id-grouping-iso-iec-42001-annex-a-control-areas" target="id-businessfunction-a-7-data-for-ai-systems" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-070" source="id-businessfunction-a-7-data-for-ai-systems" target="id-requirement-article-10-data-and-data-governance" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-071" source="id-grouping-iso-iec-42001-annex-a-control-areas" target="id-businessfunction-a-8-information-for-interested-parties" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-072" source="id-businessfunction-a-8-information-for-interested-parties" target="id-requirement-article-13-transparency-and-information-to-deployers" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-073" source="id-businessfunction-a-8-information-for-interested-parties" target="id-requirement-article-50-transparency-for-certain-ai-systems" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-074" source="id-businessfunction-a-8-information-for-interested-parties" target="id-requirement-article-73-reporting-of-serious-incidents" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-075" source="id-grouping-iso-iec-42001-annex-a-control-areas" target="id-businessfunction-a-9-use-of-ai-systems" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-076" source="id-businessfunction-a-9-use-of-ai-systems" target="id-requirement-article-14-human-oversight" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-077" source="id-businessfunction-a-9-use-of-ai-systems" target="id-requirement-article-26-obligations-of-deployers-of-high-risk-ai-systems" xsi:type="Realization">
+    </relationship>
+    <relationship identifier="id-rel-078" source="id-grouping-iso-iec-42001-annex-a-control-areas" target="id-businessfunction-a-10-third-party-and-customer-relationships" xsi:type="Aggregation">
+    </relationship>
+    <relationship identifier="id-rel-079" source="id-businessfunction-a-10-third-party-and-customer-relationships" target="id-requirement-article-26-obligations-of-deployers-of-high-risk-ai-systems" xsi:type="Realization">
+    </relationship>
+  </relationships>
+  <organizations>
+    <item><label xml:lang="en">Business</label>
+      <item identifierRef="id-businessactor-model-provider"/>
+      <item identifierRef="id-businessprocess-ai-management-system-scope-and-inventory"/>
+      <item identifierRef="id-businessprocess-ai-policy-approval-and-role-assignment"/>
+      <item identifierRef="id-businessprocess-ai-risk-assessment-and-treatment"/>
+      <item identifierRef="id-businessprocess-ai-competence-and-awareness-programme"/>
+      <item identifierRef="id-businessprocess-ai-use-case-intake-and-classification"/>
+      <item identifierRef="id-businessprocess-ai-internal-audit-and-management-review"/>
+      <item identifierRef="id-businessprocess-ai-corrective-action"/>
+      <item identifierRef="id-businessobject-statement-of-applicability"/>
+      <item identifierRef="id-businessfunction-a-2-policies-related-to-ai"/>
+      <item identifierRef="id-businessfunction-a-3-internal-organisation"/>
+      <item identifierRef="id-businessfunction-a-4-resources-for-ai-systems"/>
+      <item identifierRef="id-businessfunction-a-5-assessing-impacts-of-ai-systems"/>
+      <item identifierRef="id-businessfunction-a-6-ai-system-life-cycle"/>
+      <item identifierRef="id-businessfunction-a-7-data-for-ai-systems"/>
+      <item identifierRef="id-businessfunction-a-8-information-for-interested-parties"/>
+      <item identifierRef="id-businessfunction-a-9-use-of-ai-systems"/>
+      <item identifierRef="id-businessfunction-a-10-third-party-and-customer-relationships"/>
+    </item>
+    <item><label xml:lang="en">Application</label>
+      <item identifierRef="id-applicationcomponent-staff-emotion-monitoring"/>
+      <item identifierRef="id-applicationcomponent-cv-screening-assistant"/>
+      <item identifierRef="id-applicationcomponent-credit-scoring-model"/>
+      <item identifierRef="id-applicationcomponent-customer-service-chatbot"/>
+      <item identifierRef="id-applicationcomponent-email-spam-and-phishing-filter"/>
+      <item identifierRef="id-applicationcomponent-general-purpose-language-model"/>
+    </item>
+    <item><label xml:lang="en">Motivation</label>
+      <item identifierRef="id-driver-eu-ai-act-regulation-eu-2024-1689"/>
+      <item identifierRef="id-driver-iso-iec-42001-2023-ai-management-systems"/>
+      <item identifierRef="id-goal-lawful-trustworthy-use-of-ai"/>
+      <item identifierRef="id-requirement-provider-obligations-for-high-risk-ai-systems"/>
+      <item identifierRef="id-requirement-deployer-obligations-for-high-risk-ai-systems"/>
+      <item identifierRef="id-requirement-obligations-for-every-ai-system"/>
+      <item identifierRef="id-requirement-article-5-prohibited-ai-practices"/>
+      <item identifierRef="id-requirement-article-9-risk-management-system"/>
+      <item identifierRef="id-requirement-article-10-data-and-data-governance"/>
+      <item identifierRef="id-requirement-article-11-technical-documentation"/>
+      <item identifierRef="id-requirement-article-12-record-keeping"/>
+      <item identifierRef="id-requirement-article-13-transparency-and-information-to-deployers"/>
+      <item identifierRef="id-requirement-article-14-human-oversight"/>
+      <item identifierRef="id-requirement-article-15-accuracy-robustness-and-cybersecurity"/>
+      <item identifierRef="id-requirement-article-17-quality-management-system"/>
+      <item identifierRef="id-requirement-article-26-obligations-of-deployers-of-high-risk-ai-systems"/>
+      <item identifierRef="id-requirement-article-27-fundamental-rights-impact-assessment"/>
+      <item identifierRef="id-requirement-article-50-transparency-for-certain-ai-systems"/>
+      <item identifierRef="id-requirement-article-72-post-market-monitoring"/>
+      <item identifierRef="id-requirement-article-73-reporting-of-serious-incidents"/>
+      <item identifierRef="id-requirement-article-53-obligations-of-general-purpose-ai-model-providers"/>
+      <item identifierRef="id-requirement-iso-iec-42001-requirements-clauses-4-to-10"/>
+      <item identifierRef="id-requirement-clause-4-context-of-the-organisation"/>
+      <item identifierRef="id-requirement-clause-5-leadership"/>
+      <item identifierRef="id-requirement-clause-6-planning"/>
+      <item identifierRef="id-requirement-clause-7-support"/>
+      <item identifierRef="id-requirement-clause-8-operation"/>
+      <item identifierRef="id-requirement-clause-9-performance-evaluation"/>
+      <item identifierRef="id-requirement-clause-10-improvement"/>
+    </item>
+    <item><label xml:lang="en">Other</label>
+      <item identifierRef="id-grouping-prohibited"/>
+      <item identifierRef="id-grouping-high-risk"/>
+      <item identifierRef="id-grouping-limited-risk"/>
+      <item identifierRef="id-grouping-minimal-risk"/>
+      <item identifierRef="id-grouping-general-purpose-ai-model"/>
+      <item identifierRef="id-grouping-iso-iec-42001-annex-a-control-areas"/>
+    </item>
+    <item><label xml:lang="en">Relations</label>
+      <item identifierRef="id-rel-001"/>
+      <item identifierRef="id-rel-002"/>
+      <item identifierRef="id-rel-003"/>
+      <item identifierRef="id-rel-004"/>
+      <item identifierRef="id-rel-005"/>
+      <item identifierRef="id-rel-006"/>
+      <item identifierRef="id-rel-007"/>
+      <item identifierRef="id-rel-008"/>
+      <item identifierRef="id-rel-009"/>
+      <item identifierRef="id-rel-010"/>
+      <item identifierRef="id-rel-011"/>
+      <item identifierRef="id-rel-012"/>
+      <item identifierRef="id-rel-013"/>
+      <item identifierRef="id-rel-014"/>
+      <item identifierRef="id-rel-015"/>
+      <item identifierRef="id-rel-016"/>
+      <item identifierRef="id-rel-017"/>
+      <item identifierRef="id-rel-018"/>
+      <item identifierRef="id-rel-019"/>
+      <item identifierRef="id-rel-020"/>
+      <item identifierRef="id-rel-021"/>
+      <item identifierRef="id-rel-022"/>
+      <item identifierRef="id-rel-023"/>
+      <item identifierRef="id-rel-024"/>
+      <item identifierRef="id-rel-025"/>
+      <item identifierRef="id-rel-026"/>
+      <item identifierRef="id-rel-027"/>
+      <item identifierRef="id-rel-028"/>
+      <item identifierRef="id-rel-029"/>
+      <item identifierRef="id-rel-030"/>
+      <item identifierRef="id-rel-031"/>
+      <item identifierRef="id-rel-032"/>
+      <item identifierRef="id-rel-033"/>
+      <item identifierRef="id-rel-034"/>
+      <item identifierRef="id-rel-035"/>
+      <item identifierRef="id-rel-036"/>
+      <item identifierRef="id-rel-037"/>
+      <item identifierRef="id-rel-038"/>
+      <item identifierRef="id-rel-039"/>
+      <item identifierRef="id-rel-040"/>
+      <item identifierRef="id-rel-041"/>
+      <item identifierRef="id-rel-042"/>
+      <item identifierRef="id-rel-043"/>
+      <item identifierRef="id-rel-044"/>
+      <item identifierRef="id-rel-045"/>
+      <item identifierRef="id-rel-046"/>
+      <item identifierRef="id-rel-047"/>
+      <item identifierRef="id-rel-048"/>
+      <item identifierRef="id-rel-049"/>
+      <item identifierRef="id-rel-050"/>
+      <item identifierRef="id-rel-051"/>
+      <item identifierRef="id-rel-052"/>
+      <item identifierRef="id-rel-053"/>
+      <item identifierRef="id-rel-054"/>
+      <item identifierRef="id-rel-055"/>
+      <item identifierRef="id-rel-056"/>
+      <item identifierRef="id-rel-057"/>
+      <item identifierRef="id-rel-058"/>
+      <item identifierRef="id-rel-059"/>
+      <item identifierRef="id-rel-060"/>
+      <item identifierRef="id-rel-061"/>
+      <item identifierRef="id-rel-062"/>
+      <item identifierRef="id-rel-063"/>
+      <item identifierRef="id-rel-064"/>
+      <item identifierRef="id-rel-065"/>
+      <item identifierRef="id-rel-066"/>
+      <item identifierRef="id-rel-067"/>
+      <item identifierRef="id-rel-068"/>
+      <item identifierRef="id-rel-069"/>
+      <item identifierRef="id-rel-070"/>
+      <item identifierRef="id-rel-071"/>
+      <item identifierRef="id-rel-072"/>
+      <item identifierRef="id-rel-073"/>
+      <item identifierRef="id-rel-074"/>
+      <item identifierRef="id-rel-075"/>
+      <item identifierRef="id-rel-076"/>
+      <item identifierRef="id-rel-077"/>
+      <item identifierRef="id-rel-078"/>
+      <item identifierRef="id-rel-079"/>
+    </item>
+    <item><label xml:lang="en">Views</label>
+      <item identifierRef="id-view-ai-system-inventory-and-risk-classification"/>
+      <item identifierRef="id-view-ai-act-obligations-and-iso-42001-controls"/>
+      <item identifierRef="id-view-iso-42001-ai-management-system"/>
+    </item>
+  </organizations>
+  <propertyDefinitions>
+    <propertyDefinition identifier="propid-1" type="string"><name xml:lang="en">Binds</name></propertyDefinition>
+    <propertyDefinition identifier="propid-2" type="string"><name xml:lang="en">Risk classification</name></propertyDefinition>
+    <propertyDefinition identifier="propid-3" type="string"><name xml:lang="en">Our role</name></propertyDefinition>
+    <propertyDefinition identifier="propid-4" type="string"><name xml:lang="en">Classification basis</name></propertyDefinition>
+    <propertyDefinition identifier="propid-5" type="string"><name xml:lang="en">System owner</name></propertyDefinition>
+    <propertyDefinition identifier="propid-6" type="string"><name xml:lang="en">Provider</name></propertyDefinition>
+    <propertyDefinition identifier="propid-7" type="string"><name xml:lang="en">Control owner</name></propertyDefinition>
+    <propertyDefinition identifier="propid-8" type="string"><name xml:lang="en">Evidence location</name></propertyDefinition>
+    <propertyDefinition identifier="propid-9" type="string"><name xml:lang="en">Owner</name></propertyDefinition>
+    <propertyDefinition identifier="propid-10" type="string"><name xml:lang="en">Last reviewed</name></propertyDefinition>
+  </propertyDefinitions>
+  <views>
+    <diagrams>
+      <view identifier="id-view-ai-system-inventory-and-risk-classification" xsi:type="Diagram">
+        <name xml:lang="en">AI system inventory and risk classification</name>
+        <documentation xml:lang="en">Every AI system in the organisation, sorted into the Act's risk tiers, with the obligations each one brings. Record the organisation's role for each system: a deployer that substantially modifies a high-risk system, or puts its own name on it, becomes its provider.</documentation>
+        <node identifier="id-view-ai-system-inventory-and-risk-classification-n1" elementRef="id-grouping-prohibited" xsi:type="Element" x="20" y="20" w="230" h="112">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-ai-system-inventory-and-risk-classification-n2" elementRef="id-applicationcomponent-staff-emotion-monitoring" xsi:type="Element" x="35" y="52" w="200" h="60">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-ai-system-inventory-and-risk-classification-n3" elementRef="id-grouping-high-risk" xsi:type="Element" x="280" y="20" w="445" h="112">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-ai-system-inventory-and-risk-classification-n4" elementRef="id-applicationcomponent-cv-screening-assistant" xsi:type="Element" x="295" y="52" w="200" h="60">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-ai-system-inventory-and-risk-classification-n5" elementRef="id-applicationcomponent-credit-scoring-model" xsi:type="Element" x="510" y="52" w="200" h="60">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-ai-system-inventory-and-risk-classification-n6" elementRef="id-grouping-limited-risk" xsi:type="Element" x="755" y="20" w="230" h="112">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-ai-system-inventory-and-risk-classification-n7" elementRef="id-applicationcomponent-customer-service-chatbot" xsi:type="Element" x="770" y="52" w="200" h="60">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-ai-system-inventory-and-risk-classification-n8" elementRef="id-grouping-general-purpose-ai-model" xsi:type="Element" x="1015" y="20" w="230" h="112">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-ai-system-inventory-and-risk-classification-n9" elementRef="id-applicationcomponent-general-purpose-language-model" xsi:type="Element" x="1030" y="52" w="200" h="60">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-ai-system-inventory-and-risk-classification-n10" elementRef="id-grouping-minimal-risk" xsi:type="Element" x="1275" y="20" w="230" h="112">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-ai-system-inventory-and-risk-classification-n11" elementRef="id-applicationcomponent-email-spam-and-phishing-filter" xsi:type="Element" x="1290" y="52" w="200" h="60">
+            <style><fillColor r="181" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <node identifier="id-view-ai-system-inventory-and-risk-classification-n12" elementRef="id-requirement-article-5-prohibited-ai-practices" xsi:type="Element" x="20" y="230" w="230" h="80">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-system-inventory-and-risk-classification-n13" elementRef="id-requirement-article-26-obligations-of-deployers-of-high-risk-ai-systems" xsi:type="Element" x="280" y="230" w="200" h="80">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-system-inventory-and-risk-classification-n14" elementRef="id-requirement-provider-obligations-for-high-risk-ai-systems" xsi:type="Element" x="495" y="230" w="200" h="80">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-system-inventory-and-risk-classification-n15" elementRef="id-requirement-article-27-fundamental-rights-impact-assessment" xsi:type="Element" x="740" y="380" w="200" h="80">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-system-inventory-and-risk-classification-n16" elementRef="id-requirement-article-50-transparency-for-certain-ai-systems" xsi:type="Element" x="790" y="230" w="190" h="80">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-system-inventory-and-risk-classification-n17" elementRef="id-requirement-article-53-obligations-of-general-purpose-ai-model-providers" xsi:type="Element" x="1015" y="230" w="230" h="80">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-ai-system-inventory-and-risk-classification-c1" relationshipRef="id-rel-021" xsi:type="Relationship" source="id-view-ai-system-inventory-and-risk-classification-n2" target="id-view-ai-system-inventory-and-risk-classification-n12"/>
+        <connection identifier="id-view-ai-system-inventory-and-risk-classification-c2" relationshipRef="id-rel-023" xsi:type="Relationship" source="id-view-ai-system-inventory-and-risk-classification-n4" target="id-view-ai-system-inventory-and-risk-classification-n13"/>
+        <connection identifier="id-view-ai-system-inventory-and-risk-classification-c3" relationshipRef="id-rel-025" xsi:type="Relationship" source="id-view-ai-system-inventory-and-risk-classification-n5" target="id-view-ai-system-inventory-and-risk-classification-n14"/>
+        <connection identifier="id-view-ai-system-inventory-and-risk-classification-c4" relationshipRef="id-rel-026" xsi:type="Relationship" source="id-view-ai-system-inventory-and-risk-classification-n5" target="id-view-ai-system-inventory-and-risk-classification-n13"/>
+        <connection identifier="id-view-ai-system-inventory-and-risk-classification-c5" relationshipRef="id-rel-027" xsi:type="Relationship" source="id-view-ai-system-inventory-and-risk-classification-n5" target="id-view-ai-system-inventory-and-risk-classification-n15"/>
+        <connection identifier="id-view-ai-system-inventory-and-risk-classification-c6" relationshipRef="id-rel-029" xsi:type="Relationship" source="id-view-ai-system-inventory-and-risk-classification-n7" target="id-view-ai-system-inventory-and-risk-classification-n16"/>
+        <connection identifier="id-view-ai-system-inventory-and-risk-classification-c7" relationshipRef="id-rel-032" xsi:type="Relationship" source="id-view-ai-system-inventory-and-risk-classification-n9" target="id-view-ai-system-inventory-and-risk-classification-n17"/>
+        <connection identifier="id-view-ai-system-inventory-and-risk-classification-c8" relationshipRef="id-rel-033" xsi:type="Relationship" source="id-view-ai-system-inventory-and-risk-classification-n9" target="id-view-ai-system-inventory-and-risk-classification-n7"/>
+      </view>
+      <view identifier="id-view-ai-act-obligations-and-iso-42001-controls" xsi:type="Diagram" viewpoint="Motivation">
+        <name xml:lang="en">AI Act obligations and ISO 42001 controls</name>
+        <documentation xml:lang="en">Each obligation of the Act beside the ISO/IEC 42001 control area or process that meets it, grouped so each control's obligations sit together. An article with nothing drawn to it is a gap in the management system.</documentation>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n1" elementRef="id-requirement-article-5-prohibited-ai-practices" xsi:type="Element" x="20" y="20" w="260" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n2" elementRef="id-requirement-article-9-risk-management-system" xsi:type="Element" x="20" y="90" w="260" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n3" elementRef="id-requirement-article-12-record-keeping" xsi:type="Element" x="20" y="160" w="260" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n4" elementRef="id-requirement-article-15-accuracy-robustness-and-cybersecurity" xsi:type="Element" x="20" y="230" w="260" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n5" elementRef="id-requirement-article-72-post-market-monitoring" xsi:type="Element" x="20" y="300" w="260" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n6" elementRef="id-requirement-article-11-technical-documentation" xsi:type="Element" x="20" y="370" w="260" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n7" elementRef="id-requirement-article-10-data-and-data-governance" xsi:type="Element" x="20" y="440" w="260" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n8" elementRef="id-requirement-article-13-transparency-and-information-to-deployers" xsi:type="Element" x="20" y="510" w="260" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n9" elementRef="id-requirement-article-50-transparency-for-certain-ai-systems" xsi:type="Element" x="20" y="580" w="260" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n10" elementRef="id-requirement-article-73-reporting-of-serious-incidents" xsi:type="Element" x="20" y="650" w="260" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n11" elementRef="id-requirement-article-14-human-oversight" xsi:type="Element" x="20" y="720" w="260" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n12" elementRef="id-requirement-article-26-obligations-of-deployers-of-high-risk-ai-systems" xsi:type="Element" x="20" y="790" w="260" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n13" elementRef="id-requirement-article-27-fundamental-rights-impact-assessment" xsi:type="Element" x="20" y="860" w="260" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n14" elementRef="id-requirement-article-17-quality-management-system" xsi:type="Element" x="20" y="930" w="260" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n15" elementRef="id-businessprocess-ai-use-case-intake-and-classification" xsi:type="Element" x="850" y="20" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n16" elementRef="id-businessprocess-ai-risk-assessment-and-treatment" xsi:type="Element" x="850" y="90" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n17" elementRef="id-businessfunction-a-6-ai-system-life-cycle" xsi:type="Element" x="850" y="230" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n18" elementRef="id-businessfunction-a-4-resources-for-ai-systems" xsi:type="Element" x="850" y="370" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n19" elementRef="id-businessfunction-a-7-data-for-ai-systems" xsi:type="Element" x="850" y="440" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n20" elementRef="id-businessfunction-a-8-information-for-interested-parties" xsi:type="Element" x="850" y="580" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n21" elementRef="id-businessfunction-a-9-use-of-ai-systems" xsi:type="Element" x="850" y="720" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n22" elementRef="id-businessfunction-a-10-third-party-and-customer-relationships" xsi:type="Element" x="850" y="790" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n23" elementRef="id-businessfunction-a-5-assessing-impacts-of-ai-systems" xsi:type="Element" x="850" y="860" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n24" elementRef="id-businessfunction-a-2-policies-related-to-ai" xsi:type="Element" x="850" y="930" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-ai-act-obligations-and-iso-42001-controls-n25" elementRef="id-businessfunction-a-3-internal-organisation" xsi:type="Element" x="850" y="1000" w="260" h="55">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <connection identifier="id-view-ai-act-obligations-and-iso-42001-controls-c1" relationshipRef="id-rel-050" xsi:type="Relationship" source="id-view-ai-act-obligations-and-iso-42001-controls-n16" target="id-view-ai-act-obligations-and-iso-42001-controls-n2"/>
+        <connection identifier="id-view-ai-act-obligations-and-iso-42001-controls-c2" relationshipRef="id-rel-051" xsi:type="Relationship" source="id-view-ai-act-obligations-and-iso-42001-controls-n15" target="id-view-ai-act-obligations-and-iso-42001-controls-n1"/>
+        <connection identifier="id-view-ai-act-obligations-and-iso-42001-controls-c3" relationshipRef="id-rel-056" xsi:type="Relationship" source="id-view-ai-act-obligations-and-iso-42001-controls-n24" target="id-view-ai-act-obligations-and-iso-42001-controls-n14"/>
+        <connection identifier="id-view-ai-act-obligations-and-iso-42001-controls-c4" relationshipRef="id-rel-058" xsi:type="Relationship" source="id-view-ai-act-obligations-and-iso-42001-controls-n25" target="id-view-ai-act-obligations-and-iso-42001-controls-n14"/>
+        <connection identifier="id-view-ai-act-obligations-and-iso-42001-controls-c5" relationshipRef="id-rel-060" xsi:type="Relationship" source="id-view-ai-act-obligations-and-iso-42001-controls-n18" target="id-view-ai-act-obligations-and-iso-42001-controls-n6"/>
+        <connection identifier="id-view-ai-act-obligations-and-iso-42001-controls-c6" relationshipRef="id-rel-062" xsi:type="Relationship" source="id-view-ai-act-obligations-and-iso-42001-controls-n23" target="id-view-ai-act-obligations-and-iso-42001-controls-n13"/>
+        <connection identifier="id-view-ai-act-obligations-and-iso-42001-controls-c7" relationshipRef="id-rel-064" xsi:type="Relationship" source="id-view-ai-act-obligations-and-iso-42001-controls-n17" target="id-view-ai-act-obligations-and-iso-42001-controls-n2"/>
+        <connection identifier="id-view-ai-act-obligations-and-iso-42001-controls-c8" relationshipRef="id-rel-065" xsi:type="Relationship" source="id-view-ai-act-obligations-and-iso-42001-controls-n17" target="id-view-ai-act-obligations-and-iso-42001-controls-n6"/>
+        <connection identifier="id-view-ai-act-obligations-and-iso-42001-controls-c9" relationshipRef="id-rel-066" xsi:type="Relationship" source="id-view-ai-act-obligations-and-iso-42001-controls-n17" target="id-view-ai-act-obligations-and-iso-42001-controls-n3"/>
+        <connection identifier="id-view-ai-act-obligations-and-iso-42001-controls-c10" relationshipRef="id-rel-067" xsi:type="Relationship" source="id-view-ai-act-obligations-and-iso-42001-controls-n17" target="id-view-ai-act-obligations-and-iso-42001-controls-n4"/>
+        <connection identifier="id-view-ai-act-obligations-and-iso-42001-controls-c11" relationshipRef="id-rel-068" xsi:type="Relationship" source="id-view-ai-act-obligations-and-iso-42001-controls-n17" target="id-view-ai-act-obligations-and-iso-42001-controls-n5"/>
+        <connection identifier="id-view-ai-act-obligations-and-iso-42001-controls-c12" relationshipRef="id-rel-070" xsi:type="Relationship" source="id-view-ai-act-obligations-and-iso-42001-controls-n19" target="id-view-ai-act-obligations-and-iso-42001-controls-n7"/>
+        <connection identifier="id-view-ai-act-obligations-and-iso-42001-controls-c13" relationshipRef="id-rel-072" xsi:type="Relationship" source="id-view-ai-act-obligations-and-iso-42001-controls-n20" target="id-view-ai-act-obligations-and-iso-42001-controls-n8"/>
+        <connection identifier="id-view-ai-act-obligations-and-iso-42001-controls-c14" relationshipRef="id-rel-073" xsi:type="Relationship" source="id-view-ai-act-obligations-and-iso-42001-controls-n20" target="id-view-ai-act-obligations-and-iso-42001-controls-n9"/>
+        <connection identifier="id-view-ai-act-obligations-and-iso-42001-controls-c15" relationshipRef="id-rel-074" xsi:type="Relationship" source="id-view-ai-act-obligations-and-iso-42001-controls-n20" target="id-view-ai-act-obligations-and-iso-42001-controls-n10"/>
+        <connection identifier="id-view-ai-act-obligations-and-iso-42001-controls-c16" relationshipRef="id-rel-076" xsi:type="Relationship" source="id-view-ai-act-obligations-and-iso-42001-controls-n21" target="id-view-ai-act-obligations-and-iso-42001-controls-n11"/>
+        <connection identifier="id-view-ai-act-obligations-and-iso-42001-controls-c17" relationshipRef="id-rel-077" xsi:type="Relationship" source="id-view-ai-act-obligations-and-iso-42001-controls-n21" target="id-view-ai-act-obligations-and-iso-42001-controls-n12"/>
+        <connection identifier="id-view-ai-act-obligations-and-iso-42001-controls-c18" relationshipRef="id-rel-079" xsi:type="Relationship" source="id-view-ai-act-obligations-and-iso-42001-controls-n22" target="id-view-ai-act-obligations-and-iso-42001-controls-n12"/>
+      </view>
+      <view identifier="id-view-iso-42001-ai-management-system" xsi:type="Diagram" viewpoint="Motivation">
+        <name xml:lang="en">ISO 42001 AI management system</name>
+        <documentation xml:lang="en">Clauses 4 to 10 of ISO/IEC 42001, each with the process that meets it, and the statement of applicability that selects the Annex A controls.</documentation>
+        <node identifier="id-view-iso-42001-ai-management-system-n1" elementRef="id-driver-iso-iec-42001-2023-ai-management-systems" xsi:type="Element" x="20" y="20" w="260" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-iso-42001-ai-management-system-n2" elementRef="id-goal-lawful-trustworthy-use-of-ai" xsi:type="Element" x="360" y="20" w="300" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-iso-42001-ai-management-system-n3" elementRef="id-requirement-iso-iec-42001-requirements-clauses-4-to-10" xsi:type="Element" x="740" y="20" w="320" h="55">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-iso-42001-ai-management-system-n4" elementRef="id-requirement-clause-4-context-of-the-organisation" xsi:type="Element" x="20" y="150" w="190" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-iso-42001-ai-management-system-n5" elementRef="id-businessprocess-ai-management-system-scope-and-inventory" xsi:type="Element" x="20" y="290" w="190" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-iso-42001-ai-management-system-n6" elementRef="id-requirement-clause-5-leadership" xsi:type="Element" x="225" y="150" w="190" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-iso-42001-ai-management-system-n7" elementRef="id-businessprocess-ai-policy-approval-and-role-assignment" xsi:type="Element" x="225" y="290" w="190" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-iso-42001-ai-management-system-n8" elementRef="id-requirement-clause-6-planning" xsi:type="Element" x="430" y="150" w="395" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-iso-42001-ai-management-system-n9" elementRef="id-businessprocess-ai-risk-assessment-and-treatment" xsi:type="Element" x="430" y="290" w="190" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-iso-42001-ai-management-system-n10" elementRef="id-businessobject-statement-of-applicability" xsi:type="Element" x="635" y="290" w="190" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-iso-42001-ai-management-system-n11" elementRef="id-requirement-clause-7-support" xsi:type="Element" x="840" y="150" w="190" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-iso-42001-ai-management-system-n12" elementRef="id-businessprocess-ai-competence-and-awareness-programme" xsi:type="Element" x="840" y="290" w="190" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-iso-42001-ai-management-system-n13" elementRef="id-requirement-clause-8-operation" xsi:type="Element" x="1045" y="150" w="190" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-iso-42001-ai-management-system-n14" elementRef="id-businessprocess-ai-use-case-intake-and-classification" xsi:type="Element" x="1045" y="290" w="190" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-iso-42001-ai-management-system-n15" elementRef="id-requirement-clause-9-performance-evaluation" xsi:type="Element" x="1250" y="150" w="190" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-iso-42001-ai-management-system-n16" elementRef="id-businessprocess-ai-internal-audit-and-management-review" xsi:type="Element" x="1250" y="290" w="190" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-iso-42001-ai-management-system-n17" elementRef="id-requirement-clause-10-improvement" xsi:type="Element" x="1455" y="150" w="190" h="70">
+          <style><fillColor r="204" g="204" b="255"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-iso-42001-ai-management-system-n18" elementRef="id-businessprocess-ai-corrective-action" xsi:type="Element" x="1455" y="290" w="190" h="60">
+          <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+        </node>
+        <node identifier="id-view-iso-42001-ai-management-system-n19" elementRef="id-grouping-iso-iec-42001-annex-a-control-areas" xsi:type="Element" x="20" y="430" w="1340" h="177">
+          <style><fillColor r="255" g="255" b="255"/><lineColor r="92" g="92" b="92"/></style>
+          <node identifier="id-view-iso-42001-ai-management-system-n20" elementRef="id-businessfunction-a-2-policies-related-to-ai" xsi:type="Element" x="35" y="462" w="250" h="55">
+            <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-iso-42001-ai-management-system-n21" elementRef="id-businessfunction-a-3-internal-organisation" xsi:type="Element" x="300" y="462" w="250" h="55">
+            <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-iso-42001-ai-management-system-n22" elementRef="id-businessfunction-a-4-resources-for-ai-systems" xsi:type="Element" x="565" y="462" w="250" h="55">
+            <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-iso-42001-ai-management-system-n23" elementRef="id-businessfunction-a-5-assessing-impacts-of-ai-systems" xsi:type="Element" x="830" y="462" w="250" h="55">
+            <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-iso-42001-ai-management-system-n24" elementRef="id-businessfunction-a-6-ai-system-life-cycle" xsi:type="Element" x="1095" y="462" w="250" h="55">
+            <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-iso-42001-ai-management-system-n25" elementRef="id-businessfunction-a-7-data-for-ai-systems" xsi:type="Element" x="35" y="532" w="250" h="55">
+            <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-iso-42001-ai-management-system-n26" elementRef="id-businessfunction-a-8-information-for-interested-parties" xsi:type="Element" x="300" y="532" w="250" h="55">
+            <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-iso-42001-ai-management-system-n27" elementRef="id-businessfunction-a-9-use-of-ai-systems" xsi:type="Element" x="565" y="532" w="250" h="55">
+            <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+          <node identifier="id-view-iso-42001-ai-management-system-n28" elementRef="id-businessfunction-a-10-third-party-and-customer-relationships" xsi:type="Element" x="830" y="532" w="250" h="55">
+            <style><fillColor r="255" g="255" b="181"/><lineColor r="92" g="92" b="92"/></style>
+          </node>
+        </node>
+        <connection identifier="id-view-iso-42001-ai-management-system-c1" relationshipRef="id-rel-002" xsi:type="Relationship" source="id-view-iso-42001-ai-management-system-n1" target="id-view-iso-42001-ai-management-system-n2"/>
+        <connection identifier="id-view-iso-42001-ai-management-system-c2" relationshipRef="id-rel-035" xsi:type="Relationship" source="id-view-iso-42001-ai-management-system-n3" target="id-view-iso-42001-ai-management-system-n2"/>
+        <connection identifier="id-view-iso-42001-ai-management-system-c3" relationshipRef="id-rel-037" xsi:type="Relationship" source="id-view-iso-42001-ai-management-system-n5" target="id-view-iso-42001-ai-management-system-n4"/>
+        <connection identifier="id-view-iso-42001-ai-management-system-c4" relationshipRef="id-rel-039" xsi:type="Relationship" source="id-view-iso-42001-ai-management-system-n7" target="id-view-iso-42001-ai-management-system-n6"/>
+        <connection identifier="id-view-iso-42001-ai-management-system-c5" relationshipRef="id-rel-041" xsi:type="Relationship" source="id-view-iso-42001-ai-management-system-n9" target="id-view-iso-42001-ai-management-system-n8"/>
+        <connection identifier="id-view-iso-42001-ai-management-system-c6" relationshipRef="id-rel-043" xsi:type="Relationship" source="id-view-iso-42001-ai-management-system-n12" target="id-view-iso-42001-ai-management-system-n11"/>
+        <connection identifier="id-view-iso-42001-ai-management-system-c7" relationshipRef="id-rel-045" xsi:type="Relationship" source="id-view-iso-42001-ai-management-system-n14" target="id-view-iso-42001-ai-management-system-n13"/>
+        <connection identifier="id-view-iso-42001-ai-management-system-c8" relationshipRef="id-rel-047" xsi:type="Relationship" source="id-view-iso-42001-ai-management-system-n16" target="id-view-iso-42001-ai-management-system-n15"/>
+        <connection identifier="id-view-iso-42001-ai-management-system-c9" relationshipRef="id-rel-049" xsi:type="Relationship" source="id-view-iso-42001-ai-management-system-n18" target="id-view-iso-42001-ai-management-system-n17"/>
+        <connection identifier="id-view-iso-42001-ai-management-system-c10" relationshipRef="id-rel-053" xsi:type="Relationship" source="id-view-iso-42001-ai-management-system-n10" target="id-view-iso-42001-ai-management-system-n8"/>
+        <connection identifier="id-view-iso-42001-ai-management-system-c11" relationshipRef="id-rel-054" xsi:type="Relationship" source="id-view-iso-42001-ai-management-system-n10" target="id-view-iso-42001-ai-management-system-n19"/>
+      </view>
+    </diagrams>
+  </views>
+</model>
